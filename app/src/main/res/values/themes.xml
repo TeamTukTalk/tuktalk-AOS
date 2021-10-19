@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Tuktalk" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Tuktalk" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -14,10 +14,20 @@
         <!-- Customize your theme here. -->
 
 
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+
     </style>
 
     <style name="buttonRadiusShape">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppCompat.Button</item>
+    </style>
+    
+    <style name="TextAppearance.AppCompat.Button"
+        parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+        <item name="android:fontFamily">@font/notosans_kr_regular</item>
     </style>
 </resources>

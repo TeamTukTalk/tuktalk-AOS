@@ -2,4 +2,16 @@
     <string name="app_name">tuktalk</string>
 
     <string name="splash1">취준생과 현직자의\n리얼한 소통창구\n뚝딱과 함께 취업 뚝딱!</string>
+
+    <string name="guide1_1">같은 분야의</string>
+    <string name="guide1_2">취준생들과 함께</string>
+    <string name="guide1_3">프로젝트 또는 스터디</string>
+    <string name="guide1_4">스터디와 프로젝트를 함께 진행할 팀원을</string>
+    <string name="guide1_5">모집할 수 있고, 고민상담을 나눌 수 있습니다.</string>
+
+    <string name="guide2_4">실제 기업에서 합격한 포트폴리오 원본을</string>
+    <string name="guide2_5">참고해서 내 포트폴리오를 발전시킬 수 있습니다.</string>
+
+    <string name="guide3_4">내가 원하는 시간에 예약해서</string>
+    <string name="guide3_5">포트폴리오 피드백과 상담을 받을 수 있습니다.</string>
 </resources>
