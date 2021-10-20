@@ -38,6 +38,6 @@ class SplashActivity: AppCompatActivity() {
             val intent = Intent(this, GuideActivity::class.java)  // 로그인 화면으로 이동
             startActivity(intent)
             finish()  // 스플래쉬 화면은 최초 실행 시 보여줘야 하므로 finish 해주기!!
-        }, 1500)
+        }, 2000)
     }
 }

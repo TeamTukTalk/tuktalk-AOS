@@ -12,18 +12,18 @@
 
         <!-- horizontal start -->
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_horizontal_45.8"
+                android:id="@+id/guideline_horizontal_47.7"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintGuide_percent="0.458"
+                app:layout_constraintGuide_percent="0.477"
                 android:orientation="horizontal"
                 />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_horizontal_54.2"
+                android:id="@+id/guideline_horizontal_52.1"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintGuide_percent="0.542"
+                app:layout_constraintGuide_percent="0.521"
                 android:orientation="horizontal"
                 />
 
@@ -40,11 +40,11 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_45.8"
-        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_54.2"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_47.7"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_52.1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:src="@drawable/logo_1"/>
+        android:src="@drawable/frame_1"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

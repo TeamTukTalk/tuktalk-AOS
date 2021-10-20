@@ -10,5 +10,6 @@
 
     <color name="splash_background">#4928E9</color>
     <color name="tuktalk_primary">#4928E9</color>
-    <color name="tutalk_gray1">#DDDDDD</color>
+    <color name="tuktalk_gray1">#DDDDDD</color>
+    <color name="tuktalk_gray3">#828282</color>
 </resources>

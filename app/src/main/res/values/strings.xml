@@ -9,9 +9,16 @@
     <string name="guide1_4">스터디와 프로젝트를 함께 진행할 팀원을</string>
     <string name="guide1_5">모집할 수 있고, 고민상담을 나눌 수 있습니다.</string>
 
+    <string name="guide2_1">현직자 뚝딱 멘토의</string>
+    <string name="guide2_2">합격 포트폴리오를</string>
+    <string name="guide2_3">찾아보고</string>
     <string name="guide2_4">실제 기업에서 합격한 포트폴리오 원본을</string>
     <string name="guide2_5">참고해서 내 포트폴리오를 발전시킬 수 있습니다.</string>
 
+
+    <string name="guide3_1">원하는 시간에</string>
+    <string name="guide3_2">피드백과 상담까지</string>
+    <string name="guide3_3">받아보세요!</string>
     <string name="guide3_4">내가 원하는 시간에 예약해서</string>
     <string name="guide3_5">포트폴리오 피드백과 상담을 받을 수 있습니다.</string>
 </resources>
