@@ -25,8 +25,18 @@
         <activity android:name=".presentation.MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".presentation.login.LoginActivity"
+            android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait"/>
         <activity android:name=".presentation.guide.GuideActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.signup.SelectRoleActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.signup.SelectCategoryActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.signup.info.InfoRegistActivity"
+            android:windowSoftInputMode="adjustNothing"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.signup.complete.SignUpCompleteActivity"
             android:screenOrientation="portrait"/>
     </application>
 

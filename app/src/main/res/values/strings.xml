@@ -21,4 +21,77 @@
     <string name="guide3_3">받아보세요!</string>
     <string name="guide3_4">내가 원하는 시간에 예약해서</string>
     <string name="guide3_5">포트폴리오 피드백과 상담을 받을 수 있습니다.</string>
+
+    <string name="login_id">아이디(이메일)</string>
+    <string name="login_pw">비밀번호</string>
+
+    <string name="id_error_1">이메일 형식이 유효하지 않습니다.</string>
+    <string name="id_error_2">뚝딱에 가입되어 있지 않은 아이디입니다.</string>
+
+    <string name="pw_error">비밀번호가 맞지 않습니다.</string>
+
+
+    <string name="hint_login_id">이메일을 입력해주세요.</string>
+    <string name="hint_login_pw">비밀번호를 입력해주세요.</string>
+
+    <string name="find_id_pw">아이디 | 비밀번호 찾기</string>
+
+    <string name="tv_signup_question">아직 뚝딱 회원이 아니신가요?</string>
+    <string name="tv_signup"><u>회원가입</u></string>
+
+    <string name="tv_selectrole_q">뚝딱에서 어떤 서비스를\n이용하고 싶으세요? 🤔</string>
+
+    <string name="tv_mentee_1">멘티로 가입</string>
+    <string name="tv_mentee_2">멘토와 소통하면서 취뽀하고 싶다면!</string>
+
+    <string name="tv_mentor_1">멘토로 가입</string>
+    <string name="tv_mentor_2">지식공유를 하면서 수익 창출하고 싶다면!</string>
+
+    <string name="tv_mentee_question">어떤 분야에\n관심있으신가요? 👀</string>
+    <string name="tv_mentor_question">어떤 분야에서\n일하고 계신가요? 👀</string>
+
+    <string name="tv_category1">로고/브랜딩</string>
+    <string name="tv_category2">UXUI 디자인</string>
+    <string name="tv_category3">웹 디자인</string>
+
+    <string name="tv_category4">편집 디자인</string>
+    <string name="tv_category5">일러스트/캐릭터 디자인</string>
+
+    <string name="tv_category6">제품/산업디자인</string>
+
+    <string name="tv_category7">웹 개발</string>
+    <string name="tv_category8">앱 개발</string>
+    <string name="tv_category9">서버 개발</string>
+
+    <string name="tv_category10">IT/기술</string>
+    <string name="tv_category11">게임</string>
+    <string name="tv_category12">머신러닝/데이터</string>
+
+    <string name="tv_test">   테스트   </string>
+
+    <!-- info regist -->
+    <string name="tv_info_regist_letter">딱 이것만 작성하면\n가입완료! 🙌 </string>
+    <string name="tv_info_regist_name">이름(닉네임)</string>
+    <string name="tv_info_regist_id">아이디(이메일)</string>
+    <string name="tv_info_regist_pw">비밀번호</string>
+    <string name="tv_info_regist_pw_check">비밀번호 확인</string>
+
+    <string name="hint_regist_name">이름을 입력해주세요.</string>
+    <string name="hint_regist_id">이메일을 입력해주세요.</string>
+    <string name="hint_regist_pw">8자 이상으로 입력해주세요.</string>
+    <string name="hint_regist_pw_check">8자 이상으로 입력해주세요.</string>
+
+    <string name="regist_name_error">최소 2자 이상으로 적어주세요.</string>
+    <string name="regist_id_error1">이메일 형식에 맞게 입력해주세요.</string>
+    <string name="regist_id_error2">이미 등록된 계정입니다.</string>
+    <string name="regist_pw_error">8자 이상으로 입력해주세요.</string>
+    <string name="regist_pw_check_error">비밀번호가 일치하지 않습니다.</string>
+
+    <string name="regist_terms_description">뚝딱 가입 약관에 모두 동의합니다.</string>
+    <string name="tv_check_terms"><u>확인하기</u></string>
+
+    <!-- signup complete -->
+    <string name="welcome_1">뚝딱 가입을 환영합니다!</string>
+    <string name="welcome_2">마이페이지에서 자신을 소개해보세요.</string>
+
 </resources>

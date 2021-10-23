@@ -1,5 +1,6 @@
 package com.example.tuktalk.presentation.guide
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivityGuideBinding
 import com.example.tuktalk.presentation.guide.adapter.PagerFragmentStateAdapter
+import com.example.tuktalk.presentation.login.LoginActivity
 
 class GuideActivity: AppCompatActivity() {
 
@@ -66,7 +68,17 @@ class GuideActivity: AppCompatActivity() {
         // 시작하기 버튼 클릭 시 로그인 화면으로 이동
         binding.btnStart.setOnClickListener {
             Log.e("AppTest", "go to login activity")
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+
+
+
+            // 로그인 화면 넘어가면 안내페이지로 다시 돌아가지 못하게 설정하기??
+            // 현재는 갈 수 있음!!!
         }
 
     }
+
+
 }
