@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivityLoginBinding
+import com.example.tuktalk.presentation.main.MainActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity
 
 class LoginActivity: AppCompatActivity() {
@@ -93,6 +94,15 @@ class LoginActivity: AppCompatActivity() {
         //
         //
         //
+        
+        
+        // 로그인 버튼 클릭 시 -> 성공하면 넘어가기
+        binding.btnLogin.setOnClickListener {
+
+            // 현재 로그인 그냥 누르면 메인 액티비티 넘어가도록 설정
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
         // 회원가입 클릭 시 -> 회원가입 화면으로 이동하기

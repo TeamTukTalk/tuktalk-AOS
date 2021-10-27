@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivitySelectCategoryBinding
 import com.example.tuktalk.presentation.signup.info.InfoRegistActivity
+import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
 import com.google.android.material.card.MaterialCardView
 
 
@@ -145,8 +146,10 @@ class SelectCategoryActivity: AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_close ->{
-                // 닫기 버튼 누를 시
+                // 닫기 버튼 누를 시 다이얼로그 나타남
                 Log.e("AppTest", "toolbar close btn clicked")
+                var dialogVeiw = BreakAwayDialogFragment()
+                dialogVeiw.show(supportFragmentManager, "AppTest")
             }
             android.R.id.home -> {
                 // 뒤로가기 버튼 누를 시

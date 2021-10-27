@@ -37,6 +37,9 @@ class InfoRegistViewModel: ViewModel() {
 
     // 아이디 중복체크 / 추후 usecase 주입받고 네트워크 통신까지 하도록 구현하기
     fun checkIdDuplicate(){
+
+        // 통신 후 중복인지 아닌지 결과에 따라 분기해주기!!!
+
         // 중복아니면 - 지금은 중복 무조건 아닌걸로 해두기
         infoCorrectCheck(4,true)
         isIdAllCorrect.value = true
@@ -54,9 +57,11 @@ class InfoRegistViewModel: ViewModel() {
         }
     }
 
-    // 가입 완료시 기입 정보 서버에 전달
+    // 가입 완료 클릭시 기입 정보 서버에 전달
     fun signUpClick(){
-
+        
+        // 입력 정보들 넘겨주는 통신 후 결과에 따라 분기하기!!!
+        
         // 성공 시
         isSignUpSuccess.value = true
     }

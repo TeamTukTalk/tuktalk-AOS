@@ -17,6 +17,7 @@ import androidx.lifecycle.Observer
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivityInfoRegistBinding
 import com.example.tuktalk.presentation.signup.complete.SignUpCompleteActivity
+import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
 
 class InfoRegistActivity: AppCompatActivity() {
     private val viewModel : InfoRegistViewModel by viewModels()
@@ -327,6 +328,7 @@ class InfoRegistActivity: AppCompatActivity() {
         })
 
 
+
     }
 
     // toolbar
@@ -339,8 +341,10 @@ class InfoRegistActivity: AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_close ->{
-               // 닫기 버튼 누를 시
+               // 닫기 버튼 누를 시 다이얼로그 나타남
                 Log.e("AppTest", "toolbar close btn clicked")
+                var dialogVeiw = BreakAwayDialogFragment()
+                dialogVeiw.show(supportFragmentManager, "AppTest")
             }
             android.R.id.home -> {
                 // 뒤로가기 버튼 누를 시
@@ -350,5 +354,18 @@ class InfoRegistActivity: AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        // 입력 과정에서 뒤로 가기 누를 시 다이얼로그 나타남
+        var dialogVeiw = BreakAwayDialogFragment()
+        dialogVeiw.show(supportFragmentManager, "AppTest")
+    }
+
+    override fun onPause() {  // 앱 이탈 시 다이얼로그 나타남
+        super.onPause()
+        var dialogVeiw = BreakAwayDialogFragment()
+        dialogVeiw.show(supportFragmentManager, "AppTest")
     }
 }

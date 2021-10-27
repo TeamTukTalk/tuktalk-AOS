@@ -94,4 +94,16 @@
     <string name="welcome_1">뚝딱 가입을 환영합니다!</string>
     <string name="welcome_2">마이페이지에서 자신을 소개해보세요.</string>
 
+    <!-- breakaway diaglog -->
+    <string name="dialog_1">회원가입을 중단하시겠습니까?</string>
+    <string name="dialog_2">나가기</string>
+    <string name="dialog_3">계속 작성</string>
+
+    <!-- bottom navigation item title -->
+    <string name="item_1">홈</string>
+    <string name="item_2">탐색</string>
+    <string name="item_3">커뮤니티</string>
+    <string name="item_4">상담</string>
+    <string name="item_5">마이뚝딱</string>
+
 </resources>

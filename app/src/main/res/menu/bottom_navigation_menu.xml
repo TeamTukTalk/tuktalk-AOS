@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/tutalk_home"
+        android:title="@string/item_1"
+        android:icon="@drawable/ic_home_off"
+        android:enabled="true"/>
+
+    <item android:id="@+id/tutalk_search"
+        android:title="@string/item_2"
+        android:icon="@drawable/ic_search_off"
+        android:enabled="true"/>
+
+
+
+    <item android:id="@+id/tutalk_community"
+        android:title="@string/item_3"
+        android:icon="@drawable/ic_community_off"
+        android:enabled="true"/>
+
+
+
+    <item android:id="@+id/tutalk_chat"
+        android:title="@string/item_4"
+        android:icon="@drawable/ic_talk_off"
+        android:enabled="true"/>
+
+
+
+    <item android:id="@+id/tutalk_mypage"
+        android:title="@string/item_5"
+        android:icon="@drawable/ic_my_off"
+        android:enabled="true"/>
+
+
+</menu>

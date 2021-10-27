@@ -164,6 +164,33 @@
         <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
+    <style name="tv_dialog_1">
+        <item name="android:textColor">#242428</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="tv_dialog_2">
+        <item name="android:textColor">#4F4F4F</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="tv_dialog_3">
+        <item name="android:textColor">@color/tuktalk_primary</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
 
 
 
