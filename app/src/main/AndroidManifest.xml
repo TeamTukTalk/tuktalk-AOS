@@ -38,6 +38,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".presentation.signup.complete.SignUpCompleteActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.mypage.Test2Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.mypage.mentor.mentorRegist.MentorRegistActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

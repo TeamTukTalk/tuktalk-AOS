@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="splash_background">#4928E9</color>
-    <color name="tuktalk_primary">#4928E9</color>
+
     <color name="tuktalk_gray1">#DDDDDD</color>
     <color name="tuktalk_gray2">#4F4F4F</color>
     <color name="tuktalk_gray3">#828282</color>
@@ -17,6 +17,33 @@
     <color name="tuktalk_gray5">#F5F5F5</color>
     <color name="tuktalk_gray6">#AEAEAE</color>
     <color name="tuktalk_edittext_hint">#AEAEAE</color>
+
+
+    <!-- primary -->
+    <color name="tuktalk_primary">#4928E9</color>
+    <color name="tuktalk_primary_light1">#6461FF</color>
+    <color name="tuktalk_primary_light2">#CBD1FF</color>
+    <color name="tuktalk_primary_light3">#EAECFF</color>
+
+
+    <!-- state -->
     <color name="tuktalk_error">#FF3B3B</color>
+    <color name="tuktalk_warning">#FFCC00</color>
+    <color name="tuktalk_success">#13C276</color>
+
+    <!-- primary -->
+    <color name="tuktalk_basic_content">#242428</color>
+    <color name="tuktalk_sub_content">#333333</color>
+    <color name="tuktalk_sub_content_2">#4F4F4F</color>
+    <color name="tuktalk_sub_content_3">#828282</color>
+    <color name="tuktalk_sub_content_4">#AEAEAE</color>
+    <color name="tuktalk_sub_content_5">#BDBDBD</color>
+    <color name="tuktalk_gray_1">#DDDDDD</color>
+    <color name="tuktalk_gray_2">#E5E5E5</color>
+    <color name="tuktalk_gray_3">#EEEEEE</color>
+    <color name="tuktalk_gray_4">#F5F5F5</color>
+    <color name="tuktalk_gray_5">#F8F8F8</color>
+
+
 
 </resources>

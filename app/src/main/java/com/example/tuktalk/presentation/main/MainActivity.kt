@@ -41,11 +41,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun replaceFragment(fragment: Fragment){
+
+       /* var transaction = supportFragmentManager.beginTransaction()
+                .apply {
+                    replace(R.id.framelayout, fragment)
+                }
+
+        transaction.addToBackStack(null)
+        transaction.commit() */
+
         supportFragmentManager.beginTransaction()
                 .apply {
                     replace(R.id.framelayout, fragment)
                     commit()
                 }
+
+        // 하단바 이동 로직에 따라 구현하기!! ex> 요기요는 홈 제외 다른 탭에서 뒤로가기하면 스택 상관없이 홈 탭으로 무조건 이동!!
     }
 
 

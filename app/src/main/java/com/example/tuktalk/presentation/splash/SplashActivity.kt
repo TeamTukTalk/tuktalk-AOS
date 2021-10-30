@@ -27,7 +27,7 @@ class SplashActivity: AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1.5초 뒤에 안내 페이지로 넘어가도록 현재 설정
+        // 1.6초 뒤에 안내 페이지로 넘어가도록 현재 설정
         startLoading()
 
     }
@@ -38,6 +38,6 @@ class SplashActivity: AppCompatActivity() {
             val intent = Intent(this, GuideActivity::class.java)  // 로그인 화면으로 이동
             startActivity(intent)
             finish()  // 스플래쉬 화면은 최초 실행 시 보여줘야 하므로 finish 해주기!!
-        }, 2000)
+        }, 1600)
     }
 }

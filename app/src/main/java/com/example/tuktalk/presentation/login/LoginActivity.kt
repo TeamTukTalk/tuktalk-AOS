@@ -66,6 +66,7 @@ class LoginActivity: AppCompatActivity() {
                 if(idText.length == 0){
                     binding.llErrorId.visibility = View.GONE
                     binding.etId.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, 0,0)
+                    //binding.etId.clearFocus()
                 }
             }
             override fun afterTextChanged(p0: Editable?) {

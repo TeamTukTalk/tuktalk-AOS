@@ -13,7 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">#C5C5C5</item>
         <!-- Customize your theme here. -->
 
-
+        <item name="windowActionBar">false</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowIsTranslucent">true</item>
 
@@ -64,6 +64,12 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="btnRaduisShape2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppCompat.Button2</item>
+    </style>
+
     <style name="TextAppearance.AppCompat.Button2"
         parent="TextAppearance.MaterialComponents.Button">
         <item name="fontFamily">@font/notosans_kr_medium</item>
@@ -71,5 +77,25 @@
         <item name="android:includeFontPadding">false</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <!-- Toolbar style -->
+    <style name="ToolbarStyle.Dark" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/ToolbarTitleStyle.Dark</item> <!-- Toolbar의 타이틀 텍스트-->
+    </style>
+
+    <!-- Toolbar의 타이틀 텍스트-->
+    <style name="ToolbarTitleStyle.Dark" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/black</item> <!-- Toolbar의 타이틀 텍스트 색상-->
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+
+    <style name="mentorRegistStepShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4%</item>
+    </style>
+
+
 
 </resources>
