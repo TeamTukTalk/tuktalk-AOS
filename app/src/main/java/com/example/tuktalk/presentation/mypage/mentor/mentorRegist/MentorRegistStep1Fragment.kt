@@ -29,6 +29,7 @@ class MentorRegistStep1Fragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.e("AppTest", "mentor regist step1 fragment onViewCreated")
 
         // 회사이름, 부서 입력 시 edittext 색상 변경
         binding.etCompanyName.setOnFocusChangeListener(View.OnFocusChangeListener { view, focused ->
@@ -121,5 +122,10 @@ class MentorRegistStep1Fragment: Fragment() {
             binding.btnNextActive.visibility = View.INVISIBLE
             binding.btnNextInactive.visibility = View.VISIBLE
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest", "mentor regist step1 fragment onResume")
     }
 }

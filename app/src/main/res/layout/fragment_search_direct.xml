@@ -32,10 +32,6 @@
 
         <!-- vertical guideline end -->
 
-        <FrameLayout
-            android:id="@+id/framelayout_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
 
 

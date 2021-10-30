@@ -21,4 +21,22 @@ class MentorRegistStep3Fragment: Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mentor_regist_step3, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 버튼튼
+       binding.btnGotoWrite.setOnClickListener {
+            // 클릭 이벤트 구현해주기
+
+
+        }
+    }
+
+
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest", "mentor regist step3 fragment onResume")
+    }
 }
