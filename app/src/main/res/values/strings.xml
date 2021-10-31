@@ -130,6 +130,12 @@
     <!-- search -->
     <string name="search_select_tv_1">관심 분야의 멘토와 포트폴리오를 찾아보세요.</string>
 
+    <string name="search_design_toggle1">UXUI 디자인</string>
+    <string name="search_design_toggle2">웹 디자인</string>
+    <string name="search_design_toggle3">브랜드 디자인</string>
+    <string name="search_design_toggle4">그래픽 디자인</string>
+    <string name="search_design_toggle5">산업/제품 디자인</string>
+
 
 
 </resources>

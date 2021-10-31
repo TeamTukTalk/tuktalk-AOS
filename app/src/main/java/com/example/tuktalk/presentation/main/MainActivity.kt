@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
     val chatFragment = ChatFragment()
     val myPageFragment = MyPageFragment()
 
+    var first_home = true
+    var first_search = true
+    var first_community = true
+    var first_chat = true
+    var first_mypage = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -75,7 +81,12 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_search).setIcon(R.drawable.ic_search_off)
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
-                    replaceFragment(homeFragment)
+                    //replaceFragment(homeFragment)
+                    supportFragmentManager.beginTransaction().show(homeFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(searchFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(communityFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(chatFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(myPageFragment).commit()
                 }
                 R.id.tuktalk_search -> {
                     item.setIcon(R.drawable.ic_search_on)
@@ -83,7 +94,16 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_home).setIcon(R.drawable.ic_home_off)
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
-                    replaceFragment(searchFragment)
+                    //replaceFragment(searchFragment)
+                    if(first_search == true){
+                        first_search = false
+                        supportFragmentManager.beginTransaction().add(R.id.framelayout, searchFragment).commit()
+                    }
+                    supportFragmentManager.beginTransaction().show(searchFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(homeFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(communityFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(chatFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(myPageFragment).commit()
                 }
                 R.id.tuktalk_community -> {
                     item.setIcon(R.drawable.ic_community_on)
@@ -91,7 +111,16 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_search).setIcon(R.drawable.ic_search_off)
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
-                    replaceFragment(communityFragment)
+                    //replaceFragment(communityFragment)
+                    if(first_community == true){
+                        first_community = false
+                        supportFragmentManager.beginTransaction().add(R.id.framelayout, communityFragment).commit()
+                    }
+                    supportFragmentManager.beginTransaction().show(communityFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(searchFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(homeFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(chatFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(myPageFragment).commit()
                 }
                 R.id.tuktalk_chat -> {
                     item.setIcon(R.drawable.ic_talk_on)
@@ -99,7 +128,16 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_search).setIcon(R.drawable.ic_search_off)
                     menu.findItem(R.id.tuktalk_home).setIcon(R.drawable.ic_home_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
-                    replaceFragment(chatFragment)
+                   // replaceFragment(chatFragment)
+                    if(first_chat == true){
+                        first_chat = false
+                        supportFragmentManager.beginTransaction().add(R.id.framelayout, chatFragment).commit()
+                    }
+                    supportFragmentManager.beginTransaction().show(chatFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(searchFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(communityFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(myPageFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(homeFragment).commit()
                 }
                 R.id.tuktalk_mypage -> {
                     item.setIcon(R.drawable.ic_my_on)
@@ -107,7 +145,16 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_search).setIcon(R.drawable.ic_search_off)
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_home).setIcon(R.drawable.ic_home_off)
-                    replaceFragment(myPageFragment)
+                   // replaceFragment(myPageFragment)
+                    if(first_mypage == true){
+                        first_mypage = false
+                        supportFragmentManager.beginTransaction().add(R.id.framelayout, myPageFragment).commit()
+                    }
+                    supportFragmentManager.beginTransaction().show(myPageFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(searchFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(communityFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(chatFragment).commit()
+                    supportFragmentManager.beginTransaction().hide(homeFragment).commit()
 
                 }
         }

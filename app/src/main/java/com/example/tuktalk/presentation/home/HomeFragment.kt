@@ -28,6 +28,10 @@ class HomeFragment: Fragment() {
 
         Log.e("AppTest", "home fragment onViewCreated")
 
+        binding.tvHome.setOnClickListener {
+            binding.tvHome.setTextColor(resources.getColor(R.color.tuktalk_primary))
+        }
+
     }
 
     override fun onResume() {
