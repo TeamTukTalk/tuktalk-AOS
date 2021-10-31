@@ -127,4 +127,9 @@
     <string name="tv_step_hint3">이메일 계정을 입력해주세요</string>
 
 
+    <!-- search -->
+    <string name="search_select_tv_1">관심 분야의 멘토와 포트폴리오를 찾아보세요.</string>
+
+
+
 </resources>

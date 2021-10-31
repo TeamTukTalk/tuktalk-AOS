@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
+import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.FragmentSearchSelectBinding
 
 class SearchSelectFragment: Fragment() {
@@ -24,11 +25,31 @@ class SearchSelectFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.e("AppTest", "search select fragment onViewCreated")
 
+        // 분야 이동
+        // 디자인 분야 선택 시
+        binding.cvDesign.setOnClickListener {
+            (parentFragment as SearchFragment).goToSearchDesign()
+        }
+
+        // it/개발 분야 선택 시
+        binding.cvIt.setOnClickListener {
+            (parentFragment as SearchFragment).goToSearchIT()
+        }
+
+        // 상단 문구 공간 클릭 시 ->  직접검색으로 이동
+        binding.llGotoSearchDirect.setOnClickListener {
+            (parentFragment as SearchFragment).goToSearchDirect()
+        }
 
     }
 
     override fun onResume() {
         super.onResume()
+
+        Constants.SEARCH_FRAGMENT = 0
         Log.e("AppTest", "search select fragment onResume")
     }
+
+
+
 }

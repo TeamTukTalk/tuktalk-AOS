@@ -96,6 +96,11 @@
         <item name="cornerSize">4%</item>
     </style>
 
+    <style name="searchSelectCardView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4.5%</item>
+    </style>
+
 
 
 </resources>

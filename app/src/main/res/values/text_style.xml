@@ -254,6 +254,34 @@
         <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
+    <style name="et_hint_font2">
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+
+
+    <!-- search -->
+    <style name="search_tv_1">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="search_tv_2">
+        <item name="android:textColor">@color/tuktalk_sub_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
 
 
 
