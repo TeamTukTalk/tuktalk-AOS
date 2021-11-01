@@ -66,7 +66,8 @@ class SearchDesignFragment: Fragment() {
             categoryCvList[index]!!.setOnClickListener {
                 isCategorySelected[index] = !isCategorySelected[index]  // 토글 구현
 
-                if(isCategorySelected[index]){ // 선택 되었다면
+                if(isCategorySelected[index]){ // 미선택 -> 선택
+                    toggleSelect(index) // 나머지 토글은 미선택 처리
                     categoryCvList[index]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_primary))
                     categoryTvList[index]!!.setTextColor(resources.getColor(R.color.white))
                 }
@@ -89,6 +90,16 @@ class SearchDesignFragment: Fragment() {
         Log.e("AppTest", "search Design fragment onResume")
     }
 
+
+    fun toggleSelect(selected : Int){ // 인자로 들어온 index 제외 모두 미선택 상태로 변경
+        for(index in 0..4){
+            if(index != selected){
+                isCategorySelected[index] = false
+                categoryCvList[index]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_gray_5))
+                categoryTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_sub_content_2))
+            }
+        }
+    }
 
 
 }

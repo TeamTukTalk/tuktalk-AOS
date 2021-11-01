@@ -292,6 +292,25 @@
     </style>
 
 
+    <style name="search_tv_company_type_and_career">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="search_tv_company_type_and_career2">
+        <item name="android:textColor">@color/tuktalk_primary</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+
 
 
 
