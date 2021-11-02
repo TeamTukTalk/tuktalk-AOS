@@ -98,6 +98,7 @@ class SearchFragment: Fragment() {
 
     fun goToSearchSelect(){
         Log.e("AppTest", "goToSearchSelect")
+        Constants.SEARCH_FRAGMENT = 0
         childFragmentManager.beginTransaction()
                 .replace(R.id.framelayout_search, searchSelectFragment )
                 .commit()
@@ -123,8 +124,11 @@ class SearchFragment: Fragment() {
                 .commit()
     }
 
+
+
     override fun onDestroy() {
         super.onDestroy()
         Log.e("AppTest", "Search Fragment onDestroy")
+        Constants.SEARCH_FRAGMENT = 0 // 선택화면을 최초로 나오게 다시 설정
     }
 }

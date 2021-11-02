@@ -19,6 +19,7 @@ import com.example.tuktalk.databinding.FragmentSearchDesignBinding
 import com.example.tuktalk.databinding.FragmentSearchDirectBinding
 import com.example.tuktalk.domain.model.search.PortfolioRV_item
 import com.example.tuktalk.presentation.search.adpater.SearchDesignRVadapter
+import com.example.tuktalk.presentation.search.dialog.TagDialogFragment
 import com.google.android.material.card.MaterialCardView
 
 class SearchDesignFragment: Fragment() {
@@ -40,7 +41,7 @@ class SearchDesignFragment: Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.e("AppTest", "search Design fragment onCreateView")
+        Log.e("AppTest", "search design fragment onCreateView")
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search_design, container, false)
 
        /* callback = object : OnBackPressedCallback(true){
@@ -55,7 +56,7 @@ class SearchDesignFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.e("AppTest", "search Design fragment onViewCreated")
+        Log.e("AppTest", "search design fragment onViewCreated")
 
 
         // 토글 카드뷰 배열화
@@ -120,6 +121,16 @@ class SearchDesignFragment: Fragment() {
         binding.ivDeleteCircle.setOnClickListener {
             (parentFragment as SearchFragment).goToSearchSelect()
         }
+
+        //////////
+        // 태그 bottom sheet dialog 나타내기
+        var dialogView = TagDialogFragment()
+        binding.clSelectCareer.setOnClickListener {
+            dialogView.show(childFragmentManager, "tag_dialog_open")
+        }
+        binding.clSelectCompanyType.setOnClickListener {
+            dialogView.show(childFragmentManager, "tag_dialog_open")
+        }
     }
 
 
@@ -128,7 +139,7 @@ class SearchDesignFragment: Fragment() {
         super.onResume()
 
         Constants.SEARCH_FRAGMENT = 1
-        Log.e("AppTest", "search Design fragment onResume")
+        Log.e("AppTest", "search design fragment onResume")
     }
 
 
@@ -144,12 +155,12 @@ class SearchDesignFragment: Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.e("AppTest","SearchDesignFragment onDestoryView  && clear RV dataSet")
+        Log.e("AppTest","search design fragment onDestoryView  && clear RV dataSet")
         rvAdapter.clearList()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("AppTest","SearchDesignFragment onDestory")
+        Log.e("AppTest","search design fragment onDestory")
     }
 }
