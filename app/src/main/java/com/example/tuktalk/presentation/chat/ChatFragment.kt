@@ -23,13 +23,14 @@ class ChatFragment: Fragment() {
     // 뒤로가기 처리 위함
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.e("AppTest", "chat fragment onAttach")
 
-        callback = object : OnBackPressedCallback(true){
+        /*callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                (activity as MainActivity).backToHome()
+                (activity as MainActivity).backToHome(3)
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback) */
     }
 
 
@@ -37,7 +38,24 @@ class ChatFragment: Fragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_chat, container, false)
+        Log.e("AppTest", "chat fragment onCreateView")
+
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.e("AppTest", "chat fragment onViewCreated")
+
+      /*  callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (activity as MainActivity).backToHome(3)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
+
+
+
     }
 
     override fun onResume() {

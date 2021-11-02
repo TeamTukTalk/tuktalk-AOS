@@ -29,13 +29,14 @@ class SearchFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.e("AppTest", "search fragment onAttach")
 
-        callback = object : OnBackPressedCallback(true){
+       /* callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                (activity as MainActivity).backToHome()
+                (activity as MainActivity).backToHome(1)
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback) */
     }
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -50,6 +51,14 @@ class SearchFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.e("AppTest", "search fragment onViewCreated")
 
+       /* callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (activity as MainActivity).backToHome(1)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
+        /////////////////////////////////////////////////////////////////////////////////////////
+
         // 첫 화면은 선택 화면
        /* childFragmentManager.beginTransaction()
                 .replace(R.id.framelayout_search, searchSelectFragment )
@@ -63,7 +72,8 @@ class SearchFragment: Fragment() {
         }
         else if(Constants.SEARCH_FRAGMENT == 1){
             childFragmentManager.beginTransaction()
-                    .replace(R.id.framelayout_search, searchDesignFragment )
+                    .replace(R.id.framelayout_search, searchDesignFragment ,"goToDesign")
+                    //.addToBackStack("design")
                     .commit()
         }
         else if(Constants.SEARCH_FRAGMENT == 2){
@@ -87,9 +97,12 @@ class SearchFragment: Fragment() {
     }
 
     fun goToSearchSelect(){
+        Log.e("AppTest", "goToSearchSelect")
         childFragmentManager.beginTransaction()
                 .replace(R.id.framelayout_search, searchSelectFragment )
                 .commit()
+
+
     }
 
     fun goToSearchDesign(){
@@ -108,5 +121,10 @@ class SearchFragment: Fragment() {
         childFragmentManager.beginTransaction()
                 .replace(R.id.framelayout_search, searchDirectFragment )
                 .commit()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("AppTest", "Search Fragment onDestroy")
     }
 }

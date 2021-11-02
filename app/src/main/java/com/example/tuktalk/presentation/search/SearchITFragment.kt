@@ -27,6 +27,7 @@ class SearchITFragment: Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+    // 여기 있으면 다른 탭 이동 후 복귀 시 뒤로가기 누르면 선택화면으로 가지 않고 바로 홈탭으로 이동됨 why??
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -38,6 +39,20 @@ class SearchITFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.e("AppTest", "search IT fragment onViewCreated")
+
+       /* callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (parentFragment as SearchFragment).goToSearchSelect()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback) */
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+        // 우측 상단 x 버튼 클릭 시 뒤로가기
+        binding.ivDeleteCircle.setOnClickListener {
+            (parentFragment as SearchFragment).goToSearchSelect()
+        }
+
     }
 
     override fun onResume() {

@@ -22,22 +22,36 @@ class CommunityFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.e("AppTest", "community fragment onAttach")
 
-        callback = object : OnBackPressedCallback(true){
+        /*callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                (activity as MainActivity).backToHome()
+                (activity as MainActivity).backToHome(2)
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback) */
     }
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_community, container, false)
+        Log.e("AppTest", "community fragment onCreateView")
+
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Log.e("AppTest", "community fragment onViewCreated")
+
+        /*callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (activity as MainActivity).backToHome(2)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
+    }
 
     override fun onResume() {
         super.onResume()

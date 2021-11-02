@@ -11,10 +11,14 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
+import com.example.tuktalk.common.utils.VerticalItemDecorator
 import com.example.tuktalk.databinding.FragmentSearchDesignBinding
 import com.example.tuktalk.databinding.FragmentSearchDirectBinding
+import com.example.tuktalk.domain.model.search.PortfolioRV_item
+import com.example.tuktalk.presentation.search.adpater.SearchDesignRVadapter
 import com.google.android.material.card.MaterialCardView
 
 class SearchDesignFragment: Fragment() {
@@ -27,25 +31,32 @@ class SearchDesignFragment: Fragment() {
     var categoryCvList = arrayOfNulls<MaterialCardView>(5)
     var categoryTvList = arrayOfNulls<TextView>(5)
 
-    override fun onAttach(context: Context) {
+    lateinit var rvAdapter: SearchDesignRVadapter
+    private var testDataSet = mutableListOf<PortfolioRV_item>()
+
+   override fun onAttach(context: Context) {
         super.onAttach(context)
-        callback = object : OnBackPressedCallback(true){
-            override fun handleOnBackPressed() {
-                (parentFragment as SearchFragment).goToSearchSelect()
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("AppTest", "search Design fragment onCreateView")
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search_design, container, false)
+
+       /* callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (parentFragment as SearchFragment).goToSearchSelect()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback) */
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.e("AppTest", "search Design fragment onViewCreated")
+
 
         // 토글 카드뷰 배열화
         categoryCvList[0] = binding.cvDesignToggle1
@@ -79,6 +90,36 @@ class SearchDesignFragment: Fragment() {
             }
         }
 
+        //////////////////////////////
+        // 포트폴리오 리사이클러뷰
+        rvAdapter = SearchDesignRVadapter(testDataSet)
+        binding.recyclerViewDesign.layoutManager = LinearLayoutManager(context)
+        binding.recyclerViewDesign.adapter = rvAdapter
+        binding.recyclerViewDesign.addItemDecoration(VerticalItemDecorator(15))
+
+        // 임시 데이터
+        testDataSet.apply{
+            add(PortfolioRV_item(0, "", "", "","",
+                    1))
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+            2))
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+        }
+
+        rvAdapter.updateList(testDataSet)
+        rvAdapter.notifyDataSetChanged()
+
+
+        ///////////////////////////////
+        // 우측 상단 x 버튼 누를 시
+        binding.ivDeleteCircle.setOnClickListener {
+            (parentFragment as SearchFragment).goToSearchSelect()
+        }
     }
 
 
@@ -101,5 +142,14 @@ class SearchDesignFragment: Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e("AppTest","SearchDesignFragment onDestoryView  && clear RV dataSet")
+        rvAdapter.clearList()
+    }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("AppTest","SearchDesignFragment onDestory")
+    }
 }

@@ -26,13 +26,13 @@ class MyPageFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
-        callback = object : OnBackPressedCallback(true){
+        Log.e("AppTest", "mypage fragment onAttach")
+       /* callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
-                (activity as MainActivity).backToHome()
+                (activity as MainActivity).backToHome(4)
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback) */
     }
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -48,7 +48,13 @@ class MyPageFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        
+        /*callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (activity as MainActivity).backToHome(4)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
+
         // 멘토 등록 화면 mypage 프래그먼트 내부의 프래그먼트로??
         //
         //

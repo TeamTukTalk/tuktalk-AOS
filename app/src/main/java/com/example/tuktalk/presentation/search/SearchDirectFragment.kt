@@ -21,12 +21,13 @@ class SearchDirectFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        callback = object : OnBackPressedCallback(true){
+
+        /*callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 (parentFragment as SearchFragment).goToSearchSelect()
             }
         }
-        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)*/
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -38,6 +39,13 @@ class SearchDirectFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.e("AppTest", "search Direct fragment onViewCreated")
+
+        /*callback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                (parentFragment as SearchFragment).goToSearchSelect()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
     }
 
     override fun onResume() {

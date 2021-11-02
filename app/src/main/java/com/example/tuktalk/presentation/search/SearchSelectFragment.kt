@@ -50,6 +50,10 @@ class SearchSelectFragment: Fragment() {
         Log.e("AppTest", "search select fragment onResume")
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("AppTest", "Search Select fragment onDestroy")
+    }
 
 
 }
