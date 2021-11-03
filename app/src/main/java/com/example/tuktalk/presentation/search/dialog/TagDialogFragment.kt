@@ -4,22 +4,45 @@ import android.app.Activity
 import android.app.Dialog
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.DialogSearchTagBinding
+import com.example.tuktalk.presentation.search.SearchDesignFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.card.MaterialCardView
 import java.lang.reflect.TypeVariable
 
 
 class TagDialogFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding : DialogSearchTagBinding
+
+    private var isCompanySelected = Array<Boolean>(5) { false }
+    private var isCareerSelected = Array<Boolean>(5) { false }
+
+    private var companyCvList = arrayOfNulls<MaterialCardView>(5)
+    private var careerCvList = arrayOfNulls<MaterialCardView>(5)
+
+    private var companyTvList = arrayOfNulls<TextView>(5)
+    private var careerTvList = arrayOfNulls<TextView>(5)
+
+    private var companyTagValue = arrayOfNulls<String>(5)
+    private var careerTagValue = arrayOfNulls<String>(5)
+
+    private var COMPANY = ""
+    private var CAREER = ""
+
+    private var Index_company = -1
+    private var Index_career = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +73,7 @@ class TagDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun getBottomSheetDialogDefaultHeight(): Int {
-        return getWindowHeight() * 548 / 760
+        return getWindowHeight() * 550 / 760
     }
 
     private fun getWindowHeight(): Int {
@@ -69,34 +92,192 @@ class TagDialogFragment : BottomSheetDialogFragment() {
 
         /*view.findViewById<ConstraintLayout>(R.id.cl_dialog).maxHeight =
                 (resources.displayMetrics.heightPixels * 0.5).toInt()*/
+        Log.e("AppTest", "search tag dialog fragment onCreateView")
+        Log.e("AppTest", "company : ${COMPANY}, career : ${CAREER}")
+
+        var bundle = arguments
+        Index_company = bundle!!.getInt("index_company", -1)
+        Index_career = bundle!!.getInt("index_career", -1)
+        Log.e("AppTest", "company index : ${Index_company}, career index : ${Index_career}")
+
 
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        /*var wm : WindowManager = getContext()?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        var screen : Display = wm.getDefaultDisplay()
-
-        var size = Point()
-        screen.getRealSize(size)
-        var height = size.y
-        var width = size.x
-
-        Log.e("AppTest", "search dialog onActivityCreated, screen height : ${height},  width : ${width}")
-
-        binding.llDialog.layoutParams.height = height / 4 * 3 */
-
-        //binding.clDialog.layoutParams.height = width * 560 / 300
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.e("AppTest", "search tag dialog fragment onViewCreated")
+
+        companyTagValue[0] = "대기업"
+        companyTagValue[1] = "중견기업"
+        companyTagValue[2] = "중소기업"
+        companyTagValue[3] = "스타트업"
+        companyTagValue[4] = "프리랜서"
+
+        careerTagValue[0] = "1~2년"
+        careerTagValue[1] = "3~4년"
+        careerTagValue[2] = "5~6년"
+        careerTagValue[3] = "7~8년"
+        careerTagValue[4] = "9년 이상"
+
+        //기업 태그 cardview & textview
+        companyCvList[0] = binding.cvCompany1
+        companyCvList[1] = binding.cvCompany2
+        companyCvList[2] = binding.cvCompany3
+        companyCvList[3] = binding.cvCompany4
+        companyCvList[4] = binding.cvCompany5
+
+        companyTvList[0] = binding.tvCompany1
+        companyTvList[1] = binding.tvCompany2
+        companyTvList[2] = binding.tvCompany3
+        companyTvList[3] = binding.tvCompany4
+        companyTvList[4] = binding.tvCompany5
+
+        // 경력 태그 cardview & textview
+        careerCvList[0] = binding.cvCareer1
+        careerCvList[1] = binding.cvCareer2
+        careerCvList[2] = binding.cvCareer3
+        careerCvList[3] = binding.cvCareer4
+        careerCvList[4] = binding.cvCareer5
+
+        careerTvList[0] = binding.tvCareer1
+        careerTvList[1] = binding.tvCareer2
+        careerTvList[2] = binding.tvCareer3
+        careerTvList[3] = binding.tvCareer4
+        careerTvList[4] = binding.tvCareer5
+
+        // 이전에 선택한 값으로 뷰 보여줘야 함
+        if(Index_company >= 0)
+            selectCompanyTag(Index_company)
+        if(Index_career >= 0)
+            selectCareerTag(Index_career)
+
+
+        // 태그 클릭 시 동작
+        for(index in 0..4){
+            companyCvList[index]!!.setOnClickListener {
+                Log.e("AppTest","company tag ${index} selected")
+                selectCompanyTag(index)
+            }
+
+            careerCvList[index]!!.setOnClickListener {
+                Log.e("AppTest","career tag ${index} selected")
+                selectCareerTag(index)
+            }
+        }
+
+
+        ///////////////////
+        // 초기화 텍스트 선택 시
+        binding.tvTagReset.setOnClickListener {
+            resetTag()
+        }
+
+        ///////
+        // 적용하기
+        binding.btnTagApply.setOnClickListener {
+            (parentFragment as SearchDesignFragment).tagSelected(COMPANY, CAREER, Index_company, Index_career)
+            closeDialog()
+        }
+
+
+        // 다이얼로그 닫힘 버튼
+        binding.ivDialogClose.setOnClickListener {
+            closeDialog()
+        }
+
+        /*binding.tvTagDes.setOnClickListener {
+            Log.e("AppTest", "tvtagdes clicked")
+            companyCvList[0]!!.setStrokeColor(ContextCompat.getColor(requireContext(),R.color.tuktalk_gray4))
+            companyCvList[0]!!.invalidate()
+
+        }*/
 
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest", "search tag dialog fragment onResume")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e("AppTest", "search tag dialog fragment onDestroyView")
+    }
+
+    // 기업 태그 선택 시
+    fun selectCompanyTag(index: Int){
+        resetCompany() // 일단 모두 초기화
+        isCompanySelected[index] = true // 선택 한 태그만 true
+        companyCvList[index]!!.strokeColor = resources.getColor(R.color.tuktalk_primary)
+        companyTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_primary))
+        COMPANY = companyTagValue[index]!! // 선택한 태그 값
+        Index_company = index
+    }
+
+    // 경력 태그 선택 시
+    fun selectCareerTag(index: Int){
+        resetCareer() // 일단 모두 초기화
+        isCareerSelected[index] = true // 선택 한 태그만 true
+        careerCvList[index]!!.strokeColor = resources.getColor(R.color.tuktalk_primary)
+       // careerCvList[index]!!.strokeWidth = 2
+        careerTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_primary))
+        CAREER = careerTagValue[index]!! // 선택한 태그 값
+        Index_career = index
+    }
+
+    fun resetCompany(){
+        for(i in 0..4){
+            companyCvList[i]!!.strokeColor = resources.getColor(R.color.tuktalk_gray4)
+            companyTvList[i]!!.setTextColor(resources.getColor(R.color.tuktalk_gray2))
+            companyCvList[i]!!.invalidate() // 이걸 안해주니 색이 변경되지 않았음 -> why??  // 카테고리 선택에서는 이거 없어도 잘 동작..
+
+            isCompanySelected[i] = false
+        }
+
+        COMPANY = ""
+    }
+
+    fun resetCareer(){
+        for(i in 0..4){
+            careerCvList[i]!!.strokeColor = resources.getColor(R.color.tuktalk_gray4)
+            careerTvList[i]!!.setTextColor(resources.getColor(R.color.tuktalk_gray2))
+            //careerCvList[i]!!.strokeWidth = 1
+            careerCvList[i]!!.invalidate()
+
+            isCareerSelected[i] = false
+        }
+        CAREER = ""
+    }
 
 
+    // 두 태그의 선택 초기화
+    fun resetTag(){
+        for(i in 0..4){
+            companyCvList[i]!!.setStrokeColor(resources.getColor(R.color.tuktalk_gray4))
+            companyTvList[i]!!.setTextColor(resources.getColor(R.color.tuktalk_gray2))
+            companyCvList[i]!!.invalidate()
+
+            careerCvList[i]!!.setStrokeColor(resources.getColor(R.color.tuktalk_gray4))
+            careerTvList[i]!!.setTextColor(resources.getColor(R.color.tuktalk_gray2))
+            careerCvList[i]!!.invalidate()
+
+            isCompanySelected[i] = false
+            isCareerSelected[i] = false
+        }
+
+        COMPANY = ""
+        CAREER = ""
+        Index_company = -1
+        Index_career = -1
+    }
+
+
+    // dialog 닫힘
+    fun closeDialog(){
+            dialog?.dismiss()
     }
 }

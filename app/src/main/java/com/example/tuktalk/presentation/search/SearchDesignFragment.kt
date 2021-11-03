@@ -35,6 +35,11 @@ class SearchDesignFragment: Fragment() {
     lateinit var rvAdapter: SearchDesignRVadapter
     private var testDataSet = mutableListOf<PortfolioRV_item>()
 
+    private var COMPANY_VALUE = ""
+    private var CAREER_VALUE = ""
+    private var COMPANY_INDEX = -1
+    private var CAREER_INDEX = -1
+
    override fun onAttach(context: Context) {
         super.onAttach(context)
 
@@ -126,9 +131,17 @@ class SearchDesignFragment: Fragment() {
         // 태그 bottom sheet dialog 나타내기
         var dialogView = TagDialogFragment()
         binding.clSelectCareer.setOnClickListener {
+            var bundle = Bundle()
+            bundle.putInt("index_company", COMPANY_INDEX)
+            bundle.putInt("index_career", CAREER_INDEX)
+            dialogView.arguments = bundle
             dialogView.show(childFragmentManager, "tag_dialog_open")
         }
         binding.clSelectCompanyType.setOnClickListener {
+            var bundle = Bundle()
+            bundle.putInt("index_company", COMPANY_INDEX)
+            bundle.putInt("index_career", CAREER_INDEX)
+            dialogView.arguments = bundle
             dialogView.show(childFragmentManager, "tag_dialog_open")
         }
     }
@@ -153,10 +166,30 @@ class SearchDesignFragment: Fragment() {
         }
     }
 
+    // 다이얼로그에서 태그 선택되면, 해당 값으로 통신하기!!!
+    fun tagSelected(company: String, career : String, index_compnay: Int, index_career:Int){
+        Log.e("AppTest", "tagSelected called, company : ${company} , career : ${career} ...")
+
+        COMPANY_VALUE = company
+        CAREER_VALUE = career
+        COMPANY_INDEX = index_compnay
+        CAREER_INDEX = index_career
+
+        binding.cl1TvCompanyType.text = COMPANY_VALUE
+        binding.cl2TvCareer.text = CAREER_VALUE
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         Log.e("AppTest","search design fragment onDestoryView  && clear RV dataSet")
         rvAdapter.clearList()
+
+        COMPANY_VALUE = ""
+        COMPANY_INDEX = -1
+
+        CAREER_VALUE = ""
+        CAREER_INDEX = -1
+        // 설정 값들 초기화 해주기!!
     }
 
     override fun onDestroy() {

@@ -17,6 +17,13 @@
             app:layout_constraintGuide_percent="0.0444"/>
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_4.53"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0453"/>
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_v_48"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -111,7 +118,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/view_1"
-            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.53"
             app:layout_constraintRight_toLeftOf="@id/iv_search"
             app:layout_constraintBottom_toTopOf="@id/view_edit_line"
             android:orientation="horizontal"

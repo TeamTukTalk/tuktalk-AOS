@@ -46,6 +46,13 @@ class SearchDirectFragment: Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)*/
+
+        /// 좌측 상단 뒤로가기 버튼 누를 시
+        binding.ivBack.setOnClickListener {
+            (parentFragment as SearchFragment).goToSearchSelect()
+        }
+
+
     }
 
     override fun onResume() {

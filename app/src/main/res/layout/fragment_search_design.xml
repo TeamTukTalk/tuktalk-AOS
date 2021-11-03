@@ -17,6 +17,13 @@
             app:layout_constraintGuide_percent="0.0444"/>
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_4.53"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0453"/>
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_v_48"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -96,14 +103,14 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/view_1"
-            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.53"
             app:layout_constraintRight_toRightOf="@id/gl_v_78"
             app:layout_constraintDimensionRatio="285:22"
             android:background="@null"
             android:hint="디자인"
             android:textColorHint="@color/tuktalk_sub_content"
             style="@style/et_hint_font2"
-
+            android:focusableInTouchMode="false"
             android:gravity="center_vertical"/>
 
         <ImageView
@@ -432,7 +439,7 @@
                 app:layout_constraintTop_toTopOf="@id/cl_1_gl_h_19"
                 app:layout_constraintBottom_toBottomOf="@id/cl_1_gl_h_81"
                 android:maxLines="1"
-                android:text="대기업"
+                android:text=""
                 style="@style/search_tv_company_type_and_career2"/>
 
             <View
@@ -510,7 +517,7 @@
                 app:layout_constraintLeft_toRightOf="@id/view_cl_2_1"
                 app:layout_constraintTop_toTopOf="@id/cl_2_gl_h_19"
                 app:layout_constraintBottom_toBottomOf="@id/cl_2_gl_h_81"
-                android:text="기업"
+                android:text="경력"
                 android:maxLines="1"
                 style="@style/search_tv_company_type_and_career"/>
 
@@ -529,7 +536,7 @@
                 app:layout_constraintTop_toTopOf="@id/cl_2_gl_h_19"
                 app:layout_constraintBottom_toBottomOf="@id/cl_2_gl_h_81"
                 android:maxLines="1"
-                android:text="3~4년"
+                android:text=""
                 style="@style/search_tv_company_type_and_career2"/>
 
             <View

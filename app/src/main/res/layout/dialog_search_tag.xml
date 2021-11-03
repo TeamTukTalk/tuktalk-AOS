@@ -162,7 +162,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_2"
        app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -211,7 +211,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_2"
        app:layout_constraintLeft_toRightOf="@id/view_3"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -260,7 +260,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_2"
        app:layout_constraintLeft_toRightOf="@id/view_4"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -302,7 +302,7 @@
        app:layout_constraintTop_toBottomOf="@id/gl_h_30.3"
        app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -351,7 +351,7 @@
        app:layout_constraintTop_toBottomOf="@id/gl_h_30.3"
        app:layout_constraintLeft_toRightOf="@id/view_5"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -419,7 +419,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_7"
        app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -469,7 +469,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_7"
        app:layout_constraintLeft_toRightOf="@id/view_8"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -518,7 +518,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_7"
        app:layout_constraintLeft_toRightOf="@id/view_9"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -567,7 +567,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_7"
        app:layout_constraintLeft_toRightOf="@id/view_10"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
@@ -615,7 +615,7 @@
        app:layout_constraintTop_toBottomOf="@id/view_11"
        app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
        app:layout_constraintHeight_percent="0.0657"
-       app:strokeWidth="0.5dp"
+       app:strokeWidth="1dp"
        app:shapeAppearanceOverlay="@style/categoryCardViewShape"
        app:strokeColor="#EEEEEE"
        >
