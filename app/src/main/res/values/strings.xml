@@ -136,6 +136,18 @@
     <string name="search_design_toggle4">그래픽 디자인</string>
     <string name="search_design_toggle5">산업/제품 디자인</string>
 
+    <string name="search_dialog_tag_company1">대기업</string>
+    <string name="search_dialog_tag_company2">중견기업</string>
+    <string name="search_dialog_tag_company3">중소기업</string>
+    <string name="search_dialog_tag_company4">스타트업</string>
+    <string name="search_dialog_tag_company5">프리랜서</string>
+
+    <string name="search_dialog_tag_career_1">1~2년</string>
+    <string name="search_dialog_tag_career_2">3~4년</string>
+    <string name="search_dialog_tag_career_3">5~6년</string>
+    <string name="search_dialog_tag_career_4">7~8년</string>
+    <string name="search_dialog_tag_career_5">9년 이상</string>
+
 
 
 </resources>
