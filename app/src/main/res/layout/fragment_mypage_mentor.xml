@@ -51,7 +51,74 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <!-- vertical guideline -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_4.44"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.0444"/>
 
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_29.4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.294"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_95.56"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.9556"/>
+
+
+                <!-- vertical guideline end -->
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintDimensionRatio="360:1"/>
+
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.194"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:src="@drawable/img_mentor"/>
+
+                <View
+                    android:id="@+id/view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintDimensionRatio="360:11"/>
+
+                <View
+                    android:id="@+id/view_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintDimensionRatio="360:35"/>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_29.4"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintBottom_toBottomOf="@id/view_3"
+                    app:layout_constraintDimensionRatio="200:24"
+                    android:maxLines="1"
+                    android:text="리즈님"
+
+                    style="@style/tv_mypage_name"/>
 
 
 
