@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.main.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".presentation.login.LoginActivity"
             android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait"/>

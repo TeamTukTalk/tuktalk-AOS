@@ -614,6 +614,7 @@
 
 
 
+<!-- ///////////////////////////////////////////////////////// -->
 
         <!-- 직접 검색 리사이클러 뷰 cl -->
         <androidx.constraintlayout.widget.ConstraintLayout
