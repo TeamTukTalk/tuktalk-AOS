@@ -144,7 +144,7 @@
             android:src="@drawable/ic_icon_back"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/et_direct_search"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/view_1"
@@ -153,10 +153,12 @@
             app:layout_constraintDimensionRatio="285:22"
             android:background="@null"
             android:hint="멘토, 직무 검색"
+            android:maxLines="1"
             android:textColorHint="@color/tuktalk_sub_content_4"
             style="@style/et_hint_font2"
-
-            android:gravity="center_vertical"/>
+            android:inputType="text"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"/>
 
 
 
@@ -174,7 +176,7 @@
             android:id="@+id/view_3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/editText"
+            app:layout_constraintTop_toBottomOf="@id/et_direct_search"
             app:layout_constraintDimensionRatio="360:7"/>
 
         <View
@@ -193,23 +195,451 @@
             app:layout_constraintTop_toBottomOf="@id/view_edit_line"
             app:layout_constraintDimensionRatio="360:32"/>
 
-        <TextView
-            android:id="@+id/tv_1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_4"
-            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
-            app:layout_constraintRight_toRightOf="@id/gl_v_73"
-            app:layout_constraintDimensionRatio="244:18"
-            android:text="최근검색어"
-            style="@style/search_tv_3"/>
+ <!-- ///////////////////////////////////////////////////////////// -->
 
-        <View
-            android:id="@+id/view_5"
+        <!-- 검색어 x 일 때 보임-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_direct_des"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_1"
-            app:layout_constraintDimensionRatio="360:18"/>
+            app:layout_constraintTop_toBottomOf="@id/view_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:visibility="visible">
+
+            <!-- vertical guideline start -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_1_gl_v_4.44"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.0444"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_1_gl_v_73"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.73"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_1_gl_v_95.56"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9556"/>
+
+            <!-- vertical guideline end -->
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/cl_1_gl_v_4.44"
+                app:layout_constraintRight_toRightOf="@id/cl_1_gl_v_73"
+                app:layout_constraintDimensionRatio="244:18"
+                android:text="최근검색어"
+                style="@style/search_tv_3"/>
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_1"
+                app:layout_constraintDimensionRatio="360:92"/>
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_5"
+                app:layout_constraintLeft_toLeftOf="@id/cl_1_gl_v_4.44"
+                app:layout_constraintRight_toRightOf="@id/cl_1_gl_v_73"
+                app:layout_constraintDimensionRatio="244:18"
+                android:text="뚝딱이 추천하는 검색어"
+                style="@style/search_tv_3"/>
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_2"
+                app:layout_constraintDimensionRatio="360:16"/>
+
+            <View
+                android:id="@+id/view_7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_6"
+                app:layout_constraintDimensionRatio="360:36"/>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_6"
+                app:layout_constraintBottom_toBottomOf="@id/view_7"
+                app:layout_constraintLeft_toRightOf="@id/cl_1_gl_v_4.44"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_1"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/view_8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/cv_suggest_keyword_1"
+                app:layout_constraintBottom_toBottomOf="@id/cv_suggest_keyword_1"
+                app:layout_constraintLeft_toRightOf="@id/cv_suggest_keyword_1"
+                app:layout_constraintWidth_percent="0.022"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_6"
+                app:layout_constraintBottom_toBottomOf="@id/view_7"
+                app:layout_constraintLeft_toRightOf="@id/view_8"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_2"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/view_9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/cv_suggest_keyword_1"
+                app:layout_constraintBottom_toBottomOf="@id/cv_suggest_keyword_1"
+                app:layout_constraintLeft_toRightOf="@id/cv_suggest_keyword_2"
+                app:layout_constraintWidth_percent="0.022"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_3"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_6"
+                app:layout_constraintBottom_toBottomOf="@id/view_7"
+                app:layout_constraintLeft_toRightOf="@id/view_9"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_3"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/view_10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_suggest_keyword_1"
+                app:layout_constraintDimensionRatio="360:12"/>
+
+            <View
+                android:id="@+id/view_11"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_10"
+                app:layout_constraintDimensionRatio="360:36"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_4"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_10"
+                app:layout_constraintBottom_toBottomOf="@id/view_11"
+                app:layout_constraintLeft_toRightOf="@id/cl_1_gl_v_4.44"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_4"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/view_12"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintBottom_toBottomOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintLeft_toRightOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintWidth_percent="0.022"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_5"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_10"
+                app:layout_constraintBottom_toBottomOf="@id/view_11"
+                app:layout_constraintLeft_toRightOf="@id/view_12"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_5"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/view_13"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintBottom_toBottomOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintLeft_toRightOf="@id/cv_suggest_keyword_5"
+                app:layout_constraintWidth_percent="0.022"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_6"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_10"
+                app:layout_constraintBottom_toBottomOf="@id/view_11"
+                app:layout_constraintLeft_toRightOf="@id/view_13"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_6"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/view_14"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintBottom_toBottomOf="@id/cv_suggest_keyword_4"
+                app:layout_constraintLeft_toRightOf="@id/cv_suggest_keyword_6"
+                app:layout_constraintWidth_percent="0.022"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_suggest_keyword_7"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_10"
+                app:layout_constraintBottom_toBottomOf="@id/view_11"
+                app:layout_constraintLeft_toRightOf="@id/view_14"
+                android:backgroundTint="@color/tuktalk_primary_light3"
+                app:shapeAppearanceOverlay="@style/categoryCardViewShape"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+                    <!-- cardview 내부 공간을 위한 invisible text view -->
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                    <TextView
+                        android:id="@+id/tv_suggest_keyword_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/search_direct_suggest_keyword_7"
+                        android:maxLines="1"
+                        style="@style/tv_suggest_keyword"/>
+                    <TextView
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:text="00"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <!-- 직접 검색 리사이클러 뷰 cl -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_direct_RV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:visibility="invisible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
 
 

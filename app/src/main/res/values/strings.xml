@@ -149,5 +149,13 @@
     <string name="search_dialog_tag_career_5">9년 이상</string>
 
 
+    <string name="search_direct_suggest_keyword_1">UXUI 디자인</string>
+    <string name="search_direct_suggest_keyword_2">면접</string>
+    <string name="search_direct_suggest_keyword_3">대기업 포트폴리오</string>
+    <string name="search_direct_suggest_keyword_4">카카오</string>
+    <string name="search_direct_suggest_keyword_5">시니어</string>
+    <string name="search_direct_suggest_keyword_6">네이버</string>
+    <string name="search_direct_suggest_keyword_7">이직</string>
+
 
 </resources>
