@@ -160,5 +160,19 @@
 
     <!-- mentor mypage -->
     <string name="tv_mentor_regist_des">✉️ 멘토 인증을 해주셔야 활동하실 수 있습니다!</string>
+    <string name="tv_mentor_myservice_des">💬 나의 서비스</string>
+
+    <string name="tv_mentor_myactivity_1">수익관리</string>
+    <string name="tv_mentor_myactivity_2">내 계좌</string>
+    <string name="tv_mentor_myactivity_3">질문/답변</string>
+    <string name="tv_mentor_myactivity_4">멘토/회사 인증하기</string>
+
+
+    <string name="tv_mentor_other_service_1">공지사항</string>
+    <string name="tv_mentor_other_service_2">자주 묻는 질문</string>
+    <string name="tv_mentor_other_service_3">뚝딱에 문의하기</string>
+    <string name="tv_mentor_other_service_4">뚝딱 서비스 소개</string>
+    <string name="tv_mentor_other_service_5">친구초대</string>
+    <string name="tv_mentor_other_service_6">계정 설정</string>
 
 </resources>

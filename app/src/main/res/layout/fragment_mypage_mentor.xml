@@ -95,6 +95,13 @@
                     app:layout_constraintGuide_percent="0.6664"/>
 
                 <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_92.7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.927"/>
+
+                <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/gl_v_95.56"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -539,9 +546,707 @@
 
 
                 <!-- 나의 서비스 -->
+                <View
+                    android:id="@+id/view_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_9"
+                    app:layout_constraintDimensionRatio="360:16" />
+
+                <TextView
+                    android:id="@+id/tv_myservice_des"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_10"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.84"
+                    app:layout_constraintDimensionRatio="304:22"
+                    android:text="@string/tv_mentor_myservice_des"
+                    style="@style/tv_mentor_mp_big_title"/>
+
+                <View
+                    android:id="@+id/view_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_9"
+                    app:layout_constraintDimensionRatio="360:23" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_11"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_92.7"
+                    app:layout_constraintWidth_percent="0.012"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:src="@drawable/ic_next"
+                    android:scaleType="centerInside"/>
+
+                <View
+                    android:id="@+id/view_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_myservice_des"
+                    app:layout_constraintDimensionRatio="360:16" />
+
+                <View
+                    android:id="@+id/view_13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_12"
+                    app:layout_constraintDimensionRatio="360:135" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_my_service"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_12"
+                    app:layout_constraintBottom_toBottomOf="@id/view_13"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+
+                    app:strokeColor="#FBFBFB"
+                    app:strokeWidth="0.8dp"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius5">
+                    
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/cl_myservice_gl_h_33"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.33"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/cl_myservice_gl_h_48"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.48"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/cl_myservice_gl_h_55.5"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.555"/>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/cl_myservice_gl_h_68.8"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.688"/>
+
+                        <ImageView
+                            android:id="@+id/iv_alert"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toBottomOf="@id/cl_myservice_gl_h_33"
+                            app:layout_constraintBottom_toTopOf="@id/cl_myservice_gl_h_48"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintDimensionRatio="1:1"
+                            android:src="@drawable/ic_alert"
+                            android:scaleType="centerInside"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toBottomOf="@id/cl_myservice_gl_h_55.5"
+                            app:layout_constraintBottom_toTopOf="@id/cl_myservice_gl_h_68.8"
+                            app:layout_constraintDimensionRatio="131:18"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:text="등록한 서비스가 없습니다."
+                            android:maxLines="1"
+                            style="@style/tv_mentor_mp_no_myservice"
+                            />
 
 
 
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cv_my_service"
+                    app:layout_constraintDimensionRatio="360:24"/>
+                <!-- 나의 서비스 끝 -->
+
+                <View
+                    android:id="@+id/view_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_14"
+                    app:layout_constraintDimensionRatio="360:6"
+                    android:background="@color/tuktalk_gray_4"/>
+
+
+                <!-- 나의 활동 -->
+                <View
+                    android:id="@+id/view_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_15"
+                    app:layout_constraintDimensionRatio="360:16"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_16"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.066"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:src="@drawable/ic_chart_line"
+                    android:scaleType="centerInside"
+                    />
+
+                <View
+                    android:id="@+id/view_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_15"
+                    app:layout_constraintDimensionRatio="360:17"
+                    />
+
+                <View
+                    android:id="@+id/view_18"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/iv_chart"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_chart"
+                    app:layout_constraintLeft_toRightOf="@id/iv_chart"
+                    app:layout_constraintWidth_percent="0.022"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_my_activity_des"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_17"
+                    app:layout_constraintLeft_toRightOf="@id/view_18"
+                    app:layout_constraintWidth_percent="0.84"
+                    app:layout_constraintDimensionRatio="304:22"
+                    android:text="나의 활동"
+                    style="@style/tv_mentor_mp_big_title"
+                    />
+
+
+                <View
+                    android:id="@+id/view_19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_my_activity_des"
+                    app:layout_constraintDimensionRatio="360:17"/>
+
+                <View
+                    android:id="@+id/view_20"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_19"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    android:background="@color/tuktalk_gray_4"
+                    app:layout_constraintDimensionRatio="328:1"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_manage_profit"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_20"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_myactivity_1"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_my_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_manage_profit"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_myactivity_2"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_question_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_my_account"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_myactivity_3"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_mentor_company_regist"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_question_answer"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_myactivity_4"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+                <!-- 나의 활동 끝 -->
+
+                <View
+                    android:id="@+id/view_21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_mentor_company_regist"
+                    app:layout_constraintDimensionRatio="360:6"
+                    android:background="@color/tuktalk_gray_4"/>
+
+
+                <!-- 기타 서비스 -->
+
+                <View
+                    android:id="@+id/view_22"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_21"
+                    app:layout_constraintDimensionRatio="360:16"
+                    />
+
+                <View
+                    android:id="@+id/view_23"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_21"
+                    app:layout_constraintDimensionRatio="360:17"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_other_service_smile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_22"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.066"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:src="@drawable/ic_other_service_smile"
+                    android:scaleType="centerInside"
+                    />
+
+                <View
+                    android:id="@+id/view_24"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/iv_other_service_smile"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_other_service_smile"
+                    app:layout_constraintLeft_toRightOf="@id/iv_other_service_smile"
+                    app:layout_constraintWidth_percent="0.022"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_other_service_des"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_23"
+                    app:layout_constraintLeft_toRightOf="@id/view_24"
+                    app:layout_constraintWidth_percent="0.84"
+                    app:layout_constraintDimensionRatio="304:22"
+                    android:text="기타 서비스"
+                    style="@style/tv_mentor_mp_big_title"
+                    />
+
+                <View
+                    android:id="@+id/view_25"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_other_service_des"
+                    app:layout_constraintDimensionRatio="360:17"/>
+
+                <View
+                    android:id="@+id/view_26"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_25"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    android:background="@color/tuktalk_gray_4"
+                    app:layout_constraintDimensionRatio="328:1"/>
+
+                <!-- 공지사항 -->
+                <LinearLayout
+                    android:id="@+id/ll_goto_noti"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_26"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_other_service_1"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+
+                <!-- 자주 묻는 질문 -->
+                <LinearLayout
+                    android:id="@+id/ll_goto_often_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_noti"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_other_service_2"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_question_for_tuktalk"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_often_question"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_other_service_3"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_introduce_tuktalk"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_question_for_tuktalk"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_other_service_4"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_invite_friends"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_introduce_tuktalk"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_other_service_5"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_goto_account_option"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_invite_friends"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="@string/tv_mentor_other_service_6"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_27"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_goto_account_option"
+                    app:layout_constraintDimensionRatio="360:21"/>
+
+                
 
 
 
