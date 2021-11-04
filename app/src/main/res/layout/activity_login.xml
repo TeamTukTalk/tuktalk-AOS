@@ -405,10 +405,10 @@
         android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.0684"
         app:layout_constraintTop_toBottomOf="@id/view5"
         app:layout_constraintLeft_toRightOf="@id/guideline_vertical_4.4"
         app:layout_constraintRight_toLeftOf="@id/guideline_vertical_95.6"
+        app:layout_constraintDimensionRatio="328:52"
 
         app:shapeAppearanceOverlay="@style/buttonRadiusShape"
         android:backgroundTint="@color/tuktalk_primary"
