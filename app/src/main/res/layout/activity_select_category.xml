@@ -412,12 +412,84 @@
             />
             -->
 
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_mentor_question"
+        app:layout_constraintDimensionRatio="360:56"/>
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_1"
+        app:layout_constraintDimensionRatio="360:38"/>
+
+    <View
+        android:id="@+id/view_3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_2"
+        app:layout_constraintDimensionRatio="360:12"/>
+
+    <View
+        android:id="@+id/view_4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_3"
+        app:layout_constraintDimensionRatio="360:38"/>
+
+    <View
+        android:id="@+id/view_5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_4"
+        app:layout_constraintDimensionRatio="360:12"/>
+
+    <View
+        android:id="@+id/view_6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_5"
+        app:layout_constraintDimensionRatio="360:38"/>
+
+    <View
+        android:id="@+id/view_7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_6"
+        app:layout_constraintDimensionRatio="360:12"/>
+
+    <View
+        android:id="@+id/view_8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_7"
+        app:layout_constraintDimensionRatio="360:38"/>
+
+    <View
+        android:id="@+id/view_9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_8"
+        app:layout_constraintDimensionRatio="360:12"/>
+
+    <View
+        android:id="@+id/view_10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/view_9"
+        app:layout_constraintDimensionRatio="360:38"/>
+
+
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_26"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_31"
+        app:layout_constraintTop_toBottomOf="@id/view_1"
+        app:layout_constraintBottom_toBottomOf="@id/view_2"
         app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_4.44"
 
         app:strokeWidth="1dp"
@@ -459,16 +531,16 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintWidth_percent="0.022"
-            app:layout_constraintTop_toTopOf="@id/guideline_horizontal_26"
-            app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_31"
+            app:layout_constraintTop_toTopOf="@id/cardview_category1"
+            app:layout_constraintBottom_toBottomOf="@id/cardview_category1"
             app:layout_constraintLeft_toRightOf="@id/cardview_category1"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_26"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_31"
+        app:layout_constraintTop_toTopOf="@id/cardview_category1"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category1"
         app:layout_constraintLeft_toRightOf="@id/view1"
 
         app:strokeWidth="1dp"
@@ -509,16 +581,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.022"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_26"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_31"
+        app:layout_constraintTop_toTopOf="@id/cardview_category1"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category1"
         app:layout_constraintLeft_toRightOf="@id/cardview_category2"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category3"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_26"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_31"
+        app:layout_constraintTop_toTopOf="@id/cardview_category1"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category1"
         app:layout_constraintLeft_toRightOf="@id/view2"
 
         app:strokeWidth="1dp"
@@ -561,8 +633,8 @@
         android:id="@+id/cardview_category4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_32.6"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_37.6"
+        app:layout_constraintTop_toBottomOf="@id/view_3"
+        app:layout_constraintBottom_toBottomOf="@id/view_4"
         app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_4.44"
 
         app:strokeWidth="1dp"
@@ -601,16 +673,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.022"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_32.6"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_37.6"
+        app:layout_constraintTop_toTopOf="@id/cardview_category4"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category4"
         app:layout_constraintLeft_toRightOf="@id/cardview_category4"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category5"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_32.6"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_37.6"
+        app:layout_constraintTop_toTopOf="@id/cardview_category4"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category4"
         app:layout_constraintLeft_toRightOf="@id/view3"
 
         app:strokeWidth="1dp"
@@ -651,8 +723,8 @@
         android:id="@+id/cardview_category6"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_39.2"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_44.2"
+        app:layout_constraintTop_toBottomOf="@id/view_5"
+        app:layout_constraintBottom_toBottomOf="@id/view_6"
         app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_4.44"
 
         app:strokeWidth="1dp"
@@ -693,8 +765,8 @@
         android:id="@+id/cardview_category7"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_45.8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_50.8"
+        app:layout_constraintTop_toBottomOf="@id/view_7"
+        app:layout_constraintBottom_toBottomOf="@id/view_8"
         app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_4.44"
 
         app:strokeWidth="1dp"
@@ -733,16 +805,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.022"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_45.8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_50.8"
+        app:layout_constraintTop_toTopOf="@id/cardview_category7"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category7"
         app:layout_constraintLeft_toRightOf="@id/cardview_category7"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category8"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_45.8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_50.8"
+        app:layout_constraintTop_toTopOf="@id/cardview_category7"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category7"
         app:layout_constraintLeft_toRightOf="@id/view4"
 
         app:strokeWidth="1dp"
@@ -781,16 +853,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.022"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_45.8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_50.8"
+        app:layout_constraintTop_toTopOf="@id/cardview_category7"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category7"
         app:layout_constraintLeft_toRightOf="@id/cardview_category8"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category9"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_45.8"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_50.8"
+        app:layout_constraintTop_toTopOf="@id/cardview_category7"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category7"
         app:layout_constraintLeft_toRightOf="@id/view5"
 
         app:strokeWidth="1dp"
@@ -831,8 +903,8 @@
         android:id="@+id/cardview_category10"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_52.4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_57.4"
+        app:layout_constraintTop_toBottomOf="@id/view_9"
+        app:layout_constraintBottom_toBottomOf="@id/view_10"
         app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_4.44"
 
         app:strokeWidth="1dp"
@@ -871,16 +943,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.022"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_52.4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_57.4"
+        app:layout_constraintTop_toTopOf="@id/cardview_category10"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category10"
         app:layout_constraintLeft_toRightOf="@id/cardview_category10"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category11"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_52.4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_57.4"
+        app:layout_constraintTop_toTopOf="@id/cardview_category10"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category10"
         app:layout_constraintLeft_toRightOf="@id/view6"
 
         app:strokeWidth="1dp"
@@ -919,16 +991,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintWidth_percent="0.022"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_52.4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_57.4"
+        app:layout_constraintTop_toTopOf="@id/cardview_category10"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category10"
         app:layout_constraintLeft_toRightOf="@id/cardview_category11"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardview_category12"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_52.4"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_57.4"
+        app:layout_constraintTop_toTopOf="@id/cardview_category10"
+        app:layout_constraintBottom_toBottomOf="@id/cardview_category10"
         app:layout_constraintLeft_toRightOf="@id/view7"
 
         app:strokeWidth="1dp"
