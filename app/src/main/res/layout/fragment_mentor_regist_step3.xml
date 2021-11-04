@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
         app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
-        app:layout_constraintHeight_percent="0.5856"
+        app:layout_constraintDimensionRatio="328:376"
         app:shapeAppearanceOverlay="@style/mentorRegistStepShape"
         app:strokeWidth="0.7dp"
         app:strokeColor="#EEEEEE"
