@@ -194,7 +194,7 @@
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
                 app:layout_constraintTop_toBottomOf="@id/view_3"
-                app:layout_constraintHeight_percent="0.14"
+                app:layout_constraintDimensionRatio="288:48"
                 app:shapeAppearanceOverlay="@style/btnRaduisShape2"
 
                 android:text="작성하러 가기"
