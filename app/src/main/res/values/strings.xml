@@ -158,4 +158,7 @@
     <string name="search_direct_suggest_keyword_7">이직</string>
 
 
+    <!-- mentor mypage -->
+    <string name="tv_mentor_regist_des">✉️ 멘토 인증을 해주셔야 활동하실 수 있습니다!</string>
+
 </resources>

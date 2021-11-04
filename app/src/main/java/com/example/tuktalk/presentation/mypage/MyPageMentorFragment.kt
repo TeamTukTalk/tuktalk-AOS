@@ -39,15 +39,22 @@ class MyPageMentorFragment: Fragment() {
         }*/
 
         // 멘토 등록 액티비티 이동
-       /* binding.btnMentorRegist.setOnClickListener {
+       binding.cvGotoMentorRegist.setOnClickListener {
             Log.e("AppTest","go to mentor regist activity")
             val intent = Intent(context, MentorRegistActivity::class.java)
             startActivity(intent)
-        }*/
+        }
 
         // toolbar 설정!!
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)  // 액션바로 xml에 만들어준 toolbar를 사용한다
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowTitleEnabled(false) // 기본제목 없애기
+        
+        /// 프로필 이미지 클릭 시
+        binding.ivProfile.setOnClickListener {
+            Log.e("AppTest", "mentor mypage profile image clicked")
+        }
+
+
     }
 
     override fun onResume() {

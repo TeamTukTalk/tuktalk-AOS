@@ -146,4 +146,14 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
+    <style name="CardViewRadius50">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="CardViewRadius5">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5%</item>
+    </style>
+
 </resources>
