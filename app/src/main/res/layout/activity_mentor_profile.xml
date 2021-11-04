@@ -9,6 +9,18 @@
     android:layout_height="match_parent">
 
 
+    <!-- Tool bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:contentInsetStartWithNavigation="0dp"
+        android:background="@color/white"
+        app:titleTextColor="@color/black"
+        style="@style/ToolbarStyle.Dark"
+        />
+    <!-- -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

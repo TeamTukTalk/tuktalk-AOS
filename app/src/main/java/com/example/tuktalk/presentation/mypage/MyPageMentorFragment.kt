@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.FragmentMypageMenteeBinding
 import com.example.tuktalk.databinding.FragmentMypageMentorBinding
+import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity
 
@@ -51,7 +52,9 @@ class MyPageMentorFragment: Fragment() {
         
         /// 프로필 이미지 클릭 시
         binding.ivProfile.setOnClickListener {
-            Log.e("AppTest", "mentor mypage profile image clicked")
+            Log.e("AppTest","go to mentor profile activity")
+            val intent = Intent(context, MentorProfileActivity::class.java)
+            startActivity(intent)
         }
 
 
