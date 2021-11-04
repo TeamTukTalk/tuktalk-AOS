@@ -43,6 +43,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".presentation.mypage.mentor.mentorRegist.MentorRegistActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.mypage.mentor.mentorProfile.MentorProfileActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
