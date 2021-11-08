@@ -37,6 +37,7 @@ class GuideActivity: AppCompatActivity() {
         viewPager = binding.viewpager2
         viewPager.adapter = pagerAdapter
 
+
         viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
