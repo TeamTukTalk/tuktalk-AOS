@@ -8,20 +8,30 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
+import com.example.tuktalk.common.utils.HorizontalItemDecorator
+import com.example.tuktalk.common.utils.VerticalItemDecorator
 import com.example.tuktalk.databinding.FragmentHomeBinding
+import com.example.tuktalk.domain.model.home.HomeTop5MentorRVitem
+import com.example.tuktalk.domain.model.search.PortfolioRV_item
 import com.example.tuktalk.presentation.home.adapter.BannerVP2Adpater
+import com.example.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
 import com.example.tuktalk.presentation.main.MainActivity
+import com.example.tuktalk.presentation.search.adpater.SearchDesignRVadapter
 
 class HomeFragment: Fragment() {
     private lateinit var binding: FragmentHomeBinding
 
     private lateinit var callback: OnBackPressedCallback  // 프래그먼트에서 뒤로가기 처리하기 위함
 
-
+    // 상단 배너 이미지 리스트, 뷰페이저2 와 연결
     private var topBannerImageList = mutableListOf(R.drawable.img_banner_1, R.drawable.img_banner_1, R.drawable.img_banner_1)
+
+    lateinit var rvAdapter: Top5MentorRVAdpater
+    private var testDataSet = mutableListOf<HomeTop5MentorRVitem>()
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -52,16 +62,40 @@ class HomeFragment: Fragment() {
         val screenWidth = resources.displayMetrics.widthPixels // 스마트폰의 너비 길이를 가져옴
         Log.e("AppTest", "home, screenWidth : ${screenWidth}, pageMarginPx : ${pageMarginPx}, pagerWidth : ${pagerWidth} ")
         //val offsetPx = screenWidth - pageMarginPx - pagerWidth
-        val offsetPx = screenWidth - screenWidth * 85 / 100
+        val offsetPx = screenWidth - screenWidth * 82 / 100  // 이 비율이 적당
 
         binding.vp2HomeTopBanner.setPageTransformer { page, position ->
             page.translationX = position * -offsetPx
         }
 
-
-        binding.vp2HomeTopBanner.offscreenPageLimit = 1
+        binding.vp2HomeTopBanner.offscreenPageLimit = 1  //
         binding.vp2HomeTopBanner.adapter = BannerVP2Adpater(topBannerImageList)
         binding.vp2HomeTopBanner.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        ///////////////////////////////////////////////////////////////////////////////////
+
+        // Top5 멘토 recycler view
+        rvAdapter = Top5MentorRVAdpater(testDataSet)
+        binding.rvTop5Mentor.layoutManager = LinearLayoutManager(context).also {
+            it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
+        }
+        binding.rvTop5Mentor.adapter = rvAdapter
+        binding.rvTop5Mentor.addItemDecoration(HorizontalItemDecorator(12))
+
+        testDataSet.apply{ // 임시 데이터
+            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+                    2))
+        }
+        rvAdapter.updateList(testDataSet)
+        rvAdapter.notifyDataSetChanged()
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
     }

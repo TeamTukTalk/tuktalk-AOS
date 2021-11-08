@@ -175,4 +175,13 @@
     <string name="tv_mentor_other_service_5">친구초대</string>
     <string name="tv_mentor_other_service_6">계정 설정</string>
 
+    <!-- home -->
+    <string name="tv_home_top5_des">가장 인기있는 TOP5 뚝딱멘토 🎉</string>
+    <string name="tv_home_by_duty_des">직무별 뚝딱멘토</string>
+    <string name="tv_home_mentee_realtime_review">뚝딱멘티들의 실시간 후기 📋</string>
+
+    <string name="tv_home_mentor_des1">뚝딱멘토 활동을 시작해보세요!</string>
+    <string name="tv_home_mentor_des2">여러분이 열심히 쌓아온 경험의 가치를 환산해보세요.</string>
+
+
 </resources>

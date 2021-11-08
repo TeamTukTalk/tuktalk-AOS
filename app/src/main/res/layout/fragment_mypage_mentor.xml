@@ -289,6 +289,7 @@
                     app:shapeAppearanceOverlay="@style/CardViewRadius5"
                     app:strokeWidth="0.6dp"
                     app:strokeColor="#F5F5F5"
+                    app:cardUseCompatPadding="true"
                     >
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -374,7 +375,8 @@
 
                     app:shapeAppearanceOverlay="@style/CardViewRadius5"
                     app:strokeWidth="0.6dp"
-                    app:strokeColor="#F5F5F5">
+                    app:strokeColor="#F5F5F5"
+                    app:cardUseCompatPadding="true">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -457,7 +459,8 @@
 
                     app:shapeAppearanceOverlay="@style/CardViewRadius5"
                     app:strokeWidth="0.6dp"
-                    app:strokeColor="#F5F5F5">
+                    app:strokeColor="#F5F5F5"
+                    app:cardUseCompatPadding="true">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"

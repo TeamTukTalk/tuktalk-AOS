@@ -91,6 +91,98 @@
                     android:clipChildren="false"
                     />
 
+                <View
+                    android:id="@+id/view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/vp2_home_top_banner"
+                    app:layout_constraintDimensionRatio="360:35"/>
+
+                <View
+                    android:id="@+id/view_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+                <TextView
+                    android:id="@+id/tv_top5_mentor_des"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintBottom_toBottomOf="@id/view_3"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.68"
+                    android:text="@string/tv_home_top5_des"
+                    style="@style/tv_home_des_1"
+                    />
+
+                <View
+                    android:id="@+id/view_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_top5_mentor_des"
+                    app:layout_constraintDimensionRatio="360:14"/>
+
+                <View
+                    android:id="@+id/view_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_4"
+                    app:layout_constraintDimensionRatio="360:130"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_top5_mentor"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_4"
+                    app:layout_constraintBottom_toBottomOf="@id/view_5"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    android:overScrollMode="never"/>
+
+
+                <View
+                    android:id="@+id/view_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/rv_top5_mentor"
+                    app:layout_constraintDimensionRatio="360:45"/>
+
+                <View
+                    android:id="@+id/view_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_6"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+
+                <TextView
+                    android:id="@+id/tv_by_duty_des"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_6"
+                    app:layout_constraintBottom_toBottomOf="@id/view_7"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.68"
+                    android:text="@string/tv_home_by_duty_des"
+                    style="@style/tv_home_des_1"
+                    />
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
