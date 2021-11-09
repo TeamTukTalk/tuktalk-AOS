@@ -138,9 +138,9 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintLeft_toRightOf="@id/iv_point"
-                app:layout_constraintTop_toTopOf="@id/tv_company"
-                app:layout_constraintBottom_toBottomOf="@id/tv_company"
-                app:layout_constraintWidth_percent="0.01"/>
+                app:layout_constraintTop_toTopOf="@id/iv_point"
+                app:layout_constraintBottom_toBottomOf="@id/iv_point"
+                app:layout_constraintWidth_percent="0.012"/>
 
             <TextView
                 android:id="@+id/tv_task"

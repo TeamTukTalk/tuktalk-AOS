@@ -81,7 +81,7 @@ class SearchDesignFragment: Fragment() {
         // 터치시 효과 설정해주기
         for(index in 0..4){
             categoryCvList[index]!!.setOnClickListener {
-                isCategorySelected[index] = !isCategorySelected[index]  // 토글 구현
+                isCategorySelected[index] = !isCategorySelected[index]  // 토글 구현 / 이전 선택 상태의 반대로!!
 
                 if(isCategorySelected[index]){ // 미선택 -> 선택
                     toggleSelect(index) // 나머지 토글은 미선택 처리
