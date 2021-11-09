@@ -82,13 +82,18 @@ class HomeFragment: Fragment() {
         binding.rvTop5Mentor.addItemDecoration(HorizontalItemDecorator(12))
 
         testDataSet.apply{ // 임시 데이터
-            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(HomeTop5MentorRVitem(1, "리즈", "네이버", "UIUX 디자인",
+                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
                     2))
-            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+
+            add(HomeTop5MentorRVitem(1, "제이슨", "카카오", "앱 개발",
+                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
                     2))
-            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(HomeTop5MentorRVitem(1, "브라이언", "쿠팡", "UIUX 디자인",
+                    "#테스트 #테스트개행테스트띄어쓰기없이" +
+                            "",
                     2))
-            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "웹 개발","",
                     2))
         }
         rvAdapter.updateList(testDataSet)

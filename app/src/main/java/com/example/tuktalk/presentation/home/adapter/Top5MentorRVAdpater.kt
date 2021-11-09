@@ -27,14 +27,19 @@ class Top5MentorRVAdpater( private var dataSet : MutableList<HomeTop5MentorRVite
 
         // 비율로 높이 설정하기
         var params = view.layoutParams
-        params.width = parent.measuredHeight / 135 * 375
+        params.width = parent.measuredHeight / 135 * 280
 
         return MyViewHolder(ItemHomeTop5MentorRvBinding.bind(view))
 
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
+        if(holder is MyViewHolder){
+            holder.binding.tvName.text = dataSet[position].mentorName  // 멘토 이름
+            holder.binding.tvCompany.text = dataSet[position].companyName // 회사명
+            holder.binding.tvTask.text = dataSet[position].task // 업무명
+            holder.binding.tvHashTag.text = dataSet[position].hashTag
+        }
     }
 
     override fun getItemCount(): Int {
