@@ -18,8 +18,10 @@ import com.example.tuktalk.common.utils.HorizontalItemDecorator
 import com.example.tuktalk.databinding.FragmentHomeBinding
 import com.example.tuktalk.domain.model.home.ByTaskMentorRVitem
 import com.example.tuktalk.domain.model.home.HomeTop5MentorRVitem
+import com.example.tuktalk.domain.model.home.RealTimeMenteeReviewRVitem
 import com.example.tuktalk.presentation.home.adapter.BannerVP2Adpater
 import com.example.tuktalk.presentation.home.adapter.ByTaskMentorRVAdpater
+import com.example.tuktalk.presentation.home.adapter.RealTimeMenteeReviewRVAdpater
 import com.example.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
 import com.google.android.material.card.MaterialCardView
 
@@ -32,10 +34,12 @@ class HomeFragment: Fragment() {
     // 상단 배너 이미지 리스트, 뷰페이저2 와 연결
     private var topBannerImageList = mutableListOf(R.drawable.img_banner_1, R.drawable.img_banner_1, R.drawable.img_banner_1)
 
-    lateinit var rvAdapter: Top5MentorRVAdpater
+    lateinit var rvAdapter_top5: Top5MentorRVAdpater
     lateinit var rvAdapter_byTask : ByTaskMentorRVAdpater
+    lateinit var rvAdapter_realTime_mentee : RealTimeMenteeReviewRVAdpater
     private var testDataSet_top5 = mutableListOf<HomeTop5MentorRVitem>()
     private var testDataSet_byTask = mutableListOf<ByTaskMentorRVitem>()
+    private var testDataSet_realTime_mentee = mutableListOf<RealTimeMenteeReviewRVitem>()
 
     // 직무별 뚝딱멘토
     private var TaskSelectedList = Array<Boolean>(2) {false}
@@ -85,11 +89,11 @@ class HomeFragment: Fragment() {
         ///////////////////////////////////////////////////////////////////////////////////
 
         // Top5 멘토 recycler view
-        rvAdapter = Top5MentorRVAdpater(testDataSet_top5)
+        rvAdapter_top5 = Top5MentorRVAdpater(testDataSet_top5)
         binding.rvTop5Mentor.layoutManager = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
         }
-        binding.rvTop5Mentor.adapter = rvAdapter
+        binding.rvTop5Mentor.adapter = rvAdapter_top5
         binding.rvTop5Mentor.addItemDecoration(HorizontalItemDecorator(12))
 
         testDataSet_top5.apply{ // 임시 데이터
@@ -108,8 +112,8 @@ class HomeFragment: Fragment() {
                     "#안녕하세요 #안녕 #긴해쉬태그테스트입니다",
                     2))
         }
-        rvAdapter.updateList(testDataSet_top5)
-        rvAdapter.notifyDataSetChanged()
+        rvAdapter_top5.updateList(testDataSet_top5)
+        rvAdapter_top5.notifyDataSetChanged()
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // 직무별 뚝딱멘토
@@ -165,6 +169,33 @@ class HomeFragment: Fragment() {
         rvAdapter_byTask.updateList(testDataSet_byTask)
         rvAdapter_byTask.notifyDataSetChanged()
 
+        //////////////////////////////////////////////////////////////////
+        // 실시간 멘티 후기 RV
+        rvAdapter_realTime_mentee = RealTimeMenteeReviewRVAdpater(testDataSet_realTime_mentee)
+        binding.rvRealtimeMenteeReview.layoutManager = LinearLayoutManager(context).also {
+            it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
+        }
+        binding.rvRealtimeMenteeReview.adapter = rvAdapter_realTime_mentee
+        binding.rvRealtimeMenteeReview.addItemDecoration(HorizontalItemDecorator(12))
+
+        testDataSet_realTime_mentee.apply{ // 임시 데이터
+            add(RealTimeMenteeReviewRVitem(1, "리즈", "네이버", "UIUX 디자인",
+                    5,"애니","2021. 10. 12",
+                    "궁금했던 내용을 실무 경험으로 얘기해주셔서 너무 도움이 되었습니다. 포트폴리오를 만들려고 하니까 막막했는데 한 멘토님이 어떤 방법으로 제작해야 할지 방향을 잡아주셔서 좋았습니다.",0
+                    ))
+            add(RealTimeMenteeReviewRVitem(1, "제임스", "쿠팡", "앱",
+                    4,"에스","2021. 10. 12", "리뷰 테스트 한 줄 넘어가는 테스트",0
+            ))
+            add(RealTimeMenteeReviewRVitem(1, "킴", "네이버", "데이터",
+                    1,"제이슨","2021. 10. 12",
+                    "리뷰 테스트 리뷰 테스트 긴 문장 테스트 입니다 뚝딱뚝딱뚝딱뚝딱뚝딱 뚝딱뚝딱뚝딱",0
+            ))
+            add(RealTimeMenteeReviewRVitem(1, "브라이언", "삼성전자", "UIUX 디자인",
+                    2,"존","2021. 10. 12", "리뷰 테스트",0
+            ))
+        }
+        rvAdapter_realTime_mentee.updateList(testDataSet_realTime_mentee)
+        rvAdapter_realTime_mentee.notifyDataSetChanged()
 
 
 

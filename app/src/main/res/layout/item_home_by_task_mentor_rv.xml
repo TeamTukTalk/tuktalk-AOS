@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:shapeAppearanceOverlay="@style/CardViewRadius5"
-        app:strokeWidth="0.4dp"
+        app:strokeWidth="0.3dp"
         app:strokeColor="#F5F5F5"
         app:cardElevation="1.5dp"
 
