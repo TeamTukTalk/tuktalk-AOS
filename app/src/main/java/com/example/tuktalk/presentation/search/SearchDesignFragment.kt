@@ -107,13 +107,16 @@ class SearchDesignFragment: Fragment() {
         testDataSet.apply{
             add(PortfolioRV_item(0, "", "", "","",
                     1))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인",
+                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
             2))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
                     2))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인",
+                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
                     2))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","",
+            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인",
+                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
                     2))
         }
 

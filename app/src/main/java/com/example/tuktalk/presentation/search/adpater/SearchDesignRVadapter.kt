@@ -66,7 +66,7 @@ class SearchDesignRVadapter(
 
                 // 비율로 높이 설정하기  // recyclerview 영역이 0dp + left,right constraint = parent 로 해줘야 인식되는 듯
                 var params = view.layoutParams
-                params.height = parent.measuredHeight / 527 * 180
+                params.height = parent.measuredWidth / 360 * 135
 
                 ViewType2ViewHolder(ItemSearchDesignRecycler2Binding.bind(view))
             }
@@ -90,7 +90,10 @@ class SearchDesignRVadapter(
 
         }
         else if(holder is ViewType2ViewHolder){
-
+            holder.binding.tvMentorName.text = dataSet[position].mentorName  // 멘토 이름
+            holder.binding.tvConmpanyName.text = dataSet[position].companyName // 회사명
+            holder.binding.tvTaskName.text = dataSet[position].task // 업무명
+            holder.binding.tvHashTag.text = dataSet[position].hashTag
         }
         else if(holder is ViewType3ViewHolder){
 

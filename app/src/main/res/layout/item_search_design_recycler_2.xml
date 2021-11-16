@@ -20,6 +20,8 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75"/>
 
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_v_95.56"
         android:layout_width="0dp"
@@ -35,8 +37,10 @@
         app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
 
         app:shapeAppearanceOverlay="@style/pf_list_cardview"
-        app:strokeWidth="0.7dp"
+        app:strokeWidth="0.3dp"
         app:strokeColor="#EEEEEE"
+
+        app:cardUseCompatPadding="true"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -66,6 +70,20 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.06"/>
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_cl_v_92"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.92"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_cl_v_93.8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.938"/>
+
             <!-- -->
 
             <ImageView
@@ -78,6 +96,130 @@
                 app:layout_constraintDimensionRatio="1:1"
                 android:scaleType="centerInside"
                 android:src="@drawable/img_mentor"/>
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/iv_profile"
+                app:layout_constraintBottom_toBottomOf="@id/iv_profile"
+                app:layout_constraintLeft_toRightOf="@id/iv_profile"
+                app:layout_constraintWidth_percent="0.0487"/>
+
+            <TextView
+                android:id="@+id/tv_mentor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/view_1"
+                app:layout_constraintLeft_toRightOf="@id/view_1"
+                app:layout_constraintHeight_percent="0.148"
+                style="@style/tv_home_top5_mentor_name"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/tv_mentor_name"
+                app:layout_constraintTop_toTopOf="@id/tv_mentor_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_mentor_name"
+                app:layout_constraintDimensionRatio="1:1"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_mentor_certification"
+                />
+            
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_mentor_name"
+                app:layout_constraintLeft_toRightOf="@id/view_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHeight_percent="0.0148"/>
+
+            <TextView
+                android:id="@+id/tv_conmpany_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_3"
+                app:layout_constraintLeft_toLeftOf="@id/tv_mentor_name"
+                app:layout_constraintHeight_percent="0.133"
+                style="@style/tv_home_top5_mentor_company_task"/>
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/tv_conmpany_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_conmpany_name"
+                app:layout_constraintLeft_toRightOf="@id/tv_conmpany_name"
+                app:layout_constraintWidth_percent="0.014"/>
+
+            <ImageView
+                android:id="@+id/iv_point"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/view_4"
+                app:layout_constraintBottom_toBottomOf="@id/view_4"
+                app:layout_constraintLeft_toRightOf="@id/view_4"
+                app:layout_constraintWidth_percent="0.0075"
+                app:layout_constraintDimensionRatio="1:1"
+                android:scaleType="centerInside"
+                android:src="@drawable/indicator_circle_gray"/>
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/tv_conmpany_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_conmpany_name"
+                app:layout_constraintLeft_toRightOf="@id/iv_point"
+                app:layout_constraintWidth_percent="0.03"/>
+
+            <TextView
+                android:id="@+id/tv_task_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/view_5"
+                app:layout_constraintBottom_toBottomOf="@id/view_5"
+                app:layout_constraintLeft_toRightOf="@id/view_5"
+                style="@style/tv_home_top5_mentor_company_task"/>
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_conmpany_name"
+                app:layout_constraintHeight_percent="0.055"/>
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="0dp"
+                android:layout_height="0.7dp"
+                app:layout_constraintTop_toBottomOf="@id/view_6"
+                app:layout_constraintLeft_toLeftOf="@id/tv_conmpany_name"
+                app:layout_constraintRight_toRightOf="@id/gl_cl_v_92"
+                android:background="@color/tuktalk_gray_4"/>
+
+            <View
+                android:id="@+id/view_7"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_line"
+                app:layout_constraintHeight_percent="0.055"/>
+
+            <TextView
+                android:id="@+id/tv_hash_tag"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_7"
+                app:layout_constraintLeft_toLeftOf="@id/view_line"
+                app:layout_constraintRight_toRightOf="@id/gl_cl_v_93.8"
+                app:layout_constraintHeight_percent="0.277"
+
+
+                style="@style/tv_home_top5_mentor_hash_tag"
+                android:maxLines="2"
+                />
+
 
 
 
