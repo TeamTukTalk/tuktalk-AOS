@@ -1,5 +1,6 @@
 package com.example.tuktalk.presentation.home
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
@@ -23,6 +24,9 @@ import com.example.tuktalk.presentation.home.adapter.BannerVP2Adpater
 import com.example.tuktalk.presentation.home.adapter.ByTaskMentorRVAdpater
 import com.example.tuktalk.presentation.home.adapter.RealTimeMenteeReviewRVAdpater
 import com.example.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
+import com.example.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity
+import com.example.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity
+import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.google.android.material.card.MaterialCardView
 
 class HomeFragment: Fragment() {
@@ -197,6 +201,21 @@ class HomeFragment: Fragment() {
         rvAdapter_realTime_mentee.updateList(testDataSet_realTime_mentee)
         rvAdapter_realTime_mentee.notifyDataSetChanged()
 
+
+
+        // 직무별 뚝딱멘토 전체보기
+        binding.tvWatchAllByTask.setOnClickListener {
+            Log.e("AppTest","go to viewall bytask activity")
+            val intent = Intent(context, ViewAllByTaskActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 멘토 실시간 후기 전체보기
+        binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
+            Log.e("AppTest","go to viewall bytask activity")
+            val intent = Intent(context, ViewAllMenteeReviewActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }
