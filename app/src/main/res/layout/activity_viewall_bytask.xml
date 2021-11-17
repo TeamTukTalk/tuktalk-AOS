@@ -75,7 +75,7 @@
             app:layout_constraintBottom_toBottomOf="@id/view_3"
             app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
             app:shapeAppearanceOverlay="@style/categoryCardViewShape"
-            android:backgroundTint="@color/tuktalk_gray_5"
+            android:backgroundTint="@color/tuktalk_primary"
             app:cardUseCompatPadding="true"
             app:cardElevation="0dp"
             >
@@ -97,7 +97,7 @@
                     android:layout_height="match_parent"
                     android:text="디자인"
                     android:maxLines="1"
-                    style="@style/cv_category_tv_unselected"/>
+                    style="@style/cv_category_tv_selected"/>
                 <TextView
                     android:visibility="invisible"
                     android:layout_width="wrap_content"
@@ -180,7 +180,9 @@
             app:layout_constraintTop_toBottomOf="@id/view_5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
-            app:layout_constraintRight_toRightOf="@id/gl_v_95.56"/>
+            app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+            android:overScrollMode="never"/>
 
 
 
