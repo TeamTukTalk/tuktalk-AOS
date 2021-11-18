@@ -63,6 +63,7 @@ class ViewAllByTaskActivity: AppCompatActivity() {
         rvAdapter.updateList(testDataList)
         /////////////////////////////////////////////////////////////////
 
+
         // 직무별 cardview 토글
         binding.cvByTaskDesign.setOnClickListener {
             // 토글 선택 시 RV 리스트 초기화 후 통신 결과 리스트로 업데이트 해주기

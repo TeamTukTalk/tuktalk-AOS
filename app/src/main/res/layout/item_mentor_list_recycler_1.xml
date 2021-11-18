@@ -34,11 +34,9 @@
         android:layout_height="match_parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
         app:shapeAppearanceOverlay="@style/pf_list_cardview"
-        app:strokeWidth="0.3dp"
-        app:strokeColor="#EEEEEE"
 
+        app:cardElevation="1.1dp"
         app:cardUseCompatPadding="true"
         >
 
