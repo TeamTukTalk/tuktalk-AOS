@@ -45,5 +45,8 @@
     <color name="tuktalk_gray_5">#F8F8F8</color>
 
 
+    <color name="tuktalk_loading_spinner">#6461FF</color>
+
+
 
 </resources>
