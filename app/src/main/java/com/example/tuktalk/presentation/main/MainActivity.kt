@@ -1,10 +1,11 @@
 package com.example.tuktalk.presentation.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.ActivityMainBinding
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
     var first_community = true
     var first_chat = true
     var first_mypage = true
+
+    private var lastTimeBackPressed : Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,22 +93,22 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
                     //replaceFragment(homeFragment)
-                    if(fragmentManager.findFragmentByTag("home") != null){
+                    if (fragmentManager.findFragmentByTag("home") != null) {
                         fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("home")!!).commit()
-                    }else{
+                    } else {
                         fragmentManager.beginTransaction().add(R.id.framelayout, homeFragment, "home").commit()
                     }
 
-                    if(fragmentManager.findFragmentByTag("search") != null){
+                    if (fragmentManager.findFragmentByTag("search") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("community") != null){
+                    if (fragmentManager.findFragmentByTag("community") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("community")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("chat") != null){
+                    if (fragmentManager.findFragmentByTag("chat") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("chat")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("mypage") != null){
+                    if (fragmentManager.findFragmentByTag("mypage") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("mypage")!!).commit()
                     }
 
@@ -123,27 +126,27 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
 
-                    if(fragmentManager.findFragmentByTag("search") != null){
+                    if (fragmentManager.findFragmentByTag("search") != null) {
                         fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("search")!!).commit()
-                    }else{
+                    } else {
                         fragmentManager.beginTransaction().add(R.id.framelayout, searchFragment, "search").commit()
                     }
 
-                    if(fragmentManager.findFragmentByTag("home") != null){
+                    if (fragmentManager.findFragmentByTag("home") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("home")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("community") != null){
+                    if (fragmentManager.findFragmentByTag("community") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("community")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("chat") != null){
+                    if (fragmentManager.findFragmentByTag("chat") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("chat")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("mypage") != null){
+                    if (fragmentManager.findFragmentByTag("mypage") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("mypage")!!).commit()
                     }
 
                     //replaceFragment(searchFragment)
-                   /* if(first_search == true){
+                    /* if(first_search == true){
                         first_search = false
                         supportFragmentManager.beginTransaction().add(R.id.framelayout, searchFragment).commit()
                     }
@@ -161,22 +164,22 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
 
-                    if(fragmentManager.findFragmentByTag("community") != null){
+                    if (fragmentManager.findFragmentByTag("community") != null) {
                         fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("community")!!).commit()
-                    }else{
+                    } else {
                         fragmentManager.beginTransaction().add(R.id.framelayout, communityFragment, "community").commit()
                     }
 
-                    if(fragmentManager.findFragmentByTag("home") != null){
+                    if (fragmentManager.findFragmentByTag("home") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("home")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("search") != null){
+                    if (fragmentManager.findFragmentByTag("search") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("chat") != null){
+                    if (fragmentManager.findFragmentByTag("chat") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("chat")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("mypage") != null){
+                    if (fragmentManager.findFragmentByTag("mypage") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("mypage")!!).commit()
                     }
                     //replaceFragment(communityFragment)
@@ -198,26 +201,26 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_home).setIcon(R.drawable.ic_home_off)
                     menu.findItem(R.id.tuktalk_mypage).setIcon(R.drawable.ic_my_off)
 
-                    if(fragmentManager.findFragmentByTag("chat") != null){
+                    if (fragmentManager.findFragmentByTag("chat") != null) {
                         fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("chat")!!).commit()
-                    }else{
+                    } else {
                         fragmentManager.beginTransaction().add(R.id.framelayout, chatFragment, "chat").commit()
                     }
 
-                    if(fragmentManager.findFragmentByTag("home") != null){
+                    if (fragmentManager.findFragmentByTag("home") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("home")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("search") != null){
+                    if (fragmentManager.findFragmentByTag("search") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("community") != null){
+                    if (fragmentManager.findFragmentByTag("community") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("community")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("mypage") != null){
+                    if (fragmentManager.findFragmentByTag("mypage") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("mypage")!!).commit()
                     }
 
-                   // replaceFragment(chatFragment)
+                    // replaceFragment(chatFragment)
                     /*if(first_chat == true){
                         first_chat = false
                         supportFragmentManager.beginTransaction().add(R.id.framelayout, chatFragment).commit()
@@ -236,26 +239,26 @@ class MainActivity : AppCompatActivity() {
                     menu.findItem(R.id.tuktalk_chat).setIcon(R.drawable.ic_talk_off)
                     menu.findItem(R.id.tuktalk_home).setIcon(R.drawable.ic_home_off)
 
-                    if(fragmentManager.findFragmentByTag("mypage") != null){
+                    if (fragmentManager.findFragmentByTag("mypage") != null) {
                         fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("mypage")!!).commit()
-                    }else{
+                    } else {
                         fragmentManager.beginTransaction().add(R.id.framelayout, myPageFragment, "mypage").commit()
                     }
 
-                    if(fragmentManager.findFragmentByTag("home") != null){
+                    if (fragmentManager.findFragmentByTag("home") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("home")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("search") != null){
+                    if (fragmentManager.findFragmentByTag("search") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("search")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("community") != null){
+                    if (fragmentManager.findFragmentByTag("community") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("community")!!).commit()
                     }
-                    if(fragmentManager.findFragmentByTag("chat") != null){
+                    if (fragmentManager.findFragmentByTag("chat") != null) {
                         fragmentManager.beginTransaction().hide(fragmentManager.findFragmentByTag("chat")!!).commit()
                     }
 
-                   // replaceFragment(myPageFragment)
+                    // replaceFragment(myPageFragment)
                     /*if(first_mypage == true){
                         first_mypage = false
                         supportFragmentManager.beginTransaction().add(R.id.framelayout, myPageFragment).commit()
@@ -296,8 +299,16 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavi.selectedItemId = R.id.tuktalk_home
 
         }*/
+        // 홈탭에서 뒤로가기 누를 시!
         if(Constants.BOTTOM_NAVI_NUM == 0){
-            super.onBackPressed()
+            if(System.currentTimeMillis() - lastTimeBackPressed >= 2000){
+                lastTimeBackPressed = System.currentTimeMillis()
+                Toast.makeText(this,"'뒤로' 버튼을 한번 더 누르시면 종료됩니다.",Toast.LENGTH_SHORT).show() }
+            else {
+                ActivityCompat.finishAffinity(this)
+                System.runFinalization()
+                System.exit(0)
+            }
         }
         else{
             backToHome(0)  // 홈을 제외한 탭에서 뒤로가기 하면 홈탭으로 이동!!
@@ -306,7 +317,7 @@ class MainActivity : AppCompatActivity() {
         Log.e("AppTest", "MainActivity onBackPressed / bottom navi num : ${Constants.BOTTOM_NAVI_NUM}\"")
     }
 
-    fun backToHome(previous : Int){   // 현재 홈 에서 뒤로가기하면 backToHome이 호출되고 있다
+    fun backToHome(previous: Int){   // 현재 홈 에서 뒤로가기하면 backToHome이 호출되고 있다
         Constants.BOTTOM_NAVI_NUM = 0
         binding.bottomNavi.selectedItemId = R.id.tuktalk_home
         Log.e("AppTest", "back to home, previous page num : ${previous}")
@@ -314,16 +325,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.e("AppTest","Main Activity onResume")
+        Log.e("AppTest", "Main Activity onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.e("AppTest","Main Activity onPause")
+        Log.e("AppTest", "Main Activity onPause")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("AppTest","Main Activity onDestroy  bottom navi num : ${Constants.BOTTOM_NAVI_NUM}")
+        Log.e("AppTest", "Main Activity onDestroy  bottom navi num : ${Constants.BOTTOM_NAVI_NUM}")
     }
 }
