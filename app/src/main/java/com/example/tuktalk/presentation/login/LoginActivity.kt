@@ -6,16 +6,24 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.tuktalk.R
+import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
 import com.example.tuktalk.databinding.ActivityLoginBinding
 import com.example.tuktalk.presentation.main.MainActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity
+import com.example.tuktalk.presentation.signup.info.InfoRegistViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginActivity: AppCompatActivity() {
+    private val viewModel : LoginViewModel by viewModel()
 
     private lateinit var binding : ActivityLoginBinding
+
+    private var ID = ""
+    private var PASSWORD = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +62,7 @@ class LoginActivity: AppCompatActivity() {
                     binding.llErrorId.visibility = View.GONE
                     // 모두 0 값을 주면 아이콘 사라진다!!
                     binding.etId.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, 0,0)
+                    ID = idText.toString()
                 }
                 else{
                     binding.llErrorId.visibility = View.VISIBLE
@@ -95,15 +104,45 @@ class LoginActivity: AppCompatActivity() {
         //
         //
         //
-        
-        
-        // 로그인 버튼 클릭 시 -> 성공하면 넘어가기
-        binding.btnLogin.setOnClickListener {
+        binding.etPw.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
-            // 현재 로그인 그냥 누르면 메인 액티비티 넘어가도록 설정
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                var pwText = binding.etPw.text
+                PASSWORD = pwText.toString()
+
+            }
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
+
+
+        ////////////////////////////////////////////////////
+        
+        // 로그인 버튼 클릭 시 -> 성공하면 홈 화면으로 이동
+        binding.btnLogin.setOnClickListener {
+            var userLoginRequestDto = UserLoginRequestDto(ID, PASSWORD)
+            viewModel.logIn(userLoginRequestDto)
         }
+
+        viewModel.isLoginSuccess.observe(this, {
+            if(it){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(this, "로그인에 실패하였습니다", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.progressBarVisibility.observe(this,{
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
+        })
 
 
         // 회원가입 클릭 시 -> 회원가입 화면으로 이동하기

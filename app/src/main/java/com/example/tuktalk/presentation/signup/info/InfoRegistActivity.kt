@@ -10,20 +10,28 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.example.tuktalk.R
+import com.example.tuktalk.common.Constants
+import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
 import com.example.tuktalk.databinding.ActivityInfoRegistBinding
 import com.example.tuktalk.presentation.signup.complete.SignUpCompleteActivity
 import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class InfoRegistActivity: AppCompatActivity() {
-    private val viewModel : InfoRegistViewModel by viewModels()
+    private val viewModel : InfoRegistViewModel by viewModel()
 
     private var IsMentee = true
     private var IsIdMatchEmail = false // 아이디가 이메일 형식이 맞는지
+
+    private var NICKNAME = ""
+    private var ID = ""
+    private var PASSWORD = ""
+    private var ROLE = ""
+    private var PROFILE_URL = "https://avatars.githubusercontent.com/u/92679463?s=200&v=4"  // 회의 후 수정하기
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +49,13 @@ class InfoRegistActivity: AppCompatActivity() {
         IsMentee = intent.getBooleanExtra("isMentee", true)
         Log.e("AppTest", "InfoRegistActivity / mentee sign up? : ${IsMentee}")
 
+        if(IsMentee)
+            ROLE = "MENTEE"
+        else
+            ROLE = "MENTOR"
 
-        //
+
+        /////////////
 
         // 이름 입력 시 edittext 색상 변경
         binding.etName.setOnFocusChangeListener(View.OnFocusChangeListener { view, focused ->
@@ -113,6 +126,8 @@ class InfoRegistActivity: AppCompatActivity() {
                     // 모두 0 값을 주면 아이콘 사라진다!!
                     binding.etName.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_icon_correct,0)
                     viewModel.infoCorrectCheck(0,true)
+
+                    NICKNAME = nameText.toString() // 이름(닉네임)
                 }
                 else{
                     binding.tvErrorName.visibility = View.VISIBLE
@@ -201,6 +216,8 @@ class InfoRegistActivity: AppCompatActivity() {
                     // 모두 0 값을 주면 아이콘 사라진다!!
                     binding.etPw.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_icon_correct,0)
                     viewModel.infoCorrectCheck(2,true)
+
+                    PASSWORD = pwText.toString()
                 }
                 else{
                     binding.tvErrorPw.visibility = View.VISIBLE
@@ -259,7 +276,7 @@ class InfoRegistActivity: AppCompatActivity() {
         // id 중복 체크 - index 4
         binding.cardviewIdCheck.setOnClickListener {
             if(IsIdMatchEmail){
-                viewModel.checkIdDuplicate()
+                viewModel.checkIdDuplicate(binding.etId.text.toString())
             }
             else{ // 이메일 형식 맞지 않는 상태에서 중복확인 눌렀을 때
                 Toast.makeText(this,"아이디 형식이 올바르지 않습니다.", Toast.LENGTH_SHORT).show()
@@ -284,15 +301,18 @@ class InfoRegistActivity: AppCompatActivity() {
 
         // id 영역
         viewModel.isIdAllCorrect.observe(this,{
-            if(it){
+            if(it){ // 중복확인 까지 모두 성공
                 binding.etId.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_icon_correct,0)
-            }else{
-                if(viewModel.flag1){
+                ID = binding.etId.text.toString()
+            }
+            else{
+                if(viewModel.flag1){ // 중복확인 성공한 상태에서 내용 변경되는 경우
                     binding.etId.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, 0,0)
                     viewModel.flag1 = false
                 }
-                else{
+                else{ // 중복확인 실패 경우
                     binding.etId.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_icon_error,0)
+                    binding.tvErrorId2.visibility = View.VISIBLE // 중복 오류 문구 활성화
                 }
             }
         })
@@ -314,9 +334,11 @@ class InfoRegistActivity: AppCompatActivity() {
 
         // 가입완료 클릭 시
         binding.btnSignupCompleteActive.setOnClickListener {
-
-            // viewmodel에 기입 정보 넘겨서 회원 가입하는 통신 예정
-            viewModel.signUpClick()
+            Log.e("AppTest", "회원가입 정보  ${Constants.SELECT_CATEGORY_LIST}, 이름:${NICKNAME} 아이디:${ID} 비밀번호:${PASSWORD}" +
+                    " 역할:${ROLE} 프로필url:${PROFILE_URL}")
+            // viewmodel에 기입 정보 넘기기
+            var userSignUpRequestDto = UserSignUpRequestDto(Constants.SELECT_CATEGORY_LIST, ID, NICKNAME, PASSWORD, ROLE, PROFILE_URL)
+            viewModel.signUpClick(userSignUpRequestDto)
         }
 
         viewModel.isSignUpSuccess.observe(this,{
@@ -325,6 +347,15 @@ class InfoRegistActivity: AppCompatActivity() {
                 intent.putExtra("isMentee", IsMentee)
                 startActivity(intent)
             }
+        })
+
+        /////////////////////////////
+        // loading progressbar 처리
+        viewModel.progressBarVisibility.observe(this,{
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
         })
 
 

@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tuktalk.R
+import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.ActivitySelectCategoryBinding
 import com.example.tuktalk.presentation.signup.info.InfoRegistActivity
 import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
@@ -18,7 +19,8 @@ import com.google.android.material.card.MaterialCardView
 class SelectCategoryActivity: AppCompatActivity() {
         private lateinit var binding : ActivitySelectCategoryBinding
         private var IsMentee = true
-
+        private var categoryCvList = arrayOfNulls<MaterialCardView>(12)
+        private var categoryTvList = arrayOfNulls<TextView>(12)
         private var isCategorySelected = Array<Boolean>(12) { false }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,8 +54,7 @@ class SelectCategoryActivity: AppCompatActivity() {
 
         ////////////////////////////////////////////////////////////////////////
 
-        // category list
-        var categoryCvList = arrayOfNulls<MaterialCardView>(12)
+        // category list - cardview
         categoryCvList[0] = binding.cardviewCategory1
         categoryCvList[1] = binding.cardviewCategory2
         categoryCvList[2] = binding.cardviewCategory3
@@ -67,7 +68,7 @@ class SelectCategoryActivity: AppCompatActivity() {
         categoryCvList[10] = binding.cardviewCategory11
         categoryCvList[11] = binding.cardviewCategory12
 
-        var categoryTvList = arrayOfNulls<TextView>(12)
+        // category list - textview
         categoryTvList[0] = binding.tvCategory1
         categoryTvList[1] = binding.tvCategory2
         categoryTvList[2] = binding.tvCategory3
@@ -106,6 +107,9 @@ class SelectCategoryActivity: AppCompatActivity() {
 
         // 다음 버튼 클릭 시
         binding.btnNext.setOnClickListener {
+
+            checkCategory()  // 선택된 카테고리 추가
+
             Log.e("AppTest", "go to info regist activity")
             val intent = Intent(this, InfoRegistActivity::class.java)
             intent.putExtra("isMentee", IsMentee)
@@ -117,7 +121,7 @@ class SelectCategoryActivity: AppCompatActivity() {
         }
 
         // 해야 할 것
-        // 1. 카테고리 데이터 넘기는 방식??
+        // 1. 카테고리 데이터 넘기는 방식?? -> string list 형태
 
 
     }
@@ -160,4 +164,15 @@ class SelectCategoryActivity: AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    // 선택한 카테고리 체크 후 추가
+    fun checkCategory(){
+        for(index in 0..11){
+            if(isCategorySelected[index]){
+                Constants.SELECT_CATEGORY_LIST.add(categoryTvList[index]?.text.toString())
+            }
+        }
+        Log.e("AppTest", "선택된 카테고리 ${Constants.SELECT_CATEGORY_LIST}")
+    }
+
 }

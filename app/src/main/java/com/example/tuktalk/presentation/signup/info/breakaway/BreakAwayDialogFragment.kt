@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.DialogRegistinfoBreakawayBinding
 import com.example.tuktalk.presentation.login.LoginActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity
@@ -75,6 +76,10 @@ class BreakAwayDialogFragment: DialogFragment() {
             Log.e("AppTest","return to login activity")
             val intent = Intent(activity, LoginActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP   // 정보입력 화면에서 그전 액티비티 스택들 모두 제거 후 바로 로그인 액티비티로 이동!
+
+            // 카테고리 선택 초기화
+            Constants.SELECT_CATEGORY_LIST.clear()
+
             startActivity(intent)
         }
     }

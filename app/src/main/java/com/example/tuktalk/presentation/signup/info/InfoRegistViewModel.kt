@@ -1,9 +1,17 @@
 package com.example.tuktalk.presentation.signup.info
 
+import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
+import com.example.tuktalk.domain.usecase.user.UserEmailCheckUseCase
+import com.example.tuktalk.domain.usecase.user.UserSignUpUseCase
 
-class InfoRegistViewModel: ViewModel() {
+class InfoRegistViewModel(
+        private val userEmailCheckResultUseCase: UserEmailCheckUseCase,
+        private val userSignUpUseCase: UserSignUpUseCase
+): ViewModel() {
     // 5가지 사항 체크하는 Boolean data 담는 list 형태의 livedata 선언하기!!
 
     // 1.닉네임  2.아이디  3.비밀번호  4.비밀번호 확인  5.약관 동의
@@ -13,6 +21,7 @@ class InfoRegistViewModel: ViewModel() {
     var isTermsCheck = MutableLiveData<Boolean>(false)
 
     var isSignUpSuccess = MutableLiveData<Boolean>(false)
+    var progressBarVisibility = MutableLiveData<Boolean>()
 
     private var IsInfoCorrect = Array<Boolean>(6) { false }
 
@@ -36,15 +45,36 @@ class InfoRegistViewModel: ViewModel() {
 
 
     // 아이디 중복체크 / 추후 usecase 주입받고 네트워크 통신까지 하도록 구현하기
-    fun checkIdDuplicate(){
-
+    @SuppressLint("CheckResult")
+    fun checkIdDuplicate(email : String){
+        progressBarVisibility.value = true
+        Log.e("AppTest", "중복 검사 할 이메일 : ${email}")
         // 통신 후 중복인지 아닌지 결과에 따라 분기해주기!!!
+        userEmailCheckResultUseCase.getUserEmailCheckResult(email).subscribe(
+                {
+                    var isExist = it.isEmailExist
+                    if(isExist){
+                        Log.e("AppTest", "아이디 중복")
+                        infoCorrectCheck(4, false)
+                        isIdAllCorrect.value = false
+                    }
+                    else{
+                        Log.e("AppTest", "아이디 중복x  사용가능!")
+                        // 중복아니면
+                        infoCorrectCheck(4,true)
+                        isIdAllCorrect.value = true
+                    }
+                    progressBarVisibility.value = false
+                },
+                {
+                    throwable ->
+                    Log.e("AppTest","이메일 중복 체크 api 오류")
 
-        // 중복아니면 - 지금은 중복 무조건 아닌걸로 해두기
-        infoCorrectCheck(4,true)
-        isIdAllCorrect.value = true
+                    progressBarVisibility.value = false
+                }
+        )
 
-        // 중복이면
+
     }
 
     fun termsCheck(){
@@ -57,13 +87,32 @@ class InfoRegistViewModel: ViewModel() {
         }
     }
 
+
+
     // 가입 완료 클릭시 기입 정보 서버에 전달
-    fun signUpClick(){
+    @SuppressLint("CheckResult")
+    fun signUpClick(userSignUpRequestDto: UserSignUpRequestDto){
+        progressBarVisibility.value = true
         
         // 입력 정보들 넘겨주는 통신 후 결과에 따라 분기하기!!!
-        
-        // 성공 시
-        isSignUpSuccess.value = true
+        userSignUpUseCase.userSignUp(userSignUpRequestDto).subscribe(
+                {
+                    progressBarVisibility.value = false
+                    Log.e("AppTest", "user signup result status code : ${it.code()}")
+                    if(it.code() == 201){
+                        Log.e("AppTest", "회원가입 성공!")
+                        isSignUpSuccess.value = true
+                    }
+                    else{
+                        Log.e("AppTest", "회원가입 실패  status code : ${it.code()}")
+                    }
+                },
+                {
+                    throwable -> Log.e("AppTest", "sign up error ${throwable}")
+                    progressBarVisibility.value = false
+                }
+        )
+
     }
 
 }
