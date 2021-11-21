@@ -193,6 +193,9 @@
     <!-- mentor profile regist step -->
     <string name="tv_mentor_profile_step1_1">뚝딱 멘티들에게 보여줄\n기본정보를 입력해주세요 👋</string>
 
+    <string name="tv_mentor_profile_step1_des_1">이름(닉네임)<sup>*</sup></string>
+
+
 
 
 
