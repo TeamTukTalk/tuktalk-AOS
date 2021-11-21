@@ -27,6 +27,11 @@ class MentorProfileActivity: AppCompatActivity() {
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_icon_back)
         supportActionBar!!.setDisplayShowTitleEnabled(true) // 기본제목 없애기
         supportActionBar!!.setTitle("프로필 등록/수정")
+        /////////////////////
+
+
+
+
     }
 
     // toolbar

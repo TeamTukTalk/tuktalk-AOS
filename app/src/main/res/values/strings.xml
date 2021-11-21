@@ -190,6 +190,10 @@
     <string name="tv_viewall_menteereview_des">뚝딱멘티들의 실시간 후기 📋</string>
 
 
+    <!-- mentor profile regist step -->
+    <string name="tv_mentor_profile_step1_1">뚝딱 멘티들에게 보여줄\n기본정보를 입력해주세요 👋</string>
+
+
 
 
 </resources>

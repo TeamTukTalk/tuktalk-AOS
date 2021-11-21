@@ -580,4 +580,23 @@
     </style>
 
 
+    <style name="tv_mentor_profile_step_1">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="tv_mentor_profile_step_2">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+
 </resources>

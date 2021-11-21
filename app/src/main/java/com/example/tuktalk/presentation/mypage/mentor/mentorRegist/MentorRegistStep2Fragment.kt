@@ -14,13 +14,14 @@ import androidx.fragment.app.activityViewModels
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.FragmentMentorRegistStep1Binding
 import com.example.tuktalk.databinding.FragmentMentorRegistStep2Binding
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class MentorRegistStep2Fragment: Fragment() {
 
     private lateinit var binding : FragmentMentorRegistStep2Binding
 
     // activity의 뷰모델 가져오기
-    private val viewModel : MentorRegistViewModel by activityViewModels()
+    private val viewModel : MentorRegistViewModel by sharedViewModel()
 
     private var Mentor_Email = ""
 

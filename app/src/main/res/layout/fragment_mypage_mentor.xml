@@ -128,7 +128,8 @@
                     app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
                     app:layout_constraintWidth_percent="0.194"
                     app:layout_constraintDimensionRatio="1:1"
-                    android:src="@drawable/img_mentor"/>
+                    android:src="@drawable/img_mentor"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_profile_edit"
@@ -164,7 +165,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/view_3"
                     app:layout_constraintDimensionRatio="200:24"
                     android:maxLines="1"
-                    android:text="리즈님"
+                    android:text="00님"
 
                     style="@style/tv_mypage_name"/>
 

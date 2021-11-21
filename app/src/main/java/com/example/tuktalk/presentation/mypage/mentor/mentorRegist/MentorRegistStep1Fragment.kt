@@ -128,4 +128,14 @@ class MentorRegistStep1Fragment: Fragment() {
         super.onResume()
         Log.e("AppTest", "mentor regist step1 fragment onResume")
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e("AppTest", "mentor regist step1 fragment onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("AppTest", "mentor regist step1 fragment onDestroy")
+    }
 }

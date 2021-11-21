@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
+import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.FragmentMypageMenteeBinding
 import com.example.tuktalk.databinding.FragmentMypageMentorBinding
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
@@ -38,6 +39,9 @@ class MyPageMentorFragment: Fragment() {
             val intent = Intent(context, Test2Activity::class.java)
             startActivity(intent)
         }*/
+
+        // 닉네임 받아오기
+        binding.tvName.text = Constants.USER_NICKNAME + "님"
 
         // 멘토 등록 액티비티 이동
        binding.cvGotoMentorRegist.setOnClickListener {

@@ -17,7 +17,7 @@
             app:contentInsetStartWithNavigation="0dp"
             >
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
                 android:orientation="horizontal">
 
@@ -256,6 +256,7 @@
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
                     app:shapeAppearanceOverlay="@style/categoryCardViewShape"
                     android:backgroundTint="@color/tuktalk_gray_5"
+
                     app:cardUseCompatPadding="true"
                     app:cardElevation="0dp"
                     >

@@ -11,11 +11,12 @@ import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivityMentorRegistBinding
 import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class MentorRegistActivity: AppCompatActivity() {
 
-    private val viewModel : MentorRegistViewModel by viewModels()
+    private val viewModel : MentorRegistViewModel by viewModel()
 
     val step1Fragment = MentorRegistStep1Fragment()
     val step2Fragment = MentorRegistStep2Fragment()
@@ -68,7 +69,7 @@ class MentorRegistActivity: AppCompatActivity() {
 
             }
             android.R.id.home -> {
-                // 뒤로가기 버튼 누를 시
+                // 우측 상단 뒤로가기 버튼 누를 시
                 Log.e("AppTest", "toolbar back btn clicked")
                 finish()
                 return true
@@ -116,6 +117,8 @@ class MentorRegistActivity: AppCompatActivity() {
                 }
     }
 
+
+    // 뒤로가기 버튼 커스텀
     override fun onBackPressed() {
         if(REGIST_STEP == 1) {
             super.onBackPressed()
