@@ -42,9 +42,11 @@
         <activity android:name=".presentation.mypage.Test2Activity"
             android:screenOrientation="portrait"/>
         <activity android:name=".presentation.mypage.mentor.mentorRegist.MentorRegistActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".presentation.mypage.mentor.mentorProfile.MentorProfileActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            />
 
         <activity android:name=".presentation.home.viewAll.ViewAllByTaskActivity"
             android:screenOrientation="portrait"/>

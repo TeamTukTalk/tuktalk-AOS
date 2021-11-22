@@ -34,6 +34,20 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="buttonRadiusShape2">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppCompat.Button.3</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Button.3"
+        parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+        <item name="android:fontFamily">@font/notosans_kr_medium</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 
     <style name="categoryButtonShape">
         <item name="cornerFamily">rounded</item>
@@ -159,6 +173,11 @@
     <style name="CardViewRadius5">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">5%</item>
+    </style>
+
+    <style name="CardViewRadius10">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
     </style>
 
     <style name="CardViewRadius13">

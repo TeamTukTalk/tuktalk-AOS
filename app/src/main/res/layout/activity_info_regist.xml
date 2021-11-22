@@ -770,7 +770,7 @@
 
             android:text="가입완료"
             android:textColor="#AEAEAE"
-            android:backgroundTint="@color/tuktalk_gray5"
+            android:backgroundTint="@color/tuktalk_gray_4"
 
             android:enabled="false"
 

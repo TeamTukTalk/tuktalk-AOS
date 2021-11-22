@@ -29,21 +29,21 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintDimensionRatio="360:2.2"
         android:orientation="horizontal"
-        android:weightSum="5"
+        android:weightSum="0.5"
         >
 
         <View
             android:id="@+id/view_progress_colored"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.1"
             android:background="@color/tuktalk_primary"/>
 
         <View
             android:id="@+id/view_progress_uncolored"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="0.4"
             android:background="@color/tuktalk_gray_4"/>
 
     </LinearLayout>
