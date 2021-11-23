@@ -8,5 +8,9 @@ data class UserLoginResponseDto(
         @SerializedName("nickname")
         val nickname : String,
         @SerializedName("email")
-        val email : String
+        val email : String,
+        @SerializedName("profileImageColor")
+        val profileImageColor : String,
+        @SerializedName("firstLetter")
+        val firstLetter : String
 )

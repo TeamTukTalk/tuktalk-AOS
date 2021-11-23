@@ -9,7 +9,7 @@ import com.example.tuktalk.databinding.ItemMentorListRecycler1Binding
 import com.example.tuktalk.databinding.ItemSelectSpecialityRvBinding
 import com.example.tuktalk.domain.model.home.MentorListRVitem
 
-class SelectSpecialityRVadpater (
+class SelectSubSpecialityDesignRVadpater (
     private var dataSet : MutableList<String>
     , val selectSpeciality:(speciality: String, index: Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -29,13 +29,13 @@ class SelectSpecialityRVadpater (
 
         // 비율로 높이 설정하기
         var params = view.layoutParams
-        params.height = parent.measuredHeight / 2
+        params.height = parent.measuredHeight / 5
 
         return ViewType1ViewHolder(ItemSelectSpecialityRvBinding.bind(view))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if(holder is SelectSpecialityRVadpater.ViewType1ViewHolder){
+        if(holder is SelectSubSpecialityDesignRVadpater.ViewType1ViewHolder){
             holder.binding.tvSpeciality.text = dataSet[position] // 전문분야 텍스트
 
             holder.binding.root.setOnClickListener {

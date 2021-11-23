@@ -141,13 +141,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:layout_weight="282"
+                                android:layout_weight="270"
                                 android:gravity="center_vertical"
                                 >
 
                                 <!-- edittext autosize 되는지 해보기 -->
                                 <EditText
-                                    android:id="@+id/et_nickname"
+                                    android:id="@+id/et_speciality"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="전문분야 선택"
@@ -162,6 +162,11 @@
                                 <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
 
                             </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
 
                             <ImageView
                                 android:layout_width="0dp"
@@ -320,7 +325,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:layout_weight="282"
+                                android:layout_weight="270"
                                 android:gravity="center_vertical"
                                 >
 
@@ -341,6 +346,11 @@
                                 <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
 
                             </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
 
                             <ImageView
                                 android:layout_width="0dp"
@@ -422,7 +432,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:layout_weight="282"
+                                android:layout_weight="270"
                                 android:gravity="center_vertical"
                                 >
 
@@ -443,6 +453,11 @@
                                 <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
 
                             </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
 
                             <ImageView
                                 android:layout_width="0dp"
@@ -526,7 +541,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:layout_weight="282"
+                                android:layout_weight="270"
                                 android:gravity="center_vertical"
                                 >
 
@@ -547,6 +562,11 @@
                                 <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
 
                             </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
 
                             <ImageView
                                 android:layout_width="0dp"

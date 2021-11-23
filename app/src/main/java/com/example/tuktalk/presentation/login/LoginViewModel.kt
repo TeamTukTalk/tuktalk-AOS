@@ -27,9 +27,12 @@ class LoginViewModel(
                         Log.e("AppTest", "로그인 성공!")
 
                         Constants_gitignore.USER_TOKEN = it.body()!!.accessToken // 토큰 값 저장
-                        Constants.USER_NICKNAME = it.body()!!.nickname
+                        Constants.USER_NICKNAME = it.body()!!.nickname // 닉네임 저장
+                        Constants.USER_PROFILE_IMAGE_COLOR = it.body()!!.profileImageColor // 프로필 랜덤 배경 색상
+                        Constants.USER_FIRST_LETTER = it.body()!!.firstLetter // 닉네임 첫 글자
 
-                        Log.e("AppTest", "닉네임 : ${ Constants.USER_NICKNAME}, 유저토큰 : ${Constants_gitignore.USER_TOKEN}")
+                        Log.e("AppTest", "닉네임 : ${ Constants.USER_NICKNAME}, 유저토큰 : ${Constants_gitignore.USER_TOKEN}, " +
+                                "프로필 색상 : ${Constants.USER_PROFILE_IMAGE_COLOR}, 닉네임 첫 글자 : ${Constants.USER_FIRST_LETTER}")
 
                         isLoginSuccess.value = true // 로그인 성공
                     }

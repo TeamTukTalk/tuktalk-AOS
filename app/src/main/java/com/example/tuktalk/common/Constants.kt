@@ -15,5 +15,7 @@ object Constants {
     // 회원가입 정보 입력 화면에서 중간에 나가면 선택 카테고리 리스트 초기화 -> BreakAwayDialogFragment 에서!
 
     var USER_NICKNAME = ""
+    var USER_PROFILE_IMAGE_COLOR = ""
+    var USER_FIRST_LETTER = ""
 
 }
