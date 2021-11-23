@@ -31,7 +31,11 @@ class InfoRegistActivity: AppCompatActivity() {
     private var ID = ""
     private var PASSWORD = ""
     private var ROLE = ""
+    private var PROFILE_IMAGE_COLOR = ""
+    private var FIRST_LETTER = ""
     private var PROFILE_URL = "https://avatars.githubusercontent.com/u/92679463?s=200&v=4"  // 회의 후 수정하기
+
+    private var profileImgColorList = arrayOf("profileBlue","profileRed", "profileYellow", "profileGray", "profileGreen")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -128,6 +132,7 @@ class InfoRegistActivity: AppCompatActivity() {
                     viewModel.infoCorrectCheck(0,true)
 
                     NICKNAME = nameText.toString() // 이름(닉네임)
+                    FIRST_LETTER = NICKNAME.slice(IntRange(0,0))
                 }
                 else{
                     binding.tvErrorName.visibility = View.VISIBLE
@@ -334,10 +339,14 @@ class InfoRegistActivity: AppCompatActivity() {
 
         // 가입완료 클릭 시
         binding.btnSignupCompleteActive.setOnClickListener {
+
+            setRandomProfileImageColor()
+
             Log.e("AppTest", "회원가입 정보  ${Constants.SELECT_CATEGORY_LIST}, 이름:${NICKNAME} 아이디:${ID} 비밀번호:${PASSWORD}" +
-                    " 역할:${ROLE} 프로필url:${PROFILE_URL}")
+                    " 역할:${ROLE} 닉네임 첫 글자:${FIRST_LETTER} 프로필이미지랜덤색상:${PROFILE_IMAGE_COLOR} 프로필url:${PROFILE_URL}")
             // viewmodel에 기입 정보 넘기기
-            var userSignUpRequestDto = UserSignUpRequestDto(Constants.SELECT_CATEGORY_LIST, ID, NICKNAME, PASSWORD, ROLE, PROFILE_URL)
+            var userSignUpRequestDto = UserSignUpRequestDto(Constants.SELECT_CATEGORY_LIST, ID, NICKNAME,
+                PASSWORD, ROLE, PROFILE_IMAGE_COLOR, FIRST_LETTER)
             viewModel.signUpClick(userSignUpRequestDto)
         }
 
@@ -398,5 +407,10 @@ class InfoRegistActivity: AppCompatActivity() {
         super.onPause()
         var dialogVeiw = BreakAwayDialogFragment()
         dialogVeiw.show(supportFragmentManager, "AppTest")
+    }
+
+    fun setRandomProfileImageColor(){
+        var random = (0..4).random()
+        PROFILE_IMAGE_COLOR = profileImgColorList[random]
     }
 }

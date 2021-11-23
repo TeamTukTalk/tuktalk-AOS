@@ -26,8 +26,9 @@ class LoginViewModel(
                     if(it.code() == 200){
                         Log.e("AppTest", "로그인 성공!")
 
-                        Constants_gitignore.USER_TOKEN = it.body()!!.accessToken
+                        Constants_gitignore.USER_TOKEN = it.body()!!.accessToken // 토큰 값 저장
                         Constants.USER_NICKNAME = it.body()!!.nickname
+
                         Log.e("AppTest", "닉네임 : ${ Constants.USER_NICKNAME}, 유저토큰 : ${Constants_gitignore.USER_TOKEN}")
 
                         isLoginSuccess.value = true // 로그인 성공

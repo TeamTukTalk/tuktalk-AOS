@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.viewModelScope
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.FragmentMentorProfileStep1Binding
@@ -136,6 +137,8 @@ class MentorProfileStep1Fragment: Fragment(){
         // 다음 버튼 터치 시
         binding.btnGotoStep2Active.setOnClickListener {
             Log.e("AppTest", "btn clicked : step1 -> step2")
+            Log.e("AppTest", "simple introduce : ${viewModel.SIMPLE_INTRODUCTION}, " +
+                    "detailed introduce : ${viewModel.DETAILED_INTRODUCTION}")
             (activity as MentorProfileActivity).goToStep2()
         }
 

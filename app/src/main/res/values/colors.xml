@@ -47,6 +47,21 @@
 
     <color name="tuktalk_loading_spinner">#6461FF</color>
 
+    <color name="tuktalk_profileBlue_background">#E5EEFF</color>
+    <color name="tuktalk_profileBlue_text">#AAC7FF</color>
+
+    <color name="tuktalk_profileRed_backgorund">#FFF0F0</color>
+    <color name="tuktalk_profileRed_text">#FEC4C4</color>
+
+    <color name="tuktalk_profileYellow_backgorund">#FFF1D3</color>
+    <color name="tuktalk_profileYellow_text">#FFCE63</color>
+
+    <color name="tuktalk_profileGray_backgorund">#F5F5F5</color>
+    <color name="tuktalk_profileGray_text">#B5B5B5</color>
+
+    <color name="tuktalk_profileGreen_backgorund">#E3FFF3</color>
+    <color name="tuktalk_profileGreen_text">#7CE4B7</color>
+
 
 
 </resources>

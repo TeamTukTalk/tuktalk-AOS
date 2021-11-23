@@ -175,6 +175,11 @@
         <item name="cornerSize">5%</item>
     </style>
 
+    <style name="CardViewRadius8">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8%</item>
+    </style>
+
     <style name="CardViewRadius10">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10%</item>

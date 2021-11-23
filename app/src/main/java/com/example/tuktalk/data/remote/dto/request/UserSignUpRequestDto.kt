@@ -13,7 +13,12 @@ data class UserSignUpRequestDto(
         val password : String,
         @SerializedName("role")
         val role : String,
+        @SerializedName("profileImageColor")
+        val profileImageColor : String,
+        @SerializedName("firstLetter")
+        val firstLetter : String
+       /* ,
         @SerializedName("randomProfileImageUrl")
-        val randomProfileImageUrl : String,
+        val randomProfileImageUrl : String*/
 
 )

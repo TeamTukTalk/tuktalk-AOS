@@ -193,6 +193,7 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:minHeight="2dp"
                         android:focusable="false"
+                        android:enabled="false"
                         style="@style/et_mentor_profile_step"
                         />
 
@@ -431,7 +432,7 @@
 
                     app:strokeWidth="1dp"
                     app:strokeColor="@color/tuktalk_gray_1"
-                    app:shapeAppearanceOverlay="@style/CardViewRadius10"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius8"
 
                     app:cardUseCompatPadding="true"
                     app:cardElevation="0dp">
