@@ -9,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:overScrollMode="never">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/gl_v_4.44"
@@ -34,15 +34,2454 @@
 
                 <!-- //////////////////////////////////// -->
 
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+                <TextView
+                    android:id="@+id/tv_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+                    app:layout_constraintDimensionRatio="328:52"
+                    android:text="@string/tv_mentor_profile_step5_1"
+                    style="@style/tv_mentor_profile_step_1"/>
+
+                <View
+                    android:id="@+id/view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_1"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <View
+                    android:id="@+id/view_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_star_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star_2"/>
+
+                <TextView
+                    android:id="@+id/tv_hash_tag_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintBottom_toBottomOf="@id/view_3"
+                    app:layout_constraintLeft_toRightOf="@id/tv_star_1"
+
+                    android:text="8개까지 선택 가능합니다."
+                    style="@style/tv_hashtag_des"
+                    />
+
+                <View
+                    android:id="@+id/view_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_hash_tag_des"
+                    app:layout_constraintDimensionRatio="360:38"/>
+
+                <View
+                    android:id="@+id/view_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_4"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_company_size_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_4"
+                    app:layout_constraintBottom_toBottomOf="@id/view_5"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+
+                    android:text="기업"
+                    style="@style/tv_mentor_profile_step_2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_star_4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_company_size_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_company_size_des"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star"/>
+
+                <View
+                    android:id="@+id/view_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_size_des"
+                    app:layout_constraintDimensionRatio="360:10"/>
+
+                <HorizontalScrollView
+                    android:id="@+id/hsv_company_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scrollbars="none"
+
+                    app:layout_constraintTop_toBottomOf="@id/view_6"
+                    app:layout_constraintDimensionRatio="360:36"
+                    >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_hs_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintDimensionRatio="16:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_company_size_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/view_hs_1"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_company_size_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_company_size_1"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_hs_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/cv_company_size_1"
+                        app:layout_constraintDimensionRatio="8:38"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cv_company_size_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toRightOf="@id/view_hs_2"
+                            app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#EEEEEE"
+
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="0dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                >
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_size_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/tv_company_size_2"
+                                    android:maxLines="1"
+                                    style="@style/tv_compnay_size_tag"/>
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_hs_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/cv_company_size_2"
+                        app:layout_constraintDimensionRatio="8:38"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cv_company_size_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toRightOf="@id/view_hs_3"
+                            app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#EEEEEE"
+
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="0dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                >
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_size_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/tv_company_size_3"
+                                    android:maxLines="1"
+                                    style="@style/tv_compnay_size_tag"/>
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_hs_4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintLeft_toRightOf="@id/cv_company_size_3"
+                        app:layout_constraintDimensionRatio="8:38"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cv_company_size_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toRightOf="@id/view_hs_4"
+                            app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#EEEEEE"
+
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="0dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                >
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_size_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/tv_company_size_4"
+                                    android:maxLines="1"
+                                    style="@style/tv_compnay_size_tag"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"
+                                    android:visibility="invisible" />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <View
+                            android:id="@+id/view_hs_5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintDimensionRatio="8:38"
+                            app:layout_constraintLeft_toRightOf="@id/cv_company_size_4" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cv_company_size_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toRightOf="@id/view_hs_5"
+                            app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                            app:strokeWidth="1dp"
+                            app:strokeColor="#EEEEEE"
+
+                            app:cardUseCompatPadding="true"
+                            app:cardElevation="0dp"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                >
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                                <TextView
+                                    android:id="@+id/tv_company_size_5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/tv_company_size_5"
+                                    android:maxLines="1"
+                                    style="@style/tv_compnay_size_tag"/>
+                                <TextView
+                                    android:visibility="invisible"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="00"/>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <View
+                            android:id="@+id/view_hs_6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toRightOf="@id/cv_company_size_5"
+                            app:layout_constraintDimensionRatio="8:36"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </HorizontalScrollView>
+
+                <!-- 기업 해시태그 끝 -->
+
+                <!-- 추천 해시태그 시작 -->
+                <View
+                    android:id="@+id/view_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/hsv_company_size"
+                    app:layout_constraintDimensionRatio="360:29"/>
+
+                <View
+                    android:id="@+id/view_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_hashtag_suggest_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintBottom_toBottomOf="@id/view_8"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+
+                    android:text="추천 해시태그"
+                    style="@style/tv_mentor_profile_step_2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_star_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_hashtag_suggest_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_hashtag_suggest_des"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star"/>
 
 
+        <!-- /////////////      디자인 추천 해시태그 영역        ////////// -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_hashtag_design"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    app:layout_constraintTop_toBottomOf="@id/tv_hashtag_suggest_des"
+                    app:layout_constraintDimensionRatio="360:286"
+
+                    android:visibility="visible">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_cl1_v_4.44"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.0444"/>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_cl1_v_95.56"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.9556"/>
+
+                    <!-- ////////////////////// -->
+
+                    <View
+                        android:id="@+id/view_cl1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="360:10"/>
+
+                    <View
+                        android:id="@+id/view_cl1_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_1"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <!-- 1째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl1_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_1"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_3"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_2"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_2"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_4"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_3"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_3"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_5"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_4"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- 2째 줄 -->
+                    <View
+                        android:id="@+id/view_cl1_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_desgin_1"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl1_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_6"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl1_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_6"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_7"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_5"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_8"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_5"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_5"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_5"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_8"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_6"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_7"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_6"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_9"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_6"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_5"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_5"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_9"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_6"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_7"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_7"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_desgin_5"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl1_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_10"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <!-- 3째 줄 -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl1_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_10"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_11"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_8"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_12"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_12"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_10"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_11"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_9"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_13"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_9"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_13"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_10"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_11"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_10"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_14"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_10"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_14"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_10"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_11"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_11"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
 
+                    <View
+                        android:id="@+id/view_cl1_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_desgin_8"
+                        app:layout_constraintDimensionRatio="360:8"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <View
+                        android:id="@+id/view_cl1_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_15"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <!-- 4째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl1_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_15"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_16"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_12"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_17"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_12"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_12"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_12"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_17"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_15"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_16"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_13"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_18"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_13"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_12"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_12"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_18"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_15"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_16"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_14"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_desgin_12"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl1_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_19"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+
+                    <!-- 5째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl1_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_19"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_20"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_15"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_21"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_15"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_15"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_15"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_21"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_19"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_20"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_16"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl1_22"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_desgin_16"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_desgin_15"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_desgin_15"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_desgin_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl1_22"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl1_19"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl1_20"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_design_17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_design_17"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+     <!-- /////////////     it/개발 추천 해시태그      ////////////////////-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_hashtag_it"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    app:layout_constraintTop_toBottomOf="@id/tv_hashtag_suggest_des"
+                    app:layout_constraintDimensionRatio="360:286"
+
+                    android:visibility="invisible">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_cl2_v_4.44"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.0444"/>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_cl2_v_95.56"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.9556"/>
+
+                    <!-- //////////////////  -->
+
+                    <View
+                        android:id="@+id/view_cl2_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="360:10"/>
+
+                    <View
+                        android:id="@+id/view_cl2_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_1"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <!-- 1째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl2_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_1"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_3"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_2"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_2"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_4"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_3"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_5"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_3"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_5"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_1"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_2"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_4"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_it_1"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl2_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_6"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+
+                    <!-- 2째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl2_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_6"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_7"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_5"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_8"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_5"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_5"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_5"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_8"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_6"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_7"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_6"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_9"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_6"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_5"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_5"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_9"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_6"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_7"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_7"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <View
+                        android:id="@+id/view_cl2_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_it_5"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl2_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_10"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <!-- 3째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl2_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_10"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_11"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_8"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_12"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_12"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_8"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_9"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_13"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_9"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_13"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_10"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_11"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_10"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_it_8"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl2_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_14"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+
+                    <!-- 4째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl2_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_14"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_15"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_11"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_16"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_11"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_11"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_11"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_16"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_14"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_15"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_12"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_17"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_12"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_11"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_11"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_17"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_14"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_15"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_13"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <View
+                        android:id="@+id/view_cl2_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_it_11"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl2_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_18"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+                    <!-- 5째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl2_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_18"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_19"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_14"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_20"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_20"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_18"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_19"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_15"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_21"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_15"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_21"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_18"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_19"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_16"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_22"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_16"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_22"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_18"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_19"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_17"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <View
+                        android:id="@+id/view_cl2_23"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/cv_hashtag_it_14"
+                        app:layout_constraintDimensionRatio="360:8"/>
+
+                    <View
+                        android:id="@+id/view_cl2_24"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_23"
+                        app:layout_constraintDimensionRatio="360:36"/>
+
+
+                    <!-- 6째 줄 -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toLeftOf="@id/gl_cl2_v_4.44"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_23"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_24"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_18"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:id="@+id/view_cl2_25"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/cv_hashtag_it_18"
+                        app:layout_constraintTop_toTopOf="@id/cv_hashtag_it_18"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_hashtag_it_18"
+                        app:layout_constraintDimensionRatio="6:36"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_hashtag_it_19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        app:layout_constraintLeft_toRightOf="@id/view_cl2_25"
+                        app:layout_constraintTop_toBottomOf="@id/view_cl2_23"
+                        app:layout_constraintBottom_toBottomOf="@id/view_cl2_24"
+                        app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#EEEEEE"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="0dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                            <TextView
+                                android:id="@+id/tv_hashtag_it_19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/tv_hashtag_it_19"
+                                android:maxLines="1"
+                                style="@style/tv_compnay_size_tag"/>
+                            <TextView
+                                android:visibility="invisible"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="00"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- it/개발 해시태그 끝 -->
+
+
+        <View
+            android:id="@+id/view_9"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_hashtag_suggest_des"
+            app:layout_constraintDimensionRatio="360:286"/>
+
+
+        <View
+            android:id="@+id/view_10"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_9"
+            app:layout_constraintDimensionRatio="360:10"/>
+
+        <View
+            android:id="@+id/view_11"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_10"
+            app:layout_constraintDimensionRatio="360:52"/>
+
+        <View
+            android:id="@+id/view_12"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_11"
+            app:layout_constraintDimensionRatio="360:15"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_goto_step6_unactive"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_10"
+            app:layout_constraintBottom_toBottomOf="@id/view_11"
+            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+            app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+            android:text="등록하기"
+            android:textColor="@color/tuktalk_sub_content_4"
+            android:backgroundTint="@color/tuktalk_gray_4"
+            app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
+
+            android:enabled="false"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_goto_step6_active"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_10"
+            app:layout_constraintBottom_toBottomOf="@id/view_11"
+            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+            app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+            android:text="등록하기"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/tuktalk_primary"
+            app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
+
+            android:visibility="invisible"
+            />
+
+
+             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </ScrollView>
-
-        
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

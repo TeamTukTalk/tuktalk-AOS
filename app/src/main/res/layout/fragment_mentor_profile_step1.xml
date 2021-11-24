@@ -123,7 +123,7 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/tv_nickname_des"
             app:layout_constraintLeft_toRightOf="@id/tv_nickname_des"
-            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintWidth_percent="0.025"
             app:layout_constraintDimensionRatio="1:2"
             android:text="*"
             style="@style/tv_star"/>
@@ -252,7 +252,7 @@
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/tv_introduce_des"
             app:layout_constraintLeft_toRightOf="@id/tv_introduce_des"
-            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintWidth_percent="0.025"
             app:layout_constraintDimensionRatio="1:2"
             android:text="*"
             style="@style/tv_star"/>
@@ -409,7 +409,7 @@
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="@id/tv_introduce_detail_des"
                     app:layout_constraintLeft_toRightOf="@id/tv_introduce_detail_des"
-                    app:layout_constraintWidth_percent="0.02"
+                    app:layout_constraintWidth_percent="0.025"
                     app:layout_constraintDimensionRatio="1:2"
                     android:text="*"
                     style="@style/tv_star"/>

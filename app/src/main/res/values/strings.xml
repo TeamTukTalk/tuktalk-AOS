@@ -197,9 +197,54 @@
     <string name="et_hint_introduce_detail">멘티에게 어필할 수 있는 소개글을 자세히 작성해주세요.</string>
 
     <string name="tv_mentor_profile_step2_1">전문분야와 상세분야를 선택해주세요 🛠</string>
+    <string name="tv_mentor_profile_step3_1">재직중인 회사 정보를 작성해주세요 💼️</string>
+    <string name="tv_mentor_profile_step4_1">기타 경력/경험이 있다면 작성해주세요 💻</string>
+    <string name="et_hint_mentor_profile_step4_2">최근 커리어에서 주목할 만한 성과나 업무 경험 (큰 프로젝트 참여, 공모전, 대외활동 등등)</string>
+    <string name="tv_mentor_profile_step5_1">뚝딱 멘티들이 많이 찾을 수 있도록\n해시태그를 선택해주세요 💬 </string>
 
+    <string name="tv_company_size_1">#대기업</string>
+    <string name="tv_company_size_2">#중견기업</string>
+    <string name="tv_company_size_3">#중소기업</string>
+    <string name="tv_company_size_4">#스타트업</string>
+    <string name="tv_company_size_5">#프리랜서</string>
 
+    <string name="tv_hashtag_design_1">#이직</string>
+    <string name="tv_hashtag_design_2">#외국계</string>
+    <string name="tv_hashtag_design_3">#주니어</string>
+    <string name="tv_hashtag_design_4">#시니어</string>
+    <string name="tv_hashtag_design_5">#합격포트폴리오</string>
+    <string name="tv_hashtag_design_6">#비전공자</string>
+    <string name="tv_hashtag_design_7">#실무</string>
+    <string name="tv_hashtag_design_8">#피드백</string>
+    <string name="tv_hashtag_design_9">#GUI</string>
+    <string name="tv_hashtag_design_10">#UX</string>
+    <string name="tv_hashtag_design_11">#기업문화</string>
+    <string name="tv_hashtag_design_12">#진로고민</string>
+    <string name="tv_hashtag_design_13">#노하우</string>
+    <string name="tv_hashtag_design_14">#업무체계</string>
+    <string name="tv_hashtag_design_15">#상담</string>
+    <string name="tv_hashtag_design_16">#프로덕트디자인</string>
+    <string name="tv_hashtag_design_17">#캐릭터</string>
 
+    <string name="tv_hashtag_it_1">#이직</string>
+    <string name="tv_hashtag_it_2">#외국계</string>
+    <string name="tv_hashtag_it_3">#주니어</string>
+    <string name="tv_hashtag_it_4">#시니어</string>
+    <string name="tv_hashtag_it_5">#합격포트폴리오</string>
+    <string name="tv_hashtag_it_6">#비전공자</string>
+    <string name="tv_hashtag_it_7">#실무</string>
+    <string name="tv_hashtag_it_8">#진로고민</string>
+    <string name="tv_hashtag_it_9">#노하우</string>
+    <string name="tv_hashtag_it_10">#코딩테스트</string>
+    <string name="tv_hashtag_it_11">#채용담당</string>
+    <string name="tv_hashtag_it_12">#기업문화</string>
+    <string name="tv_hashtag_it_13">#프로젝트</string>
+    <string name="tv_hashtag_it_14">#면접</string>
+    <string name="tv_hashtag_it_15">#공채</string>
+    <string name="tv_hashtag_it_16">#수시채용</string>
+    <string name="tv_hashtag_it_17">#CTO</string>
+    <string name="tv_hashtag_it_18">#알고리즘</string>
+    <string name="tv_hashtag_it_19">#풀스택</string>
 
 
 </resources>

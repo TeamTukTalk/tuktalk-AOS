@@ -67,6 +67,14 @@ class SelectSpecialityDialogFragment: DialogFragment() {
             viewModel.speciality_num = index
             Log.e("AppTest", "선택한 전문분야 : ${ viewModel.SPECIALITY}, 전문분야 num : ${ viewModel.speciality_num}")
 
+
+            viewModel.Step5Checked.value = false  // 전문분야 새로 선택 시를 대비
+            // step5 추천 해시태그 전문분야 분기 처리
+            if(viewModel.speciality_num == 0)
+                viewModel.isSpecialityDesign.value = true
+            else
+                viewModel.isSpecialityDesign.value = false
+
             dismiss()  // 다이얼로그 종료 / 이 방식 말고 다른 것 있나 보기
         })
         binding.rvSelectSpeciality.layoutManager = LinearLayoutManager(context)

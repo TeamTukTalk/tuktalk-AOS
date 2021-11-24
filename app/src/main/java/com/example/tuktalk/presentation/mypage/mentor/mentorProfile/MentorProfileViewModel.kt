@@ -2,6 +2,8 @@ package com.example.tuktalk.presentation.mypage.mentor.mentorProfile
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.CareerInput
+import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.SubSpecialitySelect
 
 class MentorProfileViewModel: ViewModel() {
@@ -34,7 +36,7 @@ class MentorProfileViewModel: ViewModel() {
     var ld_speciality = MutableLiveData<String>()  // 데이터
     var ld_speciality_selected = MutableLiveData<Boolean>() // 전문분야 선택되었는지
 
-    var subspecialityList = ArrayList<String>()  // 상세분야 리스트
+    var SUBSPECIALITY_LIST = ArrayList<String>()  // 상세분야 리스트
 
     var ld_sub_speciality_1 = MutableLiveData<String>() // 데이터
     var ld_sub_speciality_2 = MutableLiveData<String>() // 데이터
@@ -105,22 +107,118 @@ class MentorProfileViewModel: ViewModel() {
 
     fun setSubSpecialityList(){
         if(ld_sub_speciality_1.value != null)
-            subspecialityList.add(ld_sub_speciality_1.value!!)
+            SUBSPECIALITY_LIST.add(ld_sub_speciality_1.value!!)
 
         if(ld_sub_speciality_2.value != null)
-            subspecialityList.add(ld_sub_speciality_2.value!!)
+            SUBSPECIALITY_LIST.add(ld_sub_speciality_2.value!!)
 
         if(ld_sub_speciality_3.value != null)
-            subspecialityList.add(ld_sub_speciality_3.value!!)
+            SUBSPECIALITY_LIST.add(ld_sub_speciality_3.value!!)
     }
 
 ////////////////////////////////////////////////////////////////////
 
     // step3
+    var isPositionFilled = false
+    var isYearFilled = false
+    var isMonthFilled = false
+    var isMonthUnder13 = true
+
+    var YEAR = 0
+    var MONTH = 0
+    var POSITION = "" // 데이터
+    var CAREER = CareerInput(0,0)  // 데이터
+    var Step3Checked = MutableLiveData<Boolean>()
+
+    fun fillPosition(flag: Boolean){
+        isPositionFilled = flag
+        checkStep3()
+    }
+
+    fun fillMonth(flag:Boolean, month: Int){
+        isMonthFilled = flag
+        MONTH = month
+        checkStep3()
+    }
+
+    fun monthUnder13Check(flag: Boolean){     /// 0년 0월 처리하기!!!!
+        isMonthUnder13 = flag
+        checkStep3()
+    }
+
+    fun fillYear(flag: Boolean, year: Int){
+        isYearFilled = flag
+        YEAR = year
+        checkStep3()
+    }
+
+    fun checkStep3(){
+        Step3Checked.value = (isYearFilled || isMonthFilled) && isMonthUnder13 && isPositionFilled && (MONTH>0 || YEAR>0)
+    }
+
+    fun setCareer(){
+        CAREER.years = YEAR
+        CAREER.months = MONTH
+    }
+
+///////////////////////////////////////////////////////////////
+
+    // step 4
+
+    var isCareerDescriptionFilled = false  // 경력 내용 유무
+    var CAREER_DESCRIPTION = "" // 데이터
 
 
+////////////////////////////////////////////////////////////////
 
+    // step 5
+    var isSpecialityDesign = MutableLiveData<Boolean>()  // 선택된 전문분야가 '디자인' 인지
+    var Step5Checked = MutableLiveData<Boolean>()  // 기업, 해시태그 하나 이상 씩 선택되었는지
+    var COMPANY_SIZE = ""  // 데이터
+    var HASHTAGS_LIST = ArrayList<HashTag>()  // 데이터
 
+    var isCompanySizeSelected = false
+    var isDesignHashTagSuggestSelected = false
+    var isItHashTagSuggestSelected = false
 
+    fun selectCompanySize(companySize: String){
+        COMPANY_SIZE = companySize
+        isCompanySizeSelected = true
+
+        if(isSpecialityDesign.value == true){  //  디자인 해시태그인 경우
+            if(isDesignHashTagSuggestSelected == true)
+                Step5Checked.value = true
+        }
+        else{
+            if(isItHashTagSuggestSelected == true)
+                Step5Checked.value = true
+        }
+    }
+
+    fun selectDesignHashTag(flag : Boolean){
+        isDesignHashTagSuggestSelected = flag
+
+        if(isDesignHashTagSuggestSelected && isCompanySizeSelected)
+            Step5Checked.value = true
+        else
+            Step5Checked.value = false
+    }
+
+    fun selectItHashTag(flag : Boolean){
+        isItHashTagSuggestSelected = flag
+
+        if(isItHashTagSuggestSelected && isCompanySizeSelected)
+            Step5Checked.value = true
+        else
+            Step5Checked.value = false
+    }
+
+    fun clearHashTagList(){
+        HASHTAGS_LIST.clear()
+    }
+
+    fun setHashTagList(hashTag: HashTag){
+        HASHTAGS_LIST.add(hashTag)
+    }
 
 }

@@ -9,13 +9,12 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
-import com.example.tuktalk.databinding.FragmentMentorProfileStep1Binding
 import com.example.tuktalk.databinding.FragmentMentorProfileStep2Binding
+import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.step.dialog.SelectSpecialityDialogFragment
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.step.dialog.SelectSubSpecialityDesignDialogFragment
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.step.dialog.SelectSubSpecialityITDialogFragment
-import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class MentorProfileStep2Fragment: Fragment(){
@@ -180,10 +179,10 @@ class MentorProfileStep2Fragment: Fragment(){
                     "sub1 : ${viewModel.ld_sub_speciality_1.value}," +
                     " sub2 : ${viewModel.ld_sub_speciality_2.value}, sub3 : ${viewModel.ld_sub_speciality_3.value}")
             viewModel.setSubSpecialityList() // 상세분야 리스트 생성
-            Log.e("AppTest", "subSpeicalityList : ${viewModel.subspecialityList}")
+            Log.e("AppTest", "subSpeicalityList : ${viewModel.SUBSPECIALITY_LIST}")
 
             // step3로 이동하기
-
+            (activity as MentorProfileActivity).goToStep3()
         }
 
 

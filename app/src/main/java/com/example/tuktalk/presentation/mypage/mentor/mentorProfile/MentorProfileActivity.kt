@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -33,6 +34,7 @@ class MentorProfileActivity: AppCompatActivity() {
     val step3Fragment = MentorProfileStep3Fragment()
     val step4Fragment = MentorProfileStep4Fragment()
     val step5Fragment = MentorProfileStep5Fragment()
+    val step6Fragment = MentorProfileStep6Fragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,6 +109,9 @@ class MentorProfileActivity: AppCompatActivity() {
         if (supportFragmentManager.findFragmentByTag("mp_step5") != null) {
             supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step5")!!).commit()
         }
+        if (supportFragmentManager.findFragmentByTag("mp_step6") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step6")!!).commit()
+        }
 
         PROFILE_STEP = 1
         animateProgress(1)
@@ -130,6 +135,9 @@ class MentorProfileActivity: AppCompatActivity() {
         }
         if (supportFragmentManager.findFragmentByTag("mp_step5") != null) {
             supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step5")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mp_step6") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step6")!!).commit()
         }
 
         PROFILE_STEP = 2
@@ -155,6 +163,9 @@ class MentorProfileActivity: AppCompatActivity() {
         if (supportFragmentManager.findFragmentByTag("mp_step5") != null) {
             supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step5")!!).commit()
         }
+        if (supportFragmentManager.findFragmentByTag("mp_step6") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step6")!!).commit()
+        }
 
         PROFILE_STEP = 3
         animateProgress(3)
@@ -178,6 +189,9 @@ class MentorProfileActivity: AppCompatActivity() {
         }
         if (supportFragmentManager.findFragmentByTag("mp_step5") != null) {
             supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step5")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mp_step6") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step6")!!).commit()
         }
 
         PROFILE_STEP = 4
@@ -203,9 +217,43 @@ class MentorProfileActivity: AppCompatActivity() {
         if (supportFragmentManager.findFragmentByTag("mp_step4") != null) {
             supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step4")!!).commit()
         }
+        if (supportFragmentManager.findFragmentByTag("mp_step6") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step6")!!).commit()
+        }
+
+        binding.llProgress.visibility = View.VISIBLE
 
         PROFILE_STEP = 5
         animateProgress(5)
+    }
+
+    fun goToStep6(){
+        if (supportFragmentManager.findFragmentByTag("mp_step6") != null) {
+            supportFragmentManager.beginTransaction().show(supportFragmentManager.findFragmentByTag("mp_step6")!!).commit()
+        } else {
+            supportFragmentManager.beginTransaction().add(R.id.framelayout_mentor_profile_regist, step6Fragment, "mp_step6").commit()
+        }
+
+        if (supportFragmentManager.findFragmentByTag("mp_step1") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step1")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mp_step2") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step2")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mp_step3") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step3")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mp_step4") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step4")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mp_step5") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step5")!!).commit()
+        }
+
+        // step6 에서는 진행바 invisible
+       binding.llProgress.visibility = View.INVISIBLE
+
+        PROFILE_STEP = 6  // 추후 지우기
     }
 
     // 상단의 프로필 등록 step 별 진행도 애니메이션
@@ -250,6 +298,9 @@ class MentorProfileActivity: AppCompatActivity() {
         }
         if(PROFILE_STEP == 5){
             goToStep4()
+        }
+        if(PROFILE_STEP == 6){
+            goToStep5()
         }
     }
 }

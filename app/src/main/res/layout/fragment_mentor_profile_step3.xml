@@ -26,6 +26,20 @@
                     app:layout_constraintGuide_percent="0.0444"/>
 
                 <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_48.6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.486"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_51.4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.514"/>
+
+                <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/gl_v_95.56"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -33,6 +47,820 @@
                     app:layout_constraintGuide_percent="0.9556"/>
 
                 <!-- //////////////////////////////////// -->
+
+                <View
+                    android:id="@+id/view_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+                <TextView
+                    android:id="@+id/tv_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+                    app:layout_constraintDimensionRatio="328:26"
+                    android:maxLines="1"
+                    android:text="@string/tv_mentor_profile_step3_1"
+                    style="@style/tv_mentor_profile_step_1"/>
+
+                <View
+                    android:id="@+id/view_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_1"
+                    app:layout_constraintDimensionRatio="360:40"/>
+
+                <View
+                    android:id="@+id/view_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_company_name_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintBottom_toBottomOf="@id/view_3"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+
+                    android:text="회사명"
+                    style="@style/tv_mentor_profile_step_2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_star_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_company_name_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_company_name_des"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star"/>
+
+                <View
+                    android:id="@+id/view_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_name_des"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_company_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_4"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/tuktalk_gray_1"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius13"
+
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view_cl_1_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="360:12"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="328"
+                            app:layout_constraintTop_toBottomOf="@id/view_cl_1_1"
+                            app:layout_constraintBottom_toTopOf="@id/view_cl_1_2">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"/>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="298"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_company_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+                                    android:focusable="false"
+                                    android:enabled="false"
+
+                                    android:text="회사명"
+                                    android:drawableEnd="@drawable/ic_icon_correct"
+                                    style="@style/et_mentor_profile_step"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="14"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_cl_1_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="360:12"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cv_company_name"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <View
+                    android:id="@+id/view_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_5"
+                    app:layout_constraintDimensionRatio="360:14"/>
+
+                <TextView
+                    android:id="@+id/tv_company_certification_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_5"
+                    app:layout_constraintBottom_toBottomOf="@id/view_6"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    style="@style/tv_company_certification_des"
+                    android:text="회사 인증이 완료되었습니다."
+                    />
+
+
+                <View
+                    android:id="@+id/view_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_certification_des"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+                <View
+                    android:id="@+id/view_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_task_name_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintBottom_toBottomOf="@id/view_8"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+
+                    android:text="부서"
+                    style="@style/tv_mentor_profile_step_2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_star_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_task_name_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_task_name_des"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star"/>
+
+                <View
+                    android:id="@+id/view_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_task_name_des"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_task_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_9"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/tuktalk_gray_1"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius13"
+
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view_cl_2_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="360:12"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="328"
+                            app:layout_constraintTop_toBottomOf="@id/view_cl_2_1"
+                            app:layout_constraintBottom_toTopOf="@id/view_cl_2_2">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"/>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="298"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_task_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+                                    android:focusable="false"
+                                    android:enabled="false"
+
+                                    android:text="부서명"
+                                    android:drawableEnd="@drawable/ic_icon_correct"
+                                    style="@style/et_mentor_profile_step"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="14"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_cl_2_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="360:12"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cv_task_name"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+                <View
+                    android:id="@+id/view_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_10"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_position_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_10"
+                    app:layout_constraintBottom_toBottomOf="@id/view_11"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+
+                    android:text="직위"
+                    style="@style/tv_mentor_profile_step_2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_star_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_position_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_position_des"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star"/>
+
+                <View
+                    android:id="@+id/view_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_position_des"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_position_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_12"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/tuktalk_gray_1"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius13"
+
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view_cl_3_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="360:12"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="328"
+                            app:layout_constraintTop_toBottomOf="@id/view_cl_3_1"
+                            app:layout_constraintBottom_toTopOf="@id/view_cl_3_2">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"/>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="296"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_position_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+
+                                    android:hint="사원"
+                                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                                    style="@style/et_mentor_profile_step"
+                                    android:maxLines="1"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_cl_3_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="360:12"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cv_position_name"
+                    app:layout_constraintDimensionRatio="360:22"/>
+
+                <View
+                    android:id="@+id/view_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_13"
+                    app:layout_constraintDimensionRatio="360:18"/>
+
+                <TextView
+                    android:id="@+id/tv_career_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_13"
+                    app:layout_constraintBottom_toBottomOf="@id/view_14"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+
+                    android:text="근무기간"
+                    style="@style/tv_mentor_profile_step_2"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_star_4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_career_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_career_des"
+                    app:layout_constraintWidth_percent="0.025"
+                    app:layout_constraintDimensionRatio="1:2"
+                    android:text="*"
+                    style="@style/tv_star"/>
+
+                <View
+                    android:id="@+id/view_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_career_des"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <!-- 년 입력-->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_career_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_15"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_48.6"
+
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/tuktalk_gray_1"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius13"
+
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view_cl_4_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="174:12"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="159"
+                            app:layout_constraintTop_toBottomOf="@id/view_cl_4_1"
+                            app:layout_constraintBottom_toTopOf="@id/view_cl_4_2">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="122"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_career_year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+
+                                    android:hint="0"
+                                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                                    style="@style/et_mentor_profile_step_3"
+                                    android:maxLines="1"
+
+                                    android:inputType="number"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="13"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_year_des"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+
+                                   android:text="년"
+                                    android:focusable="false"
+                                    android:enabled="false"
+                                    style="@style/et_mentor_profile_step"
+                                    android:maxLines="1"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_cl_4_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="174:12"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <!-- 달 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_career_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_15"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_51.4"
+                    app:layout_constraintRight_toLeftOf="@id/gl_v_95.56"
+
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/tuktalk_gray_1"
+                    app:shapeAppearanceOverlay="@style/CardViewRadius13"
+
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/view_cl_5_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="174:12"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="159"
+                            app:layout_constraintTop_toBottomOf="@id/view_cl_5_1"
+                            app:layout_constraintBottom_toTopOf="@id/view_cl_5_2">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="109"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_career_month"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+
+                                    android:hint="0"
+                                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                                    style="@style/et_mentor_profile_step_3"
+                                    android:maxLines="1"
+
+                                    android:inputType="number"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="26"
+                                android:gravity="center_vertical"
+                                >
+
+                                <!-- edittext autosize 되는지 해보기 -->
+                                <EditText
+                                    android:id="@+id/et_month_des"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@null"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:minHeight="2dp"
+
+                                    android:text="개월"
+                                    android:focusable="false"
+                                    android:enabled="false"
+                                    style="@style/et_mentor_profile_step"
+                                    android:maxLines="1"
+                                    />
+
+                                <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="12"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_cl_5_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="174:12"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <View
+                    android:id="@+id/view_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cv_career_month"
+                    app:layout_constraintDimensionRatio="360:7"/>
+
+                <View
+                    android:id="@+id/view_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_16"
+                    app:layout_constraintDimensionRatio="360:13"/>
+
+                <TextView
+                    android:id="@+id/tv_month_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_16"
+                    app:layout_constraintBottom_toBottomOf="@id/view_17"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    style="@style/tv_month_error"
+                    android:text="12개월 미만으로 입력해주세요."
+
+                    android:visibility="invisible"/>
+
+                <View
+                    android:id="@+id/view_18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cv_career_year"
+                    app:layout_constraintDimensionRatio="360:75"/>
+
+                <View
+                    android:id="@+id/view_19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_18"
+                    app:layout_constraintDimensionRatio="360:52"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_goto_step4_unactive"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_18"
+                    app:layout_constraintBottom_toBottomOf="@id/view_19"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:text="다음"
+                    android:textColor="@color/tuktalk_sub_content_4"
+                    android:backgroundTint="@color/tuktalk_gray_4"
+                    app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
+
+                    android:enabled="false"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_goto_step4_active"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_18"
+                    app:layout_constraintBottom_toBottomOf="@id/view_19"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:text="다음"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/tuktalk_primary"
+                    app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
+
+                    android:visibility="invisible"
+                    />
+
+                <View
+                    android:id="@+id/view_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_19"
+                    app:layout_constraintDimensionRatio="360:32"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
