@@ -292,6 +292,7 @@
        android:inputType="textEmailAddress"
        android:textCursorDrawable="@drawable/edit_text_cursor"
 
+       android:textAppearance="?android:attr/textAppearanceSmall"
        />
 
 
@@ -375,6 +376,7 @@
         android:inputType="textPassword"
         android:textCursorDrawable="@drawable/edit_text_cursor"
 
+        android:textAppearance="?android:attr/textAppearanceSmall"
         />
 
     <View
