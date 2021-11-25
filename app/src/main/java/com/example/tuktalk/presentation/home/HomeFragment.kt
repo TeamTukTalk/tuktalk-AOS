@@ -26,6 +26,8 @@ import com.example.tuktalk.presentation.home.adapter.RealTimeMenteeReviewRVAdpat
 import com.example.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
 import com.example.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity
 import com.example.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity
+import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity
+import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.google.android.material.card.MaterialCardView
 
@@ -92,8 +94,13 @@ class HomeFragment: Fragment() {
         binding.vp2HomeTopBanner.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         ///////////////////////////////////////////////////////////////////////////////////
 
-        // Top5 멘토 recycler view
-        rvAdapter_top5 = Top5MentorRVAdpater(testDataSet_top5)
+        // Top5 멘토 recycler view  // 멘토 이동 보완하기
+        rvAdapter_top5 = Top5MentorRVAdpater(testDataSet_top5,
+        selectMentor = {
+            Log.e("AppTest","go to mentor Info activity")
+            val intent = Intent(context, MentorInfoActivity::class.java)
+            startActivity(intent)
+        })
         binding.rvTop5Mentor.layoutManager = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
         }

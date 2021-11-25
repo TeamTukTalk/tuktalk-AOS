@@ -246,5 +246,18 @@
     <string name="tv_hashtag_it_18">#알고리즘</string>
     <string name="tv_hashtag_it_19">#풀스택</string>
 
+    <string name="tv_mentor_info_simple_introduction_test">네이버에서 UXUI 디자이너로 재직중인 애니입니다 :) 한줄소개는 두줄까지 나오고 중간 맞춤됩니다.</string>
+
+    <string name="tv_mentor_info_info_1">뚝딱멘토 소개 👋</string>
+    <string name="tv_mentor_info_info_2">재직중인 회사 💼</string>
+    <string name="tv_mentor_info_info_3">경력/경험 💻</string>
+    <string name="tv_mentor_info_info_4">전문분야 🛠</string>
+    <string name="tv_mentor_info_info_5">태그 💬</string>
+
+    <string name="tv_mentor_info_portfolio_1">포트폴리오 소개 📁 </string>
+    <string name="tv_mentor_info_portfolio_2">포트폴리오 미리보기 👀</string>
+    <string name="tv_mentor_info_portfolio_3">포트폴리오 정보</string>
+    <string name="tv_mentor_info_portfolio_4">포트폴리오 합격 인증 ✉️</string>
+    <string name="tv_mentor_info_portfolio_5">이런분들께 추천합니다 🙌</string>
 
 </resources>

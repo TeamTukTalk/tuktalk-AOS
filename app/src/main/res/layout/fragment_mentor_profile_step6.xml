@@ -138,9 +138,10 @@
                     android:textColor="@color/tuktalk_sub_content_2"
                     app:strokeWidth="1dp"
                     app:strokeColor="@color/tuktalk_gray_2"
-
+                    android:backgroundTint="@color/white"
                     app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
 
+                    android:stateListAnimator="@null"
                     />
 
 

@@ -53,6 +53,9 @@
         <activity android:name=".presentation.home.viewAll.ViewAllMenteeReviewActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".presentation.mypage.mentor.mentorInfo.MentorInfoActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

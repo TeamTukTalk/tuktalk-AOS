@@ -9,7 +9,9 @@ import com.example.tuktalk.databinding.ItemSearchDesignRecycler1Binding
 import com.example.tuktalk.domain.model.home.HomeTop5MentorRVitem
 import com.example.tuktalk.domain.model.search.PortfolioRV_item
 
-class Top5MentorRVAdpater( private var dataSet : MutableList<HomeTop5MentorRVitem>) :
+class Top5MentorRVAdpater( private var dataSet : MutableList<HomeTop5MentorRVitem>,
+                           val selectMentor:() -> Unit
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
@@ -39,6 +41,11 @@ class Top5MentorRVAdpater( private var dataSet : MutableList<HomeTop5MentorRVite
             holder.binding.tvCompany.text = dataSet[position].companyName // 회사명
             holder.binding.tvTask.text = dataSet[position].task // 업무명
             holder.binding.tvHashTag.text = dataSet[position].hashTag
+
+            // 아이템 뷰 클릭 시 해당 멘토정보 페이지 이동동
+           holder.binding.root.setOnClickListener {
+                selectMentor.invoke()
+            }
         }
     }
 

@@ -197,7 +197,7 @@ class MentorProfileStep5Fragment: Fragment(){
                     "careerDescription : ${viewModel.CAREER_DESCRIPTION}\n" +
                     "companySize : ${viewModel.COMPANY_SIZE}" +
                     "hashTags : ${viewModel.HASHTAGS_LIST}")
-            
+
             // step6로 이동하기
             (activity as MentorProfileActivity).goToStep6()
         }
