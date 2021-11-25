@@ -54,7 +54,7 @@
             app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
             app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
 
-            app:shapeAppearanceOverlay="@style/CardViewRadius8"
+            app:shapeAppearanceOverlay="@style/CardViewRadius5"
             app:strokeColor="#EEEEEE"
             app:strokeWidth="0.8dp"
             app:cardUseCompatPadding="true"
@@ -302,7 +302,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_cl1_8"
-                    app:layout_constraintDimensionRatio="328:45"/>
+                    app:layout_constraintDimensionRatio="328:52"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_goto_mentoring_apply"
@@ -331,7 +331,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_cl1_10"
-                    app:layout_constraintDimensionRatio="328:45"/>
+                    app:layout_constraintDimensionRatio="328:52"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_goto_portfolio"
