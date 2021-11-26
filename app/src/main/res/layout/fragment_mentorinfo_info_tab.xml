@@ -26,6 +26,15 @@
                     />
 
                 <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_8.88"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.0888"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/gl_v_30"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -75,6 +84,7 @@
                     app:layout_constraintRight_toRightOf="@id/gl_v_30"
                     android:text="@string/tv_mentor_info_info_1"
                     style="@style/tv_mentor_info_title"
+                    android:maxLines="1"
                     />
 
                 <View
@@ -91,9 +101,9 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@id/view_3"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
-                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56">
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
 
-                </TextView>
+                    style="@style/tv_mentorinfo_info_detail_introduction"/>
 
 
                 <View
@@ -139,6 +149,7 @@
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
                     app:layout_constraintRight_toRightOf="@id/gl_v_30"
                     android:text="@string/tv_mentor_info_info_2"
+                    android:maxLines="1"
                     style="@style/tv_mentor_info_title">
 
                 </TextView>
@@ -152,19 +163,448 @@
                     />
 
                 <View
-                    android:id="@+id/view_test"
+                    android:id="@+id/view_8"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_7"
-                    app:layout_constraintDimensionRatio="1:1.5"/>
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
 
                 <TextView
+                    android:id="@+id/tv_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintBottom_toBottomOf="@id/view_8"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="(주)회사명"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <ImageView
+                    android:id="@+id/iv_mentor_certification"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_company_name"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_company_name"
+                    app:layout_constraintLeft_toRightOf="@id/tv_company_name"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:src="@drawable/ic_mentor_certification"
+                    android:scaleType="centerInside"/>
+
+                <View
+                    android:id="@+id/view_point_1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_company_name"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_company_name"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+                <View
+                    android:id="@+id/view_9"
                     android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_name"
+                    app:layout_constraintDimensionRatio="360:8"
+                    />
+
+                <View
+                    android:id="@+id/view_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_9"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_9"
+                    app:layout_constraintBottom_toBottomOf="@id/view_10"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="UXUI 디자인"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <View
+                    android:id="@+id/view_point_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_task_name"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_task_name"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+                <View
+                    android:id="@+id/view_11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_task_name"
+                    app:layout_constraintDimensionRatio="360:8"
+                    />
+
+                <View
+                    android:id="@+id/view_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_11"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_position_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_11"
+                    app:layout_constraintBottom_toBottomOf="@id/view_12"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="팀장"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <View
+                    android:id="@+id/view_point_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_position_name"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_position_name"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+                <View
+                    android:id="@+id/view_13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_position_name"
+                    app:layout_constraintDimensionRatio="360:8"
+                    />
+
+                <View
+                    android:id="@+id/view_14"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_13"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_13"
+                    app:layout_constraintBottom_toBottomOf="@id/view_14"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="1년 4개월"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <View
+                    android:id="@+id/view_point_4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_career"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_career"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+
+                <View
+                    android:id="@+id/view_15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_career"
+                    app:layout_constraintDimensionRatio="360:32"
+                    />
+
+                <!--재직중인 회사 끝 & 경력/경험 시작 -->
+
+                <View
+                    android:id="@+id/view_line_2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_15"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    android:background="@color/tuktalk_gray_3"/>
+
+                <View
+                    android:id="@+id/view_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_line_2"
+                    app:layout_constraintDimensionRatio="360:32"
+                    />
+
+                <View
+                    android:id="@+id/view_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_16"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_3"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/view_test"
-                    android:text="스크롤뷰 테스트!!"/>
+                    app:layout_constraintTop_toBottomOf="@id/view_16"
+                    app:layout_constraintBottom_toBottomOf="@id/view_17"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_30"
+                    android:text="@string/tv_mentor_info_info_3"
+                    android:maxLines="1"
+                    style="@style/tv_mentor_info_title"/>
+
+                <View
+                    android:id="@+id/view_18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_3"
+                    app:layout_constraintDimensionRatio="360:12"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_careerDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_18"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    style="@style/tv_mentorinfo_info_detail_introduction"/>
+
+                <View
+                    android:id="@+id/view_19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_careerDescription"
+                    app:layout_constraintDimensionRatio="360:32"
+                    />
+
+                <!-- 경력/경험 끝 & 전문분야 시작 -->
+                <View
+                    android:id="@+id/view_line_3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_19"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    android:background="@color/tuktalk_gray_3"/>
+
+                <View
+                    android:id="@+id/view_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_line_3"
+                    app:layout_constraintDimensionRatio="360:32"
+                    />
+
+                <View
+                    android:id="@+id/view_21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_20"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_20"
+                    app:layout_constraintBottom_toBottomOf="@id/view_21"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_30"
+                    android:text="@string/tv_mentor_info_info_4"
+                    android:maxLines="1"
+                    style="@style/tv_mentor_info_title"/>
+
+                <View
+                    android:id="@+id/view_22"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_4"
+                    app:layout_constraintDimensionRatio="360:12"
+                    />
+
+                <View
+                    android:id="@+id/view_23"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_22"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
 
 
+                <TextView
+                    android:id="@+id/tv_subspeciality_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_22"
+                    app:layout_constraintBottom_toBottomOf="@id/view_23"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="UXUI 디자인"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <View
+                    android:id="@+id/view_point_5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_subspeciality_1"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_subspeciality_1"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+
+                <View
+                    android:id="@+id/view_subspeciality_2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subspeciality_1"
+                    app:layout_constraintDimensionRatio="360:8"
+                    />
+
+                <View
+                    android:id="@+id/view_subspeciality_2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_subspeciality_2_1"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_subspeciality_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_subspeciality_2_1"
+                    app:layout_constraintBottom_toBottomOf="@id/view_subspeciality_2_2"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="UXUI 디자인"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <View
+                    android:id="@+id/view_point_subspeciality_2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_subspeciality_2"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_subspeciality_2"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+                <View
+                    android:id="@+id/view_subspeciality_3_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subspeciality_2"
+                    app:layout_constraintDimensionRatio="360:8"
+                    />
+
+                <View
+                    android:id="@+id/view_subspeciality_3_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_subspeciality_3_1"
+                    app:layout_constraintDimensionRatio="360:20"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_subspeciality_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_subspeciality_3_1"
+                    app:layout_constraintBottom_toBottomOf="@id/view_subspeciality_3_2"
+                    app:layout_constraintLeft_toRightOf="@id/gl_v_8.88"
+                    android:text="UXUI 디자인"
+                    style="@style/tv_mentor_info_des_1"/>
+
+                <View
+                    android:id="@+id/view_point_subspeciality_3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintTop_toTopOf="@id/tv_subspeciality_3"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_subspeciality_3"
+                    app:layout_constraintWidth_percent="0.011"
+                    app:layout_constraintDimensionRatio="1:1"
+                    android:background="@drawable/point_black"/>
+
+                <View
+                    android:id="@+id/view_24"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subspeciality_3"
+                    app:layout_constraintDimensionRatio="360:32"/>
+
+
+                <!-- 전문분야 끝  /  태그 시작 -->
+                <View
+                    android:id="@+id/view_line_4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_24"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    android:background="@color/tuktalk_gray_3"/>
+
+                <View
+                    android:id="@+id/view_25"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_line_4"
+                    app:layout_constraintDimensionRatio="360:32"/>
+
+                <View
+                    android:id="@+id/view_26"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_25"
+                    app:layout_constraintDimensionRatio="360:20"/>
+
+                <TextView
+                    android:id="@+id/tv_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_25"
+                    app:layout_constraintBottom_toBottomOf="@id/view_26"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_30"
+                    android:text="@string/tv_mentor_info_info_5"
+                    android:maxLines="1"
+                    style="@style/tv_mentor_info_title"/>
+
+                <View
+                    android:id="@+id/view_27"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_5"
+                    app:layout_constraintDimensionRatio="360:12"/>
+
+                <TextView
+                    android:id="@+id/tv_tag"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/view_27"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+                    style="@style/tv_mentor_info_tag"/>
+
+
+                <View
+                    android:id="@+id/view_28"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tag"
+                    app:layout_constraintDimensionRatio="360:50"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

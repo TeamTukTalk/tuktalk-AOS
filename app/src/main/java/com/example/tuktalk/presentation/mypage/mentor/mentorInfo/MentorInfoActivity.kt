@@ -13,7 +13,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivityMentorInfoBinding
-import com.example.tuktalk.databinding.ActivityMentorProfileBinding
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.adapter.MentorInfoPagerFragmentStateAdapter
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.InfoTabFragment
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.MentoringTabFragment
@@ -21,10 +20,12 @@ import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.PortfolioTa
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.ReviewTabFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MentorInfoActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityMentorInfoBinding
+    private val viewModel : MentorInfoViewModel by viewModel()
 
     val infoTabFragment = InfoTabFragment()
     val portfolioTabFragment = PortfolioTabFragment()

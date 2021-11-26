@@ -10,10 +10,14 @@ import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.FragmentMentorProfileStep1Binding
 import com.example.tuktalk.databinding.FragmentMentorinfoInfoTabBinding
+import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewModel
+import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class InfoTabFragment: Fragment() {
 
     private lateinit var binding : FragmentMentorinfoInfoTabBinding
+    private val viewModel : MentorInfoViewModel by sharedViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -27,5 +31,12 @@ class InfoTabFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Log.e("AppTest", "mentor info tab fragment onViewCreated")
+
+        // ViewModel에서 정보 먼저 가져오기!!!
+        var detailIntroduction = getString(R.string.tv_mentorinfo_info_detailintroduction_sample)
+        binding.tvDetailIntroduction.text = detailIntroduction.replace(" ", "\u00A0") // 리뷰 내용
+
+
+
     }
 }
