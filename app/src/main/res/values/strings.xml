@@ -262,4 +262,5 @@
 
     <string name="tv_mentorinfo_info_detailintroduction_sample">안녕하세요! 저는 네이버에 다니고 있는 8년 경력의 UXUI 디자이너입니다. 현재는 네이버 UX기획부터 UI 디자인까지 총괄을 하고있고, 다양한 규모의 스타트업에서 근무하면서 실력을 쌓았습니다. </string>
 
+    <string name="tv_mentorinfo_portfolio_introduction_sample">제 포트폴리오는 카카오, 네이버, 쿠팡에서 UXUI 직무로 합격한 포트폴리오입니다. 총 5개의 프로젝트가 있으며, 개인프로젝트와 팀 프로젝트, 동아리에서 개발자, 기획자와 함께 작업한 프로젝트도 있습니다. </string>
 </resources>

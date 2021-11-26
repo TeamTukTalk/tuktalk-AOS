@@ -27,5 +27,23 @@ class PortfolioTabFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Log.e("AppTest", "mentor mentoring tab fragment onViewCreated")
+
+        // 포트폴리오 소개
+        var portfolioIntroductionSample = getString(R.string.tv_mentorinfo_portfolio_introduction_sample)
+        binding.tvPortfolioIntroduction.text = portfolioIntroductionSample.replace(" ", "\u00A0") // 포트폴리오 소개
+
+        // 프로젝트 개수
+        binding.tvProjectCount.text = "5"
+
+        // 페이지 수
+        binding.tvTotalPage.text = "56"
+
+        // 제작일
+        binding.tvYearStart.text = "2019"
+        binding.tvYearEnd.text = "2021"
+
+        // 이런분들께 추천합니다  영역
+        var recommendationTargetDesSample = "비전공 개발자"
+        binding.tvRecommendationTargetDescription.text = recommendationTargetDesSample.replace(" ", "\u00A0") // 추천 내용
     }
 }

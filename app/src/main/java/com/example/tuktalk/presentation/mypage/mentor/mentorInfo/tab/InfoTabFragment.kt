@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
@@ -36,7 +37,8 @@ class InfoTabFragment: Fragment() {
         var detailIntroduction = getString(R.string.tv_mentorinfo_info_detailintroduction_sample)
         binding.tvDetailIntroduction.text = detailIntroduction.replace(" ", "\u00A0") // 리뷰 내용
 
-
+        val tvTag : TextView = view.findViewById(R.id.tv_tag)
+        tvTag.text = "#테스트  #테스트  #긴해시태그  #합격포트폴리오  #이직  #이직  #공채  #코테"
 
     }
 }
