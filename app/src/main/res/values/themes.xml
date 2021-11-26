@@ -190,4 +190,9 @@
         <item name="cornerSize">13%</item>
     </style>
 
+
+    <style name="tab_selected">
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -9,6 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_v_4.44"
             android:layout_width="0dp"
@@ -73,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="@id/view_2"
             app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
             app:layout_constraintRight_toRightOf="@id/gl_v_42"
-            android:text="@string/tv_mentor_info_info_1"
+            android:text="포트폴리오탭"
             style="@style/tv_mentor_info_title"
             />
 
@@ -151,7 +159,6 @@
             app:layout_constraintDimensionRatio="360:12"
             />
 
-        
 
 
 
@@ -165,6 +172,8 @@
 
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
