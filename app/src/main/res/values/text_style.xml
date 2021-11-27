@@ -814,5 +814,13 @@
         <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
+    <style name="tv_service_waiting">
+        <item name="android:textColor">@color/tuktalk_sub_content_3</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
 
 </resources>

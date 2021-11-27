@@ -11,19 +11,24 @@ import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.FragmentMypageMenteeBinding
 import com.example.tuktalk.databinding.FragmentMypageMentorBinding
+import com.example.tuktalk.databinding.FragmentMypageMentorLaunchingVerBinding
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity
 
 class MyPageMentorFragment: Fragment() {
 
-    private lateinit var binding : FragmentMypageMentorBinding
+    //private lateinit var binding : FragmentMypageMentorBinding
+    // 런칭 버전
+    private lateinit var binding : FragmentMypageMentorLaunchingVerBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         Log.e("AppTest", "mentor fragment onCreateView")
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mypage_mentor, container, false)
+        //binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mypage_mentor, container, false)
+        // 런칭 버전
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mypage_mentor_launching_ver, container, false)
 
         setHasOptionsMenu(true)
         return binding.root
