@@ -1,6 +1,7 @@
 package com.example.tuktalk.di
 
 import com.example.tuktalk.common.Constants_gitignore
+import com.example.tuktalk.data.remote.MentorApi
 import com.example.tuktalk.data.remote.UserApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,10 +15,11 @@ import java.util.concurrent.TimeUnit
 internal val remoteModule = module {
     single { provideRetrofitBuild_Rx() }
     single { provideUserApi(get()) }
-
+    single { provideMentorApi(get())}
 }
 
 internal fun provideUserApi(retrofit: Retrofit) : UserApi = retrofit.create(UserApi::class.java)
+internal fun provideMentorApi(retrofit: Retrofit) : MentorApi = retrofit.create(MentorApi::class.java)
 
 
 internal fun provideRetrofitBuild_Rx() = Retrofit.Builder()

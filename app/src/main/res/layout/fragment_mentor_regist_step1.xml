@@ -280,7 +280,7 @@
                     app:layout_constraintTop_toBottomOf="@id/view_7"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                     app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                    app:layout_constraintDimensionRatio="288:48"
+                    app:layout_constraintDimensionRatio="288:50"
                     android:text="다음"
                     android:textColor="@color/white"
                     app:shapeAppearanceOverlay="@style/btnRaduisShape2"

@@ -39,6 +39,19 @@
 
     <!-- guideline vertical end -->
 
+    <ProgressBar
+        android:id="@+id/loading_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        android:indeterminateTint="@color/tuktalk_loading_spinner"
+        android:visibility="invisible"
+        />
+
 
 
     <com.google.android.material.card.MaterialCardView
@@ -257,7 +270,7 @@
                 app:layout_constraintTop_toBottomOf="@id/view_5"
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                app:layout_constraintDimensionRatio="288:48"
+                app:layout_constraintDimensionRatio="288:50"
                 android:text="발송"
                 android:textColor="@color/tuktalk_sub_content_4"
                 app:shapeAppearanceOverlay="@style/btnRaduisShape2"
@@ -272,7 +285,7 @@
                 app:layout_constraintTop_toBottomOf="@id/view_5"
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                app:layout_constraintDimensionRatio="288:48"
+                app:layout_constraintDimensionRatio="288:50"
                 android:text="발송"
                 android:textColor="@color/white"
                 app:shapeAppearanceOverlay="@style/btnRaduisShape2"
@@ -287,7 +300,7 @@
                 app:layout_constraintTop_toBottomOf="@id/view_5"
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                app:layout_constraintDimensionRatio="288:48"
+                app:layout_constraintDimensionRatio="288:50"
                 android:text="재발송"
                 android:textColor="@color/tuktalk_sub_content_2"
                 app:shapeAppearanceOverlay="@style/btnRaduisShape2"
@@ -295,8 +308,7 @@
                 app:strokeWidth="0.8dp"
                 app:strokeColor="@color/tuktalk_gray_1"
 
-
-                android:elevation="0dp"
+                android:stateListAnimator="@null"
 
                 android:visibility="invisible"/>
 
@@ -317,7 +329,7 @@
                 app:layout_constraintTop_toBottomOf="@id/view_6"
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                app:layout_constraintDimensionRatio="288:48"
+                app:layout_constraintDimensionRatio="288:50"
                 android:text="인증완료"
                 android:textColor="@color/white"
                 app:shapeAppearanceOverlay="@style/btnRaduisShape2"

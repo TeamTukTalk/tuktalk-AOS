@@ -13,8 +13,9 @@ internal val viewModelModule = module {
 
     viewModel { InfoRegistViewModel(get(), get()) }
     viewModel { LoginViewModel(get())}
-    viewModel { MentorRegistViewModel() }
+    viewModel { MentorRegistViewModel(get()) }
     viewModel { MentorProfileViewModel() }
     viewModel { MentorInfoViewModel() }
     viewModel { RegistPortfolioViewModel() }
+
 }

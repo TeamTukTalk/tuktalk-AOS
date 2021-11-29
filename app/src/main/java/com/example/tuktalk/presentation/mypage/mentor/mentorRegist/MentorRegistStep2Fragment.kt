@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -83,6 +84,7 @@ class MentorRegistStep2Fragment: Fragment() {
             binding.btnNextResend.visibility = View.VISIBLE
             binding.btnCertificationCompleteCheck.visibility = View.VISIBLE
 
+            Log.e("AppTest", "메일 인증 시도")
             viewModel.sendMentorEmail() // 이메일 보내기
         }
 
@@ -95,11 +97,31 @@ class MentorRegistStep2Fragment: Fragment() {
             }
         })*/
 
-        binding.btnCertificationCompleteCheck.setOnClickListener {
+        // 재발송 클릭 시
+        binding.btnNextResend.setOnClickListener {
+            Log.e("AppTest", "메일 인증 재발송")
 
-            // 여기서 이메일 중복 체크하고 성공 시 step3 가기!!!
-            (activity as MentorRegistActivity).goToStep3()
         }
+
+
+
+        ///////////////
+        binding.btnCertificationCompleteCheck.setOnClickListener {
+            // 여기서 이메일 중복 체크하고 성공 시 step3 가기!!!
+            viewModel.checkMentorEmailCertification()
+        }
+
+        ////////////////
+        viewModel.Is_Certified.observe(viewLifecycleOwner, {
+            if(it){
+                 Log.e("AppTest", "기업 메일 인증 성공  go to step3")
+                (activity as MentorRegistActivity).goToStep3()
+            }
+            else{
+                Log.e("AppTest", "기업 메일 인증 재시도 하세요")
+                Toast.makeText(context, "이메일 인증을 다시 시도해주세요.", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onResume() {

@@ -4,13 +4,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.ActivityMentorRegistBinding
-import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
