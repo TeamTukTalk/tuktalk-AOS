@@ -49,6 +49,10 @@ class MyPageMentorFragment: Fragment() {
         // 닉네임 받아오고 상단 닉네임 텍스트에 할당
         binding.tvName.text = Constants.USER_NICKNAME + "님"
 
+        // 프로필 배경 & 닉네임 첫 글자 설정
+        binding.tvProfileFirstLetter.text = Constants.USER_FIRST_LETTER
+        setProfileBackGroundColor()
+
 
         // 멘토 등록 액티비티 이동
        binding.cvGotoMentorRegist.setOnClickListener {
@@ -60,13 +64,20 @@ class MyPageMentorFragment: Fragment() {
         // toolbar 설정!!
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)  // 액션바로 xml에 만들어준 toolbar를 사용한다
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowTitleEnabled(false) // 기본제목 없애기
-        
-        /// 프로필 이미지 클릭 시 -> 프로필 등록/수정 이동
-        binding.ivProfile.setOnClickListener {
+
+
+        /// 프로필 이미지, 편집 이미지 클릭 시 -> 프로필 등록/수정 이동
+        binding.clProfile.setOnClickListener {
             Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
             val intent = Intent(context, MentorProfileActivity::class.java)
             startActivity(intent)
         }
+        binding.ivProfileEdit.setOnClickListener {
+            Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
+            val intent = Intent(context, MentorProfileActivity::class.java)
+            startActivity(intent)
+        }
+
         //////////////////////////////////////////////////////
 
         // 나의 서비스 로 이동
@@ -108,5 +119,31 @@ class MyPageMentorFragment: Fragment() {
             Log.e("AppTest","fragment actionbar option icon clicked")
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    // "profileBlue","profileRed", "profileYellow", "profileGray", "profileGreen"
+    fun setProfileBackGroundColor(){
+        when(Constants.USER_PROFILE_IMAGE_COLOR){
+            "profileBlue" -> {
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_blue)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileBlue_text))
+            }
+            "profileRed"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_red)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileRed_text))
+            }
+            "profileYellow"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_yellow)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileYellow_text))
+            }
+            "profileGray"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_gray)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileGray_text))
+            }
+            "profileGreen"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_green)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileGreen_text))
+            }
+        }
     }
 }
