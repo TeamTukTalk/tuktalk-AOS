@@ -81,20 +81,23 @@ class MentorRegistStep2Fragment: Fragment() {
             // 발송 클릭
             binding.btnNextActive.visibility = View.INVISIBLE
             binding.btnNextResend.visibility = View.VISIBLE
+            binding.btnCertificationCompleteCheck.visibility = View.VISIBLE
 
             viewModel.sendMentorEmail() // 이메일 보내기
         }
 
         // 인증 통신 성공
-        viewModel.isEmailChecked.observe(viewLifecycleOwner, {
+        /*viewModel.isEmailChecked.observe(viewLifecycleOwner, {
             if(it){
                 binding.btnNextResend.visibility = View.INVISIBLE
                 binding.btnNextCertificationComplete.visibility = View.VISIBLE
                 binding.etEmail.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_icon_correct,0)
             }
-        })
+        })*/
 
-        binding.btnNextCertificationComplete.setOnClickListener {
+        binding.btnCertificationCompleteCheck.setOnClickListener {
+
+            // 여기서 이메일 중복 체크하고 성공 시 step3 가기!!!
             (activity as MentorRegistActivity).goToStep3()
         }
     }

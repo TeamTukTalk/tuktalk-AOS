@@ -124,7 +124,7 @@
     <string name="tv_step3_1">뚝딱 멘토가 되신걸 환영합니다!</string>
     <string name="tv_step3_2">마이페이지에서 자신을 소개해보세요.</string>
 
-    <string name="tv_step_inquire">*외부 이메일 차단 등의 이유로 인증이 불가능한 경우 뚝딱\n abc@company.com 으로 문의해주세요.</string>
+    <string name="tv_step_inquire">*외부 이메일 차단 등의 이유로 인증이 불가능한 경우 뚝딱\n tuktalk.business@gmail.com 으로 문의해주세요.</string>
 
     <string name="tv_step_hint1">회사명</string>
     <string name="tv_step_hint2">ex> 웹 디자인</string>

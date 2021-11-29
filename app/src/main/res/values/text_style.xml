@@ -229,13 +229,22 @@
         <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
+    <style name="tv_step_des_2_1">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
     <style name="tv_step_des_inquire">
         <item name="android:textColor">@color/tuktalk_sub_content_3</item>
         <item name="autoSizeMinTextSize">2sp</item>
         <item name="autoSizeTextType">uniform</item>
         <item name="android:gravity">left|center_vertical</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="fontFamily">@font/notosans_kr_medium</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
     </style>
 
     <style name="tv_step_input_des">
