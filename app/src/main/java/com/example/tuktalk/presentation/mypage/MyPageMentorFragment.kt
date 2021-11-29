@@ -14,6 +14,7 @@ import com.example.tuktalk.databinding.FragmentMypageMentorBinding
 import com.example.tuktalk.databinding.FragmentMypageMentorLaunchingVerBinding
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
+import com.example.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity
 
 class MyPageMentorFragment: Fragment() {
@@ -45,8 +46,9 @@ class MyPageMentorFragment: Fragment() {
             startActivity(intent)
         }*/
 
-        // 닉네임 받아오기
+        // 닉네임 받아오고 상단 닉네임 텍스트에 할당
         binding.tvName.text = Constants.USER_NICKNAME + "님"
+
 
         // 멘토 등록 액티비티 이동
        binding.cvGotoMentorRegist.setOnClickListener {
@@ -59,20 +61,42 @@ class MyPageMentorFragment: Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)  // 액션바로 xml에 만들어준 toolbar를 사용한다
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowTitleEnabled(false) // 기본제목 없애기
         
-        /// 프로필 이미지 클릭 시
+        /// 프로필 이미지 클릭 시 -> 프로필 등록/수정 이동
         binding.ivProfile.setOnClickListener {
-            Log.e("AppTest","go to mentor profile activity")
+            Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
             val intent = Intent(context, MentorProfileActivity::class.java)
             startActivity(intent)
         }
+        //////////////////////////////////////////////////////
+
+        // 나의 서비스 로 이동
+        binding.llGotoMyservice.setOnClickListener {
+            Log.e("AppTest","MyPageMentorFragment/ go to mentor service activity")
+            val intent = Intent(context, MentorServiceActivity::class.java)
+            startActivity(intent)
+        }
+        binding.ivGotoMyservice.setOnClickListener {
+            Log.e("AppTest","MyPageMentorFragment/ go to mentor service activity")
+            val intent = Intent(context, MentorServiceActivity::class.java)
+            startActivity(intent)
+        }
+        ///////////////////////////////////////////////////////////
 
 
     }
 
     override fun onResume() {
         super.onResume()
-
         Log.e("AppTest", "mentor fragment onResume")
+        Log.e("AppTest", "mentor certified : ${Constants.IS_CERTIFIED_MENTOR}")
+
+        if(Constants.IS_CERTIFIED_MENTOR){   // 멘토 기업인증 했으면
+            binding.cvGotoMentorRegist.visibility = View.GONE
+        }
+        else{  // 기업인증 아직 하지않은 상태라면
+            binding.cvGotoMentorRegist.visibility = View.VISIBLE
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

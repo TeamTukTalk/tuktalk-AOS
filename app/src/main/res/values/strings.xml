@@ -1,4 +1,8 @@
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation"
+    >
+
     <string name="app_name">tuktalk</string>
 
     <string name="splash1">취준생과 현직자의\n리얼한 소통창구\n뚝딱과 함께 취업 뚝딱!</string>
@@ -266,4 +270,13 @@
 
     <string name="tv_service_waiting">준비중입니다. 잠시만 기다려주세요.</string>
 
+    <string name="tv_regist_portfolio_title_1">포트폴리오를 소개해주세요! 📁 </string>
+    <string name="tv_regist_portfolio_title_2">포트폴리오 정보를 입력해주세요.</string>
+    <string name="tv_regist_portfolio_title_3">어떤 분들께 추천하나요? 🙌</string>
+    <string name="tv_regist_portfolio_title_4">포트폴리오를 업로드해주세요.</string>
+
+    <string name="tv_portfolio_tip"><u>작성 TIP</u></string>
+    <string name="et_portfolio_hint_1">자신의 포트폴리오의 장점, 차별점과 주요 프로젝트의 설명, 제작 과정 등등 자세히 작성해주세요.</string>
+    <string name="et_portfolio_hint_2">포트폴리오 제작에 어려움을 느끼시는 분 등등</string>
+    
 </resources>

@@ -55,6 +55,10 @@
 
         <activity android:name=".presentation.mypage.mentor.mentorInfo.MentorInfoActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.mypage.mentor.mentorService.MentorServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

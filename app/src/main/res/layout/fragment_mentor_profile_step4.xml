@@ -87,6 +87,7 @@
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
                     app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
 
+                    android:textCursorDrawable="@drawable/edit_text_cursor"
                     android:gravity="start"
                     android:background="@null"
                     android:textAppearance="?android:attr/textAppearanceSmall"

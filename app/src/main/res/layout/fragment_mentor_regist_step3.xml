@@ -159,7 +159,7 @@
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
                 app:layout_constraintHeight_percent="0.0638"
-                android:text="@string/tv_step3_1"
+                android:text="멘토등록 완료!"
                 style="@style/tv_step_des_1"/>
 
             <View
@@ -177,7 +177,7 @@
                 app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
                 app:layout_constraintTop_toBottomOf="@id/view_2"
                 app:layout_constraintHeight_percent="0.0478"
-                android:text="@string/tv_step3_2"
+                android:text="뚝딱멘토가 되신걸 환영합니다."
                 style="@style/tv_step_des_2"/>
 
             <View
@@ -188,7 +188,7 @@
                 app:layout_constraintHeight_percent="0.085"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_goto_write"
+                android:id="@+id/btn_mentor_regist_complete"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
@@ -197,7 +197,8 @@
                 app:layout_constraintDimensionRatio="288:48"
                 app:shapeAppearanceOverlay="@style/btnRaduisShape2"
 
-                android:text="작성하러 가기"
+
+                android:text="확인"
                 android:textColor="@color/tuktalk_primary"
                 android:backgroundTint="@color/white"
                 app:strokeColor="@color/tuktalk_primary"

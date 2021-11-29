@@ -4,13 +4,14 @@ import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
 import com.example.tuktalk.data.remote.dto.response.UserEmailCheckDto
 import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
 import com.example.tuktalk.data.remote.dto.response.UserLoginResponseDto
+import com.example.tuktalk.data.remote.dto.response.UserSignUpResponseDto
 
 import io.reactivex.Single
 import retrofit2.Response
 
 interface UserRepository {
     fun userEmailCheck(email: String) : Single<UserEmailCheckDto>
-    fun userSignUp(userSignUpRequestDto: UserSignUpRequestDto): Single<Response<Void>>
+    fun userSignUp(userSignUpRequestDto: UserSignUpRequestDto): Single<Response<UserSignUpResponseDto>>
     fun userLogin(userLoginRequestDto: UserLoginRequestDto): Single<Response<UserLoginResponseDto>>
 }
 

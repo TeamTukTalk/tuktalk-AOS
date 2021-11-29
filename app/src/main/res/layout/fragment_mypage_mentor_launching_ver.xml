@@ -286,6 +286,16 @@
                     android:text="@string/tv_mentor_myservice_des"
                     style="@style/tv_mentor_mp_big_title"/>
 
+                <LinearLayout
+                    android:id="@+id/ll_goto_myservice"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="@id/tv_myservice_des"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_myservice_des"
+                    app:layout_constraintLeft_toRightOf="@id/tv_myservice_des"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:orientation="horizontal"/>
+
                 <View
                     android:id="@+id/view_11"
                     android:layout_width="match_parent"
@@ -294,6 +304,7 @@
                     app:layout_constraintDimensionRatio="360:23" />
 
                 <ImageView
+                    android:id="@+id/iv_goto_myservice"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_11"

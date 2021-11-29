@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
-import com.example.tuktalk.databinding.FragmentMentorProfileStep1Binding
 import com.example.tuktalk.databinding.FragmentMentorProfileStep3Binding
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
@@ -119,20 +118,20 @@ class MentorProfileStep3Fragment: Fragment(){
                     viewModel.fillMonth(false, month)
                 }
 
-                if(month > 12){
+                if(month > 11){ // 개월 값은 11까지 가능
                     binding.tvMonthError.visibility = View.VISIBLE
                     binding.cvCareerMonth.strokeColor = resources.getColor(R.color.tuktalk_error)
-                    viewModel.monthUnder13Check(false)
+                    viewModel.monthUnder12Check(false)
                 }
                 else{
                     binding.tvMonthError.visibility = View.INVISIBLE
                     binding.cvCareerMonth.strokeColor = resources.getColor(R.color.tuktalk_primary)
 
                     if(userinput.length > 0){
-                        viewModel.monthUnder13Check(true)
+                        viewModel.monthUnder12Check(true)
                     }
                     else
-                        viewModel.monthUnder13Check(false)
+                        viewModel.monthUnder12Check(false)
                 }
             }
 

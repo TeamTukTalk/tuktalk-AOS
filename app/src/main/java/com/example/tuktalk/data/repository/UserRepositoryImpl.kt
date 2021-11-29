@@ -5,6 +5,7 @@ import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
 import com.example.tuktalk.data.remote.dto.response.UserEmailCheckDto
 import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
 import com.example.tuktalk.data.remote.dto.response.UserLoginResponseDto
+import com.example.tuktalk.data.remote.dto.response.UserSignUpResponseDto
 import com.example.tuktalk.domain.repository.UserRepository
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -25,7 +26,7 @@ class UserRepositoryImpl(
 
 
     // 가입
-    override fun userSignUp(userSignUpRequestDto: UserSignUpRequestDto): Single<Response<Void>> =
+    override fun userSignUp(userSignUpRequestDto: UserSignUpRequestDto): Single<Response<UserSignUpResponseDto>> =
             userApi.userSignUp(userSignUpRequestDto)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

@@ -4,6 +4,7 @@ import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
 import com.example.tuktalk.data.remote.dto.response.UserEmailCheckDto
 import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
 import com.example.tuktalk.data.remote.dto.response.UserLoginResponseDto
+import com.example.tuktalk.data.remote.dto.response.UserSignUpResponseDto
 import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.Body
@@ -23,7 +24,7 @@ interface UserApi {
     @POST("api/users")
     fun userSignUp(
             @Body userdata: UserSignUpRequestDto
-    ):Single<Response<Void>>
+    ):Single<Response<UserSignUpResponseDto>>
 
     // 로그인
     @POST("api/sign-in")

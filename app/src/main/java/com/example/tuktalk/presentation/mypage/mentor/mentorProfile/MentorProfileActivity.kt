@@ -27,8 +27,6 @@ class MentorProfileActivity: AppCompatActivity() {
     var PROFILE_STEP = 1
     private var progressPosition = 1
 
-
-
     val step1Fragment = MentorProfileStep1Fragment()
     val step2Fragment = MentorProfileStep2Fragment()
     val step3Fragment = MentorProfileStep3Fragment()
@@ -276,9 +274,6 @@ class MentorProfileActivity: AppCompatActivity() {
     companion object {
         const val PROGRESS_WEIGHT_STEP = 0.1f
     }
-
-
-
 
 
 

@@ -122,7 +122,7 @@ class MentorProfileViewModel: ViewModel() {
     var isPositionFilled = false
     var isYearFilled = false
     var isMonthFilled = false
-    var isMonthUnder13 = true
+    var isMonthUnder12 = true
 
     var YEAR = 0
     var MONTH = 0
@@ -141,8 +141,8 @@ class MentorProfileViewModel: ViewModel() {
         checkStep3()
     }
 
-    fun monthUnder13Check(flag: Boolean){     /// 0년 0월 처리하기!!!!
-        isMonthUnder13 = flag
+    fun monthUnder12Check(flag: Boolean){     /// 0년 0월 처리하기!!!!
+        isMonthUnder12 = flag
         checkStep3()
     }
 
@@ -153,7 +153,7 @@ class MentorProfileViewModel: ViewModel() {
     }
 
     fun checkStep3(){
-        Step3Checked.value = (isYearFilled || isMonthFilled) && isMonthUnder13 && isPositionFilled && (MONTH>0 || YEAR>0)
+        Step3Checked.value = (isYearFilled || isMonthFilled) && isMonthUnder12 && isPositionFilled && (MONTH>0 || YEAR>0)
     }
 
     fun setCareer(){

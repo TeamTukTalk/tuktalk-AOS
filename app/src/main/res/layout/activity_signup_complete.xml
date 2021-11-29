@@ -109,7 +109,9 @@
         app:shapeAppearanceOverlay="@style/btnRaduisShape"
         android:text="프로필 등록하기"
         android:textColor="@color/tuktalk_primary"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button2"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Button2"
+
+        android:stateListAnimator="@null"/>
 
     <View
         android:id="@+id/view_4"
@@ -133,7 +135,9 @@
         app:shapeAppearanceOverlay="@style/btnRaduisShape"
         android:text="홈으로 가기"
         android:textColor="#4F4F4F"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button2"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Button2"
+
+        android:stateListAnimator="@null"/>
 
 
 

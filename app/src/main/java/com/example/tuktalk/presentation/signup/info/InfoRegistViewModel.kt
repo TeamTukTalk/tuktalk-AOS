@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tuktalk.common.Constants
+import com.example.tuktalk.common.Constants_gitignore
 import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
 import com.example.tuktalk.domain.usecase.user.UserEmailCheckUseCase
 import com.example.tuktalk.domain.usecase.user.UserSignUpUseCase
@@ -100,7 +102,14 @@ class InfoRegistViewModel(
                     progressBarVisibility.value = false
                     Log.e("AppTest", "user signup result status code : ${it.code()}")
                     if(it.code() == 201){
-                        Log.e("AppTest", "회원가입 성공!")
+                        Constants_gitignore.USER_TOKEN = "Bearer " + it.body()!!.accessToken
+                        Constants.USER_NICKNAME = it.body()!!.nickname // 닉네임 저장
+                        Constants.USER_PROFILE_IMAGE_COLOR = it.body()!!.profileImageColor // 프로필 랜덤 배경 색상
+                        Constants.USER_FIRST_LETTER = it.body()!!.firstLetter // 닉네임 첫 글자
+                        Log.e("AppTest", "InfoRegistViewModel/ 회원가입 성공!" +
+                                "usertoken : ${Constants_gitignore.USER_TOKEN}  nickname : ${Constants.USER_NICKNAME}" +
+                                "  profilecolor : ${Constants.USER_PROFILE_IMAGE_COLOR}  firstletter : ${Constants.USER_FIRST_LETTER}")
+
                         isSignUpSuccess.value = true
                     }
                     else{

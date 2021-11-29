@@ -758,6 +758,13 @@
             app:layout_constraintDimensionRatio="360:32"
             app:layout_constraintTop_toBottomOf="@id/constraintlayout_terms"/>
 
+        <View
+            android:id="@+id/view_18"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="328:52"
+            app:layout_constraintTop_toBottomOf="@id/View_17"/>
+
         <!-- 가입완료 버튼 -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_signup_complete_inactive"
@@ -794,6 +801,13 @@
             android:visibility="invisible"
             />
 
+
+        <View
+            android:id="@+id/view_19"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="360:40"
+            app:layout_constraintTop_toBottomOf="@id/view_18"/>
 
 
 

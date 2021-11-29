@@ -25,10 +25,10 @@ class MentorRegistStep3Fragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 버튼튼
-       binding.btnGotoWrite.setOnClickListener {
+        // 확인 버튼
+       binding.btnMentorRegistComplete.setOnClickListener {
             // 클릭 이벤트 구현해주기
-
+        // -> 마이페이지 첫 화면 돌아가기
 
         }
     }
