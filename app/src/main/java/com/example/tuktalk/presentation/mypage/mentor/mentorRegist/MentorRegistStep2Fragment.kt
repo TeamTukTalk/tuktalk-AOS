@@ -107,7 +107,7 @@ class MentorRegistStep2Fragment: Fragment() {
 
         ///////////////
         binding.btnCertificationCompleteCheck.setOnClickListener {
-            // 여기서 이메일 중복 체크하고 성공 시 step3 가기!!!
+            // 여기서 이메일 체크하고 성공 시 step3 가기!!!
             viewModel.checkMentorEmailCertification()
         }
 

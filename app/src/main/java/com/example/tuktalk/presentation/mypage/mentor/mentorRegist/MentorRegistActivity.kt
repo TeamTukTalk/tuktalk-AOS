@@ -37,14 +37,23 @@ class MentorRegistActivity: AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(true) // 기본제목 없애기
         supportActionBar!!.setTitle("멘토등록")
 
+        //////////////////////////////////////
 
         // 시작은 step1
-        supportFragmentManager.beginTransaction()
+        /*supportFragmentManager.beginTransaction()
                 .apply {
                     REGIST_STEP = 1
                     replace(R.id.framelayout_mentor_regist_step, step1Fragment)
                     commit()
-                }
+                }*/
+
+        // 첫 시작은 step1 !!
+        var fragmentManager = supportFragmentManager
+        if (fragmentManager.findFragmentByTag("mentor_regist_step1") != null) {
+            fragmentManager.beginTransaction().show(fragmentManager.findFragmentByTag("mentor_regist_step1")!!).commit()
+        } else {
+            fragmentManager.beginTransaction().add(R.id.framelayout_mentor_regist_step, step1Fragment, "mentor_regist_step1").commit()
+        }
 
 
 
@@ -79,12 +88,18 @@ class MentorRegistActivity: AppCompatActivity() {
         binding.ivStep2.setImageResource(R.drawable.ic_step2_off)
         binding.tvStep2.setTextColor(resources.getColor(R.color.tuktalk_sub_content_4))
 
-        supportFragmentManager.beginTransaction()
-                .apply {
-                    REGIST_STEP = 1
-                    replace(R.id.framelayout_mentor_regist_step, step1Fragment)
-                    commit()
-                }
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step1") != null) {
+            supportFragmentManager.beginTransaction().show(supportFragmentManager.findFragmentByTag("mentor_regist_step1")!!).commit()
+        } else {
+            supportFragmentManager.beginTransaction().add(R.id.framelayout_mentor_regist_step, step1Fragment, "mentor_regist_step1").commit()
+        }
+
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step2") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step2")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step3") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step3")!!).commit()
+        }
     }
 
 
@@ -94,24 +109,36 @@ class MentorRegistActivity: AppCompatActivity() {
         binding.ivStep3.setImageResource(R.drawable.ic_step3_off)
         binding.tvStep3.setTextColor(resources.getColor(R.color.tuktalk_sub_content_4))
 
-        supportFragmentManager.beginTransaction()
-                .apply {
-                    REGIST_STEP = 2
-                    replace(R.id.framelayout_mentor_regist_step, step2Fragment)
-                    commit()
-                }
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step2") != null) {
+            supportFragmentManager.beginTransaction().show(supportFragmentManager.findFragmentByTag("mentor_regist_step2")!!).commit()
+        } else {
+            supportFragmentManager.beginTransaction().add(R.id.framelayout_mentor_regist_step, step2Fragment, "mentor_regist_step2").commit()
+        }
+
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step1") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mentor_regist_step1")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step3") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mentor_regist_step3")!!).commit()
+        }
     }
 
     fun goToStep3(){
         binding.ivStep3.setImageResource(R.drawable.ic_step3_on)
         binding.tvStep3.setTextColor(resources.getColor(R.color.tuktalk_primary))
 
-        supportFragmentManager.beginTransaction()
-                .apply {
-                    REGIST_STEP = 3
-                    replace(R.id.framelayout_mentor_regist_step, step3Fragment)
-                    commit()
-                }
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step3") != null) {
+            supportFragmentManager.beginTransaction().show(supportFragmentManager.findFragmentByTag("mentor_regist_step3")!!).commit()
+        } else {
+            supportFragmentManager.beginTransaction().add(R.id.framelayout_mentor_regist_step, step3Fragment, "mentor_regist_step3").commit()
+        }
+
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step1") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mentor_regist_step1")!!).commit()
+        }
+        if (supportFragmentManager.findFragmentByTag("mentor_regist_step2") != null) {
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mentor_regist_step2")!!).commit()
+        }
     }
 
 

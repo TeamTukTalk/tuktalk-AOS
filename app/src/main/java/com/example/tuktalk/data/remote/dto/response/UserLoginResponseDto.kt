@@ -12,5 +12,7 @@ data class UserLoginResponseDto(
         @SerializedName("profileImageColor")
         val profileImageColor : String,
         @SerializedName("firstLetter")
-        val firstLetter : String
+        val firstLetter : String,
+        @SerializedName("role")
+        val role : String
 )
