@@ -44,11 +44,10 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
             app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
-            app:layout_constraintDimensionRatio="328:376"
             app:shapeAppearanceOverlay="@style/mentorRegistStepShape"
             app:strokeWidth="0.7dp"
             app:strokeColor="#EEEEEE"
@@ -125,16 +124,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintHeight_percent="0.085"/>
+                    app:layout_constraintDimensionRatio="343:32"/>
+
+                <View
+                    android:id="@+id/view_1_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintDimensionRatio="343:24"/>
 
                 <TextView
                     android:id="@+id/tv_1"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintBottom_toBottomOf="@id/view_1_1"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_33.5"
                     app:layout_constraintRight_toRightOf="@id/gl_v_66.5"
-                    app:layout_constraintHeight_percent="0.0638"
                     android:text="@string/tv_step1_1"
                     style="@style/tv_step_des_1"
                     />
@@ -146,17 +152,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/tv_1"
-                    app:layout_constraintHeight_percent="0.01"
+                    app:layout_constraintDimensionRatio="343:4"
                     />
+
+                <View
+                    android:id="@+id/view_2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintDimensionRatio="343:18"
+                    />
+
 
                 <TextView
                     android:id="@+id/tv_2"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_2"
+                    app:layout_constraintBottom_toBottomOf="@id/view_2_1"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_10.6"
                     app:layout_constraintRight_toRightOf="@id/gl_v_89.4"
-                    app:layout_constraintHeight_percent="0.0478"
                     android:maxLines="1"
                     android:text="@string/tv_step1_2"
                     style="@style/tv_step_des_2"/>
@@ -166,7 +181,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/tv_2"
-                    app:layout_constraintHeight_percent="0.106"
+                    app:layout_constraintDimensionRatio="343:40"
+                    />
+
+                <View
+                    android:id="@+id/view_3_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_3"
+                    app:layout_constraintDimensionRatio="343:20"
                     />
 
                 <TextView
@@ -174,9 +197,9 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_3"
+                    app:layout_constraintBottom_toBottomOf="@id/view_3_1"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                     app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                    app:layout_constraintHeight_percent="0.053"
                     android:text="회사명"
                     style="@style/tv_step_input_des"
                     />
@@ -186,7 +209,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/tv_office_des"
-                    app:layout_constraintHeight_percent="0.005"/>
+                    app:layout_constraintDimensionRatio="343:6"/>
 
                 <EditText
                     android:id="@+id/et_company_name"
@@ -211,10 +234,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/et_company_name"
-                    app:layout_constraintHeight_percent="0.0638"
+                    app:layout_constraintDimensionRatio="343:32"
                     />
 
-                <TextView
+             <!--   <TextView
                     android:id="@+id/tv_department_des"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -256,16 +279,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/et_department_name"
-                    app:layout_constraintHeight_percent="0.085"/>
+                    app:layout_constraintHeight_percent="0.085"/>-->
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_next_inactive"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintTop_toBottomOf="@id/view_5"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                     app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
-                    app:layout_constraintHeight_percent="0.127"
+                    app:layout_constraintDimensionRatio="288:50"
                     android:text="다음"
                     android:textColor="@color/tuktalk_sub_content_4"
                     app:shapeAppearanceOverlay="@style/btnRaduisShape2"
@@ -277,7 +300,7 @@
                     android:id="@+id/btn_next_active"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/view_7"
+                    app:layout_constraintTop_toBottomOf="@id/view_5"
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_6.1"
                     app:layout_constraintRight_toRightOf="@id/gl_v_93.9"
                     app:layout_constraintDimensionRatio="288:50"
@@ -288,10 +311,24 @@
 
                     android:visibility="invisible"/>
 
+                <View
+                    android:id="@+id/view_5_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/btn_next_inactive"
+                    app:layout_constraintDimensionRatio="343:32"
+                    />
+
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
+
+
+
 
 
 

@@ -207,6 +207,9 @@
                    app:shapeAppearanceOverlay="@style/CardViewRadius50"
                     android:backgroundTint="@color/tuktalk_gray_5"
 
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="0dp"
+
                    >
                     <LinearLayout
                         android:layout_width="match_parent"

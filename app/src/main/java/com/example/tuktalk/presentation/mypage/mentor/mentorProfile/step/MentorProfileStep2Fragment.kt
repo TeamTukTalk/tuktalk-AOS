@@ -50,13 +50,17 @@ class MentorProfileStep2Fragment: Fragment(){
                 viewModel.ld_sub_speciality_1.value = null
                 viewModel.ld_sub_speciality_selected.value = false
             }
-            if(binding.cvSubSpeciality2.visibility == View.VISIBLE){
+            if(binding.cvSubSpeciality2.visibility == View.VISIBLE){ // 안보이게 다시 바꾸기
                 viewModel.ld_sub_speciality_2.value = null
                 viewModel.ld_sub_speciality_selected.value = false
+
+                binding.cvSubSpeciality2.visibility = View.INVISIBLE
             }
-            if(binding.cvSubSpeciality3.visibility == View.VISIBLE){
+            if(binding.cvSubSpeciality3.visibility == View.VISIBLE){ // 안보이게 다시 바꾸기
                 viewModel.ld_sub_speciality_3.value = null
                 viewModel.ld_sub_speciality_selected.value = false
+
+                binding.cvSubSpeciality3.visibility = View.INVISIBLE
             }
 
             viewModel.clearSubSpecailitySelected() // 상세분야 선택여부 모두 초기화

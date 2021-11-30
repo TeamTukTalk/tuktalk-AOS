@@ -95,10 +95,10 @@ class MentorRegistActivity: AppCompatActivity() {
         }
 
         if (supportFragmentManager.findFragmentByTag("mentor_regist_step2") != null) {
-            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step2")!!).commit()
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mentor_regist_step2")!!).commit()
         }
         if (supportFragmentManager.findFragmentByTag("mentor_regist_step3") != null) {
-            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mp_step3")!!).commit()
+            supportFragmentManager.beginTransaction().hide(supportFragmentManager.findFragmentByTag("mentor_regist_step3")!!).commit()
         }
     }
 
