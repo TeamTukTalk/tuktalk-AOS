@@ -111,7 +111,10 @@
         android:textColor="@color/tuktalk_primary"
         android:textAppearance="@style/TextAppearance.AppCompat.Button2"
 
-        android:stateListAnimator="@null"/>
+        android:stateListAnimator="@null"
+
+        android:visibility="invisible"/>
+    <!-- ////////////// 우선 프로필 등록하기 제외 /////////////// -->
 
     <View
         android:id="@+id/view_4"

@@ -141,7 +141,7 @@ class LoginActivity: AppCompatActivity() {
 
         viewModel.isLoginSuccess.observe(this, {
             if (it) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)  // 홈 화면 이동
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "로그인에 실패하였습니다", Toast.LENGTH_SHORT).show()

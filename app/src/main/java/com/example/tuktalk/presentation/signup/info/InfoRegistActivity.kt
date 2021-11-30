@@ -309,6 +309,8 @@ class InfoRegistActivity: AppCompatActivity() {
             if(it){ // 중복확인 까지 모두 성공
                 binding.etId.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0, R.drawable.ic_icon_correct,0)
                 ID = binding.etId.text.toString()
+
+                Toast.makeText(this, "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show()
             }
             else{
                 if(viewModel.flag1){ // 중복확인 성공한 상태에서 내용 변경되는 경우
@@ -366,6 +368,10 @@ class InfoRegistActivity: AppCompatActivity() {
             else
                 binding.loadingProgressBar.visibility = View.INVISIBLE
         })
+
+
+        ////////////////////////////////////////////////////
+
 
 
 

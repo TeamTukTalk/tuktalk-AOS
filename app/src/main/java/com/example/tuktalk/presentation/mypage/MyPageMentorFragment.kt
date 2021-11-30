@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -68,14 +69,25 @@ class MyPageMentorFragment: Fragment() {
 
         /// 프로필 이미지, 편집 이미지 클릭 시 -> 프로필 등록/수정 이동
         binding.clProfile.setOnClickListener {
-            Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
-            val intent = Intent(context, MentorProfileActivity::class.java)
-            startActivity(intent)
+
+            if(Constants.IS_CERTIFIED_MENTOR){
+                Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
+                val intent = Intent(context, MentorProfileActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(context, "멘토 기업 이메일 인증을 먼저 진행해주세요.", Toast.LENGTH_SHORT).show()
+            }
         }
         binding.ivProfileEdit.setOnClickListener {
-            Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
-            val intent = Intent(context, MentorProfileActivity::class.java)
-            startActivity(intent)
+            if(Constants.IS_CERTIFIED_MENTOR){
+                Log.e("AppTest","MyPageMentorFragment/ go to mentor profile activity")
+                val intent = Intent(context, MentorProfileActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(context, "멘토 기업 이메일 인증을 먼저 진행해주세요.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         //////////////////////////////////////////////////////
