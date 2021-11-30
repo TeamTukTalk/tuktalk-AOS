@@ -104,6 +104,8 @@ class MentorRegistActivity: AppCompatActivity() {
 
 
     fun goToStep2(){
+        REGIST_STEP = 2
+
         binding.ivStep2.setImageResource(R.drawable.ic_step2_on)
         binding.tvStep2.setTextColor(resources.getColor(R.color.tuktalk_primary))
         binding.ivStep3.setImageResource(R.drawable.ic_step3_off)
@@ -124,6 +126,8 @@ class MentorRegistActivity: AppCompatActivity() {
     }
 
     fun goToStep3(){
+        REGIST_STEP = 3
+
         binding.ivStep3.setImageResource(R.drawable.ic_step3_on)
         binding.tvStep3.setTextColor(resources.getColor(R.color.tuktalk_primary))
 
@@ -151,7 +155,8 @@ class MentorRegistActivity: AppCompatActivity() {
             goToStep1()
         }
         if(REGIST_STEP == 3){
-            goToStep2()
+            // 등록 완료 화면에서는 뒤로가기 작동x
+
         }
     }
 }

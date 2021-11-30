@@ -7,6 +7,7 @@ import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface MentorApi {
@@ -16,4 +17,11 @@ interface MentorApi {
     fun getEmailCheckResult(
             @Header("Authorization")userToken: String
     ): Single<Response<MentorEmailCertificationResponseDto>>
+
+    // 기업 메일 전송하기
+    @POST("api/mails")
+    fun sendEmailCertification(
+        @Header("Authorization")userToken: String,
+        @Query("email") email: String
+    ): Single<Response<Void>>
 }

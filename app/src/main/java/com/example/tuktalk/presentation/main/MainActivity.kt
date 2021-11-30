@@ -12,13 +12,16 @@ import com.example.tuktalk.databinding.ActivityMainBinding
 import com.example.tuktalk.presentation.chat.ChatFragment
 import com.example.tuktalk.presentation.community.CommunityFragment
 import com.example.tuktalk.presentation.home.HomeFragment
+import com.example.tuktalk.presentation.login.LoginViewModel
 import com.example.tuktalk.presentation.mypage.MyPageFragment
 import com.example.tuktalk.presentation.search.SearchFragment
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val viewModel : MainActivityViewModel by viewModel()
 
     val homeFragment = HomeFragment()
     val searchFragment = SearchFragment()
@@ -50,6 +53,29 @@ class MainActivity : AppCompatActivity() {
 
         //fragmentManager.beginTransaction().replace(R.id.framelayout, homeFragment, "home").commitAllowingStateLoss()
         binding.bottomNavi.selectedItemId = R.id.tuktalk_home
+        
+        
+        //// 멘토인 경우 기업 메일 인증 여부 확인하기 실행
+        if(Constants.USER_MODE == 0){
+            viewModel.checkMentorCertified()
+        }
+
+        viewModel.isCertificationCheckSuccess.observe(this, {
+            if(it){
+                Log.e("AppTest", "MainActivity/ 인증 여부 확인 성공")
+
+                if(Constants.IS_CERTIFIED_MENTOR)
+                    Toast.makeText(this, "기업 이메일 인증이 확인되었습니다.", Toast.LENGTH_SHORT).show()
+                else
+                    Toast.makeText(this, "기업 이메일 인증이 필요합니다.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Log.e("AppTest", "MainActivity/ 인증 여부 확인 실패")
+                Toast.makeText(this, "기업 이메일 인증 여부 확인에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
 
     }
 

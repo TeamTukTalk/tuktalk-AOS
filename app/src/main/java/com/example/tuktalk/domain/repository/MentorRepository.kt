@@ -9,4 +9,5 @@ interface MentorRepository {
 
     // 멘토 기업 메일 인증 여부 체크
     fun mentorEmailCertificationCheck(userToken: String) : Single<Response<MentorEmailCertificationResponseDto>>
+    fun sendEmailCertification(userToken: String, email: String) : Single<Response<Void>>
 }

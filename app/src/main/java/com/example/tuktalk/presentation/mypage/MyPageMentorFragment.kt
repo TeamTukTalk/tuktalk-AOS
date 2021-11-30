@@ -103,9 +103,13 @@ class MyPageMentorFragment: Fragment() {
 
         if(Constants.IS_CERTIFIED_MENTOR){   // 멘토 기업인증 했으면
             binding.cvGotoMentorRegist.visibility = View.GONE
+            binding.view6.visibility = View.GONE
+            binding.view7.visibility = View.GONE
         }
         else{  // 기업인증 아직 하지않은 상태라면
+            binding.view6.visibility = View.VISIBLE
             binding.cvGotoMentorRegist.visibility = View.VISIBLE
+            binding.view7.visibility = View.VISIBLE
         }
 
     }

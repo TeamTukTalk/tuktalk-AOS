@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit
 
 internal val remoteModule = module {
     single { provideRetrofitBuild_Rx() }
+
     single { provideUserApi(get()) }
     single { provideMentorApi(get())}
 }

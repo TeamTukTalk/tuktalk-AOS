@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.tuktalk.R
+import com.example.tuktalk.common.Constants
 import com.example.tuktalk.databinding.FragmentMentorRegistStep1Binding
 import com.example.tuktalk.databinding.FragmentMentorRegistStep2Binding
 import org.koin.android.viewmodel.ext.android.sharedViewModel
@@ -63,10 +64,14 @@ class MentorRegistStep2Fragment: Fragment() {
                 if(emailPattern.matcher(emailText).matches()){
                     binding.btnNextActive.visibility = View.VISIBLE
                     binding.btnNextInactive.visibility = View.INVISIBLE
+
+                    viewModel.MENTOR_EMAIL = emailText.toString() // 인증할 이메일
                 }
                 else{
                     binding.btnNextActive.visibility = View.INVISIBLE
                     binding.btnNextInactive.visibility = View.VISIBLE
+
+                    viewModel.MENTOR_EMAIL = ""
                 }
 
             }
@@ -84,7 +89,7 @@ class MentorRegistStep2Fragment: Fragment() {
             binding.btnNextResend.visibility = View.VISIBLE
             binding.btnCertificationCompleteCheck.visibility = View.VISIBLE
 
-            Log.e("AppTest", "메일 인증 시도")
+            Log.e("AppTest", "인증 메일 발송,  발송 메일주소 : ${viewModel.MENTOR_EMAIL}")
             viewModel.sendMentorEmail() // 이메일 보내기
         }
 
@@ -101,7 +106,20 @@ class MentorRegistStep2Fragment: Fragment() {
         binding.btnNextResend.setOnClickListener {
             Log.e("AppTest", "메일 인증 재발송")
 
+
         }
+
+        // 메일 성공적으로 전송되면 알림
+        viewModel.Is_mail_send.observe(viewLifecycleOwner,{
+            if(it){
+                Log.e("AppTest", "메일 전송 성공")
+                Toast.makeText(context, "인증 메일 전송 성공. 메일을 확인해주세요.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Log.e("AppTest", "메일 전송 실패")
+                Toast.makeText(context, "인증 메일 전송 실패. 다시 시도해주세요.", Toast.LENGTH_SHORT).show()
+            }
+        })
 
 
 
@@ -114,13 +132,29 @@ class MentorRegistStep2Fragment: Fragment() {
         ////////////////
         viewModel.Is_Certified.observe(viewLifecycleOwner, {
             if(it){
-                 Log.e("AppTest", "기업 메일 인증 성공  go to step3")
-                (activity as MentorRegistActivity).goToStep3()
+                 Log.e("AppTest", "기업 메일 인증여부 확인 성공")
+                if(!Constants.IS_CERTIFIED_MENTOR){
+                    Toast.makeText(context, "이메일 인증을 다시 시도해주세요.", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    Toast.makeText(context, "기업 이메일 인증 성공.", Toast.LENGTH_SHORT).show()
+                    (activity as MentorRegistActivity).goToStep3()
+                }
             }
             else{
-                Log.e("AppTest", "기업 메일 인증 재시도 하세요")
+                Log.e("AppTest", "기업 메일 인증 통신 오류")
                 Toast.makeText(context, "이메일 인증을 다시 시도해주세요.", Toast.LENGTH_SHORT).show()
             }
+        })
+
+        //////////////
+
+        // 로딩 프로그레스바
+        viewModel.progressBarVisibility.observe(viewLifecycleOwner, {
+            if (it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
         })
     }
 

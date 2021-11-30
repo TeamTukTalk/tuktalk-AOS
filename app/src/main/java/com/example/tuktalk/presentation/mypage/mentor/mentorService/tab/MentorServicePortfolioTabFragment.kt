@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
@@ -34,13 +35,13 @@ class MentorServicePortfolioTabFragment: Fragment() {
 
         // 등록하기 버튼 클릭 시
         binding.btnGotoRegistPortfolio.setOnClickListener {
+            Log.e("AppTest", "MentorServicePortfolioTabFragment/ 멘토 기업 이메일 인증 여부 : ${Constants.IS_CERTIFIED_MENTOR}")
             if(Constants.IS_CERTIFIED_MENTOR){
                 val intent = Intent(context, RegistPortfolioActivity::class.java)
                 startActivity(intent)
             }
             else{  // 기업 메일 인증 연동 후 else 에서는 Toast 메시지만 보여주기!!!
-                val intent = Intent(context, RegistPortfolioActivity::class.java)
-                startActivity(intent)
+                Toast.makeText(context, "멘토 기업 이메일 인증을 먼저 해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
 

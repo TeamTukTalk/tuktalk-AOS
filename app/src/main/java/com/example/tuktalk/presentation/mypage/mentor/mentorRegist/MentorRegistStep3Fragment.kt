@@ -29,7 +29,7 @@ class MentorRegistStep3Fragment: Fragment() {
        binding.btnMentorRegistComplete.setOnClickListener {
             // 클릭 이벤트 구현해주기
         // -> 마이페이지 첫 화면 돌아가기
-
+            activity?.finish()
         }
     }
 
