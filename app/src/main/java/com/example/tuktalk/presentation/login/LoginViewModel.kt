@@ -30,6 +30,7 @@ class LoginViewModel(
                         Constants.USER_NICKNAME = it.body()!!.nickname // 닉네임 저장
                         Constants.USER_PROFILE_IMAGE_COLOR = it.body()!!.profileImageColor // 프로필 랜덤 배경 색상
                         Constants.USER_FIRST_LETTER = it.body()!!.firstLetter // 닉네임 첫 글자
+                        Constants.USER_EMAIL = it.body()!!.email // 유저 이메일
 
                         if(it.body()!!.role.equals("MENTOR"))
                             Constants.USER_MODE = 0  // 멘토
@@ -38,7 +39,8 @@ class LoginViewModel(
 
                         Log.e("AppTest", "LoginViewModel/ 닉네임 : ${ Constants.USER_NICKNAME}, 유저토큰 : ${Constants_gitignore.USER_TOKEN},\n " +
                                 "프로필 색상 : ${Constants.USER_PROFILE_IMAGE_COLOR}, 닉네임 첫 글자 : ${Constants.USER_FIRST_LETTER},\n " +
-                                "역할 : ${it.body()!!.role} = 유저모드 : ${Constants.USER_MODE}")
+                                "역할 : ${it.body()!!.role} = 유저모드 : ${Constants.USER_MODE},\n" +
+                                " 유저이메일 : ${Constants.USER_EMAIL}")
 
                         isLoginSuccess.value = true // 로그인 성공
                     }

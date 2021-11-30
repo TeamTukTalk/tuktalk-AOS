@@ -8,6 +8,7 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
@@ -31,6 +32,78 @@ class MentorProfileStep3Fragment: Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 회사명 가져오기
+        viewModel.getMentorCompnayName()
+
+        // 회사명으로 업데이트
+        viewModel.IsGetCompanyNameSuccess.observe(viewLifecycleOwner, {
+            if(it){ // 회사명 가져오기 성공 시
+                Log.e("AppTest", "MentorProfileStep3Fragment/ 회사명 업데이트! : ${viewModel.COMPANY_NAME}")
+
+                binding.etCompanyName.setText(viewModel.COMPANY_NAME)
+                binding.etCompanyName.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_icon_correct, 0)
+                binding.tvCompanyCertificationDes.visibility = View.VISIBLE
+            }
+            else{
+                Toast.makeText(context, "회사명 가져오기에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        // 로딩 프로그레스 바
+        viewModel.progressBarStep3Visibility.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
+        })
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // 부서명 입력 시 개행 방지
+        binding.etTaskName.setOnKeyListener(object: View.OnKeyListener{
+            override fun onKey(p0: View?, keyCode: Int, keyEvent: KeyEvent?): Boolean {
+                if(keyCode == KeyEvent.KEYCODE_ENTER)
+                    return true
+                return false
+            }
+        })
+
+        // 부서명 edit text 활성화 시 cardview 테두리 색상 변경하기
+        binding.etTaskName.setOnFocusChangeListener(View.OnFocusChangeListener { view, focused ->
+            if(focused){
+                Log.e("AppTest","et position focused")
+                binding.cvTaskName.strokeColor = resources.getColor(R.color.tuktalk_primary)
+                binding.cvTaskName.invalidate()
+            }
+            else{
+                Log.e("AppTest","et position focus x")
+                binding.cvTaskName.strokeColor = resources.getColor(R.color.tuktalk_gray_1)
+                binding.cvTaskName.invalidate()
+            }
+        })
+
+         // 부서명 edit text 내용 채워졌는지 확인
+        binding.etTaskName.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                var userinput = binding.etTaskName.text.toString()
+                if(userinput.length > 0){
+                    viewModel.fillDepartment(true)
+                    viewModel.DEPARTMENT = userinput
+                }
+                else{
+                    viewModel.fillDepartment(false)
+                    viewModel.DEPARTMENT = ""
+                }
+            }
+            override fun afterTextChanged(p0: Editable?) {
+            }
+        })
+
+
+
 
         // 직위 입력 시 개행 방지
         binding.etPositionName.setOnKeyListener(object: View.OnKeyListener{
@@ -181,8 +254,8 @@ class MentorProfileStep3Fragment: Fragment(){
             Log.e("AppTest", "btn goto step4 clicked")
             viewModel.setCareer()
 
-            Log.e("AppTest", "position : ${viewModel.POSITION}, 근무 기간 : ${viewModel.CAREER.years}년  " +
-                    "${viewModel.CAREER.months}개월")
+            Log.e("AppTest", "deaprtment : ${viewModel.DEPARTMENT}  position : ${viewModel.POSITION},\n" +
+                    " 근무 기간 : ${viewModel.CAREER.years}년 ${viewModel.CAREER.months}개월")
 
             // step4로 이동하기
             (activity as MentorProfileActivity).goToStep4()

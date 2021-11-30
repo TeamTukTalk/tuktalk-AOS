@@ -1,6 +1,7 @@
 package com.example.tuktalk.data.remote
 
 import com.example.tuktalk.common.Constants_gitignore
+import com.example.tuktalk.data.remote.dto.response.MentorCompanyNameResponseDto
 import com.example.tuktalk.data.remote.dto.response.MentorEmailCertificationResponseDto
 import com.example.tuktalk.data.remote.dto.response.UserEmailCheckDto
 import io.reactivex.Single
@@ -24,4 +25,12 @@ interface MentorApi {
         @Header("Authorization")userToken: String,
         @Query("email") email: String
     ): Single<Response<Void>>
+
+
+    // 멘토 회사 이름 가져오기
+    @GET("api/mentors/default-mentor-information")
+    fun getMentorCompanyName(
+        @Header("Authorization")userToken: String,
+        @Query("email") userEmail: String
+    ): Single<Response<MentorCompanyNameResponseDto>>
 }

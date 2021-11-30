@@ -65,6 +65,20 @@
 
                 <!-- //////////////////////////////////// -->
 
+                <ProgressBar
+                    android:id="@+id/loading_progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    android:indeterminateTint="@color/tuktalk_loading_spinner"
+                    android:visibility="invisible"
+                    />
+
+
                 <View
                     android:id="@+id/view_1"
                     android:layout_width="match_parent"
@@ -188,10 +202,12 @@
                                     android:enabled="false"
 
                                     android:text="회사명"
-                                    android:drawableEnd="@drawable/ic_icon_correct"
+
                                     style="@style/et_mentor_profile_step"
                                     />
 
+                                <!--  android:drawableEnd="@drawable/ic_icon_correct"
+                                회사명 성공적으로 가져오면 활성화 해주기 -->
                                 <!--  android:textAppearance="?android:attr/textAppearanceSmallInverse" -->
 
                             </LinearLayout>
@@ -238,6 +254,8 @@
                     app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
                     style="@style/tv_company_certification_des"
                     android:text="회사 인증이 완료되었습니다."
+
+                    android:visibility="invisible"
                     />
 
 
@@ -341,11 +359,11 @@
                                     android:background="@null"
                                     android:textAppearance="?android:attr/textAppearanceSmall"
                                     android:minHeight="2dp"
-                                    android:focusable="false"
-                                    android:enabled="false"
 
-                                    android:text="부서명"
-                                    android:drawableEnd="@drawable/ic_icon_correct"
+                                    android:hint="부서명"
+                                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                                    android:maxLines="1"
+
                                     style="@style/et_mentor_profile_step"
                                     />
 

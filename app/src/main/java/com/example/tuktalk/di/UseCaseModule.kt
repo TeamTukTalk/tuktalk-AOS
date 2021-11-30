@@ -1,6 +1,7 @@
 package com.example.tuktalk.di
 
 import com.example.tuktalk.domain.usecase.mentor.MentorEmailCertificationCheckUseCase
+import com.example.tuktalk.domain.usecase.mentor.MentorGetCompanyNameUseCase
 import com.example.tuktalk.domain.usecase.mentor.MentorSendEmailCertificationUseCase
 import com.example.tuktalk.domain.usecase.user.UserEmailCheckUseCase
 import com.example.tuktalk.domain.usecase.user.UserLoginUseCase
@@ -15,5 +16,6 @@ internal val useCaseModule = module {
 
     factory { MentorEmailCertificationCheckUseCase(get()) }
     factory { MentorSendEmailCertificationUseCase(get())}
+    factory { MentorGetCompanyNameUseCase(get()) }
 
 }

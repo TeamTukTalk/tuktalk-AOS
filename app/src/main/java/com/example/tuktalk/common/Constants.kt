@@ -17,6 +17,7 @@ object Constants {
     var USER_NICKNAME = ""
     var USER_PROFILE_IMAGE_COLOR = ""
     var USER_FIRST_LETTER = ""
+    var USER_EMAIL = ""
 
 
     var IS_CERTIFIED_MENTOR = false  // 멘토 기업메일 인증 여부

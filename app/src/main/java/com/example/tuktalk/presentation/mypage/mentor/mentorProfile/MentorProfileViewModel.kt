@@ -1,12 +1,19 @@
 package com.example.tuktalk.presentation.mypage.mentor.mentorProfile
 
+import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tuktalk.common.Constants
+import com.example.tuktalk.common.Constants_gitignore
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.CareerInput
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.SubSpecialitySelect
+import com.example.tuktalk.domain.usecase.mentor.MentorGetCompanyNameUseCase
 
-class MentorProfileViewModel: ViewModel() {
+class MentorProfileViewModel(
+    private val getMentorCompanyNameUseCase : MentorGetCompanyNameUseCase
+): ViewModel() {
     // step1
     var isIntroduceSimpleFilled = false
     var isIntroduceDetailFilled = false
@@ -119,16 +126,28 @@ class MentorProfileViewModel: ViewModel() {
 ////////////////////////////////////////////////////////////////////
 
     // step3
+
+    var isDepartmentFilled = false
     var isPositionFilled = false
     var isYearFilled = false
     var isMonthFilled = false
     var isMonthUnder12 = true
 
+    var progressBarStep3Visibility = MutableLiveData<Boolean>()  // 로딩 프로그레스바
+    var IsGetCompanyNameSuccess = MutableLiveData<Boolean>()
+
+    var COMPANY_NAME = ""
+    var DEPARTMENT = ""
     var YEAR = 0
     var MONTH = 0
     var POSITION = "" // 데이터
     var CAREER = CareerInput(0,0)  // 데이터
     var Step3Checked = MutableLiveData<Boolean>()
+
+    fun fillDepartment(flag: Boolean){
+        isDepartmentFilled = flag
+        checkStep3()
+    }
 
     fun fillPosition(flag: Boolean){
         isPositionFilled = flag
@@ -153,13 +172,47 @@ class MentorProfileViewModel: ViewModel() {
     }
 
     fun checkStep3(){
-        Step3Checked.value = (isYearFilled || isMonthFilled) && isMonthUnder12 && isPositionFilled && (MONTH>0 || YEAR>0)
+        Step3Checked.value = isDepartmentFilled && (isYearFilled || isMonthFilled) && isMonthUnder12 && isPositionFilled && (MONTH>0 || YEAR>0)
     }
 
     fun setCareer(){
         CAREER.years = YEAR
         CAREER.months = MONTH
     }
+
+    // 멘토 회사 이름 가져오기
+    @SuppressLint("CheckResult")
+    fun getMentorCompnayName(){
+        progressBarStep3Visibility.value = true
+
+        getMentorCompanyNameUseCase.getMentorCompanyName(Constants_gitignore.USER_TOKEN, Constants.USER_EMAIL).subscribe(
+            {
+                if(it.code() == 200){
+                    Log.e("AppTest", "MentorProfileViewModel/ 회사 이름 가져오기 성공")
+
+                    COMPANY_NAME = it.body()!!.companyName
+                    IsGetCompanyNameSuccess.value = true
+
+                    Log.e("AppTest", "회사 이름 : ${COMPANY_NAME}")
+
+                }
+                else{
+                    Log.e("AppTest", "MentorProfileViewModel/ 회사 이름 가져오기 실패, status code : ${it.code()}")
+                    IsGetCompanyNameSuccess.value = false
+                    COMPANY_NAME = ""
+                }
+
+                progressBarStep3Visibility.value = false
+            },
+            {
+                throwable -> Log.e("AppTest", "login error ${throwable}")
+                progressBarStep3Visibility.value = false
+                IsGetCompanyNameSuccess.value = false
+                COMPANY_NAME = ""
+            }
+        )
+    }
+
 
 ///////////////////////////////////////////////////////////////
 

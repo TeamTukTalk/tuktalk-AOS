@@ -44,7 +44,8 @@ class MentorRegistStep1Fragment: Fragment() {
             }
         })
 
-        binding.etDepartmentName.setOnFocusChangeListener(View.OnFocusChangeListener { view, focused ->
+        // 부서명 우선 제외
+        /*binding.etDepartmentName.setOnFocusChangeListener(View.OnFocusChangeListener { view, focused ->
             if(focused){
                 Log.e("AppTest","et department focused")
                 binding.etDepartmentName.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.tuktalk_primary)
@@ -54,7 +55,7 @@ class MentorRegistStep1Fragment: Fragment() {
                 Log.e("AppTest","et department focus x")
                 binding.etDepartmentName.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.tuktalk_gray1)
             }
-        })
+        })*/
 
         ///////////////////////
 
@@ -81,7 +82,7 @@ class MentorRegistStep1Fragment: Fragment() {
             }
         })
 
-        binding.etDepartmentName.addTextChangedListener(object: TextWatcher{
+        /*binding.etDepartmentName.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -102,7 +103,7 @@ class MentorRegistStep1Fragment: Fragment() {
 
             }
 
-        })
+        })*/
 
         ////////////
         // 다음 버튼 클릭 시 step2 로 가야함
@@ -113,8 +114,20 @@ class MentorRegistStep1Fragment: Fragment() {
 
     }
 
-    fun fillCheck(){
+    /*fun fillCheck(){
         if(isCompanyFilled && isDeparmentFilled){  // 다음 버튼 활성화
+            binding.btnNextActive.visibility = View.VISIBLE
+            binding.btnNextInactive.visibility = View.INVISIBLE
+        }
+        else{
+            binding.btnNextActive.visibility = View.INVISIBLE
+            binding.btnNextInactive.visibility = View.VISIBLE
+        }
+    }*/
+
+    // 현재 부서명 제외,  회사 입력되었는지만 판단
+    fun fillCheck(){
+        if(isCompanyFilled){
             binding.btnNextActive.visibility = View.VISIBLE
             binding.btnNextInactive.visibility = View.INVISIBLE
         }
