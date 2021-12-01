@@ -6,13 +6,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.common.Constants_gitignore
+import com.example.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDto
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.CareerInput
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.SubSpecialitySelect
 import com.example.tuktalk.domain.usecase.mentor.MentorGetCompanyNameUseCase
+import com.example.tuktalk.domain.usecase.mentor.MentorRegistProfileUseCase
 
 class MentorProfileViewModel(
-    private val getMentorCompanyNameUseCase : MentorGetCompanyNameUseCase
+    private val getMentorCompanyNameUseCase : MentorGetCompanyNameUseCase,
+    private val registMentorProfileUseCase : MentorRegistProfileUseCase
 ): ViewModel() {
     // step1
     var isIntroduceSimpleFilled = false
@@ -123,6 +126,12 @@ class MentorProfileViewModel(
             SUBSPECIALITY_LIST.add(ld_sub_speciality_3.value!!)
     }
 
+    // step3에서 stpe2로 되돌아 가는 경우 리스트에 들어있는 값 없애주기!!!
+    fun clearSubSpecialityList(){
+        Log.e("AppTest", "상세분야 리스트 초기화! / 중복방지")
+        SUBSPECIALITY_LIST.clear()
+    }
+
 ////////////////////////////////////////////////////////////////////
 
     // step3
@@ -230,6 +239,9 @@ class MentorProfileViewModel(
     var COMPANY_SIZE = ""  // 데이터
     var HASHTAGS_LIST = ArrayList<HashTag>()  // 데이터
 
+    var Regist_Mentor_Profile_Success = MutableLiveData<Boolean>()  // 멘토 프로필 등록 성공했는 지
+    var progressBarStep5Visibility = MutableLiveData<Boolean>()  // 로딩 프로그레스바
+
     var isCompanySizeSelected = false
     var isDesignHashTagSuggestSelected = false
     var isItHashTagSuggestSelected = false
@@ -276,8 +288,47 @@ class MentorProfileViewModel(
 
     ///////////////////////////////////////////////////////////////////////////////
     // step1 ~ step5 데이터로 멘토 프로필 등록 통신!
+    @SuppressLint("CheckResult")
     fun registMentorProfile(){
 
+        var mentorProfile = MentorProfileRequestDto(Constants.USER_NICKNAME, SIMPLE_INTRODUCTION, DETAILED_INTRODUCTION,
+        SPECIALITY, SUBSPECIALITY_LIST, COMPANY_NAME, DEPARTMENT, POSITION, CAREER,
+        CAREER_DESCRIPTION, COMPANY_SIZE, HASHTAGS_LIST)
+
+        progressBarStep5Visibility.value = true
+
+        registMentorProfileUseCase.registMentorProfile(Constants_gitignore.USER_TOKEN, mentorProfile).subscribe(
+                {
+                    if(it.code() == 201){
+
+                        if(it.body()?.mentorId == null){ // 프로필 등록 실패
+                            Regist_Mentor_Profile_Success.value = false
+                        }
+                        else{ // 프로필 등록 성공
+                            Constants.CURRENT_MENTOR_ID = it.body()!!.mentorId
+                            Log.e("AppTest", "MentorProfileViewModel/ 멘토 프로필 등록 성공 " +
+                                    "멘토 id : ${Constants.CURRENT_MENTOR_ID}")
+
+                            Regist_Mentor_Profile_Success.value = true
+                        }
+
+                    }
+                    else{
+                        Log.e("AppTest", "MentorProfileViewModel/ 프로필 등록 실패 " +
+                                "status:${it.code()} ")
+
+                        Regist_Mentor_Profile_Success.value = false
+                    }
+
+                    progressBarStep5Visibility.value = false
+                },
+                {
+                    throwable -> Log.e("AppTest", "login error ${throwable}")
+
+                    progressBarStep5Visibility. value = false
+                    Regist_Mentor_Profile_Success.value = false
+                }
+        )
     }
 
 }

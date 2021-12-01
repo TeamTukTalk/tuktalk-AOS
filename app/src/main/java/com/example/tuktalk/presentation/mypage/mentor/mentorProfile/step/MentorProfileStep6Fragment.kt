@@ -30,7 +30,7 @@ class MentorProfileStep6Fragment: Fragment(){
     private val viewModel : MentorProfileViewModel by sharedViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.e("AppTest", "mentor profile step1 fragment onCreateView")
+        Log.e("AppTest", "mentor profile step6 fragment onCreateView")
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mentor_profile_step6, container, false)
         return binding.root
@@ -42,7 +42,8 @@ class MentorProfileStep6Fragment: Fragment(){
 
         // 프로필 등록 완료시 마이페이지 첫 화면 가기 설정 하기
        binding.btnComplete.setOnClickListener {
-
+           Log.e("AppTest", "MentorProfileStep6Fragment/  등록 완료 화면 -> 마이페이지 첫 화면 돌아가기")
+           activity?.finish()
         }
 
     }

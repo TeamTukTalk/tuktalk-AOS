@@ -52,6 +52,8 @@
 
 
 
+
+
                 <View
                     android:id="@+id/view_1"
                     android:layout_width="match_parent"
@@ -433,6 +435,7 @@
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_7"
                     app:layout_constraintDimensionRatio="360:18"/>
+
 
         <ProgressBar
             android:id="@+id/loading_progressBar"
@@ -2460,56 +2463,58 @@
             android:id="@+id/view_10"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_9"
-            app:layout_constraintDimensionRatio="360:50"/>
+            app:layout_constraintDimensionRatio="360:50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_9" />
 
-      <!--  <View
-            android:id="@+id/view_11"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_10"
-            app:layout_constraintDimensionRatio="360:52"/>
+        <!--  <View
+              android:id="@+id/view_11"
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              app:layout_constraintTop_toBottomOf="@id/view_10"
+              app:layout_constraintDimensionRatio="360:52"/>
 
-        <View
-            android:id="@+id/view_12"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_11"
-            app:layout_constraintDimensionRatio="360:15"/>
+          <View
+              android:id="@+id/view_12"
+              android:layout_width="match_parent"
+              android:layout_height="0dp"
+              app:layout_constraintTop_toBottomOf="@id/view_11"
+              app:layout_constraintDimensionRatio="360:15"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_goto_step6_unactive"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_10"
-            app:layout_constraintBottom_toBottomOf="@id/view_11"
-            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
-            app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+          <com.google.android.material.button.MaterialButton
+              android:id="@+id/btn_goto_step6_unactive"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              app:layout_constraintTop_toBottomOf="@id/view_10"
+              app:layout_constraintBottom_toBottomOf="@id/view_11"
+              app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+              app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
 
-            android:text="등록하기"
-            android:textColor="@color/tuktalk_sub_content_4"
-            android:backgroundTint="@color/tuktalk_gray_4"
-            app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
+              android:text="등록하기"
+              android:textColor="@color/tuktalk_sub_content_4"
+              android:backgroundTint="@color/tuktalk_gray_4"
+              app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
 
-            android:enabled="false"
-            />
+              android:enabled="false"
+              />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_goto_step6_active"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_10"
-            app:layout_constraintBottom_toBottomOf="@id/view_11"
-            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
-            app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+          <com.google.android.material.button.MaterialButton
+              android:id="@+id/btn_goto_step6_active"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              app:layout_constraintTop_toBottomOf="@id/view_10"
+              app:layout_constraintBottom_toBottomOf="@id/view_11"
+              app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+              app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
 
-            android:text="등록하기"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/tuktalk_primary"
-            app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
+              android:text="등록하기"
+              android:textColor="@color/white"
+              android:backgroundTint="@color/tuktalk_primary"
+              app:shapeAppearanceOverlay="@style/buttonRadiusShape2"
 
-            android:visibility="invisible"
-            />-->
+              android:visibility="invisible"
+              />-->
 
 
              </androidx.constraintlayout.widget.ConstraintLayout>

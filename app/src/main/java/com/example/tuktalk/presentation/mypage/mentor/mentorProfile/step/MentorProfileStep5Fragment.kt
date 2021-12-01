@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.tuktalk.R
@@ -31,7 +32,8 @@ class MentorProfileStep5Fragment: Fragment(){
 
     // 디자인 추천 해시태그
     private var isDesignHashTagSelected = Array<Boolean>(17) { false }
-    private var designHashTagList = arrayOf("이직", "외국계", "주니어", "시니어", "합격포트폴리오", "비전공자", "실무", "피드백", "GUI", "UX", "기업문화",
+    private var designHashTagList = arrayOf("이직", "외국계", "주니어", "시니어",
+            "합격포트폴리오", "비전공자", "실무", "피드백", "GUI", "UX", "기업문화",
             "진로고민", "노하우", "업무체계", "상담", "프로덕트디자인", "캐릭터")
     private var designHashTagCvList = arrayOfNulls<MaterialCardView>(17)
     private var designHashTagTvList = arrayOfNulls<TextView>(17)
@@ -40,7 +42,8 @@ class MentorProfileStep5Fragment: Fragment(){
 
     // IT/개발 추천 해시태그
     private var isItHashTagSelected = Array<Boolean>(19) { false }
-    private var itHashTagList = arrayOf("이직", "외국계", "주니어", "시니어", "합격포트폴리오", "비전공자", "실무", "진로고민", "노하우",
+    private var itHashTagList = arrayOf("이직", "외국계", "주니어", "시니어", "합격포트폴리오", "비전공자", "실무",
+            "진로고민", "노하우",
             "코딩테스트", "채용담당", "기업문화", "프로젝트", "면접", "공채", "수시채용", "CTO", "알고리즘", "풀스택")
     private var itHashTagCvList = arrayOfNulls<MaterialCardView>(19)
     private var itHashTagTvList = arrayOfNulls<TextView>(19)
@@ -183,7 +186,10 @@ class MentorProfileStep5Fragment: Fragment(){
         })
 
         binding.btnGotoStep6Active.setOnClickListener {
+
+            // 선택된 해시태그 정리
             setHashTagList()
+
             Log.e("AppTest", "멘토 프로필 등록 최종 데이터 확인\n" +
                     "nickname : ${Constants.USER_NICKNAME}\n" +
                     "simpleIntroduction : ${viewModel.SIMPLE_INTRODUCTION}\n" +
@@ -199,8 +205,32 @@ class MentorProfileStep5Fragment: Fragment(){
                     "hashTags : ${viewModel.HASHTAGS_LIST}")
 
             // step6로 이동하기 -> 멘토 프로필 통신 후 결과 성공 시 step6 이동으로 변경하기
-            (activity as MentorProfileActivity).goToStep6()
+            //(activity as MentorProfileActivity).goToStep6()
+
+            // 멘토 프로필 등록 통신 시작
+            viewModel.registMentorProfile()
         }
+
+        ////////////
+        // 멘토 프로필 등록 성공 감지
+        viewModel.Regist_Mentor_Profile_Success.observe(viewLifecycleOwner, {
+            if(it){
+                Log.e("AppTest", "멘토 프로필등록 성공 후 완료화면으로 이동!")
+                (activity as MentorProfileActivity).goToStep6()  // step6 로 이동
+            }
+            else{
+                Log.e("AppTest", "멘토 프로필 등록 실패")
+                Toast.makeText(context, "프로필 등록에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        // 통신 로딩 프로그레스 바
+        viewModel.progressBarStep5Visibility.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
+        })
 
     }
 

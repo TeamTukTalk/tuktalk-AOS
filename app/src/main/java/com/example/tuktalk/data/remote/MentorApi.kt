@@ -1,15 +1,12 @@
 package com.example.tuktalk.data.remote
 
-import com.example.tuktalk.common.Constants_gitignore
-import com.example.tuktalk.data.remote.dto.response.MentorCompanyNameResponseDto
-import com.example.tuktalk.data.remote.dto.response.MentorEmailCertificationResponseDto
-import com.example.tuktalk.data.remote.dto.response.UserEmailCheckDto
+import com.example.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDto
+import com.example.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
+import com.example.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
+import com.example.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
 import io.reactivex.Single
 import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface MentorApi {
 
@@ -33,4 +30,12 @@ interface MentorApi {
         @Header("Authorization")userToken: String,
         @Query("email") userEmail: String
     ): Single<Response<MentorCompanyNameResponseDto>>
+
+
+    // 멘토 프로필 등록하기
+    @POST("api/mentors")
+    fun registMentorProfile(
+            @Header("Authorization")userToken: String,
+            @Body mentorProfile : MentorProfileRequestDto
+    ):Single<Response<MentorProfileResponseDto>>
 }

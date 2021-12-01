@@ -117,6 +117,7 @@
 
                 <!-- vertical end-->
 
+
                 <View
                     android:id="@+id/view_1"
                     android:layout_width="match_parent"
@@ -199,6 +200,19 @@
                     app:layout_constraintRight_toRightOf="parent"
 
                     android:overScrollMode="never"/>
+
+                <ProgressBar
+                    android:id="@+id/loading_progressBar_top5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/view_4"
+                    app:layout_constraintBottom_toBottomOf="@id/view_5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    android:indeterminateTint="@color/tuktalk_loading_spinner"
+                    android:visibility="invisible"
+                    />
 
 
 
@@ -374,6 +388,19 @@
                     app:layout_constraintRight_toRightOf="parent"
 
                     android:overScrollMode="never"/>
+
+                <ProgressBar
+                    android:id="@+id/loading_progressBar_by_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/view_11"
+                    app:layout_constraintBottom_toBottomOf="@id/view_12"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+
+                    android:indeterminateTint="@color/tuktalk_loading_spinner"
+                    android:visibility="invisible"
+                    />
 
                 <View
                     android:id="@+id/view_13"

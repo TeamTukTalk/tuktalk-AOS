@@ -1,4 +1,4 @@
-package com.example.tuktalk.data.remote.dto.response
+package com.example.tuktalk.data.remote.dto.response.home
 
 import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.google.gson.annotations.SerializedName

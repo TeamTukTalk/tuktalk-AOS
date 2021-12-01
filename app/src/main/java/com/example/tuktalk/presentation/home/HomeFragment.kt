@@ -16,24 +16,23 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.common.utils.HorizontalItemDecorator
+import com.example.tuktalk.data.remote.dto.response.home.Top5MentorResponseDto
 import com.example.tuktalk.databinding.FragmentHomeBinding
 import com.example.tuktalk.domain.model.home.ByTaskMentorRVitem
 import com.example.tuktalk.domain.model.home.HomeTop5MentorRVitem
 import com.example.tuktalk.domain.model.home.RealTimeMenteeReviewRVitem
-import com.example.tuktalk.presentation.home.adapter.BannerVP2Adpater
 import com.example.tuktalk.presentation.home.adapter.ByTaskMentorRVAdpater
 import com.example.tuktalk.presentation.home.adapter.RealTimeMenteeReviewRVAdpater
 import com.example.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
 import com.example.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity
 import com.example.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity
-import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
-import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.google.android.material.card.MaterialCardView
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment: Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModel()
 
     private lateinit var callback: OnBackPressedCallback  // 프래그먼트에서 뒤로가기 처리하기 위함
 
@@ -42,7 +41,7 @@ class HomeFragment: Fragment() {
 
     lateinit var rvAdapter_top5: Top5MentorRVAdpater
     lateinit var rvAdapter_byTask : ByTaskMentorRVAdpater
-    private var testDataSet_top5 = mutableListOf<HomeTop5MentorRVitem>()
+    private var testDataSet_top5 = mutableListOf<Top5MentorResponseDto>()
     private var testDataSet_byTask = mutableListOf<ByTaskMentorRVitem>()
 
     // 현재는 실시간 멘티 후기x
@@ -97,6 +96,9 @@ class HomeFragment: Fragment() {
         binding.vp2HomeTopBanner.orientation = ViewPager2.ORIENTATION_HORIZONTAL*/
         ///////////////////////////////////////////////////////////////////////////////////
 
+        // top5 멘토 리스트 통신
+        viewModel.getTop5MentorList()
+
         // Top5 멘토 recycler view  // 멘토 이동 보완하기
         rvAdapter_top5 = Top5MentorRVAdpater(testDataSet_top5,
         selectMentor = {
@@ -110,24 +112,25 @@ class HomeFragment: Fragment() {
         binding.rvTop5Mentor.adapter = rvAdapter_top5
         binding.rvTop5Mentor.addItemDecoration(HorizontalItemDecorator(12))
 
-        testDataSet_top5.apply{ // 임시 데이터
-            add(HomeTop5MentorRVitem(1, "리즈", "네이버", "UIUX 디자인",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
+        viewModel.Get_top5_mentorList_Success.observe(viewLifecycleOwner, {
+            if(it){
+                Log.e("AppTest", "HomeFragment/ top5 리스트 조회 성공 -> RV 업데이트")
+                rvAdapter_top5.updateList(viewModel.Top5_Mentor_List)
+            }
+            else{
+                Log.e("AppTest", "HomeFragment/ top5 리스트 조회 실패")
+            }
+        })
 
-            add(HomeTop5MentorRVitem(1, "제이슨", "카카오", "앱 개발",
-                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
-                    2))
-            add(HomeTop5MentorRVitem(1, "브라이언", "쿠팡", "UIUX 디자인",
-                    "#테스트 #테스트개행테스트띄어쓰기없이" +
-                            "",
-                    2))
-            add(HomeTop5MentorRVitem(1, "제이슨", "네이버", "웹 개발",
-                    "#안녕하세요 #안녕 #긴해쉬태그테스트입니다",
-                    2))
-        }
-        rvAdapter_top5.updateList(testDataSet_top5)
-        rvAdapter_top5.notifyDataSetChanged()
+        viewModel.progressBarVisibility_top5.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBarTop5.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarTop5.visibility = View.INVISIBLE
+        })
+
+
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // 직무별 뚝딱멘토

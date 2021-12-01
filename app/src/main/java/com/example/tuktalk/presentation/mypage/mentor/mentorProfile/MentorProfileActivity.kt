@@ -24,7 +24,7 @@ class MentorProfileActivity: AppCompatActivity() {
     private lateinit var binding : ActivityMentorProfileBinding
     private val viewModel : MentorProfileViewModel by viewModel()
 
-    var PROFILE_STEP = 1
+    var PROFILE_STEP = 1  // 등록 단계별로 변한다
     private var progressPosition = 1
 
     val step1Fragment = MentorProfileStep1Fragment()
@@ -140,6 +140,9 @@ class MentorProfileActivity: AppCompatActivity() {
 
         PROFILE_STEP = 2
         animateProgress(2)
+
+        // 리스트에 값 중복으로 추가되는 것 방지
+        viewModel.clearSubSpecialityList()
     }
 
     fun goToStep3(){
@@ -295,7 +298,7 @@ class MentorProfileActivity: AppCompatActivity() {
             goToStep4()
         }
         if(PROFILE_STEP == 6){
-            goToStep5()
+            // 등록 완료 화면 뒤로가기 막기
         }
     }
 }
