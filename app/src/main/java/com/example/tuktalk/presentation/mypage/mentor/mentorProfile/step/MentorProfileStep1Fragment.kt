@@ -38,6 +38,11 @@ class MentorProfileStep1Fragment: Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 프로필 배경색 & 닉네임 첫 글자 설정하기
+        binding.tvProfileFirstLetter.text = Constants.USER_FIRST_LETTER
+        setProfileBackGroundColor()
+        //////////////////////////////////////////////////////////////
+
         // 닉네임은 가져오기
         binding.etNickname.setText(Constants.USER_NICKNAME)  // edittext의 경우 text= 형태가 아닌 setText로 텍스트 값 할당!
 
@@ -152,5 +157,31 @@ class MentorProfileStep1Fragment: Fragment(){
         Log.e("AppTest", "mentor profile step1 fragment onResume")
     }
 
+
+    // "profileBlue","profileRed", "profileYellow", "profileGray", "profileGreen"
+    fun setProfileBackGroundColor(){
+        when(Constants.USER_PROFILE_IMAGE_COLOR){
+            "profileBlue" -> {
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_blue)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileBlue_text))
+            }
+            "profileRed"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_red)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileRed_text))
+            }
+            "profileYellow"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_yellow)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileYellow_text))
+            }
+            "profileGray"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_gray)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileGray_text))
+            }
+            "profileGreen"->{
+                binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_green)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileGreen_text))
+            }
+        }
+    }
 
 }

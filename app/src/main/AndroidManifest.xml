@@ -60,6 +60,14 @@
         <activity android:name=".presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".presentation.mypage.mentee.menteeProfile.MenteeProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".presentation.signup.info.terms.TermsActivity"
+            android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

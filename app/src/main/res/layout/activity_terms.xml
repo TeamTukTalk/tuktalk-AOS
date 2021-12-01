@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_4.44"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.0444"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_95.56"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.9556"/>
+
+
+
+        <!-- Tool bar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:contentInsetStartWithNavigation="0dp"
+            android:background="@color/white"
+            app:titleTextColor="@color/black"
+            style="@style/ToolbarStyle.Dark"
+            />
+
+        <!--///////// -->
+
+        <!-- ch1 title main -->
+        <LinearLayout
+            android:id="@+id/ll_ch_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:orientation="vertical"
+            android:weightSum="56"
+
+            app:layout_constraintDimensionRatio="360:56">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="17"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="22"
+                android:orientation="horizontal"
+                android:weightSum="360">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="16"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="294"
+                    android:text="@string/tv_terms_ch_1"
+                    style="@style/tv_terms_main_title"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="16"/>
+
+                <ImageView
+                    android:id="@+id/iv_ch1_arrow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="13"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_terms_arrow_down"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="21"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="17"/>
+        </LinearLayout>
+
+        <!-- ch1 내부 start -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_content_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_ch_1"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:visibility="gone">
+
+
+                    <!-- /////////////////////// -->
+
+                    <!-- 1set -->
+                    <TextView
+                        android:id="@+id/tv_sub_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_1"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_1"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_1"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_1"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_1"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 2set -->
+                    <TextView
+                        android:id="@+id/tv_sub_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_1"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_2"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_2"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_2"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_2"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 3set -->
+                    <TextView
+                        android:id="@+id/tv_sub_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_2"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_3"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_3"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_3"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_3"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_3"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 4set -->
+                    <TextView
+                        android:id="@+id/tv_sub_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_3"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_4"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_4"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_4"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_4"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_4"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 5set -->
+                    <TextView
+                        android:id="@+id/tv_sub_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_4"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_5"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_5"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_5"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_5"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_5"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 6 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_5"
+                        app:layout_constraintDimensionRatio="328:20"
+
+                        android:text="@string/tv_terms_article_6"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_6"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_6"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_6"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_6"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 7 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_6"
+                        app:layout_constraintDimensionRatio="328:20"
+
+                        android:text="@string/tv_terms_article_7"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_7"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_7"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_7"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_7"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 8 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_7"
+                        app:layout_constraintDimensionRatio="328:20"
+
+                        android:text="@string/tv_terms_article_8"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_8"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_8"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_8"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_8"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- ch1 내부  end-->
+
+                <!-- ch2 title main -->
+                <LinearLayout
+                    android:id="@+id/ll_ch_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cl_content_1"
+                    android:orientation="vertical"
+                    android:weightSum="56"
+
+                    app:layout_constraintDimensionRatio="360:56">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:orientation="horizontal"
+                        android:weightSum="360">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <TextView
+                            android:id="@+id/tv_ch_2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="294"
+                            android:text="@string/tv_terms_ch_2"
+                            style="@style/tv_terms_main_title"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <ImageView
+                            android:id="@+id/iv_ch2_arrow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="13"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_terms_arrow_down"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="21"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+                </LinearLayout>
+
+                <!-- ch2 내부 start  9조~12조 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_content_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_ch_2"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:visibility="gone">
+
+
+                    <!-- /////////////////////// -->
+
+                    <!-- 9set -->
+                    <TextView
+                        android:id="@+id/tv_sub_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_9"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_9"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_9"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_9"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_9"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 10 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_9"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_10"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_10"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_10"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_10"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_10"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 11 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_10"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_11"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_11"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_11"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_11"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_11"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 12 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_11"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_12"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_12"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_12"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_12"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_12"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- ch2 내부  end-->
+
+                <!-- ch3 title main -->
+                <LinearLayout
+                    android:id="@+id/ll_ch_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cl_content_2"
+                    android:orientation="vertical"
+                    android:weightSum="56"
+
+                    app:layout_constraintDimensionRatio="360:56">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:orientation="horizontal"
+                        android:weightSum="360">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <TextView
+                            android:id="@+id/tv_ch_3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="294"
+                            android:text="@string/tv_terms_ch_3"
+                            style="@style/tv_terms_main_title"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <ImageView
+                            android:id="@+id/iv_ch3_arrow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="13"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_terms_arrow_down"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="21"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+                </LinearLayout>
+
+                <!-- ch3 내부 start  13조~20조 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_content_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_ch_3"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:visibility="gone">
+
+
+                    <!-- /////////////////////// -->
+
+                    <!-- 13 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_13"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_13"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_13"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_13"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_13"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 14 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_13"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_14"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_14"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_14"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_14"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_14"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 15 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_14"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_15"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_15"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_15"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_15"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_15"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_15"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 16 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_15"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_16"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_16"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_16"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_16"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_16"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_16"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 17 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_16"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_17"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_17"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_17"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_17"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_17"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 18 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_17"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_18"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_18"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_18"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_18"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_18"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_18"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 19 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_18"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_19"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_19"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_19"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_19"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_19"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 20 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_19"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_20"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_20"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_20"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_20"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_20"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_20"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- ch3 내부  end-->
+
+
+                <!-- ch4 title main -->
+                <LinearLayout
+                    android:id="@+id/ll_ch_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cl_content_3"
+                    android:orientation="vertical"
+                    android:weightSum="56"
+
+                    app:layout_constraintDimensionRatio="360:56">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:orientation="horizontal"
+                        android:weightSum="360">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <TextView
+                            android:id="@+id/tv_ch_4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="294"
+                            android:text="@string/tv_terms_ch_4"
+                            style="@style/tv_terms_main_title"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <ImageView
+                            android:id="@+id/iv_ch4_arrow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="13"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_terms_arrow_down"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="21"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+                </LinearLayout>
+
+                <!-- ch4 내부 start  21조 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_content_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_ch_4"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:visibility="gone">
+
+
+                    <!-- /////////////////////// -->
+
+                    <!-- 21 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_21"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_21"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_21"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_21"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_21"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_21"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_21"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_21"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- ch4 내부  end-->
+
+
+                <!-- ch5 title main -->
+                <LinearLayout
+                    android:id="@+id/ll_ch_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cl_content_4"
+                    android:orientation="vertical"
+                    android:weightSum="56"
+
+                    app:layout_constraintDimensionRatio="360:56">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:orientation="horizontal"
+                        android:weightSum="360">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <TextView
+                            android:id="@+id/tv_ch_5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="294"
+                            android:text="@string/tv_terms_ch_5"
+                            style="@style/tv_terms_main_title"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <ImageView
+                            android:id="@+id/iv_ch5_arrow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="13"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_terms_arrow_down"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="21"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+                </LinearLayout>
+
+                <!-- ch5 내부 start  22조~26조 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_content_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_ch_5"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:visibility="gone">
+
+
+                    <!-- /////////////////////// -->
+
+                    <!-- 22 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_22"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_22"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_22"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_22"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_22"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_22"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_22"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_22"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 23 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_23"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_22"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_23"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_23"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_23"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_23"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_23"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_23"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_23"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 24 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_24"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_23"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_24"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_24"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_24"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_24"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_24"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_24"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_24"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 25 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_25"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_24"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_25"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_25"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_25"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_25"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_25"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_25"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_25"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                    <!-- 26 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_26"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/view_between_1_25"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_26"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_26"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_26"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_26"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_26"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_26"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_26"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- ch5 내부  end-->
+
+
+                <!-- ch6 title main -->
+                <LinearLayout
+                    android:id="@+id/ll_ch_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cl_content_5"
+                    android:orientation="vertical"
+                    android:weightSum="56"
+
+                    app:layout_constraintDimensionRatio="360:56">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="22"
+                        android:orientation="horizontal"
+                        android:weightSum="360">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <TextView
+                            android:id="@+id/tv_ch_6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="294"
+                            android:text="@string/tv_terms_ch_6"
+                            style="@style/tv_terms_main_title"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="16"/>
+
+                        <ImageView
+                            android:id="@+id/iv_ch6_arrow"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="13"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_terms_arrow_down"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="21"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"/>
+                </LinearLayout>
+
+                <!-- ch6 내부 start  27조 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_content_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/ll_ch_6"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+                    android:visibility="gone">
+
+
+                    <!-- /////////////////////// -->
+
+                    <!-- 27 set -->
+                    <TextView
+                        android:id="@+id/tv_sub_27"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintDimensionRatio="328:20"
+                        android:text="@string/tv_terms_article_27"
+                        style="@style/tv_terms_sub_title"/>
+
+                    <View
+                        android:id="@+id/view_1_27"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_sub_27"
+                        app:layout_constraintDimensionRatio="328:4"/>
+
+                    <TextView
+                        android:id="@+id/tv_article_27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/view_1_27"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+
+                        android:text="@string/tv_terms_content_27"
+                        style="@style/tv_terms_contents"/>
+
+                    <View
+                        android:id="@+id/view_between_1_27"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toBottomOf="@id/tv_article_27"
+                        app:layout_constraintDimensionRatio="328:20"/>
+
+                    <!-- -->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- ch6 내부  end-->
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -19,6 +19,7 @@ import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
 import com.example.tuktalk.databinding.ActivityInfoRegistBinding
 import com.example.tuktalk.presentation.signup.complete.SignUpCompleteActivity
 import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
+import com.example.tuktalk.presentation.signup.info.terms.TermsActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class InfoRegistActivity: AppCompatActivity() {
@@ -359,6 +360,14 @@ class InfoRegistActivity: AppCompatActivity() {
                 startActivity(intent)
             }
         })
+
+        ////////////////////////
+
+        // 약관 확인하기
+        binding.tvCheckTerms.setOnClickListener {
+            val intent = Intent(this, TermsActivity::class.java)
+            startActivity(intent)
+        }
 
         /////////////////////////////
         // loading progressbar 처리

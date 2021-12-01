@@ -114,7 +114,8 @@ class InfoRegistViewModel(
                             Constants.USER_MODE = 1  // 멘티
 
                         Log.e("AppTest", "InfoRegistViewModel/ 회원가입 성공!" +
-                                "usertoken : ${Constants_gitignore.USER_TOKEN}  nickname : ${Constants.USER_NICKNAME}" +
+                                "usertoken : ${Constants_gitignore.USER_TOKEN}\n" +
+                                "nickname : ${Constants.USER_NICKNAME}" +
                                 "  profilecolor : ${Constants.USER_PROFILE_IMAGE_COLOR}  firstletter : ${Constants.USER_FIRST_LETTER},\n " +
                                 "역할 : ${it.body()!!.role} = 유저모드 : ${Constants.USER_MODE}, \n" +
                                 "유저이메일 : ${Constants.USER_EMAIL}")

@@ -2,6 +2,8 @@ package com.example.tuktalk.di
 
 import com.example.tuktalk.presentation.login.LoginViewModel
 import com.example.tuktalk.presentation.main.MainActivityViewModel
+import com.example.tuktalk.presentation.mypage.mentee.menteeProfile.MenteeProfileViewModel
+import com.example.tuktalk.presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioViewModel
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewModel
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
 import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistViewModel
@@ -15,10 +17,16 @@ internal val viewModelModule = module {
     viewModel { InfoRegistViewModel(get(), get()) }
     viewModel { LoginViewModel(get())}
     viewModel { MentorRegistViewModel(get(), get()) }
+
     viewModel { MentorProfileViewModel(get()) }
+    viewModel { MenteeProfileViewModel() }
+
     viewModel { MentorInfoViewModel() }
     viewModel { RegistPortfolioViewModel() }
 
+    viewModel { MenteeRecentPortfolioViewModel() }
+
     viewModel { MainActivityViewModel(get()) }
+
 
 }

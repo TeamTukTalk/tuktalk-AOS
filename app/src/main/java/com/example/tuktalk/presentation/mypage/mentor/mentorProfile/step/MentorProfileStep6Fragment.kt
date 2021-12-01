@@ -40,6 +40,10 @@ class MentorProfileStep6Fragment: Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
 
+        // 프로필 등록 완료시 마이페이지 첫 화면 가기 설정 하기
+       binding.btnComplete.setOnClickListener {
+
+        }
 
     }
 

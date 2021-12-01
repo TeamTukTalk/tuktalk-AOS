@@ -27,6 +27,8 @@ class LoginActivity: AppCompatActivity() {
     private var ID = ""
     private var PASSWORD = ""
 
+    private var IS_KEYBOARD_UP = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,13 +39,13 @@ class LoginActivity: AppCompatActivity() {
         // 로그인 activity 오른쪽에서 왼쪽으로 나타나는 애니메이션 적용
         overridePendingTransition(R.anim.slide_right_enter, R.anim.none)
 
-        // edit text 외부 터치 시 키보드 내려가게 하기
-        binding.clAll.setOnTouchListener(object: View.OnTouchListener{
+        // edit text 외부 터치 시 키보드 내려가게 하기 -> 특정 경우 null point error 발생 가능,  우선 막아두기
+      /*  binding.clAll.setOnTouchListener(object: View.OnTouchListener{
             override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
                 hideKeyboard()
                 return false
             }
-        })
+        })*/
 
 
         // 아이디 입력 시 edittext 색상 변경
@@ -52,6 +54,8 @@ class LoginActivity: AppCompatActivity() {
                Log.e("AppTest", "et id focused")
                binding.etId.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.tuktalk_primary)
                //binding.etId.error = "error test"
+
+               IS_KEYBOARD_UP = true
            } else {
                Log.e("AppTest", "et id focus x")
                binding.etId.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.tuktalk_gray1)
@@ -102,6 +106,8 @@ class LoginActivity: AppCompatActivity() {
                 Log.e("AppTest", "et pw focused")
                 binding.etPw.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.tuktalk_primary)
                 //binding.etId.error = "error test"
+
+                IS_KEYBOARD_UP = true
             } else {
                 Log.e("AppTest", "et pw focus x")
                 binding.etPw.backgroundTintList = ContextCompat.getColorStateList(applicationContext, R.color.tuktalk_gray1)
@@ -176,7 +182,10 @@ class LoginActivity: AppCompatActivity() {
 
     // edit text 외부 터치 시 키보드 내려가게
     fun hideKeyboard() {
-        val inputManager: InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        if(IS_KEYBOARD_UP){
+            val inputManager: InputMethodManager = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputManager.hideSoftInputFromWindow(this.currentFocus!!.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+            IS_KEYBOARD_UP = false
+        }
     }
 }
