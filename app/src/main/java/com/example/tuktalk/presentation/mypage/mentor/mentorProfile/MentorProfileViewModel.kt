@@ -274,4 +274,10 @@ class MentorProfileViewModel(
         HASHTAGS_LIST.add(hashTag)
     }
 
+    ///////////////////////////////////////////////////////////////////////////////
+    // step1 ~ step5 데이터로 멘토 프로필 등록 통신!
+    fun registMentorProfile(){
+
+    }
+
 }

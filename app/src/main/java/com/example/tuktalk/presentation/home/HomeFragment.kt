@@ -42,10 +42,13 @@ class HomeFragment: Fragment() {
 
     lateinit var rvAdapter_top5: Top5MentorRVAdpater
     lateinit var rvAdapter_byTask : ByTaskMentorRVAdpater
-    lateinit var rvAdapter_realTime_mentee : RealTimeMenteeReviewRVAdpater
     private var testDataSet_top5 = mutableListOf<HomeTop5MentorRVitem>()
     private var testDataSet_byTask = mutableListOf<ByTaskMentorRVitem>()
+
+    // 현재는 실시간 멘티 후기x
+    lateinit var rvAdapter_realTime_mentee : RealTimeMenteeReviewRVAdpater
     private var testDataSet_realTime_mentee = mutableListOf<RealTimeMenteeReviewRVitem>()
+
 
     // 직무별 뚝딱멘토
     private var TaskSelectedList = Array<Boolean>(2) {false}
@@ -77,8 +80,8 @@ class HomeFragment: Fragment() {
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowTitleEnabled(false) // 기본제목 없애기
 
 
-        // 배너 이미지 뷰페이저 설정
-        val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin) // dimens.xml 파일 안에 크기를 정의해두었다. (200dp)
+        // 배너 이미지 뷰페이저 설정 -> 현재는 배너 이미지 1개로
+       /* val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin) // dimens.xml 파일 안에 크기를 정의해두었다. (200dp)
         val pagerWidth = resources.getDimensionPixelOffset(R.dimen.pageWidth) // dimens.xml 파일이 없으면 생성해야함 (50dp)
         val screenWidth = resources.displayMetrics.widthPixels // 스마트폰의 너비 길이를 가져옴
         Log.e("AppTest", "home, screenWidth : ${screenWidth}, pageMarginPx : ${pageMarginPx}, pagerWidth : ${pagerWidth} ")
@@ -91,7 +94,7 @@ class HomeFragment: Fragment() {
 
         binding.vp2HomeTopBanner.offscreenPageLimit = 1  //
         binding.vp2HomeTopBanner.adapter = BannerVP2Adpater(topBannerImageList)
-        binding.vp2HomeTopBanner.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.vp2HomeTopBanner.orientation = ViewPager2.ORIENTATION_HORIZONTAL*/
         ///////////////////////////////////////////////////////////////////////////////////
 
         // Top5 멘토 recycler view  // 멘토 이동 보완하기
@@ -181,8 +184,9 @@ class HomeFragment: Fragment() {
         rvAdapter_byTask.notifyDataSetChanged()
 
         //////////////////////////////////////////////////////////////////
-        // 실시간 멘티 후기 RV
-        rvAdapter_realTime_mentee = RealTimeMenteeReviewRVAdpater(testDataSet_realTime_mentee)
+        // 실시간 멘티 후기 RV -> 현재는 비활성화!!
+
+       /* rvAdapter_realTime_mentee = RealTimeMenteeReviewRVAdpater(testDataSet_realTime_mentee)
         binding.rvRealtimeMenteeReview.layoutManager = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
         }
@@ -206,7 +210,7 @@ class HomeFragment: Fragment() {
             ))
         }
         rvAdapter_realTime_mentee.updateList(testDataSet_realTime_mentee)
-        rvAdapter_realTime_mentee.notifyDataSetChanged()
+        rvAdapter_realTime_mentee.notifyDataSetChanged()*/
 
 
 
@@ -217,12 +221,13 @@ class HomeFragment: Fragment() {
             startActivity(intent)
         }
 
-        // 멘토 실시간 후기 전체보기
-        binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
+
+        // 멘토 실시간 후기 전체보기 -> 현재는 비활성화
+     /*   binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
             Log.e("AppTest","go to viewall bytask activity")
             val intent = Intent(context, ViewAllMenteeReviewActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
 
     }

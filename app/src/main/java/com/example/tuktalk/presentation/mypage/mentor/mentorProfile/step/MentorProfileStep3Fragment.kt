@@ -254,7 +254,7 @@ class MentorProfileStep3Fragment: Fragment(){
             Log.e("AppTest", "btn goto step4 clicked")
             viewModel.setCareer()
 
-            Log.e("AppTest", "deaprtment : ${viewModel.DEPARTMENT}  position : ${viewModel.POSITION},\n" +
+            Log.e("AppTest", "department : ${viewModel.DEPARTMENT}  position : ${viewModel.POSITION},\n" +
                     " 근무 기간 : ${viewModel.CAREER.years}년 ${viewModel.CAREER.months}개월")
 
             // step4로 이동하기

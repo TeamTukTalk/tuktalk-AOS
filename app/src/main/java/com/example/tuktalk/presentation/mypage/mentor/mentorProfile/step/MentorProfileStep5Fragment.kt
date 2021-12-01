@@ -184,21 +184,21 @@ class MentorProfileStep5Fragment: Fragment(){
 
         binding.btnGotoStep6Active.setOnClickListener {
             setHashTagList()
-            Log.e("AppTest", "" +
+            Log.e("AppTest", "멘토 프로필 등록 최종 데이터 확인\n" +
                     "nickname : ${Constants.USER_NICKNAME}\n" +
                     "simpleIntroduction : ${viewModel.SIMPLE_INTRODUCTION}\n" +
                     "detailedIntroduction : ${viewModel.DETAILED_INTRODUCTION}\n" +
                     "specialty : ${viewModel.SPECIALITY}\n" +
                     "subSpecialties : ${viewModel.SUBSPECIALITY_LIST}\n" +
-                    "companyName :  \n" +
-                    "department :  \n" +
+                    "companyName : ${viewModel.COMPANY_NAME} \n" +
+                    "department : ${viewModel.DEPARTMENT} \n" +
                     "position : ${viewModel.POSITION}\n" +
-                    "career : ${viewModel.CAREER}" +
+                    "career : ${viewModel.CAREER}\n" +
                     "careerDescription : ${viewModel.CAREER_DESCRIPTION}\n" +
-                    "companySize : ${viewModel.COMPANY_SIZE}" +
+                    "companySize : ${viewModel.COMPANY_SIZE}\n" +
                     "hashTags : ${viewModel.HASHTAGS_LIST}")
 
-            // step6로 이동하기
+            // step6로 이동하기 -> 멘토 프로필 통신 후 결과 성공 시 step6 이동으로 변경하기
             (activity as MentorProfileActivity).goToStep6()
         }
 

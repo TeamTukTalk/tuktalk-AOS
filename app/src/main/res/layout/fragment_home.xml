@@ -124,7 +124,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintDimensionRatio="360:8"/>
 
-                <androidx.viewpager2.widget.ViewPager2
+               <!-- <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/vp2_home_top_banner"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -133,13 +133,23 @@
 
                     android:clipToPadding="false"
                     android:clipChildren="false"
+                    />-->
+                <!-- 현재 배너 이미지뷰 형태 -->
+
+                <ImageView
+                    android:id="@+id/iv_top_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_1"
+                    app:layout_constraintDimensionRatio="360:246"
+                    android:src="@drawable/img_banner_2"
                     />
 
                 <View
                     android:id="@+id/view_2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/vp2_home_top_banner"
+                    app:layout_constraintTop_toBottomOf="@id/iv_top_banner"
                     app:layout_constraintDimensionRatio="360:28"/>
 
                 <View
@@ -374,7 +384,7 @@
 
 
                 <!-- 실시간 멘티 후기 영역 -->
-                <View
+               <!-- <View
                     android:id="@+id/view_realtime_mentee_review"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -449,7 +459,7 @@
 
 
 
-
+-->
 
 
                 <!-- 실시간 멘티 후기 영역 end -->
@@ -459,8 +469,11 @@
                     android:id="@+id/view_18"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/view_realtime_mentee_review"
+                    app:layout_constraintTop_toBottomOf="@id/view_13"
                     app:layout_constraintDimensionRatio="360:40"/>
+                <!--멘토 실시간 후기 있으면
+                app:layout_constraintTop_toBottomOf="@id/view_realtime_mentee_review" -->
+
 
                 <TextView
                     android:id="@+id/tv_mentor_des_1"
