@@ -7,12 +7,14 @@ import com.example.tuktalk.R
 import com.example.tuktalk.databinding.*
 import com.example.tuktalk.domain.model.home.HomeTop5MentorRVitem
 import com.example.tuktalk.domain.model.home.MentorListRVitem
+import com.example.tuktalk.domain.model.home.ViewAllByTask
 import com.example.tuktalk.domain.model.search.PortfolioRV_item
 import com.example.tuktalk.presentation.search.adpater.SearchDesignRVadapter
 import java.lang.RuntimeException
 
 class ViewAllByTaskRVAdapter(
-        private var dataSet : MutableList<MentorListRVitem>
+        private var dataSet : MutableList<ViewAllByTask>,
+        val selectMentor:(mentorId : Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     // 뷰 타입 오버라이드! 1. 빈 뷰 2. 포트폴리오 리스트 아이템 3. 로딩 뷰
@@ -72,10 +74,49 @@ class ViewAllByTaskRVAdapter(
 
         }
         else if(holder is ViewAllByTaskRVAdapter.ViewType2ViewHolder){
-            holder.binding.tvMentorName.text = dataSet[position].mentorName  // 멘토 이름
-            holder.binding.tvConmpanyName.text = dataSet[position].companyName // 회사명
-            holder.binding.tvTaskName.text = dataSet[position].task // 업무명
-            holder.binding.tvHashTag.text = dataSet[position].hashTag
+            holder.binding.tvMentorName.text = dataSet[position].byTaskMentorResponseDto.nickname  // 멘토 이름
+            holder.binding.tvConmpanyName.text = dataSet[position].byTaskMentorResponseDto.companyName // 회사명
+            holder.binding.tvTaskName.text = dataSet[position].byTaskMentorResponseDto.department // 부서명
+
+            holder.binding.tvProfileFirstLetter.text = dataSet[position].byTaskMentorResponseDto.firstLetter // 닉네임 첫 글자
+
+            // 프로필 배경색
+            when(dataSet[position].byTaskMentorResponseDto.profileImageColor){
+                "profileBlue" -> {
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_blue)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileBlue_text))
+                }
+                "profileRed"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_red)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileRed_text))
+                }
+                "profileYellow"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_yellow)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileYellow_text))
+                }
+                "profileGray"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_gray)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileGray_text))
+                }
+                "profileGreen"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_green)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileGreen_text))
+                }
+            }
+
+            // 해쉬태그 설정
+            var hashTagText = ""
+            dataSet[position].byTaskMentorResponseDto.hashTags.forEach{
+                hashTagText += "#" + it.hashTag + " "
+            }
+            holder.binding.tvHashTag.text = hashTagText
+
+
+            // 아이템 뷰 클릭 시 해당 멘토정보 페이지 이동동
+            holder.binding.root.setOnClickListener {
+                selectMentor.invoke(dataSet[position].byTaskMentorResponseDto.id)
+            }
+
         }
     }
 
@@ -83,7 +124,7 @@ class ViewAllByTaskRVAdapter(
         return dataSet.size
     }
 
-    fun updateList(newList: MutableList<MentorListRVitem>){
+    fun updateList(newList: MutableList<ViewAllByTask>){
         dataSet = newList
         notifyDataSetChanged()
     }

@@ -35,6 +35,8 @@ class MentorInfoActivity: AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
 
+    private var MENTOR_ID = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.e("AppTest", "Mentor Info Activity onCreate")
@@ -46,7 +48,13 @@ class MentorInfoActivity: AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_icon_back)
         supportActionBar!!.setDisplayShowTitleEnabled(false) // 기본제목 없애기
-        /////////////////////
+        ///////////////////////////////////////////////////////////////////////////
+
+
+        // 멘토리스트 선택 후 해당 멘토의 아이디 받아오기
+        MENTOR_ID = intent.getIntExtra("mentorId", 0)
+        Log.e("AppTest", "선택한 멘토 id : ${MENTOR_ID}")
+        ////////////////////////////////////////////////////
 
         // tablayout & viewpager2 설정
         val pagerAdapter = MentorInfoPagerFragmentStateAdapter(this)

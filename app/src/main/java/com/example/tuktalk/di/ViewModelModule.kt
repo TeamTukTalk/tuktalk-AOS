@@ -1,6 +1,7 @@
 package com.example.tuktalk.di
 
 import com.example.tuktalk.presentation.home.HomeViewModel
+import com.example.tuktalk.presentation.home.viewAll.ViewAllByTaskViewModel
 import com.example.tuktalk.presentation.login.LoginViewModel
 import com.example.tuktalk.presentation.main.MainActivityViewModel
 import com.example.tuktalk.presentation.mypage.mentee.menteeProfile.MenteeProfileViewModel
@@ -29,7 +30,8 @@ internal val viewModelModule = module {
 
     viewModel { MainActivityViewModel(get()) }
 
-    viewModel { HomeViewModel(get()) }
+    viewModel { HomeViewModel(get(), get()) }
+    viewModel { ViewAllByTaskViewModel(get()) }
 
 
 }

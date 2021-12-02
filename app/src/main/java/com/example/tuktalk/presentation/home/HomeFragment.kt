@@ -16,6 +16,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.common.utils.HorizontalItemDecorator
+import com.example.tuktalk.data.remote.dto.response.home.ByTaskMentorResponseDto
 import com.example.tuktalk.data.remote.dto.response.home.Top5MentorResponseDto
 import com.example.tuktalk.databinding.FragmentHomeBinding
 import com.example.tuktalk.domain.model.home.ByTaskMentorRVitem
@@ -41,8 +42,9 @@ class HomeFragment: Fragment() {
 
     lateinit var rvAdapter_top5: Top5MentorRVAdpater
     lateinit var rvAdapter_byTask : ByTaskMentorRVAdpater
+
     private var testDataSet_top5 = mutableListOf<Top5MentorResponseDto>()
-    private var testDataSet_byTask = mutableListOf<ByTaskMentorRVitem>()
+    private var testDataSet_byTask = mutableListOf<ByTaskMentorResponseDto>()
 
     // 현재는 실시간 멘티 후기x
     lateinit var rvAdapter_realTime_mentee : RealTimeMenteeReviewRVAdpater
@@ -101,9 +103,10 @@ class HomeFragment: Fragment() {
 
         // Top5 멘토 recycler view  // 멘토 이동 보완하기
         rvAdapter_top5 = Top5MentorRVAdpater(testDataSet_top5,
-        selectMentor = {
-            Log.e("AppTest","go to mentor Info activity")
+        selectMentor = { mentorId : Int ->
+            Log.e("AppTest","Top5 -> go to mentor Info activity")
             val intent = Intent(context, MentorInfoActivity::class.java)
+            intent.putExtra("mentorId", mentorId)
             startActivity(intent)
         })
         binding.rvTop5Mentor.layoutManager = LinearLayoutManager(context).also {
@@ -141,50 +144,46 @@ class HomeFragment: Fragment() {
         TaskTvList[1] = binding.tvCategoryIt
 
         // 시작 시 직무별 멘토 - 디자인 분야 선택되어 있는 상태
-        selectTask(0)
+        selectTask(0)  // selectTask 에서 현재 선택한 speciality로 직무별 멘토 리스트 통신 호출
+
         for(i in 0..(TaskNum-1)){
             TaskCvList[i]!!.setOnClickListener {
                 selectTask(i)
-
-                // 뷰모델 연동하기, 리사이클러뷰 변화
             }
         }
 
-        rvAdapter_byTask = ByTaskMentorRVAdpater(testDataSet_byTask)
+        rvAdapter_byTask = ByTaskMentorRVAdpater(testDataSet_byTask,
+                selectMentor = { mentorId : Int ->
+                    Log.e("AppTest","byTask -> go to mentor Info activity")
+                    val intent = Intent(context, MentorInfoActivity::class.java)
+                    intent.putExtra("mentorId", mentorId)
+                    startActivity(intent)
+                })
         binding.rvByTaskMentor.layoutManager = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
         }
         binding.rvByTaskMentor.adapter = rvAdapter_byTask
         binding.rvByTaskMentor.addItemDecoration(HorizontalItemDecorator(12))
 
-        testDataSet_byTask.apply {
-            add(ByTaskMentorRVitem(1, "제인", "네이버웹툰", "서버",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "에스", "카카오", "앱",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "디모", "라인", "웹",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "애니", "삼성", "디자인",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "한", "쿠팡", "앱",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "제인", "네이버웹툰", "서버",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "제인", "네이버웹툰", "서버",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-            add(ByTaskMentorRVitem(1, "제인", "네이버웹툰", "서버",
-                    "#실무 #노하우 #업무체계 #진로고민 #대기업 #GUI #피드백",
-                    2))
-        }
-        rvAdapter_byTask.updateList(testDataSet_byTask)
-        rvAdapter_byTask.notifyDataSetChanged()
+
+        viewModel.Get_byTask_mentorList_Success.observe(viewLifecycleOwner, {
+            if(it){
+                Log.e("AppTest", "HomeFragment/ 직무별 멘토 리스트 조회 성공 -> RV 업데이트")
+
+                rvAdapter_byTask.updateList(viewModel.ByTask_Mentor_List)
+            }
+            else{
+                Log.e("AppTest", "HomeFragment/ 직무별 멘토 리스트 조회 실패")
+            }
+        })
+
+        viewModel.progressBarVisibility_byTask.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBarByTask.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarByTask.visibility = View.INVISIBLE
+        })
+
 
         //////////////////////////////////////////////////////////////////
         // 실시간 멘티 후기 RV -> 현재는 비활성화!!
@@ -254,7 +253,7 @@ class HomeFragment: Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    /// 직무별 뚝딱멘토 - 직무 선택 시
+    /// 직무별 뚝딱멘토 - 직무 선택 시 -> viewModel 연결하기
     fun selectTask(taskNum : Int){
         for(i in 0..(TaskNum-1)){
             TaskCvList[i]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_gray_5))
@@ -265,6 +264,17 @@ class HomeFragment: Fragment() {
         TaskCvList[taskNum]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_primary))
         TaskTvList[taskNum]!!.setTextColor(resources.getColor(R.color.white))
         TaskSelectedList[taskNum] = true
+
+
+        var speciality = ""
+        if(taskNum == 0)
+            speciality = "디자인"
+        else
+            speciality = "IT/개발"
+
+
+        // 선택한 speciality로 멘토리스트 가져오기!
+        viewModel.getByTaskMentorList(speciality)
 
     }
 
