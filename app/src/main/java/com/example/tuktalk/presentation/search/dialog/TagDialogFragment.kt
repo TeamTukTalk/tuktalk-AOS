@@ -8,10 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import com.example.tuktalk.R
 import com.example.tuktalk.databinding.DialogSearchTagBinding
 import com.example.tuktalk.presentation.search.SearchDesignFragment
@@ -19,7 +16,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.card.MaterialCardView
-import java.lang.reflect.TypeVariable
 
 
 class TagDialogFragment : BottomSheetDialogFragment() {
@@ -37,9 +33,11 @@ class TagDialogFragment : BottomSheetDialogFragment() {
 
     private var companyTagValue = arrayOfNulls<String>(5)
     private var careerTagValue = arrayOfNulls<String>(5)
+    private var careerTagIntValue = arrayOf(1,3,5,7,9)
 
-    private var COMPANY = ""
+    private var COMPANY_SIZE = ""
     private var CAREER = ""
+    private var START_YEAR = 0
 
     private var Index_company = -1
     private var Index_career = -1
@@ -73,7 +71,7 @@ class TagDialogFragment : BottomSheetDialogFragment() {
     }
 
     private fun getBottomSheetDialogDefaultHeight(): Int {
-        return getWindowHeight() * 550 / 760
+        return getWindowHeight() * 560 / 760
     }
 
     private fun getWindowHeight(): Int {
@@ -93,13 +91,12 @@ class TagDialogFragment : BottomSheetDialogFragment() {
         /*view.findViewById<ConstraintLayout>(R.id.cl_dialog).maxHeight =
                 (resources.displayMetrics.heightPixels * 0.5).toInt()*/
         Log.e("AppTest", "search tag dialog fragment onCreateView")
-        Log.e("AppTest", "company : ${COMPANY}, career : ${CAREER}")
+        Log.e("AppTest", "company : ${COMPANY_SIZE}, career : ${CAREER}")
 
         var bundle = arguments
         Index_company = bundle!!.getInt("index_company", -1)
         Index_career = bundle!!.getInt("index_career", -1)
         Log.e("AppTest", "company index : ${Index_company}, career index : ${Index_career}")
-
 
         return view
     }
@@ -177,7 +174,7 @@ class TagDialogFragment : BottomSheetDialogFragment() {
         ///////
         // 적용하기
         binding.btnTagApply.setOnClickListener {
-            (parentFragment as SearchDesignFragment).tagSelected(COMPANY, CAREER, Index_company, Index_career)
+            (parentFragment as SearchDesignFragment).tagSelected(COMPANY_SIZE, CAREER, Index_company, Index_career, START_YEAR)
             closeDialog()
         }
 
@@ -214,7 +211,7 @@ class TagDialogFragment : BottomSheetDialogFragment() {
         isCompanySelected[index] = true // 선택 한 태그만 true
         companyCvList[index]!!.strokeColor = resources.getColor(R.color.tuktalk_primary)
         companyTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_primary))
-        COMPANY = companyTagValue[index]!! // 선택한 태그 값
+        COMPANY_SIZE = companyTagValue[index]!! // 선택한 태그 값
         Index_company = index
     }
 
@@ -227,6 +224,8 @@ class TagDialogFragment : BottomSheetDialogFragment() {
         careerTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_primary))
         CAREER = careerTagValue[index]!! // 선택한 태그 값
         Index_career = index
+        START_YEAR = careerTagIntValue[index]
+        Log.e("AppTest", "선택한 startYear 값 : ${START_YEAR}")
     }
 
     fun resetCompany(){
@@ -238,7 +237,7 @@ class TagDialogFragment : BottomSheetDialogFragment() {
             isCompanySelected[i] = false
         }
 
-        COMPANY = ""
+        COMPANY_SIZE = ""
     }
 
     fun resetCareer(){
@@ -251,6 +250,7 @@ class TagDialogFragment : BottomSheetDialogFragment() {
             isCareerSelected[i] = false
         }
         CAREER = ""
+        START_YEAR = 0
     }
 
 
@@ -269,10 +269,11 @@ class TagDialogFragment : BottomSheetDialogFragment() {
             isCareerSelected[i] = false
         }
 
-        COMPANY = ""
+        COMPANY_SIZE = ""
         CAREER = ""
         Index_company = -1
         Index_career = -1
+        START_YEAR = 0
     }
 
 

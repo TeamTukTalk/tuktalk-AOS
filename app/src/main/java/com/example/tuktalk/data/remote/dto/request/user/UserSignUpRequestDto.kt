@@ -1,4 +1,4 @@
-package com.example.tuktalk.data.remote.dto.request
+package com.example.tuktalk.data.remote.dto.request.user
 
 import com.google.gson.annotations.SerializedName
 

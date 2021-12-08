@@ -6,6 +6,7 @@ import com.example.tuktalk.domain.usecase.mentor.MentorEmailCertificationCheckUs
 import com.example.tuktalk.domain.usecase.mentor.MentorGetCompanyNameUseCase
 import com.example.tuktalk.domain.usecase.mentor.MentorRegistProfileUseCase
 import com.example.tuktalk.domain.usecase.mentor.MentorSendEmailCertificationUseCase
+import com.example.tuktalk.domain.usecase.search.SearchMentorListUseCase
 import com.example.tuktalk.domain.usecase.user.UserEmailCheckUseCase
 import com.example.tuktalk.domain.usecase.user.UserLoginUseCase
 import com.example.tuktalk.domain.usecase.user.UserSignUpUseCase
@@ -24,5 +25,7 @@ internal val useCaseModule = module {
 
     factory { HomeTop5MentorListUseCase(get()) }
     factory { HomeByTaskMentorListUseCase(get()) }
+
+    factory { SearchMentorListUseCase(get()) }
 
 }

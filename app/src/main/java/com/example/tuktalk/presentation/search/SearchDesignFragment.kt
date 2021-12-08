@@ -18,14 +18,19 @@ import com.example.tuktalk.common.utils.VerticalItemDecorator
 import com.example.tuktalk.databinding.FragmentSearchDesignBinding
 import com.example.tuktalk.databinding.FragmentSearchDirectBinding
 import com.example.tuktalk.domain.model.search.PortfolioRV_item
+import com.example.tuktalk.presentation.home.HomeViewModel
 import com.example.tuktalk.presentation.search.adpater.SearchDesignRVadapter
 import com.example.tuktalk.presentation.search.dialog.TagDialogFragment
+import com.example.tuktalk.presentation.search.viewModel.SearchDesignViewModel
 import com.google.android.material.card.MaterialCardView
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class SearchDesignFragment: Fragment() {
 
     private lateinit var binding: FragmentSearchDesignBinding
     private lateinit var callback: OnBackPressedCallback  // 프래그먼트에서 뒤로가기 처리하기 위함
+
+    private val viewModel: SearchDesignViewModel by viewModel()
 
     private var isCategorySelected = Array<Boolean>(5) { false }
     // category list
@@ -35,10 +40,13 @@ class SearchDesignFragment: Fragment() {
     lateinit var rvAdapter: SearchDesignRVadapter
     private var testDataSet = mutableListOf<PortfolioRV_item>()
 
-    private var COMPANY_VALUE = ""
     private var CAREER_VALUE = ""
     private var COMPANY_INDEX = -1
     private var CAREER_INDEX = -1
+
+    private var COMPANY_VALUE = ""
+    private var START_YEAR = 0
+    private var SUB_SPECIALITY = ""
 
    override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -87,11 +95,22 @@ class SearchDesignFragment: Fragment() {
                     toggleSelect(index) // 나머지 토글은 미선택 처리
                     categoryCvList[index]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_primary))
                     categoryTvList[index]!!.setTextColor(resources.getColor(R.color.white))
+
+                    Log.e("AppTest", "SearchDesignFragment/ 현재 선택된 subspeciality : ${categoryTvList[index]!!.text}")
+                    SUB_SPECIALITY = categoryTvList[index]!!.text.toString()
+                    viewModel.searchMentorList(SUB_SPECIALITY, COMPANY_VALUE, START_YEAR)
+                    // 선택한 토글 반영해서 리스트 호출
                 }
                 else{
                     categoryCvList[index]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_gray_5))
                     categoryTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_sub_content_2))
+
+                    Log.e("AppTest", "SearchDesignFragment/ subspeciality 아무것도 선택x")
+                    SUB_SPECIALITY = ""
+                    viewModel.searchMentorList(SUB_SPECIALITY, COMPANY_VALUE, START_YEAR)
+                    // 토글 취소 반영해서 리스트 호출
                 }
+
 
             }
         }
@@ -147,6 +166,10 @@ class SearchDesignFragment: Fragment() {
             dialogView.arguments = bundle
             dialogView.show(childFragmentManager, "tag_dialog_open")
         }
+
+        ////////////////////////////////////////////////////////////////
+        Log.e("AppTest", "디자인 멘토 리스트 조회 test")
+        viewModel.searchMentorList(SUB_SPECIALITY, COMPANY_VALUE, START_YEAR)
     }
 
 
@@ -170,16 +193,21 @@ class SearchDesignFragment: Fragment() {
     }
 
     // 다이얼로그에서 태그 선택되면, 해당 값으로 통신하기!!!
-    fun tagSelected(company: String, career : String, index_compnay: Int, index_career:Int){
+    fun tagSelected(company: String, career : String, index_compnay: Int, index_career:Int, startYear : Int){
         Log.e("AppTest", "tagSelected called, company : ${company} , career : ${career} ...")
 
         COMPANY_VALUE = company
         CAREER_VALUE = career
         COMPANY_INDEX = index_compnay
         CAREER_INDEX = index_career
+        START_YEAR = startYear
 
         binding.cl1TvCompanyType.text = COMPANY_VALUE
         binding.cl2TvCareer.text = CAREER_VALUE
+
+        // 선택된 태그 적용해서 리스트 호출
+        Log.e("AppTest", "SearchDesignFragment/ companySize : ${COMPANY_VALUE}, startYear : ${START_YEAR}")
+        viewModel.searchMentorList(SUB_SPECIALITY, COMPANY_VALUE, START_YEAR)
     }
 
     override fun onDestroyView() {

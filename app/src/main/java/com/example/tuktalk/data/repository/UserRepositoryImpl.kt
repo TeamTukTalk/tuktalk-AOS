@@ -1,11 +1,11 @@
 package com.example.tuktalk.data.repository
 
 import com.example.tuktalk.data.remote.UserApi
-import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
-import com.example.tuktalk.data.remote.dto.response.UserEmailCheckDto
-import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
-import com.example.tuktalk.data.remote.dto.response.UserLoginResponseDto
-import com.example.tuktalk.data.remote.dto.response.UserSignUpResponseDto
+import com.example.tuktalk.data.remote.dto.request.user.UserLoginRequestDto
+import com.example.tuktalk.data.remote.dto.response.user.UserEmailCheckDto
+import com.example.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
+import com.example.tuktalk.data.remote.dto.response.user.UserLoginResponseDto
+import com.example.tuktalk.data.remote.dto.response.user.UserSignUpResponseDto
 import com.example.tuktalk.domain.repository.UserRepository
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers

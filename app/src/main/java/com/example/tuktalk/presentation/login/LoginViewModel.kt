@@ -1,14 +1,12 @@
 package com.example.tuktalk.presentation.login
 
 import android.annotation.SuppressLint
-import android.provider.SyncStateContract
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.common.Constants_gitignore
-import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
-import com.example.tuktalk.data.remote.dto.response.UserLoginResponseDto
+import com.example.tuktalk.data.remote.dto.request.user.UserLoginRequestDto
 import com.example.tuktalk.domain.usecase.user.UserLoginUseCase
 
 class LoginViewModel(

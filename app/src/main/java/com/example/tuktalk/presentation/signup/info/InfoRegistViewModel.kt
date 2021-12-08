@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tuktalk.common.Constants
 import com.example.tuktalk.common.Constants_gitignore
-import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
+import com.example.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
 import com.example.tuktalk.domain.usecase.user.UserEmailCheckUseCase
 import com.example.tuktalk.domain.usecase.user.UserSignUpUseCase
 

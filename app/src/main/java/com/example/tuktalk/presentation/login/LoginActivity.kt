@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.tuktalk.R
-import com.example.tuktalk.data.remote.dto.request.UserLoginRequestDto
+import com.example.tuktalk.data.remote.dto.request.user.UserLoginRequestDto
 import com.example.tuktalk.databinding.ActivityLoginBinding
 import com.example.tuktalk.presentation.main.MainActivity
 import com.example.tuktalk.presentation.signup.SelectRoleActivity

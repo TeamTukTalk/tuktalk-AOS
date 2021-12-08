@@ -15,7 +15,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.example.tuktalk.R
 import com.example.tuktalk.common.Constants
-import com.example.tuktalk.data.remote.dto.request.UserSignUpRequestDto
+import com.example.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
 import com.example.tuktalk.databinding.ActivityInfoRegistBinding
 import com.example.tuktalk.presentation.signup.complete.SignUpCompleteActivity
 import com.example.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment

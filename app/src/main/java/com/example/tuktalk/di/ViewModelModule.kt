@@ -10,6 +10,7 @@ import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewM
 import com.example.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
 import com.example.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistViewModel
 import com.example.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioViewModel
+import com.example.tuktalk.presentation.search.viewModel.SearchDesignViewModel
 import com.example.tuktalk.presentation.signup.info.InfoRegistViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -32,6 +33,8 @@ internal val viewModelModule = module {
 
     viewModel { HomeViewModel(get(), get()) }
     viewModel { ViewAllByTaskViewModel(get()) }
+
+    viewModel { SearchDesignViewModel(get()) }
 
 
 }

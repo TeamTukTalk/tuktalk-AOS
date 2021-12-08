@@ -1,8 +1,8 @@
-package com.example.tuktalk.data.remote.dto.response
+package com.example.tuktalk.data.remote.dto.response.user
 
 import com.google.gson.annotations.SerializedName
 
-data class UserSignUpResponseDto(
+data class UserLoginResponseDto(
         @SerializedName("accessToken")
         val accessToken : String,
         @SerializedName("nickname")

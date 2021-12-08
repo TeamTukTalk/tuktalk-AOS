@@ -26,7 +26,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"/>
         <activity android:name=".presentation.login.LoginActivity"
-            android:windowSoftInputMode="adjustNothing"
+
             android:screenOrientation="portrait"/>
         <activity android:name=".presentation.guide.GuideActivity"
             android:screenOrientation="portrait"/>
