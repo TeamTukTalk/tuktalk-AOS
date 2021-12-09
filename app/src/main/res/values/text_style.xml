@@ -758,7 +758,7 @@
         <item name="autoSizeTextType">uniform</item>
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="fontFamily">@font/notosans_kr_regular</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
     <style name="tv_mentor_info_task_name">
@@ -767,7 +767,7 @@
         <item name="autoSizeTextType">uniform</item>
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="fontFamily">@font/notosans_kr_regular</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
 

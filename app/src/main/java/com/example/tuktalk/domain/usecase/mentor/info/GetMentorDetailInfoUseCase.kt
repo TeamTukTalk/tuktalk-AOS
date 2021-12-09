@@ -6,6 +6,6 @@ class GetMentorDetailInfoUseCase(
     private val repository: MentorRepository
 ) {
 
-    fun getMentorEmailCertificationResult(userToken: String, mentorId: Int)
+    fun getMentorDetailInfo(userToken: String, mentorId: Int)
             = repository.getMentorDetailInfo(userToken, mentorId)
 }

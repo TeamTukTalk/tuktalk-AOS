@@ -11,10 +11,13 @@ import com.example.tuktalk.R
 import com.example.tuktalk.databinding.FragmentMentorinfoInfoTabBinding
 import com.example.tuktalk.databinding.FragmentMentorinfoMentoringTabBinding
 import com.example.tuktalk.databinding.FragmentMentorinfoPortfolioTabBinding
+import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class MentoringTabFragment: Fragment() {
 
     private lateinit var binding : FragmentMentorinfoMentoringTabBinding
+    private val viewModel : MentorInfoViewModel by sharedViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 

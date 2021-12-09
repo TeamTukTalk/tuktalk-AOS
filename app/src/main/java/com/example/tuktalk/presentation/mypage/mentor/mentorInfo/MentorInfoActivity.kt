@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
@@ -54,13 +56,15 @@ class MentorInfoActivity: AppCompatActivity() {
         // 멘토리스트 선택 후 해당 멘토의 아이디 받아오기
         MENTOR_ID = intent.getIntExtra("mentorId", 0)
         Log.e("AppTest", "선택한 멘토 id : ${MENTOR_ID}")
+
+        viewModel.CURRENT_MENTOR_ID = MENTOR_ID
         ////////////////////////////////////////////////////
 
         // tablayout & viewpager2 설정
         val pagerAdapter = MentorInfoPagerFragmentStateAdapter(this)
         pagerAdapter.addFragment(infoTabFragment)
         pagerAdapter.addFragment(portfolioTabFragment)
-        pagerAdapter.addFragment(mentoringTabFragment)
+        //pagerAdapter.addFragment(mentoringTabFragment)  // 1:1 멘토링 기능 보류
         pagerAdapter.addFragment(reviewTabFragment)
 
         viewPager = binding!!.viewPager2
@@ -75,13 +79,13 @@ class MentorInfoActivity: AppCompatActivity() {
             }
         })
 
-        // tablayout 연결
+        // tablayout 연결    // 1:1 멘토링 보류
         TabLayoutMediator(tabLayout, viewPager){tab, position ->
             tab.text = when(position){
                 0 -> "멘토정보"
                 1 -> "포트폴리오"
-                2 -> "1:1 멘토링"
-                3 -> "후기"
+                //2 -> "1:1 멘토링"
+                2 -> "후기"
                 else -> {"TAB"}
             }
         }.attach()
@@ -106,6 +110,78 @@ class MentorInfoActivity: AppCompatActivity() {
 
         //tabLayout.selectTab(tabLayout.getTabAt(0))
         //
+
+        /////////////////////////////////////////////////////////////////////////
+        // 전달 받은 mentorId로 멘토 상세 정보, 포트폴리오 상제 정보 조회 후 뷰모델에 데이터 저장
+        viewModel.getMentorDetailInfo(MENTOR_ID)
+        viewModel.getPortfolioDetailInfo(MENTOR_ID)
+
+        viewModel.IsGetMentorDetialInfoSuccess.observe(this, {
+            if(it){
+
+                setProfileBackgroundColor(viewModel.ProfileImageColor)    // 프로필 배경
+                binding.tvProfileFirstLetter.text = viewModel.FirstLetter  // 닉네임 첫글자
+                binding.tvNickname.text = viewModel.Nickname // 멘토 닉네임
+                binding.tvCompnayName.text = viewModel.CompanyName // 회사이름
+                binding.tvTaskName.text = viewModel.SubSpecialties[0].subSpecialtyValue   // 처음 거로 가져오기? -> department 따로 있어야 되는지 물어보기
+                binding.tvSimpleIntroduction.text = viewModel.SimpleIntroduction
+
+            }
+            else{
+                Log.e("AppTest", "MentorInfoActivity/ 멘토 상세 정보 조회 실패")
+                Toast.makeText(this, "멘토 정보를 가져오는 도중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
+                finish()  // 이전 화면가기
+            }
+        })
+
+        viewModel.ProgressBarVisibility_info.observe(this, {
+            if(it)
+                binding.loadingProgressBarInfo.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarInfo.visibility = View.INVISIBLE
+        })
+
+        /////////////////////////////////////////////////
+
+        viewModel.IsGetPortfolioDetialInfoSuccess.observe(this, {
+            if(it){
+                Log.e("AppTest", "MentorInfoActivity/ 포트폴리오 상세 정보 조회 성공")
+            }
+            else{
+                Log.e("AppTest", "MentorInfoActivity/ 포트폴리오 상세 정보 조회 실패")
+                Toast.makeText(this, "멘토의 포트폴리오 정보를 가져오는 도중 오류가 발생했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.ProgressBarVisibility_portfolio.observe(this, {
+            if(it)
+                binding.loadingProgressBarPortfolio.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarPortfolio.visibility = View.INVISIBLE
+        })
+
+        // 포트폴리오 열람 버튼 누를 시 -> 먼저 포트폴리오 상세 조회 후  정보들 viewModel에 저장해두기  ->  그 다음 pdf url 열기
+        binding.btnGotoOpenPortfolio.setOnClickListener {
+            Log.e("AppTest", "MentorInfoActivity/ 포트폴리오 열람 버튼 클릭")
+            //viewModel.getPortfolioDetailInfo(MENTOR_ID)
+
+            if(viewModel.IsPortfolioUnregistered){
+                Toast.makeText(this, "현재 멘토는 포트폴리오 미등록 상태입니다.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                if(viewModel.PortFolioPdfUrl.length <= 0){
+                    Toast.makeText(this, "멘토의 포트폴리오 정보가 확인되지 않았습니다. 뒤로가기 후 다시 멘토를 선택해주세요.",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            if(viewModel.PortFolioPdfUrl != null && viewModel.PortFolioPdfUrl.length > 0){
+                Log.e("AppTest", "MentorInfoActivity/ pdf 열기 페이지로 이동")
+            }
+
+        }
+
+
 
     }
 
@@ -132,5 +208,31 @@ class MentorInfoActivity: AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun setProfileBackgroundColor(profileImageColor : String){
+        // 프로필 배경색
+        when(profileImageColor){
+            "profileBlue" -> {
+                binding.clProfileImage.setBackgroundResource(R.drawable.profile_image_circle_background_blue)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileBlue_text))
+            }
+            "profileRed"->{
+                binding.clProfileImage.setBackgroundResource(R.drawable.profile_image_circle_background_red)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileRed_text))
+            }
+            "profileYellow"->{
+                binding.clProfileImage.setBackgroundResource(R.drawable.profile_image_circle_background_yellow)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileYellow_text))
+            }
+            "profileGray"->{
+                binding.clProfileImage.setBackgroundResource(R.drawable.profile_image_circle_background_gray)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileGray_text))
+            }
+            "profileGreen"->{
+                binding.clProfileImage.setBackgroundResource(R.drawable.profile_image_circle_background_green)
+                binding.tvProfileFirstLetter.setTextColor(resources.getColor(R.color.tuktalk_profileGreen_text))
+            }
+        }
     }
 }

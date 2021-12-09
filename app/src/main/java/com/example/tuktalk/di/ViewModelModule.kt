@@ -26,7 +26,7 @@ internal val viewModelModule = module {
     viewModel { MentorProfileViewModel(get(), get()) }
     viewModel { MenteeProfileViewModel() }
 
-    viewModel { MentorInfoViewModel() }
+    viewModel { MentorInfoViewModel(get(), get()) }
     viewModel { RegistPortfolioViewModel() }
 
     viewModel { MenteeRecentPortfolioViewModel() }
@@ -39,8 +39,5 @@ internal val viewModelModule = module {
     viewModel { SearchDesignViewModel(get()) }
     viewModel { SearchItViewModel(get()) }
     viewModel { SearchDirectViewModel(get()) }
-
-    viewModel { MentorInfoViewModel(get()) }
-
 
 }

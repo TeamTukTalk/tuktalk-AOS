@@ -34,5 +34,4 @@ data class MentorDetailInfoResponseDto(
     val careerDescription : String,
     @SerializedName("hashTags")
     val hashTags : ArrayList<HashTag>
-
     )

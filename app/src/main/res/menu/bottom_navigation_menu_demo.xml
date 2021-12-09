@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/tuktalk_home"
+        android:title="@string/item_1"
+        android:icon="@drawable/ic_home_off"
+        android:enabled="true"
+        android:checked="true"/>
+
+    <item android:id="@+id/tuktalk_search"
+        android:title="@string/item_2"
+        android:icon="@drawable/ic_search_off"
+        android:enabled="true"/>
+
+
+    <item android:id="@+id/tuktalk_mypage"
+        android:title="@string/item_5"
+        android:icon="@drawable/ic_my_off"
+        android:enabled="true"/>
+
+
+</menu>

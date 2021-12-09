@@ -47,4 +47,6 @@ interface MentorApi {
         @Header("Authorization")userToken: String,
         @Path("mentorId")mentorId : Int
     ) : Single<Response<MentorDetailInfoResponseDto>>
+
+    //
 }

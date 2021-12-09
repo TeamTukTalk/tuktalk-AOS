@@ -1,10 +1,7 @@
 package com.example.tuktalk.di
 
 import com.example.tuktalk.common.Constants_gitignore
-import com.example.tuktalk.data.remote.HomeApi
-import com.example.tuktalk.data.remote.MentorApi
-import com.example.tuktalk.data.remote.SearchApi
-import com.example.tuktalk.data.remote.UserApi
+import com.example.tuktalk.data.remote.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -21,6 +18,7 @@ internal val remoteModule = module {
     single { provideMentorApi(get())}
     single { provideHomeApi(get())}
     single { provideSearchApi(get())}
+    single { providePortfolioApi(get()) }
 
 }
 
@@ -28,6 +26,7 @@ internal fun provideUserApi(retrofit: Retrofit) : UserApi = retrofit.create(User
 internal fun provideMentorApi(retrofit: Retrofit) : MentorApi = retrofit.create(MentorApi::class.java)
 internal fun provideHomeApi(retrofit: Retrofit) : HomeApi = retrofit.create(HomeApi::class.java)
 internal fun provideSearchApi(retrofit: Retrofit) : SearchApi = retrofit.create(SearchApi::class.java)
+internal fun providePortfolioApi(retrofit: Retrofit) : PortfolioApi = retrofit.create(PortfolioApi::class.java)
 
 
 internal fun provideRetrofitBuild_Rx() = Retrofit.Builder()

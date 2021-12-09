@@ -33,6 +33,8 @@
 
         app:itemTextColor="@drawable/bottom_navi_text"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/bottom_navigation_menu"/>
+        app:menu="@menu/bottom_navigation_menu_demo"/>
+
+    <!-- 추후 기능 업데이트시 기존의 커뮤니티, 상담 탭 추가 -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

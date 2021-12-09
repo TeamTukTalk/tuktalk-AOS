@@ -22,7 +22,7 @@ class InfoTabFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        Log.e("AppTest", "mentor info tab fragment onCreateView")
+        Log.e("AppTest", "InfoTabFragment/ onCreateView")
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mentorinfo_info_tab, container, false)
         return binding.root
@@ -31,14 +31,94 @@ class InfoTabFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.e("AppTest", "mentor info tab fragment onViewCreated")
+        Log.e("AppTest", "InfoTabFragment/ onViewCreated")
 
+        // 전문분야 관련
+        val tvSubSpecialty1 : TextView = view.findViewById(R.id.tv_subspeciality_1)
+        val tvSubSpecialty2 : TextView = view.findViewById(R.id.tv_subspeciality_2)
+        val tvSubSpecialty3 : TextView = view.findViewById(R.id.tv_subspeciality_3)
+
+        val subSpecialty1_space : View = view.findViewById(R.id.view_subspeciality_1_space)
+        val subSpecialty2_space : View = view.findViewById(R.id.view_subspeciality_2_space)
+        val subSpecialty3_space : View = view.findViewById(R.id.view_subspeciality_3_space)
+
+        val pointSubSpecialty1 : View = view.findViewById(R.id.view_point_subspeciality_1)
+        val pointSubSpecialty2 : View = view.findViewById(R.id.view_point_subspeciality_2)
+        val pointSubSpecialty3 : View = view.findViewById(R.id.view_point_subspeciality_3)
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // ViewModel에서 정보 먼저 가져오기!!!
-        var detailIntroduction = getString(R.string.tv_mentorinfo_info_detailintroduction_sample)
-        binding.tvDetailIntroduction.text = detailIntroduction.replace(" ", "\u00A0") // 리뷰 내용
+        viewModel.IsGetMentorDetialInfoSuccess.observe(viewLifecycleOwner, {
+            if(it){
+                var detailIntroduction = viewModel.DetailedIntroduction
+                binding.tvDetailIntroduction.text = detailIntroduction.replace(" ", "\u00A0") // 리뷰 내용
 
-        val tvTag : TextView = view.findViewById(R.id.tv_tag)
-        tvTag.text = "#테스트  #테스트  #긴해시태그  #합격포트폴리오  #이직  #이직  #공채  #코테"
+                binding.tvCompanyName.text = viewModel.CompanyName  // 회사이름
+                binding.tvTaskName.text = viewModel.Specialty // 역할?
+                binding.tvPositionName.text = viewModel.Position
+
+                var careerText = ""
+                if(viewModel.Career.years > 0)
+                    careerText += viewModel.Career.years.toString() + "년 "
+                if(viewModel.Career.months > 0)
+                    careerText += viewModel.Career.months.toString() + "개월"
+
+                binding.tvCareer.text = careerText  // 경력(기간)
+
+                val tvCareerDescription : TextView = view.findViewById(R.id.tv_careerDescription)
+                tvCareerDescription.text = viewModel.CareerDescription  // 경력/경험 설명
+
+                // 전문분야
+                if(viewModel.SubSpecialties.size == 1){
+                    subSpecialty1_space.visibility = View.VISIBLE
+                    tvSubSpecialty1.visibility = View.VISIBLE
+                    pointSubSpecialty1.visibility = View.VISIBLE
+                    tvSubSpecialty1.text = viewModel.SubSpecialties[0].subSpecialtyValue
+                }
+                else if(viewModel.SubSpecialties.size == 2){
+                    subSpecialty1_space.visibility = View.VISIBLE
+                    tvSubSpecialty1.visibility = View.VISIBLE
+                    pointSubSpecialty1.visibility = View.VISIBLE
+                    tvSubSpecialty1.text = viewModel.SubSpecialties[0].subSpecialtyValue
+
+                    subSpecialty2_space.visibility = View.VISIBLE
+                    tvSubSpecialty2.visibility = View.VISIBLE
+                    pointSubSpecialty2.visibility = View.VISIBLE
+                    tvSubSpecialty2.text = viewModel.SubSpecialties[1].subSpecialtyValue
+                }
+                else if(viewModel.SubSpecialties.size == 3){
+                    subSpecialty1_space.visibility = View.VISIBLE
+                    tvSubSpecialty1.visibility = View.VISIBLE
+                    pointSubSpecialty1.visibility = View.VISIBLE
+                    tvSubSpecialty1.text = viewModel.SubSpecialties[0].subSpecialtyValue
+
+                    subSpecialty2_space.visibility = View.VISIBLE
+                    tvSubSpecialty2.visibility = View.VISIBLE
+                    pointSubSpecialty2.visibility = View.VISIBLE
+                    tvSubSpecialty2.text = viewModel.SubSpecialties[1].subSpecialtyValue
+
+                    subSpecialty3_space.visibility = View.VISIBLE
+                    tvSubSpecialty3.visibility = View.VISIBLE
+                    pointSubSpecialty3.visibility = View.VISIBLE
+                    tvSubSpecialty3.text = viewModel.SubSpecialties[2].subSpecialtyValue
+
+                }
+
+                val tvTag : TextView = view.findViewById(R.id.tv_tag)
+                var hashTagText = ""
+                viewModel.HashTags.forEach{
+                    hashTagText += "#" + it.hashTag + " "
+                }
+                tvTag.text = hashTagText
+
+            }
+            else{
+                Log.e("AppTest", "InfoTabFragment/ 상세 정보 조회 실패")
+            }
+        })
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
 }
