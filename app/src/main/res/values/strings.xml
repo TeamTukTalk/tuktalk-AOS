@@ -140,6 +140,15 @@
     <string name="search_design_toggle4">그래픽 디자인</string>
     <string name="search_design_toggle5">산업/제품 디자인</string>
 
+    <string name="search_it_toggle1">앱</string>
+    <string name="search_it_toggle2">웹</string>
+    <string name="search_it_toggle3">서버</string>
+    <string name="search_it_toggle4">AI/머신러닝</string>
+    <string name="search_it_toggle5">데이터</string>
+    <string name="search_it_toggle6">게임</string>
+    <string name="search_it_toggle7">IT/기술직군</string>
+    <string name="search_it_toggle8">기타</string>
+
     <string name="search_dialog_tag_company1">대기업</string>
     <string name="search_dialog_tag_company2">중견기업</string>
     <string name="search_dialog_tag_company3">중소기업</string>

@@ -4,7 +4,7 @@ import com.example.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.google.gson.annotations.SerializedName
 
 data class SearchMentorResponseDto(
-        @SerializedName("id")
+        @SerializedName("mentorId")
         val id : Int,
         @SerializedName("nickname")
         val nickname : String,
@@ -20,5 +20,4 @@ data class SearchMentorResponseDto(
         val firstLetter : String,
         @SerializedName("hashTags")
         val hashTags : ArrayList<HashTag>
-
 )

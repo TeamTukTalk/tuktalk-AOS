@@ -1,6 +1,7 @@
 package com.example.tuktalk.presentation.search
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,7 +20,9 @@ import com.example.tuktalk.common.utils.VerticalItemDecorator
 import com.example.tuktalk.databinding.FragmentSearchDesignBinding
 import com.example.tuktalk.databinding.FragmentSearchDirectBinding
 import com.example.tuktalk.domain.model.search.PortfolioRV_item
+import com.example.tuktalk.domain.model.search.SearchDesignMentorList
 import com.example.tuktalk.presentation.home.HomeViewModel
+import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity
 import com.example.tuktalk.presentation.search.adpater.SearchDesignRVadapter
 import com.example.tuktalk.presentation.search.dialog.TagDialogFragment
 import com.example.tuktalk.presentation.search.viewModel.SearchDesignViewModel
@@ -38,7 +42,7 @@ class SearchDesignFragment: Fragment() {
     var categoryTvList = arrayOfNulls<TextView>(5)
 
     lateinit var rvAdapter: SearchDesignRVadapter
-    private var testDataSet = mutableListOf<PortfolioRV_item>()
+    private var testDataSet = mutableListOf<SearchDesignMentorList>()
 
     private var CAREER_VALUE = ""
     private var COMPANY_INDEX = -1
@@ -48,10 +52,6 @@ class SearchDesignFragment: Fragment() {
     private var START_YEAR = 0
     private var SUB_SPECIALITY = ""
 
-   override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("AppTest", "search design fragment onCreateView")
@@ -117,30 +117,41 @@ class SearchDesignFragment: Fragment() {
 
         //////////////////////////////
         // 포트폴리오 리사이클러뷰
-        rvAdapter = SearchDesignRVadapter(testDataSet)
+        rvAdapter = SearchDesignRVadapter(testDataSet,
+            selectMentor = { mentorId : Int ->
+                Log.e("AppTest","search tab design -> go to mentor Info activity")
+                val intent = Intent(context, MentorInfoActivity::class.java)
+                intent.putExtra("mentorId", mentorId)
+                startActivity(intent)
+            })
         binding.recyclerViewDesign.layoutManager = LinearLayoutManager(context)
         binding.recyclerViewDesign.adapter = rvAdapter
         binding.recyclerViewDesign.addItemDecoration(VerticalItemDecorator(15))
 
-        // 임시 데이터
-        testDataSet.apply{
-            add(PortfolioRV_item(0, "", "", "","",
-                    1))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인",
-                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
-            2))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인","#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
-                    2))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인",
-                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
-                    2))
-            add(PortfolioRV_item(1, "제이슨", "네이버", "UIUX 디자인",
-                    "#이직 #실무 #상담 #UX #면접 #공채 #앱 #이직",
-                    2))
-        }
+        // 검색 결과
+        viewModel.IsSearchDesignMentorListSuccess.observe(viewLifecycleOwner,{
+            if(it){
+                Log.e("AppTest", "디자인 멘토 리스트 검색 통신 성공")
+                rvAdapter.updateList(viewModel.Search_Design_Mentor_List)
 
-        rvAdapter.updateList(testDataSet)
-        rvAdapter.notifyDataSetChanged()
+                if(viewModel.IsResultEmpty)
+                    binding.clNoResult.visibility = View.VISIBLE
+                else
+                    binding.clNoResult.visibility = View.INVISIBLE
+            }
+            else{
+                Log.e("AppTest", "디자인 멘토 리스트 검색 실패")
+                Toast.makeText(context, "검색에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.ProgressBarVisibility.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
+        })
+        // 로딩바
 
 
         ///////////////////////////////
@@ -168,7 +179,8 @@ class SearchDesignFragment: Fragment() {
         }
 
         ////////////////////////////////////////////////////////////////
-        Log.e("AppTest", "디자인 멘토 리스트 조회 test")
+        // 처음 페이지 생성 시 자동으로 검색 수행
+        Log.e("AppTest", "첫 디자인 멘토 리스트 조회 test")
         viewModel.searchMentorList(SUB_SPECIALITY, COMPANY_VALUE, START_YEAR)
     }
 
@@ -192,6 +204,14 @@ class SearchDesignFragment: Fragment() {
         }
     }
 
+    fun clearToggle(){
+        for(index in 0..4){
+                isCategorySelected[index] = false
+                categoryCvList[index]!!.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.tuktalk_gray_5))
+                categoryTvList[index]!!.setTextColor(resources.getColor(R.color.tuktalk_sub_content_2))
+        }
+    }
+
     // 다이얼로그에서 태그 선택되면, 해당 값으로 통신하기!!!
     fun tagSelected(company: String, career : String, index_compnay: Int, index_career:Int, startYear : Int){
         Log.e("AppTest", "tagSelected called, company : ${company} , career : ${career} ...")
@@ -212,14 +232,21 @@ class SearchDesignFragment: Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.e("AppTest","search design fragment onDestoryView  && clear RV dataSet")
+        Log.e("AppTest","search design fragment onDestoryView  && clear RV dataSet && 설정값 모두 초기화")
+
         rvAdapter.clearList()
+        clearToggle()
 
         COMPANY_VALUE = ""
         COMPANY_INDEX = -1
 
         CAREER_VALUE = ""
         CAREER_INDEX = -1
+
+        START_YEAR = 0
+        SUB_SPECIALITY = ""
+
+
         // 설정 값들 초기화 해주기!!
     }
 

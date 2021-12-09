@@ -15,6 +15,9 @@ import com.example.tuktalk.databinding.FragmentHomeBinding
 import com.example.tuktalk.databinding.FragmentSearchBinding
 import com.example.tuktalk.presentation.main.MainActivity
 import com.example.tuktalk.presentation.mypage.mentorFragment
+import com.example.tuktalk.presentation.search.viewModel.SearchDesignViewModel
+import com.example.tuktalk.presentation.search.viewModel.SearchItViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class SearchFragment: Fragment() {
 

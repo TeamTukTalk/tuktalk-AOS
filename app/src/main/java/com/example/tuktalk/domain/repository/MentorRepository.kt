@@ -4,6 +4,7 @@ import com.example.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDt
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
+import com.example.tuktalk.data.remote.dto.response.mentor.info.MentorDetailInfoResponseDto
 import io.reactivex.Single
 import retrofit2.Response
 
@@ -20,4 +21,7 @@ interface MentorRepository {
 
     // 멘토 프로필 등록하기
     fun registMentorProfile(userToken: String, mentorProfile : MentorProfileRequestDto): Single<Response<MentorProfileResponseDto>>
+
+    // 멘토 상제정보 조회
+    fun getMentorDetailInfo(userToken: String, mentorId: Int): Single<Response<MentorDetailInfoResponseDto>>
 }

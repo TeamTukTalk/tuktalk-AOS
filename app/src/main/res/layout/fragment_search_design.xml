@@ -171,7 +171,9 @@
                     android:layout_height="match_parent"
                     app:layout_constraintLeft_toRightOf="@id/view_hs_1"
                     app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
-                    android:backgroundTint="@color/tuktalk_gray_5">
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -212,7 +214,9 @@
                     android:layout_height="match_parent"
                     app:layout_constraintLeft_toRightOf="@id/view_hs_2"
                     app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
-                    android:backgroundTint="@color/tuktalk_gray_5">
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -253,7 +257,9 @@
                     android:layout_height="match_parent"
                     app:layout_constraintLeft_toRightOf="@id/view_hs_3"
                     app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
-                    android:backgroundTint="@color/tuktalk_gray_5">
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -294,7 +300,9 @@
                     android:layout_height="match_parent"
                     app:layout_constraintLeft_toRightOf="@id/view_hs_4"
                     app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
-                    android:backgroundTint="@color/tuktalk_gray_5">
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -335,7 +343,9 @@
                     android:layout_height="match_parent"
                     app:layout_constraintLeft_toRightOf="@id/view_hs_5"
                     app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
-                    android:backgroundTint="@color/tuktalk_gray_5">
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -600,6 +610,64 @@
            android:overScrollMode="never"/>
 
 
+
+        <!-- 검색 결과 없을 시 나오는 뷰 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_sv_top_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/iv_no_result"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.056"
+                app:layout_constraintDimensionRatio="1:1"
+                android:src="@drawable/ic_alert"
+                android:scaleType="centerInside"/>
+
+            <View
+                android:id="@+id/view_cl_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_no_result"
+                app:layout_constraintDimensionRatio="360:10"/>
+
+            <TextView
+                android:id="@+id/tv_no_result"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_cl_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.302"
+                app:layout_constraintDimensionRatio="109:19"
+                android:text="검색 결과가 없습니다."
+                style="@style/tv_no_result"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/loading_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:indeterminateTint="@color/tuktalk_loading_spinner"
+            android:visibility="invisible"
+            />
 
 
 

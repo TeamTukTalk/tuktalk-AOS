@@ -60,7 +60,7 @@ class ViewAllByTaskViewModel(
                     ViewAll_progressBarVisibility_byTask.value = false
                 },
                 {
-                    throwable -> Log.e("AppTest", "login error ${throwable}")
+                    throwable -> Log.e("AppTest", "view all by task error ${throwable}")
                     ViewAll_Get_byTask_mentorList_Success.value = false
                     ViewAll_progressBarVisibility_byTask.value = false
                 }

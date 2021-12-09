@@ -140,6 +140,819 @@
             app:layout_constraintRight_toRightOf="@id/gl_v_95.56"/>
 
 
+        <View
+            android:id="@+id/view_4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_edit_line"
+            app:layout_constraintDimensionRatio="360:20"/>
+
+        <HorizontalScrollView
+            android:id="@+id/hs_category_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_4"
+            android:scrollbars="none"
+            app:layout_constraintDimensionRatio="360:36">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/view_hs_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintDimensionRatio="16:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_1"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle1"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_1"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_2"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle2"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_2"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_3"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle3"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_3"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_4"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle4"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_4"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_5"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle5"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_5"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_6"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle6"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_6"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_7"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle7"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_7"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_it_toggle_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/view_hs_8"
+                    app:shapeAppearanceOverlay="@style/searchCardViewToggleShape"
+                    android:backgroundTint="@color/tuktalk_gray_5"
+
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="36">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                            <TextView
+                                android:id="@+id/tv_category8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:text="@string/search_it_toggle8"
+                                android:maxLines="1"
+                                style="@style/search_tv_toggle1"
+                                android:layout_weight="20"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="8"/>
+
+                        </LinearLayout>
+                        <TextView
+                            android:visibility="invisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"/>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/view_hs_9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintLeft_toRightOf="@id/cv_it_toggle_8"
+                    app:layout_constraintDimensionRatio="8:36"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+
+
+        <View
+            android:id="@+id/view_5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/hs_category_toggle"
+            app:layout_constraintDimensionRatio="360:16"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_select_company_type"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_5"
+            app:layout_constraintBottom_toBottomOf="@id/view_7"
+            app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+
+            android:background="@drawable/layout_outline_1">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_1_gl_h_19"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.19"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_1_gl_h_81"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.81"/>
+
+            <View
+                android:id="@+id/view_cl_1_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="16:36"/>
+
+            <TextView
+                android:id="@+id/cl_1_tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_cl_1_1"
+                app:layout_constraintTop_toTopOf="@id/cl_1_gl_h_19"
+                app:layout_constraintBottom_toBottomOf="@id/cl_1_gl_h_81"
+                android:text="기업"
+                android:maxLines="1"
+                style="@style/search_tv_company_type_and_career"/>
+
+            <View
+                android:id="@+id/view_cl_1_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toRightOf="@id/cl_1_tv_1"
+                app:layout_constraintDimensionRatio="8:36"/>
+
+            <TextView
+                android:id="@+id/cl_1_tv_company_type"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_cl_1_2"
+                app:layout_constraintTop_toTopOf="@id/cl_1_gl_h_19"
+                app:layout_constraintBottom_toBottomOf="@id/cl_1_gl_h_81"
+                android:maxLines="1"
+                android:text=""
+                style="@style/search_tv_company_type_and_career2"/>
+
+            <View
+                android:id="@+id/view_cl_1_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toRightOf="@id/cl_1_tv_company_type"
+                app:layout_constraintDimensionRatio="8:36"/>
+
+            <ImageView
+                android:id="@+id/cl_1_iv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_cl_1_3"
+                app:layout_constraintTop_toTopOf="@id/view_cl_1_3"
+                app:layout_constraintBottom_toBottomOf="@id/view_cl_1_3"
+                app:layout_constraintDimensionRatio="8:36"
+                android:src="@drawable/ic_v_shape"
+                android:scaleType="centerInside"/>
+
+            <View
+                android:id="@+id/view_cl_1_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toRightOf="@id/cl_1_iv"
+                app:layout_constraintDimensionRatio="16:36"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/cl_select_company_type"
+            app:layout_constraintBottom_toBottomOf="@id/cl_select_company_type"
+            app:layout_constraintLeft_toRightOf="@id/cl_select_company_type"
+            app:layout_constraintWidth_percent="0.022"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_select_career"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_5"
+            app:layout_constraintBottom_toBottomOf="@id/view_7"
+            app:layout_constraintLeft_toRightOf="@id/view_6"
+            android:background="@drawable/layout_outline_1">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_2_gl_h_19"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.19"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cl_2_gl_h_81"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.81"/>
+
+            <View
+                android:id="@+id/view_cl_2_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="16:36"/>
+
+            <TextView
+                android:id="@+id/cl_2_tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_cl_2_1"
+                app:layout_constraintTop_toTopOf="@id/cl_2_gl_h_19"
+                app:layout_constraintBottom_toBottomOf="@id/cl_2_gl_h_81"
+                android:text="경력"
+                android:maxLines="1"
+                style="@style/search_tv_company_type_and_career"/>
+
+            <View
+                android:id="@+id/view_cl_2_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toRightOf="@id/cl_2_tv_1"
+                app:layout_constraintDimensionRatio="8:36"/>
+
+            <TextView
+                android:id="@+id/cl_2_tv_career"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_cl_2_2"
+                app:layout_constraintTop_toTopOf="@id/cl_2_gl_h_19"
+                app:layout_constraintBottom_toBottomOf="@id/cl_2_gl_h_81"
+                android:maxLines="1"
+                android:text=""
+                style="@style/search_tv_company_type_and_career2"/>
+
+            <View
+                android:id="@+id/view_cl_2_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toRightOf="@id/cl_2_tv_career"
+                app:layout_constraintDimensionRatio="8:36"/>
+
+            <ImageView
+                android:id="@+id/cl_2_iv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_cl_2_3"
+                app:layout_constraintTop_toTopOf="@id/view_cl_2_3"
+                app:layout_constraintBottom_toBottomOf="@id/view_cl_2_3"
+                app:layout_constraintDimensionRatio="8:36"
+                android:src="@drawable/ic_v_shape"
+                android:scaleType="centerInside"/>
+
+            <View
+                android:id="@+id/view_cl_2_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintLeft_toRightOf="@id/cl_2_iv"
+                app:layout_constraintDimensionRatio="16:36"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_5"
+            app:layout_constraintDimensionRatio="360:36"/>
+
+        <View
+            android:id="@+id/view_8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_7"
+            app:layout_constraintDimensionRatio="360:16"/>
+
+        <View
+            android:id="@+id/view_sv_top_line"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_8"
+            app:layout_constraintDimensionRatio="360:1"
+            android:background="@color/tuktalk_gray_3"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recyclerView_it"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/view_sv_top_line"
+           app:layout_constraintBottom_toBottomOf="parent"
+
+           android:overScrollMode="never"/>
+
+
+
+        <!-- 검색 결과 없을 시 나오는 뷰 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/view_sv_top_line"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/iv_no_result"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.056"
+                app:layout_constraintDimensionRatio="1:1"
+                android:src="@drawable/ic_alert"
+                android:scaleType="centerInside"/>
+
+            <View
+                android:id="@+id/view_cl_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_no_result"
+                app:layout_constraintDimensionRatio="360:10"/>
+
+            <TextView
+                android:id="@+id/tv_no_result"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_cl_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.302"
+                app:layout_constraintDimensionRatio="109:19"
+                android:text="검색 결과가 없습니다."
+                style="@style/tv_no_result"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/loading_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:indeterminateTint="@color/tuktalk_loading_spinner"
+            android:visibility="invisible"
+            />
+
 
 
 

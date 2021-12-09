@@ -4,6 +4,7 @@ import com.example.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDt
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
+import com.example.tuktalk.data.remote.dto.response.mentor.info.MentorDetailInfoResponseDto
 import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.*
@@ -38,4 +39,12 @@ interface MentorApi {
             @Header("Authorization")userToken: String,
             @Body mentorProfile : MentorProfileRequestDto
     ):Single<Response<MentorProfileResponseDto>>
+
+
+    // 멘토 상세정보 조회
+    @GET("api/mentors/{mentorId}")
+    fun getMentorDetailInfo(
+        @Header("Authorization")userToken: String,
+        @Path("mentorId")mentorId : Int
+    ) : Single<Response<MentorDetailInfoResponseDto>>
 }

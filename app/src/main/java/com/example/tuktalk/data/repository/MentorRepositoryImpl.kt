@@ -5,6 +5,7 @@ import com.example.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDt
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
 import com.example.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
+import com.example.tuktalk.data.remote.dto.response.mentor.info.MentorDetailInfoResponseDto
 import com.example.tuktalk.domain.repository.MentorRepository
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -42,6 +43,16 @@ class MentorRepositoryImpl(
             mentorApi.registMentorProfile(userToken, mentorProfile)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
+
+
+    // 멘토 상제정보 조회
+    override fun getMentorDetailInfo(
+        userToken: String,
+        mentorId: Int
+    ): Single<Response<MentorDetailInfoResponseDto>> =
+        mentorApi.getMentorDetailInfo(userToken, mentorId)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
 
 
 }

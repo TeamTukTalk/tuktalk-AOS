@@ -9,11 +9,13 @@ import com.example.tuktalk.databinding.ItemSearchDesignRecycler1Binding
 import com.example.tuktalk.databinding.ItemSearchDesignRecycler2Binding
 import com.example.tuktalk.databinding.ItemSearchDesignRecycler3LoadingBinding
 import com.example.tuktalk.domain.model.search.PortfolioRV_item
+import com.example.tuktalk.domain.model.search.SearchDesignMentorList
 import okhttp3.Challenge
 import java.lang.RuntimeException
 
 class SearchDesignRVadapter(
-        private var dataSet : MutableList<PortfolioRV_item>
+        private var dataSet : MutableList<SearchDesignMentorList>,
+        val selectMentor:(mentorId : Int) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     //var dataSet = mutableListOf<PortfolioRV_item>()
@@ -65,8 +67,8 @@ class SearchDesignRVadapter(
                 )
 
                 // 비율로 높이 설정하기  // recyclerview 영역이 0dp + left,right constraint = parent 로 해줘야 인식되는 듯
-                var params = view.layoutParams
-                params.height = parent.measuredWidth / 360 * 135
+               /* var params = view.layoutParams
+                params.height = parent.measuredWidth / 360 * 135*/
 
                 ViewType2ViewHolder(ItemSearchDesignRecycler2Binding.bind(view))
             }
@@ -90,10 +92,50 @@ class SearchDesignRVadapter(
 
         }
         else if(holder is ViewType2ViewHolder){
-            holder.binding.tvMentorName.text = dataSet[position].mentorName  // 멘토 이름
-            holder.binding.tvConmpanyName.text = dataSet[position].companyName // 회사명
-            holder.binding.tvTaskName.text = dataSet[position].task // 업무명
-            holder.binding.tvHashTag.text = dataSet[position].hashTag
+            holder.binding.tvMentorName.text = dataSet[position].searchMentorResponseDto.nickname  // 멘토 이름
+            holder.binding.tvConmpanyName.text = dataSet[position].searchMentorResponseDto.companyName // 회사명
+            holder.binding.tvTaskName.text = dataSet[position].searchMentorResponseDto.department // 부서명
+
+            holder.binding.tvProfileFirstLetter.text = dataSet[position].searchMentorResponseDto.firstLetter
+
+            // 프로필 배경색
+            when(dataSet[position].searchMentorResponseDto.profileImageColor){
+                "profileBlue" -> {
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_blue)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileBlue_text))
+                }
+                "profileRed"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_red)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileRed_text))
+                }
+                "profileYellow"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_yellow)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileYellow_text))
+                }
+                "profileGray"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_gray)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileGray_text))
+                }
+                "profileGreen"->{
+                    holder.binding.clProfile.setBackgroundResource(R.drawable.profile_image_circle_background_green)
+                    holder.binding.tvProfileFirstLetter.setTextColor(holder.itemView.resources.getColor(R.color.tuktalk_profileGreen_text))
+                }
+            }
+
+            // 해쉬태그 설정
+            var hashTagText = ""
+            dataSet[position].searchMentorResponseDto.hashTags.forEach{
+                hashTagText += "#" + it.hashTag + " "
+            }
+            holder.binding.tvHashTag.text = hashTagText
+
+
+            // 아이템 선택 시 해당 멘토 상세페이지 이동 연동하기
+            holder.binding.root.setOnClickListener {
+                selectMentor.invoke(dataSet[position].searchMentorResponseDto.id)
+            }
+
+
         }
         else if(holder is ViewType3ViewHolder){
 
@@ -105,7 +147,7 @@ class SearchDesignRVadapter(
     }
 
 
-    fun updateList(newList: MutableList<PortfolioRV_item>){
+    fun updateList(newList: MutableList<SearchDesignMentorList>){
         dataSet = newList
         notifyDataSetChanged()
     }

@@ -925,5 +925,14 @@
         <item name="fontFamily">@font/notosans_kr_regular</item>
     </style>
 
+    <style name="tv_no_result">
+        <item name="android:textColor">@color/tuktalk_sub_content_4</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
 
 </resources>
