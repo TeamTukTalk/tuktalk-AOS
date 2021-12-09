@@ -45,8 +45,10 @@ class PortfolioOpenActivity: AppCompatActivity() {
 
         // WebView 설정
         binding.webView.webViewClient = WebViewClientCustom()
+        binding.webView.clearCache(true)
         binding.webView.settings.setSupportZoom(true) // 확대 기능 허용
         binding.webView.settings.javaScriptEnabled = true
+
 
         binding.webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$PortfolioPdfUrl")
 
@@ -89,5 +91,10 @@ class PortfolioOpenActivity: AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.e("AppTest", "PortfolioOpenActivity/ onResume")
+    }
+
+    // 그냥 뒤로가기 후 다시 열람하면 웹뷰 보이지 않음 -> finish로 해주면 보임
+    override fun onBackPressed() {
+        finish()
     }
 }
