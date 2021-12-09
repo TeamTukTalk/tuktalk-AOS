@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat.getSystemService
@@ -29,6 +30,7 @@ import com.example.tuktalk.presentation.search.adpater.SearchDirectRVadapter
 import com.example.tuktalk.presentation.search.adpater.SearchITRVadapter
 import com.example.tuktalk.presentation.search.viewModel.SearchDirectViewModel
 import com.example.tuktalk.presentation.search.viewModel.SearchItViewModel
+import com.google.android.material.card.MaterialCardView
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SearchDirectFragment: Fragment() {
@@ -40,6 +42,10 @@ class SearchDirectFragment: Fragment() {
     private var testDataSet = mutableListOf<SearchMentorResponseDto>()
 
     private var QUERY = ""   // 검색어 값
+
+    // suggest keyword list
+    var categoryCvList = arrayOfNulls<MaterialCardView>(7)
+    var categoryTvList = arrayOfNulls<TextView>(7)
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -57,6 +63,26 @@ class SearchDirectFragment: Fragment() {
             binding.etDirectSearch.setText("")
             (parentFragment as SearchFragment).goToSearchSelect()
         }
+
+        /////////////////////////
+        // 토글 카드뷰 배열화
+        categoryCvList[0] = binding.cvSuggestKeyword1
+        categoryCvList[1] = binding.cvSuggestKeyword2
+        categoryCvList[2] = binding.cvSuggestKeyword3
+        categoryCvList[3] = binding.cvSuggestKeyword4
+        categoryCvList[4] = binding.cvSuggestKeyword5
+        categoryCvList[5] = binding.cvSuggestKeyword6
+        categoryCvList[6] = binding.cvSuggestKeyword7
+
+        // 토글 텍스트뷰 배열화
+        categoryTvList[0] = binding.tvSuggestKeyword1
+        categoryTvList[1] = binding.tvSuggestKeyword2
+        categoryTvList[2] = binding.tvSuggestKeyword3
+        categoryTvList[3] = binding.tvSuggestKeyword4
+        categoryTvList[4] = binding.tvSuggestKeyword5
+        categoryTvList[5] = binding.tvSuggestKeyword6
+        categoryTvList[6] = binding.tvSuggestKeyword7
+
 
         //////////////////////////////////////   * edit text 의 inputType 'text'로 해주면 완료버튼 보임
         // 직접 검색 후 키보드에서 완료버튼 누르면 닫힘
@@ -111,6 +137,18 @@ class SearchDirectFragment: Fragment() {
             override fun afterTextChanged(p0: Editable?) {
             }
         })
+
+        ///////////////////////////////////////////////////////////////////////
+        // 추천 검색어 cardview 누를 시 해당 검색어로 리스트 조회
+        for(index in 0..6){
+            categoryCvList[index]!!.setOnClickListener {
+                binding.etDirectSearch.setText(categoryTvList[index]!!.text)
+                QUERY = categoryTvList[index]!!.text.toString()
+
+                Log.e("AppTest", "SearchDirectFragment/ 선택한 추천 검색어 : ${QUERY}")
+                viewModel.searchMentorList(QUERY)
+            }
+        }
 
         /////////////////////////////////////////////////////////////////////////
 
