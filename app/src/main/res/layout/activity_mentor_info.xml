@@ -234,7 +234,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     app:layout_constraintLeft_toRightOf="@id/tv_compnay_name"
-                                    app:layout_constraintWidth_percent="0.018"/>
+                                    app:layout_constraintDimensionRatio="1:4"/>
 
                                 <ImageView
                                     android:id="@+id/iv_point"
@@ -254,7 +254,7 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     app:layout_constraintLeft_toRightOf="@id/iv_point"
-                                    app:layout_constraintWidth_percent="0.018"/>
+                                    app:layout_constraintDimensionRatio="1:4"/>
 
 
                                 <TextView

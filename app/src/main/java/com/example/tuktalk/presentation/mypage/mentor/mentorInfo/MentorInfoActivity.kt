@@ -1,5 +1,6 @@
 package com.example.tuktalk.presentation.mypage.mentor.mentorInfo
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,7 @@ import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.InfoTabFrag
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.MentoringTabFragment
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.PortfolioTabFragment
 import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.ReviewTabFragment
+import com.example.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -31,7 +33,7 @@ class MentorInfoActivity: AppCompatActivity() {
 
     val infoTabFragment = InfoTabFragment()
     val portfolioTabFragment = PortfolioTabFragment()
-    val mentoringTabFragment = MentoringTabFragment()
+    val mentoringTabFragment = MentoringTabFragment()  // 멘토링 탭 기능상 현재 보류
     val reviewTabFragment = ReviewTabFragment()
 
     private lateinit var viewPager: ViewPager2
@@ -177,6 +179,12 @@ class MentorInfoActivity: AppCompatActivity() {
 
             if(viewModel.PortFolioPdfUrl != null && viewModel.PortFolioPdfUrl.length > 0){
                 Log.e("AppTest", "MentorInfoActivity/ pdf 열기 페이지로 이동")
+
+                // pdf url 열기 구현하기!!
+                val intent = Intent(this, PortfolioOpenActivity::class.java)
+                intent.putExtra("portfolioPdfUrl", viewModel.PortFolioPdfUrl)  // url 전달
+                startActivity(intent)
+
             }
 
         }
