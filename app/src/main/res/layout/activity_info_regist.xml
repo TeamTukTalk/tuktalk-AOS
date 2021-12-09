@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.tuktalk.presentation.signup.info.InfoRegistViewModel" />
+            type="com.nemo.tuktalk.presentation.signup.info.InfoRegistViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout

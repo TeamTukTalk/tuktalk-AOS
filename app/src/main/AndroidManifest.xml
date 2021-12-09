@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tuktalk">
+    package="com.nemo.tuktalk">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:name=".TuktalkApplication"
+        android:name="com.nemo.tuktalk.TuktalkApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_tuktalk_2"
         android:label="@string/app_name"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tuktalk"
         android:usesCleartextTraffic="true">
-        <activity android:name=".presentation.splash.SplashActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,53 +22,53 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.main.MainActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.main.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"/>
-        <activity android:name=".presentation.login.LoginActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.login.LoginActivity"
 
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.guide.GuideActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.guide.GuideActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.signup.SelectRoleActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.signup.SelectRoleActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.signup.SelectCategoryActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.signup.SelectCategoryActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.signup.info.InfoRegistActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.signup.info.InfoRegistActivity"
             android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.signup.complete.SignUpCompleteActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.signup.complete.SignUpCompleteActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.mypage.Test2Activity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.Test2Activity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.mypage.mentor.mentorRegist.MentorRegistActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"/>
-        <activity android:name=".presentation.mypage.mentor.mentorProfile.MentorProfileActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity"
             android:screenOrientation="portrait"
             />
 
-        <activity android:name=".presentation.home.viewAll.ViewAllByTaskActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.home.viewAll.ViewAllMenteeReviewActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".presentation.mypage.mentor.mentorInfo.MentorInfoActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.mypage.mentor.mentorService.MentorServiceActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".presentation.mypage.mentee.menteeProfile.MenteeProfileActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".presentation.signup.info.terms.TermsActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.menteeProfile.MenteeProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.signup.info.terms.TermsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenActivity"
             android:screenOrientation="portrait"/>
 
     </application>
