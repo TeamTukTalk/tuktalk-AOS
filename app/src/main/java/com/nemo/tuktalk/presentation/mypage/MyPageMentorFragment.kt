@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -11,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.nemo.tuktalk.R
 import com.nemo.tuktalk.common.Constants
 import com.nemo.tuktalk.databinding.FragmentMypageMentorLaunchingVerBinding
+import com.nemo.tuktalk.presentation.mypage.account.AccountOptionActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceActivity
@@ -101,6 +104,14 @@ class MyPageMentorFragment: Fragment() {
             startActivity(intent)
         }
         ///////////////////////////////////////////////////////////
+
+        // 계정 설정 이동
+        val llGotoAccountOtion : LinearLayout = view.findViewById(R.id.ll_goto_account_option)
+        llGotoAccountOtion.setOnClickListener {
+            Log.e("AppTest","MyPageMentorFragment/ go to account option activity")
+            val intent = Intent(context, AccountOptionActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

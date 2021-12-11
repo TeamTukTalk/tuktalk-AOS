@@ -1,9 +1,13 @@
 package com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.view.WindowManager
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -13,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.nemo.tuktalk.R
 import com.nemo.tuktalk.databinding.ActivityPortfolioOpenBinding
+import com.nemo.tuktalk.presentation.guide.GuideActivity
 
 class PortfolioOpenActivity: AppCompatActivity() {
 
@@ -23,6 +28,9 @@ class PortfolioOpenActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.e("AppTest", "PortfolioOpenActivity/ onCreate")
+
+        // 알림문구 부터 보여주기
+        Toast.makeText(this, "파일이 보이지 않을 시 뒤로가기 후 다시 시도해주세요.", Toast.LENGTH_SHORT).show()
 
         binding = DataBindingUtil.setContentView<ActivityPortfolioOpenBinding>(this, R.layout.activity_portfolio_open)
 
@@ -49,8 +57,14 @@ class PortfolioOpenActivity: AppCompatActivity() {
         binding.webView.settings.javaScriptEnabled = true
 
 
-        binding.webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$PortfolioPdfUrl")
+        startLoadPdf()
 
+    }
+
+    fun startLoadPdf(){
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$PortfolioPdfUrl")
+        }, 1500)
     }
 
     inner class WebViewClientCustom : WebViewClient(){
@@ -65,6 +79,8 @@ class PortfolioOpenActivity: AppCompatActivity() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {  //웹뷰 페이지 로딩 시작
             super.onPageStarted(view, url, favicon)
             Toast.makeText(this@PortfolioOpenActivity, "포트폴리오를 불러오고 있습니다." , Toast.LENGTH_SHORT).show()
+
+            binding.loadingProgressBar.visibility = View.INVISIBLE
         }
 
         override fun onPageFinished(view: WebView?, url: String?) { // 웹뷰 페이지 로딩 완료

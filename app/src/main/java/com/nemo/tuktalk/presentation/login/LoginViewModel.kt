@@ -42,7 +42,7 @@ class LoginViewModel(
                             Constants.USER_EMAIL = it.body()!!.email // 유저 이메일
 
 
-                            if(it.body()!!.role.equals("MENTOR"))
+                            if(it.body()!!.role.equals("MENTOR"))  // 로그인 시 역할 검사 후 유저모드 값 할당!!
                                 Constants.USER_MODE = 0  // 멘토
                             else
                                 Constants.USER_MODE = 1  // 멘티
