@@ -41,8 +41,7 @@
         app:strokeWidth="0.4dp"
         app:strokeColor="#EEEEEE"
 
-        app:cardUseCompatPadding="true"
-        >
+        app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -211,7 +210,7 @@
                 app:layout_constraintDimensionRatio="328:47"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_open_pdf"
+                android:id="@+id/btn_write_review"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                app:layout_constraintLeft_toLeftOf="@id/gl_cl_v_6.1"
@@ -219,7 +218,7 @@
                 app:layout_constraintTop_toBottomOf="@id/view_6"
                 app:layout_constraintBottom_toBottomOf="@id/view_7"
 
-                android:text="열람하기"
+                android:text="리뷰 작성하기"
                 android:textColor="@color/tuktalk_sub_content_2"
                 android:backgroundTint="@color/white"
                 app:strokeColor="#DDDDDD"
@@ -233,7 +232,7 @@
                 android:id="@+id/view_8"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@id/btn_open_pdf"
+                app:layout_constraintTop_toBottomOf="@id/btn_write_review"
                 app:layout_constraintDimensionRatio="328:18"/>
 
 

@@ -185,6 +185,7 @@ class MentorInfoActivity: AppCompatActivity() {
                 // pdf url 열기 구현하기!!
                 val intent = Intent(this, PortfolioOpenActivity::class.java)
                 intent.putExtra("portfolioPdfUrl", viewModel.PortFolioPdfUrl)  // url 전달
+                intent.putExtra("portfolioId", viewModel.PortFolioId) // 포트폴리오 아이디 전달
                 startActivity(intent)
 
             }

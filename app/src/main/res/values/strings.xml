@@ -557,4 +557,8 @@
 
     <string name="tv_check_withdrawal">회원 탈퇴 유의사항을 확인하였으며 동의합니다.</string>
 
+
+    <string name="tv_write_review_1">얼마나 만족하셨나요? 🤔</string>
+    <string name="tv_write_review_2">어떤점이 좋았나요?</string>
+
 </resources>

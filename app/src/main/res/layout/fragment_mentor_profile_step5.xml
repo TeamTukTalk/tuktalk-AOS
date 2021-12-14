@@ -2580,7 +2580,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="360:32"/>
+            app:layout_constraintDimensionRatio="360:16"/>
 
         <View
             android:id="@+id/view_for_btn_2"

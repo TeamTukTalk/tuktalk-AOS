@@ -65,7 +65,7 @@ class MenteeWishListViewModel(
                         }
                     }
                     else{
-
+                        Log.e("AppTest", "MenteeWishListViewModel/ error, code : ${it.code()}")
                         Is_Get_Wish_List_Success.value = false
                     }
 

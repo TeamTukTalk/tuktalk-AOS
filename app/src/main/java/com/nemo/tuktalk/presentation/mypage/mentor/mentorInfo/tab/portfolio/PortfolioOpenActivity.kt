@@ -16,14 +16,19 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.nemo.tuktalk.R
+import com.nemo.tuktalk.common.Constants
 import com.nemo.tuktalk.databinding.ActivityPortfolioOpenBinding
 import com.nemo.tuktalk.presentation.guide.GuideActivity
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class PortfolioOpenActivity: AppCompatActivity() {
 
     private lateinit var binding : ActivityPortfolioOpenBinding
+    private val viewModel : PortfolioOpenViewModel by viewModel()
 
     private var PortfolioPdfUrl = ""
+    private var PortfolioId = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +39,10 @@ class PortfolioOpenActivity: AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView<ActivityPortfolioOpenBinding>(this, R.layout.activity_portfolio_open)
 
-        // 포트폴리오 pdf 캡쳐방지 -> 현재 액티비티에만 적용
+        // 포트폴리오 pdf 캡쳐방지 -> 현재 액티비티에만 적용  //////////////////////////////////////////////
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
 
         // toolbar 설정!!
         setSupportActionBar(binding.toolbar)  // 액션바로 xml에 만들어준 toolbar를 사용한다
@@ -46,9 +53,15 @@ class PortfolioOpenActivity: AppCompatActivity() {
         /////////////////////
 
 
-        // 포트폴리오 pdf url 전달받기
+        // 포트폴리오 pdf url, id 전달받기
         PortfolioPdfUrl = intent.getStringExtra("portfolioPdfUrl").toString()
         Log.e("AppTest", "PortfolioOpenActivity/  pdf url : ${PortfolioPdfUrl}")
+
+        PortfolioId = intent.getIntExtra("portfolioId", -1)
+        Log.e("AppTest", "PortfolioOpenActivity/ portfolio id : ${PortfolioId}")
+        Log.e("AppTest", "PortfolioOpenActivity/ current user mode : ${Constants.USER_MODE}")
+
+        //////////////////////////////////////////
 
         // WebView 설정
         binding.webView.webViewClient = WebViewClientCustom()
@@ -80,12 +93,18 @@ class PortfolioOpenActivity: AppCompatActivity() {
             super.onPageStarted(view, url, favicon)
             Toast.makeText(this@PortfolioOpenActivity, "포트폴리오를 불러오고 있습니다." , Toast.LENGTH_SHORT).show()
 
-            binding.loadingProgressBar.visibility = View.INVISIBLE
+            binding.loadingProgressBar.visibility = View.INVISIBLE // 로딩 프로그레스바
         }
 
         override fun onPageFinished(view: WebView?, url: String?) { // 웹뷰 페이지 로딩 완료
             super.onPageFinished(view, url)
             Toast.makeText(this@PortfolioOpenActivity, "포트폴리오 가져오기 완료." , Toast.LENGTH_SHORT).show()
+
+
+            // 멘티의 경우 포트폴리오 열람 기록 등록
+            if(Constants.USER_MODE == 1 && PortfolioId > 0)
+                viewModel.menteeViewPortfolio(PortfolioId)
+
         }
     }
 

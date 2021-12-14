@@ -1,4 +1,4 @@
-package com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.adapter
+package com.nemo.tuktalk.presentation.mypage.mentee.managereview.tab.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,16 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nemo.tuktalk.R
 import com.nemo.tuktalk.databinding.ItemEmptyViewBinding
 import com.nemo.tuktalk.databinding.ItemRvMenteeRecentPortfolioBinding
-import com.nemo.tuktalk.databinding.ItemRvMenteeWishListBinding
+import com.nemo.tuktalk.databinding.ItemRvMenteeRecentPortfolioForReviewBinding
 import com.nemo.tuktalk.domain.model.mypage.mentee.recenthistory.RecentHistoryItem
-import com.nemo.tuktalk.domain.model.mypage.mentee.wishlist.WishListItem
-import com.nemo.tuktalk.presentation.mypage.mentee.wishlist.adapter.MenteeWishListRVadapter
+import com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.adapter.MenteeRecentPorfolioRVadapter
 import java.lang.RuntimeException
 
-class MenteeRecentPorfolioRVadapter(
+class ReviewPossibleRVadapter(
         private var dataSet : MutableList<RecentHistoryItem>,
-        val openPdfUrl:(pdfUrl : String) -> Unit
-): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        val writeReview:(mentorId : Int) -> Unit
+): RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
 
     // 뷰 타입 오버라이드!   ->  1 = 빈 뷰  /  2 = 찜 멘토 리스트 아이템
     override fun getItemViewType(position: Int): Int {
@@ -29,11 +28,10 @@ class MenteeRecentPorfolioRVadapter(
     }
 
     // 멘토리스트 아이템 뷰
-    inner class ViewType2ViewHolder(val binding: ItemRvMenteeRecentPortfolioBinding)
+    inner class ViewType2ViewHolder(val binding: ItemRvMenteeRecentPortfolioForReviewBinding)
         :RecyclerView.ViewHolder(binding.root){
 
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
@@ -52,14 +50,12 @@ class MenteeRecentPorfolioRVadapter(
             }
             2-> {
                 val view = LayoutInflater.from(parent.context).inflate(
-                        R.layout.item_rv_mentee_recent_portfolio,
+                        R.layout.item_rv_mentee_recent_portfolio_for_review,
                         parent,
                         false
                 )
 
-
-                ViewType2ViewHolder(ItemRvMenteeRecentPortfolioBinding.bind(view))
-
+                ViewType2ViewHolder(ItemRvMenteeRecentPortfolioForReviewBinding.bind(view))
             }
             else -> {
                 throw RuntimeException("unknown item view type error")
@@ -83,9 +79,9 @@ class MenteeRecentPorfolioRVadapter(
             holder.binding.tvPortfolioDescription.text = dataSet[position].menteeRecentHistoryResponseDto.description // 설명
 
 
-            // 열람하기 버튼 터치 시 해당 pdf url 열기 액티비티 이동 연동하기
-            holder.binding.btnOpenPdf.setOnClickListener {
-                openPdfUrl.invoke(dataSet[position].menteeRecentHistoryResponseDto.pdfUrl)
+            // 리뷰 작성하기  버튼 터치 시 리뷰 작성 액티비티로 이동하기
+            holder.binding.btnWriteReview.setOnClickListener {
+                writeReview.invoke(dataSet[position].menteeRecentHistoryResponseDto.mentorId)
             }
 
 
@@ -93,9 +89,8 @@ class MenteeRecentPorfolioRVadapter(
     }
 
     override fun getItemCount(): Int {
-       return dataSet.size
+        return dataSet.size
     }
-
 
     fun updateList(newList: MutableList<RecentHistoryItem>){
         dataSet = newList
@@ -105,6 +100,4 @@ class MenteeRecentPorfolioRVadapter(
     fun clearList(){
         dataSet.clear()
     }
-
-
 }

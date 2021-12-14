@@ -5,10 +5,13 @@ import com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskViewModel
 import com.nemo.tuktalk.presentation.login.LoginViewModel
 import com.nemo.tuktalk.presentation.main.MainActivityViewModel
 import com.nemo.tuktalk.presentation.mypage.account.withdrawal.WithdrawalViewModel
+import com.nemo.tuktalk.presentation.mypage.mentee.managereview.MenteeManageReviewViewModel
+import com.nemo.tuktalk.presentation.mypage.mentee.managereview.tab.writereview.WriteReviewViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.menteeProfile.MenteeProfileViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.wishlist.MenteeWishListViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewModel
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioViewModel
@@ -31,7 +34,7 @@ internal val viewModelModule = module {
     viewModel { MentorInfoViewModel(get(), get(), get()) }
     viewModel { RegistPortfolioViewModel(get()) }
 
-    viewModel { MenteeRecentPortfolioViewModel() }
+    viewModel { MenteeRecentPortfolioViewModel(get()) }
 
     viewModel { MainActivityViewModel(get()) }
 
@@ -45,5 +48,10 @@ internal val viewModelModule = module {
     viewModel { WithdrawalViewModel() }
 
     viewModel { MenteeWishListViewModel(get()) }
+
+    viewModel { PortfolioOpenViewModel(get()) }
+
+    viewModel { MenteeManageReviewViewModel(get()) }
+    viewModel { WriteReviewViewModel() }
 
 }

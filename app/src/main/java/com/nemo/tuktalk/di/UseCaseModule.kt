@@ -3,7 +3,9 @@ package com.nemo.tuktalk.di
 import com.nemo.tuktalk.domain.usecase.home.GetRealTimeReviewListUseCase
 import com.nemo.tuktalk.domain.usecase.home.HomeByTaskMentorListUseCase
 import com.nemo.tuktalk.domain.usecase.home.HomeTop5MentorListUseCase
+import com.nemo.tuktalk.domain.usecase.mentee.GetRecentHistoryUseCase
 import com.nemo.tuktalk.domain.usecase.mentee.GetWishListUseCase
+import com.nemo.tuktalk.domain.usecase.mentee.MenteeViewPortfolioUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorEmailCertificationCheckUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorGetCompanyNameUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorRegistProfileUseCase
@@ -43,6 +45,7 @@ internal val useCaseModule = module {
     factory { WishMentorUseCase(get()) }
     factory { GetWishListUseCase(get()) }
 
-
+    factory { MenteeViewPortfolioUseCase(get()) }
+    factory { GetRecentHistoryUseCase(get()) }
 
 }

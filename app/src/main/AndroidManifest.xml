@@ -66,6 +66,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.wishlist.MenteeWishListActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.managereview.MenteeManageReviewActivity"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="com.nemo.tuktalk.presentation.signup.info.terms.TermsActivity"
             android:screenOrientation="portrait"/>
@@ -78,6 +80,9 @@
         <activity android:name="com.nemo.tuktalk.presentation.mypage.account.basicinfo.ActivityUserBasicInfo"
             android:screenOrientation="portrait"/>
         <activity android:name="com.nemo.tuktalk.presentation.mypage.account.withdrawal.ActivityWithdrawal"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.managereview.tab.writereview.WriteReviewActivity"
             android:screenOrientation="portrait"/>
 
     </application>

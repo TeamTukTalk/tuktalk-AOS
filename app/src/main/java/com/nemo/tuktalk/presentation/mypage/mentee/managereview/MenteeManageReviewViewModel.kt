@@ -1,4 +1,4 @@
-package com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio
+package com.nemo.tuktalk.presentation.mypage.mentee.managereview
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -6,13 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nemo.tuktalk.common.Constants_gitignore
 import com.nemo.tuktalk.data.remote.dto.response.mentee.MenteeRecentHistoryResponseDto
-import com.nemo.tuktalk.data.remote.dto.response.mentee.MenteeWishListResponseDto
 import com.nemo.tuktalk.domain.model.mypage.mentee.recenthistory.RecentHistoryItem
-import com.nemo.tuktalk.domain.model.mypage.mentee.wishlist.WishListItem
-import com.nemo.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.nemo.tuktalk.domain.usecase.mentee.GetRecentHistoryUseCase
 
-class MenteeRecentPortfolioViewModel(
+class MenteeManageReviewViewModel(
         private val getRecentHistoryUseCase: GetRecentHistoryUseCase
 ): ViewModel() {
 
@@ -25,7 +22,6 @@ class MenteeRecentPortfolioViewModel(
     var emptyMenteeRecentHistoryResponseDto = MenteeRecentHistoryResponseDto(0,"","","","")
 
     var IsResultEmpty = false
-
 
 
     @SuppressLint("CheckResult")
