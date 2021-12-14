@@ -41,6 +41,8 @@ class MentorInfoActivity: AppCompatActivity() {
 
     private var MENTOR_ID = 0
 
+    lateinit var wishMenu : MenuItem
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.e("AppTest", "Mentor Info Activity onCreate")
@@ -186,17 +188,32 @@ class MentorInfoActivity: AppCompatActivity() {
                 startActivity(intent)
 
             }
-
         }
 
+        ///////////////////////////////////////////////
 
 
+        // test
+        /*binding.tvProfileFirstLetter.setOnClickListener {
+            updateWishMenuIcon()
+        }*/
+
+
+    }
+
+    fun updateWishMenuIcon(){
+        // 멘토 상세페이지 조회 후 현재 유저가 해당 멘토 찜 여부 파악 후 하트 아이콘 상태 업데이트 하기!!
+
+        wishMenu.setIcon(R.drawable.ic_mentor_like_active)  // 찜한 멘토인 경우
+
+        wishMenu.setIcon(R.drawable.ic_mentor_like) // 찜하지 않는 멘토인 경우
     }
 
 
     // toolbar
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu4, menu)
+        wishMenu = menu!!.findItem(R.id.action_like)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -204,8 +221,13 @@ class MentorInfoActivity: AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_like ->{
-                // 하트 버튼 누를 시
-                Log.e("AppTest", "toolbar like btn clicked")
+                // 하트 버튼 누를 시 -> 멘토 찜하기 연동하기!!!
+                Log.e("AppTest", "toolbar like btn clicked, current mentorId : ${MENTOR_ID}")
+               // item.setIcon(R.drawable.ic_mentor_like_active)
+
+                // 찜 여부에 따라 찜하기 / 찜취소 나누기!!!
+
+
 
             }
             android.R.id.home -> {

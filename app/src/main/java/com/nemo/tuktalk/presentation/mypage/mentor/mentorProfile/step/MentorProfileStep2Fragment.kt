@@ -64,6 +64,7 @@ class MentorProfileStep2Fragment: Fragment(){
             }
 
             viewModel.clearSubSpecailitySelected() // 상세분야 선택여부 모두 초기화
+            SUB_SPECIALITY_NUM = 1
 
         })
 

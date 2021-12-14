@@ -1,9 +1,15 @@
 package com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio
 
+import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.nemo.tuktalk.common.Constants_gitignore
+import com.nemo.tuktalk.domain.usecase.portfolio.UploadPdfFileUseCase
 
-class RegistPortfolioViewModel: ViewModel() {  // 포트폴리오 등록
+class RegistPortfolioViewModel(
+        private val uploadPdfFileUseCase: UploadPdfFileUseCase
+): ViewModel() {  // 포트폴리오 등록
 
 
     // step1
@@ -59,6 +65,29 @@ class RegistPortfolioViewModel: ViewModel() {  // 포트폴리오 등록
     fun fillRecommendationTargetDescription(userInput : String, flag: Boolean){
         Step3Checked.value = flag
         RECOMMENDATION_TARGET_DESCRIPTION = userInput
+    }
+
+
+    //////////////////////////////////////////
+
+    // step4
+
+    @SuppressLint("CheckResult")
+    fun uploadPdfFile(encodedPdf : String){
+
+        uploadPdfFileUseCase.uploadPdfFile(Constants_gitignore.USER_TOKEN, encodedPdf).subscribe(
+                {
+                    if(it.code() == 200){
+                        Log.e("AppTest", "RegistPortfolioViewModel/ 업로드 성공")
+                    }
+                    else{
+                        Log.e("AppTest", "RegistPortfolioViewModel/ 업로드 실패")
+                    }
+                },
+                {
+                    throwable -> Log.e("AppTest", "RegistPortfolioViewModel/ upload pdf error ${throwable}")
+                }
+        )
     }
 
 }

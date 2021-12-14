@@ -622,6 +622,15 @@
         <item name="fontFamily">@font/notosans_kr_medium</item>
     </style>
 
+    <style name="et_mentor_profile_step_revise">
+        <item name="android:textColor">@color/tuktalk_sub_content</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
     <style name="et_mentor_profile_step_2">
         <item name="android:textColor">@color/tuktalk_sub_content</item>
         <item name="android:includeFontPadding">false</item>
@@ -932,6 +941,51 @@
         <item name="android:gravity">center</item>
         <item name="android:includeFontPadding">false</item>
         <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="tv_withdrawal_1">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+
+    <style name="tv_withdrawal_2">
+        <item name="android:textColor">@color/tuktalk_sub_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+
+    <style name="item_recent_pf_tv_portfolio">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="item_recent_pf_tv_1">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+    <style name="item_recent_pf_tv_2">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
     </style>
 
 

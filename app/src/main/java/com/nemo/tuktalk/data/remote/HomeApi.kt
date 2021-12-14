@@ -2,6 +2,7 @@ package com.nemo.tuktalk.data.remote
 
 import com.nemo.tuktalk.data.remote.dto.response.home.ByTaskMentorResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.home.Top5MentorResponseDto
+import com.nemo.tuktalk.data.remote.dto.response.home.review.ReviewResponseDtoList
 import io.reactivex.Single
 import retrofit2.Response
 import retrofit2.http.GET
@@ -22,4 +23,13 @@ interface HomeApi {
             @Header("Authorization")userToken: String,
             @Query("specialty") speciality: String
     ): Single<Response<ArrayList<ByTaskMentorResponseDto>>>
+
+
+    // 실시간 후기 리스트 가져오기
+    @GET("api/reviews")
+    fun getRealTimeReviewList(
+            @Header("Authorization")userToken: String,
+            @Query("page") page: Int
+    ) : Single<Response<ReviewResponseDtoList>>
+
 }

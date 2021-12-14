@@ -35,7 +35,7 @@
         <activity android:name="com.nemo.tuktalk.presentation.signup.SelectCategoryActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.nemo.tuktalk.presentation.signup.info.InfoRegistActivity"
-            android:windowSoftInputMode="adjustNothing"
+
             android:screenOrientation="portrait"/>
         <activity android:name="com.nemo.tuktalk.presentation.signup.complete.SignUpCompleteActivity"
             android:screenOrientation="portrait"/>
@@ -64,6 +64,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.wishlist.MenteeWishListActivity"
+            android:screenOrientation="portrait"/>
 
         <activity android:name="com.nemo.tuktalk.presentation.signup.info.terms.TermsActivity"
             android:screenOrientation="portrait"/>
@@ -71,9 +73,11 @@
         <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".presentation.mypage.account.AccountOptionActivity"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.account.AccountOptionActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.mypage.account.basicinfo.ActivityUserBasicInfo"
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.account.basicinfo.ActivityUserBasicInfo"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.account.withdrawal.ActivityWithdrawal"
             android:screenOrientation="portrait"/>
 
     </application>

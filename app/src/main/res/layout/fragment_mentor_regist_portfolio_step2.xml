@@ -309,7 +309,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_weight="264"
+                        android:layout_weight="280"
                         android:gravity="center_vertical"
                         >
 
@@ -335,17 +335,16 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_weight="39"
                         android:gravity="center_vertical"
                         >
 
                         <!-- edittext autosize 되는지 해보기 -->
                         <EditText
                             android:id="@+id/et_pageCount_des"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@null"
                             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -365,7 +364,7 @@
                     <View
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="12"/>
+                        android:layout_weight="10"/>
 
                 </LinearLayout>
 

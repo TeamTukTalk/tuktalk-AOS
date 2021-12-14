@@ -722,9 +722,9 @@
 
                             <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:orientation="vertical"
-                                android:layout_weight="109"
+                                android:layout_weight="116"
                                 android:gravity="center_vertical"
                                 >
 
@@ -750,17 +750,17 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:layout_weight="26"
+
                                 android:gravity="center_vertical"
                                 >
 
                                 <!-- edittext autosize 되는지 해보기 -->
                                 <EditText
                                     android:id="@+id/et_month_des"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:background="@null"
                                     android:textAppearance="?android:attr/textAppearanceSmall"
@@ -769,7 +769,7 @@
                                     android:text="개월"
                                     android:focusable="false"
                                     android:enabled="false"
-                                    style="@style/et_mentor_profile_step"
+                                    style="@style/et_mentor_profile_step_revise"
                                     android:maxLines="1"
                                     />
 
@@ -777,10 +777,7 @@
 
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="12"/>
+
 
                         </LinearLayout>
 

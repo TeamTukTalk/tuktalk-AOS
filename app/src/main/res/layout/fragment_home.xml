@@ -19,7 +19,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -411,7 +412,7 @@
 
 
                 <!-- 실시간 멘티 후기 영역 -->
-               <!-- <View
+                <View
                     android:id="@+id/view_realtime_mentee_review"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -486,9 +487,6 @@
 
 
 
--->
-
-
                 <!-- 실시간 멘티 후기 영역 end -->
 
 
@@ -496,10 +494,11 @@
                     android:id="@+id/view_18"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/view_13"
+                    app:layout_constraintTop_toBottomOf="@id/view_realtime_mentee_review"
                     app:layout_constraintDimensionRatio="360:40"/>
                 <!--멘토 실시간 후기 있으면
-                app:layout_constraintTop_toBottomOf="@id/view_realtime_mentee_review" -->
+                app:layout_constraintTop_toBottomOf="@id/view_realtime_mentee_review"
+                 없으면 view13 밑-->
 
 
                 <TextView

@@ -1,6 +1,7 @@
 package com.nemo.tuktalk.data.repository
 
 import com.nemo.tuktalk.data.remote.PortfolioApi
+import com.nemo.tuktalk.data.remote.dto.response.portfolio.FileUploadResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.portfolio.PortfolioDetailInfoResponseDto
 import com.nemo.tuktalk.domain.repository.PortfolioRepository
 import io.reactivex.Single
@@ -20,5 +21,10 @@ class PortfolioRepositoryImpl(
         portfolioApi.getMentorDetailInfo(userToken, mentorId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-    
+
+    override fun uploadPdfFile(userToken: String, encodedPdf: String): Single<Response<FileUploadResponseDto>>
+        = portfolioApi.uploadPdfFiles(userToken, encodedPdf)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+
 }

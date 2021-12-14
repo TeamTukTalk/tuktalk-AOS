@@ -14,6 +14,7 @@ import com.nemo.tuktalk.databinding.ActivityMentorServiceBinding
 import com.nemo.tuktalk.presentation.login.LoginActivity
 import com.nemo.tuktalk.presentation.main.MainActivity
 import com.nemo.tuktalk.presentation.mypage.account.basicinfo.ActivityUserBasicInfo
+import com.nemo.tuktalk.presentation.mypage.account.withdrawal.ActivityWithdrawal
 
 class AccountOptionActivity : AppCompatActivity() {
 
@@ -22,7 +23,7 @@ class AccountOptionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.e("AppTest", "AccountOptionActivity/ mentor service activity onCreate")
+        Log.e("AppTest", "AccountOptionActivity/ onCreate")
 
         binding = DataBindingUtil.setContentView<ActivityAccountOptionBinding>(this, R.layout.activity_account_option)
 
@@ -53,6 +54,12 @@ class AccountOptionActivity : AppCompatActivity() {
             Toast.makeText(this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LoginActivity::class.java)  // 로그인 화면 이동
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)  //
+            startActivity(intent)
+        }
+        
+        // 회원 탈퇴 이동
+        binding.llWithdrawal.setOnClickListener {
+            val intent = Intent(this, ActivityWithdrawal::class.java)  // 회원 탈퇴 화면 이동
             startActivity(intent)
         }
 

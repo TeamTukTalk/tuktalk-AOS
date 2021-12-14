@@ -8,7 +8,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:shapeAppearanceOverlay="@style/CardViewRadius5"
 
-        app:cardElevation="1.5dp"
+        app:cardElevation="1dp"
 
         app:cardUseCompatPadding="true"
         >

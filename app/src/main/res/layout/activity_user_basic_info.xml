@@ -176,7 +176,7 @@
         app:layout_constraintBottom_toBottomOf="@id/view_5"
         app:layout_constraintLeft_toRightOf="@id/gl_v_4.44"
 
-        android:text="이름(닉네임)"
+        android:text="이메일"
         style="@style/tv_mentor_profile_step_2"
         />
 

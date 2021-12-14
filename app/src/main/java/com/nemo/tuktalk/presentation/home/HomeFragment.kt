@@ -24,6 +24,7 @@ import com.nemo.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
 import com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity
 import com.google.android.material.card.MaterialCardView
+import com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment: Fragment() {
@@ -41,7 +42,7 @@ class HomeFragment: Fragment() {
     private var testDataSet_top5 = mutableListOf<Top5MentorResponseDto>()
     private var testDataSet_byTask = mutableListOf<ByTaskMentorResponseDto>()
 
-    // 현재는 실시간 멘티 후기x
+    // 현재는 실시간 멘티 후기 O
     lateinit var rvAdapter_realTime_mentee : RealTimeMenteeReviewRVAdpater
     private var testDataSet_realTime_mentee = mutableListOf<RealTimeMenteeReviewRVitem>()
 
@@ -181,9 +182,9 @@ class HomeFragment: Fragment() {
 
 
         //////////////////////////////////////////////////////////////////
-        // 실시간 멘티 후기 RV -> 현재는 비활성화!!
+        // 실시간 멘티 후기 RV
 
-       /* rvAdapter_realTime_mentee = RealTimeMenteeReviewRVAdpater(testDataSet_realTime_mentee)
+        rvAdapter_realTime_mentee = RealTimeMenteeReviewRVAdpater(testDataSet_realTime_mentee)
         binding.rvRealtimeMenteeReview.layoutManager = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
         }
@@ -207,9 +208,9 @@ class HomeFragment: Fragment() {
             ))
         }
         rvAdapter_realTime_mentee.updateList(testDataSet_realTime_mentee)
-        rvAdapter_realTime_mentee.notifyDataSetChanged()*/
+        rvAdapter_realTime_mentee.notifyDataSetChanged()
 
-
+        ////////////////////////////////////////////////////////////////////
 
         // 직무별 뚝딱멘토 전체보기
         binding.tvWatchAllByTask.setOnClickListener {
@@ -220,11 +221,11 @@ class HomeFragment: Fragment() {
 
 
         // 멘토 실시간 후기 전체보기 -> 현재는 비활성화
-     /*   binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
+       binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
             Log.e("AppTest","go to viewall bytask activity")
             val intent = Intent(context, ViewAllMenteeReviewActivity::class.java)
             startActivity(intent)
-        }*/
+        }
 
 
     }
@@ -236,8 +237,8 @@ class HomeFragment: Fragment() {
         Log.e("AppTest", "home fragment onResume, Bottom navi num : ${Constants.BOTTOM_NAVI_NUM}")
     }
 
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+    ////  홈 화면 알림 아이콘 현재는 비활성화 해두기
+    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.toolbar_menu3, menu)
     }
 
@@ -246,7 +247,7 @@ class HomeFragment: Fragment() {
             Log.e("AppTest","home fragment actionbar bell icon clicked")
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
     /// 직무별 뚝딱멘토 - 직무 선택 시 -> viewModel 연결하기
     fun selectTask(taskNum : Int){

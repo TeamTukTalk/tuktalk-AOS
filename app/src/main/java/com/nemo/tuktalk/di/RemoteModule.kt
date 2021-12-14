@@ -19,11 +19,13 @@ internal val remoteModule = module {
     single { provideHomeApi(get())}
     single { provideSearchApi(get())}
     single { providePortfolioApi(get()) }
+    single { provideMenteeApi(get())}
 
 }
 
 internal fun provideUserApi(retrofit: Retrofit) : UserApi = retrofit.create(UserApi::class.java)
 internal fun provideMentorApi(retrofit: Retrofit) : MentorApi = retrofit.create(MentorApi::class.java)
+internal fun provideMenteeApi(retrofit: Retrofit) : MenteeApi = retrofit.create(MenteeApi::class.java)
 internal fun provideHomeApi(retrofit: Retrofit) : HomeApi = retrofit.create(HomeApi::class.java)
 internal fun provideSearchApi(retrofit: Retrofit) : SearchApi = retrofit.create(SearchApi::class.java)
 internal fun providePortfolioApi(retrofit: Retrofit) : PortfolioApi = retrofit.create(PortfolioApi::class.java)

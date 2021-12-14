@@ -5,6 +5,7 @@ import com.nemo.tuktalk.data.remote.dto.response.user.UserEmailCheckDto
 import com.nemo.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserLoginResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserSignUpResponseDto
+import com.nemo.tuktalk.data.remote.dto.response.user.activity.WishMentorResponseDto
 
 import io.reactivex.Single
 import retrofit2.Response
@@ -13,6 +14,9 @@ interface UserRepository {
     fun userEmailCheck(email: String) : Single<UserEmailCheckDto>
     fun userSignUp(userSignUpRequestDto: UserSignUpRequestDto): Single<Response<UserSignUpResponseDto>>
     fun userLogin(userLoginRequestDto: UserLoginRequestDto): Single<Response<UserLoginResponseDto>>
+
+    // 멘토 찜하기 = 위시리스트 추가
+    fun wishMentor(userToken: String, mentorId: Int) : Single<Response<WishMentorResponseDto>>
 }
 
 

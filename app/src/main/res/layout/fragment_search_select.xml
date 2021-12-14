@@ -100,11 +100,11 @@
         <EditText
             android:id="@+id/editText"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/view_1"
             app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
             app:layout_constraintRight_toRightOf="@id/gl_v_78"
-            app:layout_constraintDimensionRatio="285:22"
+
             android:background="@null"
             android:hint="멘토, 직무 검색"
             android:textColorHint="@color/tuktalk_sub_content_4"
@@ -128,7 +128,8 @@
             android:id="@+id/iv_search"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/view_2"
+           app:layout_constraintTop_toTopOf="@id/editText"
+            app:layout_constraintBottom_toBottomOf="@id/editText"
             app:layout_constraintLeft_toLeftOf="@id/gl_v_89.4"
             app:layout_constraintRight_toRightOf="@id/gl_v_95"
             app:layout_constraintDimensionRatio="1:1"

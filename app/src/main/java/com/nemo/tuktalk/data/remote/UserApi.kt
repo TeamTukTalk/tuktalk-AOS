@@ -5,12 +5,10 @@ import com.nemo.tuktalk.data.remote.dto.response.user.UserEmailCheckDto
 import com.nemo.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserLoginResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserSignUpResponseDto
+import com.nemo.tuktalk.data.remote.dto.response.user.activity.WishMentorResponseDto
 import io.reactivex.Single
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface UserApi {
 
@@ -31,4 +29,13 @@ interface UserApi {
     fun userLogin(
             @Body userdata: UserLoginRequestDto
     ):Single<Response<UserLoginResponseDto>>
+
+
+    // 멘토 찜하기
+    @POST("api/wishes")
+    fun wishMentor(
+            @Header("Authorization")userToken: String,
+            @Query("mentorId") mentorId:Int
+    ): Single<Response<WishMentorResponseDto>>
+
 }

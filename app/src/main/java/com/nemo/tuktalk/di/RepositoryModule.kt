@@ -12,5 +12,6 @@ internal val repositoryModule = module {
     single<HomeRepository>{ HomeRepositoryImpl(get())}
     single<SearchRepository>{ SearchRepositoryImpl(get()) }
     single<PortfolioRepository>{ PortfolioRepositoryImpl(get()) }
+    single<MenteeRepository>{ MenteeRepositoryImpl(get())}
 
 }

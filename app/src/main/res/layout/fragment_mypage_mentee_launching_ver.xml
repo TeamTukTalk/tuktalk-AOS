@@ -274,7 +274,7 @@
 
                 <!-- 멘토 회사 인증 & 계정 설정 -->
                 <LinearLayout
-                    android:id="@+id/ll_goto_certificate_company"
+                    android:id="@+id/ll_review_manage"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/view_14"
@@ -300,7 +300,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="22"
-                            android:text="멘토/회사 인증하기"
+                            android:text="리뷰관리"
                             style="@style/tv_mentor_mp_small_title"/>
                         <View
                             android:layout_width="match_parent"
@@ -314,10 +314,58 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ll_mentee_wishlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_review_manage"
+                    app:layout_constraintDimensionRatio="360:46"
+                    android:orientation="horizontal"
+                    android:weightSum="360">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="328"
+                        android:orientation="vertical"
+                        android:weightSum="46">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="22"
+                            android:text="찜목록"
+                            style="@style/tv_mentor_mp_small_title"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="12"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="16"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view_line_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll_mentee_wishlist"
+                    app:layout_constraintDimensionRatio="360:8"
+                    android:background="@color/tuktalk_gray_5"/>
+
+                <LinearLayout
                     android:id="@+id/ll_goto_account_option"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    app:layout_constraintTop_toBottomOf="@id/ll_goto_certificate_company"
+                    app:layout_constraintTop_toBottomOf="@id/view_line_2"
                     app:layout_constraintDimensionRatio="360:46"
                     android:orientation="horizontal"
                     android:weightSum="360">
@@ -354,12 +402,12 @@
                 </LinearLayout>
 
 
-                <View
+              <!--  <View
                     android:id="@+id/view_16"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     app:layout_constraintTop_toBottomOf="@id/ll_goto_account_option"
-                    app:layout_constraintDimensionRatio="360:60"/>
+                    app:layout_constraintDimensionRatio="360:60"/>-->
 
 
 

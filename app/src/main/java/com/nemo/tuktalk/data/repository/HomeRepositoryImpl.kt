@@ -3,6 +3,7 @@ package com.nemo.tuktalk.data.repository
 import com.nemo.tuktalk.data.remote.HomeApi
 import com.nemo.tuktalk.data.remote.dto.response.home.ByTaskMentorResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.home.Top5MentorResponseDto
+import com.nemo.tuktalk.data.remote.dto.response.home.review.ReviewResponseDtoList
 import com.nemo.tuktalk.domain.repository.HomeRepository
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -24,5 +25,12 @@ class HomeRepositoryImpl(
             homeApi.getMentorByTask(userToken, speciality)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
+
+    // 실기간 후기 리스트 조회
+    override fun getRealTimeReviewList(userToken: String, page: Int): Single<Response<ReviewResponseDtoList>> =
+            homeApi.getRealTimeReviewList(userToken, page)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+
 
 }

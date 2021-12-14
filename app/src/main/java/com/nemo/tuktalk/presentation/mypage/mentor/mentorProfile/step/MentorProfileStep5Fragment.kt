@@ -62,25 +62,33 @@ class MentorProfileStep5Fragment: Fragment(){
 
         // 전문분야에 따라 추천 해시태그 변경  1.디자인  2. IT/개발
         if(viewModel.ld_speciality.value == "디자인"){
-            binding.clHashtagDesign.visibility = View.VISIBLE
-            binding.clHashtagIt.visibility = View.INVISIBLE
+            //binding.clHashtagDesign.visibility = View.VISIBLE
+            binding.hsHashtagDesign.visibility = View.VISIBLE
+            //binding.clHashtagIt.visibility = View.INVISIBLE
+            binding.hsHashtagIt.visibility = View.INVISIBLE
         }
         else{
-            binding.clHashtagDesign.visibility = View.INVISIBLE
-            binding.clHashtagIt.visibility = View.VISIBLE
+            //binding.clHashtagDesign.visibility = View.INVISIBLE
+            binding.hsHashtagDesign.visibility = View.INVISIBLE
+            //binding.clHashtagIt.visibility = View.VISIBLE
+            binding.hsHashtagIt.visibility = View.VISIBLE
         }
 
         viewModel.isSpecialityDesign.observe(viewLifecycleOwner, {
             if(it){
-                binding.clHashtagDesign.visibility = View.VISIBLE
-                binding.clHashtagIt.visibility = View.INVISIBLE
+                //binding.clHashtagDesign.visibility = View.VISIBLE
+                binding.hsHashtagDesign.visibility = View.VISIBLE
+                //binding.clHashtagIt.visibility = View.INVISIBLE
+                binding.hsHashtagIt.visibility = View.INVISIBLE
                 if(viewModel.isCompanySizeSelected && viewModel.isDesignHashTagSuggestSelected){
                     viewModel.Step5Checked.value = true
                 }
             }
             else{
-                binding.clHashtagDesign.visibility = View.INVISIBLE
-                binding.clHashtagIt.visibility = View.VISIBLE
+                //binding.clHashtagDesign.visibility = View.INVISIBLE
+                binding.hsHashtagDesign.visibility = View.INVISIBLE
+                //binding.clHashtagIt.visibility = View.VISIBLE
+                binding.hsHashtagIt.visibility = View.VISIBLE
                 if(viewModel.isCompanySizeSelected && viewModel.isItHashTagSuggestSelected){
                     viewModel.Step5Checked.value = true
                 }

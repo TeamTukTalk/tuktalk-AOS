@@ -12,8 +12,10 @@ import com.nemo.tuktalk.R
 import com.nemo.tuktalk.common.Constants
 import com.nemo.tuktalk.databinding.FragmentMypageMenteeLaunchingVerBinding
 import com.nemo.tuktalk.presentation.mypage.account.AccountOptionActivity
+import com.nemo.tuktalk.presentation.mypage.mentee.managereview.MenteeManageReviewActivity
 import com.nemo.tuktalk.presentation.mypage.mentee.menteeProfile.MenteeProfileActivity
 import com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.MenteeRecentPortfolioActivity
+import com.nemo.tuktalk.presentation.mypage.mentee.wishlist.MenteeWishListActivity
 
 class MyPageMenteeFragment: Fragment() {
 
@@ -73,6 +75,22 @@ class MyPageMenteeFragment: Fragment() {
             startActivity(intent)
         }
         ///////////////////////////////////////////////////////////
+
+        // 리뷰 관리 이동
+        val llGotoManageReview : LinearLayout = view.findViewById(R.id.ll_review_manage)
+        llGotoManageReview.setOnClickListener {
+            Log.e("AppTest","MyPageMenteeFragment/ go to manage review activity")
+            val intent = Intent(context, MenteeManageReviewActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 찜 목록 이동
+        val llGotoWishList : LinearLayout = view.findViewById(R.id.ll_mentee_wishlist)
+        llGotoWishList.setOnClickListener {
+            Log.e("AppTest","MyPageMenteeFragment/ go to wish list activity")
+            val intent = Intent(context, MenteeWishListActivity::class.java)
+            startActivity(intent)
+        }
 
         // 계정 설정 이동
         val llGotoAccountOtion : LinearLayout = view.findViewById(R.id.ll_goto_account_option)

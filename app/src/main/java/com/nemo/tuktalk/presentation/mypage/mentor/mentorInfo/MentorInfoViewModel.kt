@@ -10,10 +10,12 @@ import com.nemo.tuktalk.domain.model.mypage.mentor.profileRegist.CareerInput
 import com.nemo.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.nemo.tuktalk.domain.usecase.mentor.info.GetMentorDetailInfoUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.GetPortfolioDetailInfoUseCase
+import com.nemo.tuktalk.domain.usecase.user.activity.WishMentorUseCase
 
 class MentorInfoViewModel(
     private val getMentorDetailInfoUseCase: GetMentorDetailInfoUseCase,
-    private val getPortfolioDetailInfoUseCase: GetPortfolioDetailInfoUseCase
+    private val getPortfolioDetailInfoUseCase: GetPortfolioDetailInfoUseCase,
+    private val wishMentorUseCase: WishMentorUseCase
 ): ViewModel() {
 
     var CURRENT_MENTOR_ID = 0
@@ -186,6 +188,27 @@ class MentorInfoViewModel(
                 ProgressBarVisibility_portfolio.value = false
                 IsGetPortfolioDetialInfoSuccess.value = false
             }
+        )
+    }
+
+    //////////////////////////////////////////////////////////////
+
+    var IS_CURENT_MENTOR_WISH = false  // 현재 멘토가 찜 멘토인지 여부
+
+    var ProgressBarVisibility_wish = MutableLiveData<Boolean>()
+    var IsWishMentorSuccess = MutableLiveData<Boolean>()
+
+    // 멘토 찜하기
+    @SuppressLint("CheckResult")
+    fun wishMentor(mentorId: Int){
+
+        wishMentorUseCase.wishMentor(Constants_gitignore.USER_TOKEN, mentorId).subscribe(
+                {
+
+                },
+                {
+
+                }
         )
     }
 }
