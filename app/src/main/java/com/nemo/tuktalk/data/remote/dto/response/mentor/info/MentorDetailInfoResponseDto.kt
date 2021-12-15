@@ -33,5 +33,7 @@ data class MentorDetailInfoResponseDto(
     @SerializedName("careerDescription")
     val careerDescription : String,
     @SerializedName("hashTags")
-    val hashTags : ArrayList<HashTag>
+    val hashTags : ArrayList<HashTag>,
+    @SerializedName("addedToWishList")
+    val addedToWishList : Boolean
     )

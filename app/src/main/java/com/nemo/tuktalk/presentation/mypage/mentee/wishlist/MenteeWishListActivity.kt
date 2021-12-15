@@ -46,7 +46,11 @@ class MenteeWishListActivity: AppCompatActivity() {
         /////////////////////
 
         // RV 설정
-        rvAdapter = MenteeWishListRVadapter(testDataSet)
+        rvAdapter = MenteeWishListRVadapter(testDataSet,
+        deleteWish = {
+            // viewModel의 찜 취소 연동하기
+            viewModel.deleteWishMentor(it)
+        })
         binding.rvMenteeWishList.layoutManager = LinearLayoutManager(this)
         binding.rvMenteeWishList.adapter = rvAdapter
         binding.rvMenteeWishList.addItemDecoration(VerticalItemDecorator(15))
@@ -79,6 +83,25 @@ class MenteeWishListActivity: AppCompatActivity() {
         })
 
         ///////////////////////////////////////////////////////////////////
+
+        viewModel.Is_Delete_Wish_Mentor_Success.observe(this, {
+            if(it){
+                Log.e("AppTest", "MenteeWishListActivity/ 찜 취소 성공 -> 찜 목록 업데이트")
+
+                viewModel.getMenteeWishList()
+            }
+            else{
+                Log.e("AppTest", "MenteeWishListActivity/ 찜 취소에 실패했습니다")
+                Toast.makeText(this, "찜 취소에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.ProgressBarVisibility_delete.observe(this, {
+            if(it)
+                binding.loadingProgressBarDelete.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarDelete.visibility = View.INVISIBLE
+        })
 
 
     }

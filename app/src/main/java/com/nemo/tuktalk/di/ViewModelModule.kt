@@ -47,7 +47,7 @@ internal val viewModelModule = module {
 
     viewModel { WithdrawalViewModel() }
 
-    viewModel { MenteeWishListViewModel(get()) }
+    viewModel { MenteeWishListViewModel(get(), get()) }
 
     viewModel { PortfolioOpenViewModel(get()) }
 

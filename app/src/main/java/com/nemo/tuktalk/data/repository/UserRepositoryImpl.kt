@@ -45,4 +45,10 @@ class UserRepositoryImpl(
             userApi.wishMentor(userToken, mentorId)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
+
+    // 멘토 찜 취소하기
+    override fun deleteWishMentor(userToken: String, wishId: Int): Single<Response<Void>> =
+            userApi.deleteWishMentor(userToken, wishId)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
 }

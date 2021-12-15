@@ -115,8 +115,6 @@
                 android:src="@drawable/ic_mentor_like_active"
                 android:scaleType="centerInside"/>
 
-
-
             <View
                 android:id="@+id/view_1_1"
                 android:layout_width="match_parent"

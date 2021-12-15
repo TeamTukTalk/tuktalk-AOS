@@ -39,6 +39,7 @@ class MentorInfoViewModel(
     var Career = CareerInput(0,0)
     var CareerDescription = ""
     var HashTags = ArrayList<HashTag>()
+    var AddedToWishList = false
 
 
     // 멘토 상제정보 조회
@@ -67,6 +68,7 @@ class MentorInfoViewModel(
                     Career = it.body()!!.career
                     CareerDescription = it.body()!!.careerDescription
                     HashTags = it.body()!!.hashTags
+                    AddedToWishList = it.body()!!.addedToWishList
                     Log.e("AppTest", "MentorInfoViewModel/ 상세 정보 조회 결과\n" +
                             "MentorID : ${MentorId}\n" +
                             "ProfileImageUrl : ${ProfileImageUrl}\n" +
@@ -81,7 +83,8 @@ class MentorInfoViewModel(
                             "Position : ${Position}\n" +
                             "Career : ${Career}\n" +
                             "CareerDescription : ${CareerDescription}\n" +
-                            "HashTags : ${HashTags}")
+                            "HashTags : ${HashTags}\n" +
+                            "AddedToWishList : ${AddedToWishList}")
 
 
                     IsGetMentorDetialInfoSuccess.value = true
@@ -193,21 +196,38 @@ class MentorInfoViewModel(
 
     //////////////////////////////////////////////////////////////
 
-    var IS_CURENT_MENTOR_WISH = false  // 현재 멘토가 찜 멘토인지 여부
-
     var ProgressBarVisibility_wish = MutableLiveData<Boolean>()
     var IsWishMentorSuccess = MutableLiveData<Boolean>()
 
     // 멘토 찜하기
     @SuppressLint("CheckResult")
     fun wishMentor(mentorId: Int){
+        ProgressBarVisibility_wish.value = true
 
         wishMentorUseCase.wishMentor(Constants_gitignore.USER_TOKEN, mentorId).subscribe(
                 {
+                    if(it.code() == 200){
+                        if(it.body()!!.wishId != null){
+                            Log.e("AppTest", "MentorInfoViewModel/ 찜 하기 성공")
+                            IsWishMentorSuccess.value = true
+                        }
+                        else{
+                            Log.e("AppTest", "MentorInfoViewModel/ 멘토를 찾을 수 없습니다")
+                            IsWishMentorSuccess.value = false
+                        }
+                    }
+                    else{
+                        Log.e("AppTest", "MentorInfoViewModel/ 찜 하기 실패")
+                        IsWishMentorSuccess.value = false
+                    }
 
+                    ProgressBarVisibility_wish.value = false
                 },
                 {
-
+                    throwable -> Log.e("AppTest", "MentorInfoViewModel/ throwable : ${throwable}\n" +
+                        ",멘토 찜 하기 오류")
+                    IsWishMentorSuccess.value = false
+                    ProgressBarVisibility_wish.value = false
                 }
         )
     }

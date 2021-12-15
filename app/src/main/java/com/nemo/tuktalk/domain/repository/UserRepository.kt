@@ -17,6 +17,9 @@ interface UserRepository {
 
     // 멘토 찜하기 = 위시리스트 추가
     fun wishMentor(userToken: String, mentorId: Int) : Single<Response<WishMentorResponseDto>>
+
+    // 멘토 찜 취소 하기
+    fun deleteWishMentor(userToken: String, wishId: Int) : Single<Response<Void>>
 }
 
 

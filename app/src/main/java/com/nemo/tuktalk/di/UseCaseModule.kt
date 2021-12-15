@@ -17,6 +17,7 @@ import com.nemo.tuktalk.domain.usecase.search.SearchMentorListUseCase
 import com.nemo.tuktalk.domain.usecase.user.UserEmailCheckUseCase
 import com.nemo.tuktalk.domain.usecase.user.UserLoginUseCase
 import com.nemo.tuktalk.domain.usecase.user.UserSignUpUseCase
+import com.nemo.tuktalk.domain.usecase.user.activity.DeleteWishMentorUseCase
 import com.nemo.tuktalk.domain.usecase.user.activity.WishMentorUseCase
 import org.koin.dsl.module
 
@@ -44,6 +45,7 @@ internal val useCaseModule = module {
 
     factory { WishMentorUseCase(get()) }
     factory { GetWishListUseCase(get()) }
+    factory { DeleteWishMentorUseCase(get()) }
 
     factory { MenteeViewPortfolioUseCase(get()) }
     factory { GetRecentHistoryUseCase(get()) }

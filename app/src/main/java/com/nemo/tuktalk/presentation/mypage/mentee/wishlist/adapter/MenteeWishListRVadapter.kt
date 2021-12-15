@@ -1,5 +1,6 @@
 package com.nemo.tuktalk.presentation.mypage.mentee.wishlist.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +14,8 @@ import com.nemo.tuktalk.presentation.search.adpater.SearchDesignRVadapter
 import java.lang.RuntimeException
 
 class MenteeWishListRVadapter(
-        private var dataSet : MutableList<WishListItem>
+        private var dataSet : MutableList<WishListItem>,
+        val deleteWish:(wishId : Int) -> Unit
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     // 뷰 타입 오버라이드!   ->  1 = 빈 뷰  /  2 = 찜 멘토 리스트 아이템
@@ -116,9 +118,13 @@ class MenteeWishListRVadapter(
 
             // 아이템 선택 시 해당 멘토 상세페이지 이동 연동하기
             holder.binding.root.setOnClickListener {
+                Log.e("AppTest", "WishList itemview clicked")
 
+            }
 
-
+            holder.binding.ivHeart.setOnClickListener {
+                Log.e("AppTest", "WishList heart clicked")
+                deleteWish.invoke(dataSet[position].menteeWishListResponseDto.wishId)
             }
 
 

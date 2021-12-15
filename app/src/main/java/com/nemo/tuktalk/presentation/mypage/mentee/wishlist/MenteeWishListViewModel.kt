@@ -11,9 +11,11 @@ import com.nemo.tuktalk.domain.model.home.ViewAllByTask
 import com.nemo.tuktalk.domain.model.mypage.mentee.wishlist.WishListItem
 import com.nemo.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.nemo.tuktalk.domain.usecase.mentee.GetWishListUseCase
+import com.nemo.tuktalk.domain.usecase.user.activity.DeleteWishMentorUseCase
 
 class MenteeWishListViewModel(
-        private val getWishListUseCase: GetWishListUseCase
+        private val getWishListUseCase: GetWishListUseCase,
+        private val deleteWishMentorUseCase: DeleteWishMentorUseCase
 ): ViewModel() {
 
     // 찜 멘토 리스트
@@ -78,4 +80,36 @@ class MenteeWishListViewModel(
                 }
         )
     }
+
+    ///////////////////////////////////////////////////////////////////////
+
+    var Is_Delete_Wish_Mentor_Success = MutableLiveData<Boolean>()
+    var ProgressBarVisibility_delete = MutableLiveData<Boolean>()
+
+    // 찜 취소하기
+    @SuppressLint("CheckResult")
+    fun deleteWishMentor(wishId : Int){
+        ProgressBarVisibility_delete.value = true
+
+        deleteWishMentorUseCase.deleteWishMentor(Constants_gitignore.USER_TOKEN, wishId).subscribe(
+                {
+                    if(it.code() == 200){
+                        Log.e("AppTest", "MenteeWishListViewModel/ delete 성공")
+                        Is_Delete_Wish_Mentor_Success.value = true
+                    }
+                    else{
+                        Log.e("AppTest", "MenteeWishListViewModel/ delete 실패")
+                        Is_Delete_Wish_Mentor_Success.value = false
+                    }
+
+                    ProgressBarVisibility_delete.value = false
+                },
+                {
+                    throwable -> Log.e("AppTest", "MenteeWishListViewModel/ delete error ${throwable}")
+                    Is_Delete_Wish_Mentor_Success.value = false
+                    ProgressBarVisibility_delete.value = false
+                }
+        )
+    }
+
 }

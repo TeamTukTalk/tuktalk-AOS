@@ -38,4 +38,11 @@ interface UserApi {
             @Query("mentorId") mentorId:Int
     ): Single<Response<WishMentorResponseDto>>
 
+    // 멘토 찜 취소하기
+    @DELETE("api/wishes/{wishId}")
+    fun deleteWishMentor(
+            @Header("Authorization")userToken: String,
+            @Path("wishId") wishId:Int
+    ): Single<Response<Void>>
+
 }

@@ -130,6 +130,8 @@ class MentorInfoActivity: AppCompatActivity() {
                 binding.tvTaskName.text = viewModel.SubSpecialties[0].subSpecialtyValue   // 처음 거로 가져오기? -> department 따로 있어야 되는지 물어보기
                 binding.tvSimpleIntroduction.text = viewModel.SimpleIntroduction
 
+                updateWishMenuIcon() // 현재 유저가 해당 멘토 찜 여부에 따라 우측 상단 하트 아이콘 상태 반영하기
+
             }
             else{
                 Log.e("AppTest", "MentorInfoActivity/ 멘토 상세 정보 조회 실패")
@@ -194,20 +196,35 @@ class MentorInfoActivity: AppCompatActivity() {
         ///////////////////////////////////////////////
 
 
-        // test
-        /*binding.tvProfileFirstLetter.setOnClickListener {
-            updateWishMenuIcon()
-        }*/
+       // 찜 한 경우 -> 성공 시 멘토 상세 정보 재조회 후 업데이트
+        viewModel.IsWishMentorSuccess.observe(this, {
+            if(it){
+                Log.e("AppTest", "MentorInfoActivity/ 찜 하기 성공 -> 멘토 상세 정보 재조회")
+
+                viewModel.getMentorDetailInfo(MENTOR_ID)
+            }
+            else{
+                Log.e("AppTest", "MentorInfoActivity/ 찜 하기 실패")
+                Toast.makeText(this, "찜목록 추가에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.ProgressBarVisibility_wish.observe(this, {
+            if(it)
+                binding.loadingProgressBarWish.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarWish.visibility = View.INVISIBLE
+        })
 
 
     }
 
     fun updateWishMenuIcon(){
         // 멘토 상세페이지 조회 후 현재 유저가 해당 멘토 찜 여부 파악 후 하트 아이콘 상태 업데이트 하기!!
-
-        wishMenu.setIcon(R.drawable.ic_mentor_like_active)  // 찜한 멘토인 경우
-
-        wishMenu.setIcon(R.drawable.ic_mentor_like) // 찜하지 않는 멘토인 경우
+        if(viewModel.AddedToWishList)
+            wishMenu.setIcon(R.drawable.ic_mentor_like_active)  // 찜한 멘토인 경우
+        else
+            wishMenu.setIcon(R.drawable.ic_mentor_like) // 찜하지 않는 멘토인 경우
     }
 
 
@@ -226,9 +243,15 @@ class MentorInfoActivity: AppCompatActivity() {
                 Log.e("AppTest", "toolbar like btn clicked, current mentorId : ${MENTOR_ID}")
                // item.setIcon(R.drawable.ic_mentor_like_active)
 
-                // 찜 여부에 따라 찜하기 / 찜취소 나누기!!!
-
-
+                // 찜 여부에 따라 찜하기 / 찜취소 나누기!!! = 찜 취소는 마이페이지 찜 목록에서 가능
+                if(viewModel.AddedToWishList){
+                    // 찜 취소
+                    Toast.makeText(this, "찜 취소는 '마이페이지-찜목록' 에서 가능합니다.", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    // 찜 하기
+                    viewModel.wishMentor(MENTOR_ID)
+                }
 
             }
             android.R.id.home -> {
