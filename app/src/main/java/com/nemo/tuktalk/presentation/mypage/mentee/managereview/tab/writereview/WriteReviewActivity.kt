@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.nemo.tuktalk.R
@@ -121,9 +122,21 @@ class WriteReviewActivity: AppCompatActivity() {
         binding.btnWriteReviewActive.setOnClickListener {
             Log.e("AppTest", "리뷰등록 버튼 clicked, rating : ${viewModel.REVIEW_RATING}, review : ${viewModel.REVIEW_CONTENT}")
 
-
+            viewModel.writeReview(MENTOR_ID)
 
         }
+
+        viewModel.IsWriteReviewSuccess.observe(this, {
+            if(it){
+                Log.e("AppTest", "WriteReviewActivity/ 후기 작성 결과 : 성공")
+                Toast.makeText(this, "리뷰 등록을 완료했습니다.", Toast.LENGTH_SHORT).show()
+                finish()  // 리뷰 작성 액티비티 종료
+            }
+            else{
+                Log.e("AppTest", "WriteReviewActivity/ 후기 작성 결과 : 실패")
+                Toast.makeText(this, "리뷰 등록에 실패했습니다.", Toast.LENGTH_SHORT).show()
+            }
+        })
 
 
 
@@ -155,5 +168,11 @@ class WriteReviewActivity: AppCompatActivity() {
                 ivStarList[i]!!.setImageResource(R.drawable.ic_star_unactive)
             }
         }
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest", "WriteReviewActivity/ onResume")
     }
 }

@@ -85,4 +85,8 @@ class MenteeManageReviewActivity: AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest","MenteeManageReviewActivity/ onResume")
+    }
 }

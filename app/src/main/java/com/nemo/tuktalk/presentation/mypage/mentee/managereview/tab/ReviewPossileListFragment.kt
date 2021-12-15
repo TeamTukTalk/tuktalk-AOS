@@ -87,4 +87,9 @@ class ReviewPossileListFragment: Fragment() {
 
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest", "ReviewPossileListFragment/ onResume")
+    }
 }

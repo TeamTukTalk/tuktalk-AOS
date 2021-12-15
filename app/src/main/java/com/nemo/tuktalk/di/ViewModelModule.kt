@@ -2,6 +2,7 @@ package com.nemo.tuktalk.di
 
 import com.nemo.tuktalk.presentation.home.HomeViewModel
 import com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskViewModel
+import com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewViewModel
 import com.nemo.tuktalk.presentation.login.LoginViewModel
 import com.nemo.tuktalk.presentation.main.MainActivityViewModel
 import com.nemo.tuktalk.presentation.mypage.account.withdrawal.WithdrawalViewModel
@@ -40,6 +41,7 @@ internal val viewModelModule = module {
 
     viewModel { HomeViewModel(get(), get(), get()) }
     viewModel { ViewAllByTaskViewModel(get()) }
+    viewModel { ViewAllMenteeReviewViewModel(get()) }
 
     viewModel { SearchDesignViewModel(get()) }
     viewModel { SearchItViewModel(get()) }
@@ -51,7 +53,7 @@ internal val viewModelModule = module {
 
     viewModel { PortfolioOpenViewModel(get()) }
 
-    viewModel { MenteeManageReviewViewModel(get()) }
-    viewModel { WriteReviewViewModel() }
+    viewModel { MenteeManageReviewViewModel(get(), get()) }
+    viewModel { WriteReviewViewModel(get()) }
 
 }

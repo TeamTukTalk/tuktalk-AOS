@@ -3,20 +3,25 @@ package com.nemo.tuktalk.presentation.home.viewAll
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nemo.tuktalk.R
 import com.nemo.tuktalk.common.utils.VerticalItemDecorator
 import com.nemo.tuktalk.databinding.ActivityViewallMenteeReviewBinding
 import com.nemo.tuktalk.domain.model.home.RealTimeMenteeReviewRVitem_viewAll
+import com.nemo.tuktalk.domain.model.home.RealTimeReviewRVitem
+import com.nemo.tuktalk.domain.model.home.RealTimeReviewRVitem2
 import com.nemo.tuktalk.presentation.home.viewAll.adapter.ViewAllMenteeReviewRVAdapter
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ViewAllMenteeReviewActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityViewallMenteeReviewBinding
+    private val viewModel: ViewAllMenteeReviewViewModel by viewModel()
 
     lateinit var rvAdapter: ViewAllMenteeReviewRVAdapter
-    private var testDataList = mutableListOf<RealTimeMenteeReviewRVitem_viewAll>()
+    private var testDataList = mutableListOf<RealTimeReviewRVitem2>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,30 +41,29 @@ class ViewAllMenteeReviewActivity : AppCompatActivity() {
         binding.RVRealtimeMenteeReview.adapter = rvAdapter
         binding.RVRealtimeMenteeReview.addItemDecoration(VerticalItemDecorator(15))
 
-        testDataList.apply{ // 임시 데이터
-            add(RealTimeMenteeReviewRVitem_viewAll(1, "", "", "",
-                    0,"","",
-                    " ", 1, false
-            ))
-            add(RealTimeMenteeReviewRVitem_viewAll(1, "리즈", "네이버", "UIUX 디자인",
-                    5,"애니","2021. 10. 12",
-                    "궁금했던 내용을 실무 경험으로 얘기해주셔서 너무 도움이 되었습니다. 포트폴리오를 만들려고 하니까 막막했는데 한 멘토님이 어떤 방법으로 제작해야 할지 방향을 잡아주셔서 좋았습니다.",
-                    2, false
-            ))
-            add(RealTimeMenteeReviewRVitem_viewAll(1, "제임스", "쿠팡", "앱",
-                    4,"에스","2021. 10. 12", "리뷰 테스트 한 줄 넘어가는 테스트",2, false
-            ))
-            add(RealTimeMenteeReviewRVitem_viewAll(1, "킴", "네이버", "데이터",
-                    1,"제이슨","2021. 10. 12",
-                    "리뷰 테스트 리뷰 테스트 긴 문장 테스트 입니다 뚝딱뚝딱뚝딱뚝딱뚝딱 뚝딱뚝딱뚝딱",2, false
-            ))
-            add(RealTimeMenteeReviewRVitem_viewAll(1, "브라이언", "삼성전자", "UIUX 디자인",
-                    2,"존","2021. 10. 12", "리뷰 테스트",2, false
-            ))
-        }
-        rvAdapter.updateList(testDataList)
+
         /////////////////////////////////////////////////////////////////////////////
 
+        // 화면 생성 시 바로 통신
+        viewModel.viewAllGetReviewList()
+
+        viewModel.ViewAll_Get_Review_List_Success.observe(this, {
+            if(it){
+                Log.e("AppTest", "ViewAllMenteeReviewActivity/ 실시간 후기 리스트 조회 성공 -> RV 업데이트")
+
+                rvAdapter.updateList(viewModel.ViewAll_Review_List)
+            }
+            else{
+                Log.e("AppTest", "ViewAllMenteeReviewActivity/ 실시간 후기 리스트 조회 실패")
+            }
+        })
+
+        viewModel.ViewAll_progressBarVisibility_review.observe(this, {
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
+        })
 
 
 

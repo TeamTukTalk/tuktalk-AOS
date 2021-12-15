@@ -1,18 +1,20 @@
-package com.nemo.tuktalk.data.remote.dto.response.home.review
+package com.nemo.tuktalk.data.remote.dto.response.mentee.review
 
 import com.google.gson.annotations.SerializedName
+import com.nemo.tuktalk.data.remote.dto.response.home.review.ReviewResponseMentee
+import com.nemo.tuktalk.data.remote.dto.response.home.review.ReviewResponseMentor
 
-data class ReviewResponseDto(
+data class MenteeReviewListResponseDto(
         @SerializedName("reviewId")
         val reviewId : Int,
         @SerializedName("mentor")
-        val mentor : ReviewResponseMentor,
+        val mentor : MenteeReviewListResponseMentor,
         @SerializedName("rating")
         val rating : Int,
         @SerializedName("description")
         val reviewDescription : String,
         @SerializedName("mentee")
-        val mentee : ReviewResponseMentee,
+        val mentee : MenteeReviewListResponseMentee,
         @SerializedName("portfolioViewedDateTime")
         val portfolioViewedDateTime : String,
         @SerializedName("reviewCreatedDateTime")
@@ -21,5 +23,4 @@ data class ReviewResponseDto(
         val profileImageColor : String,
         @SerializedName("firstLetter")
         val firstLetter : String
-
 )

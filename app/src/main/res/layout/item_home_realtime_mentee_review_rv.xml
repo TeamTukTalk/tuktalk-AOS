@@ -62,24 +62,41 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintDimensionRatio="1:1"/>
 
-            <ImageView
-                android:id="@+id/iv_profile"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_profile"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+
                 app:layout_constraintTop_toBottomOf="@id/view_1"
                 app:layout_constraintLeft_toRightOf="@id/view_1"
                 app:layout_constraintHeight_percent="0.188"
                 app:layout_constraintDimensionRatio="1:1"
-                android:src="@drawable/img_mentor"
-                android:scaleType="centerInside"/>
+
+                android:background="@drawable/profile_image_circle_background_blue">
+
+                <TextView
+                    android:id="@+id/tv_profile_first_letter"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintWidth_percent="0.29"
+                    app:layout_constraintHeight_percent="0.5"
+                    android:text="애"
+                    style="@style/tv_profile_first_letter"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:id="@+id/view_2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintLeft_toRightOf="@id/iv_profile"
-                app:layout_constraintTop_toTopOf="@id/iv_profile"
-                app:layout_constraintBottom_toBottomOf="@id/iv_profile"
+                app:layout_constraintLeft_toRightOf="@id/cl_profile"
+                app:layout_constraintTop_toTopOf="@id/cl_profile"
+                app:layout_constraintBottom_toBottomOf="@id/cl_profile"
                 app:layout_constraintWidth_percent="0.0695"
                 />
 
@@ -175,9 +192,9 @@
                 android:id="@+id/view_6"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintLeft_toLeftOf="@id/iv_profile"
+                app:layout_constraintLeft_toLeftOf="@id/cl_profile"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_profile"
+                app:layout_constraintTop_toBottomOf="@id/cl_profile"
                 app:layout_constraintHeight_percent="0.051"
                 />
 
@@ -195,7 +212,7 @@
                 android:id="@+id/view_7"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintLeft_toLeftOf="@id/iv_profile"
+                app:layout_constraintLeft_toLeftOf="@id/cl_profile"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_star"
                 app:layout_constraintHeight_percent="0.035"
@@ -206,7 +223,7 @@
                 android:id="@+id/view_review"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintLeft_toLeftOf="@id/iv_profile"
+                app:layout_constraintLeft_toLeftOf="@id/cl_profile"
                 app:layout_constraintRight_toRightOf="@id/gl_v_91.3"
                 app:layout_constraintTop_toBottomOf="@id/view_7"
                 app:layout_constraintHeight_percent="0.306"

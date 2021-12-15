@@ -30,8 +30,8 @@ class HomeViewModel(
     // 실시간 후기 리스트 조회 결과 담을 리스트
     var RealTimeReview_List = ArrayList<RealTimeReviewRVitem>()
     var EmptyItem_realTimeReview = RealTimeReviewRVitem(1,
-            ReviewResponseDto(ReviewResponseMentor("", "", ""), 0, "",
-            ReviewResponseMentee("")))
+            ReviewResponseDto(0,ReviewResponseMentor("", "", ""), 0, "",
+            ReviewResponseMentee(""), "", "", "", ""))
     // 실시간 후기 empty item view
 
 

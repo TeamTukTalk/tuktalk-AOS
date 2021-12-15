@@ -246,7 +246,7 @@ class MentorInfoActivity: AppCompatActivity() {
                 // 찜 여부에 따라 찜하기 / 찜취소 나누기!!! = 찜 취소는 마이페이지 찜 목록에서 가능
                 if(viewModel.AddedToWishList){
                     // 찜 취소
-                    Toast.makeText(this, "찜 취소는 '마이페이지-찜목록' 에서 가능합니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "찜 취소는 '마이뚝딱-찜목록' 에서 가능합니다.", Toast.LENGTH_SHORT).show()
                 }
                 else{
                     // 찜 하기

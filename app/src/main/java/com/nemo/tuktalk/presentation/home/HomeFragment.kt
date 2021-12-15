@@ -24,6 +24,7 @@ import com.nemo.tuktalk.presentation.home.adapter.Top5MentorRVAdpater
 import com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity
 import com.google.android.material.card.MaterialCardView
+import com.nemo.tuktalk.domain.model.home.RealTimeReviewRVitem
 import com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -44,7 +45,7 @@ class HomeFragment: Fragment() {
 
     // 현재는 실시간 멘티 후기 O
     lateinit var rvAdapter_realTime_mentee : RealTimeMenteeReviewRVAdpater
-    private var testDataSet_realTime_mentee = mutableListOf<RealTimeMenteeReviewRVitem>()
+    private var testDataSet_realTime_mentee = mutableListOf<RealTimeReviewRVitem>()
 
 
     // 직무별 뚝딱멘토
@@ -184,6 +185,9 @@ class HomeFragment: Fragment() {
         //////////////////////////////////////////////////////////////////
         // 실시간 멘티 후기 RV
 
+        // 홈 화면 첫 시작 시 바로 통신
+        viewModel.getRealTimeReviewList()
+
         rvAdapter_realTime_mentee = RealTimeMenteeReviewRVAdpater(testDataSet_realTime_mentee)
         binding.rvRealtimeMenteeReview.layoutManager = LinearLayoutManager(context).also {
             it.orientation = LinearLayoutManager.HORIZONTAL  // 가로 방향 recyclerview
@@ -191,24 +195,23 @@ class HomeFragment: Fragment() {
         binding.rvRealtimeMenteeReview.adapter = rvAdapter_realTime_mentee
         binding.rvRealtimeMenteeReview.addItemDecoration(HorizontalItemDecorator(12))
 
-        testDataSet_realTime_mentee.apply{ // 임시 데이터
-            add(RealTimeMenteeReviewRVitem(1, "리즈", "네이버", "UIUX 디자인",
-                    5,"애니","2021. 10. 12",
-                    "궁금했던 내용을 실무 경험으로 얘기해주셔서 너무 도움이 되었습니다. 포트폴리오를 만들려고 하니까 막막했는데 한 멘토님이 어떤 방법으로 제작해야 할지 방향을 잡아주셔서 좋았습니다.",0
-                    ))
-            add(RealTimeMenteeReviewRVitem(1, "제임스", "쿠팡", "앱",
-                    4,"에스","2021. 10. 12", "리뷰 테스트 한 줄 넘어가는 테스트",0
-            ))
-            add(RealTimeMenteeReviewRVitem(1, "킴", "네이버", "데이터",
-                    1,"제이슨","2021. 10. 12",
-                    "리뷰 테스트 리뷰 테스트 긴 문장 테스트 입니다 뚝딱뚝딱뚝딱뚝딱뚝딱 뚝딱뚝딱뚝딱",0
-            ))
-            add(RealTimeMenteeReviewRVitem(1, "브라이언", "삼성전자", "UIUX 디자인",
-                    2,"존","2021. 10. 12", "리뷰 테스트",0
-            ))
-        }
-        rvAdapter_realTime_mentee.updateList(testDataSet_realTime_mentee)
-        rvAdapter_realTime_mentee.notifyDataSetChanged()
+        viewModel.Get_RealTime_Review_List_Success.observe(viewLifecycleOwner, {
+            if(it){
+                Log.e("AppTest", "HomeFragment/ 실시간 후기 리스트 조회 성공 -> RV 업데이트")
+
+                rvAdapter_realTime_mentee.updateList(viewModel.RealTimeReview_List)
+            }
+            else{
+                Log.e("AppTest", "HomeFragment/ 실시간 후기 리스트 조회 실패")
+            }
+        })
+
+        viewModel.progressBarVisibility_realTimeReview.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBarReview.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarReview.visibility = View.INVISIBLE
+        })
 
         ////////////////////////////////////////////////////////////////////
 
@@ -220,7 +223,7 @@ class HomeFragment: Fragment() {
         }
 
 
-        // 멘토 실시간 후기 전체보기 -> 현재는 비활성화
+        // 멘토 실시간 후기 전체보기
        binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
             Log.e("AppTest","go to viewall bytask activity")
             val intent = Intent(context, ViewAllMenteeReviewActivity::class.java)
