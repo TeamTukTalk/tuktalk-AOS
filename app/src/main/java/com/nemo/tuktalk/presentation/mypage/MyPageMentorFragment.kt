@@ -175,6 +175,7 @@ class MyPageMentorFragment: Fragment() {
             binding.view6.visibility = View.GONE
             binding.view7.visibility = View.GONE
 
+            // 인증 마크 배경 & 체크 이미지 활성화
             binding.ivMentorCertification.visibility = View.VISIBLE
             binding.ivMentorCertificationCheck.visibility = View.VISIBLE
 
@@ -188,6 +189,7 @@ class MyPageMentorFragment: Fragment() {
             binding.cvGotoMentorRegist.visibility = View.VISIBLE
             binding.view7.visibility = View.VISIBLE
 
+            // 인증 마크 배경 & 체크 이미지 비활성화
             binding.ivMentorCertification.visibility = View.INVISIBLE
             binding.ivMentorCertificationCheck.visibility = View.INVISIBLE
             

@@ -160,7 +160,7 @@
                     android:maxLines="1"
                     android:text="00님"
 
-                    style="@style/tv_mypage_name"/>
+                    style="@style/tv_mypage_name_mentee"/>
 
                 <View
                     android:id="@+id/view_4"
