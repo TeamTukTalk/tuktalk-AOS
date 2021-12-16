@@ -35,11 +35,12 @@ class RegistPortfolioStep5Fragment: Fragment() {
         binding.btnComplete.setOnClickListener {
             Log.e("AppTest", "RegistPortfolioStep5Fragment/ portfolio regist finish  back to myService")
 
-            val intent = Intent(activity, MentorServiceActivity::class.java)
+           /* val intent = Intent(activity, MentorServiceActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             // 정보입력 화면에서 그전 액티비티 스택들 모두 제거 후 바로 멘토서비스 액티비티로 이동!
+            startActivity(intent)*/
 
-            startActivity(intent)
+           activity?.finish()
         }
     }
 }

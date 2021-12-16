@@ -231,8 +231,8 @@ class RegistPortfolioActivity: AppCompatActivity() {
         if(PORTFOLIO_STEP == 4){
             goToStep3()
         }
-        if(PORTFOLIO_STEP == 5){
-            goToStep4()
+        if(PORTFOLIO_STEP == 5){  // 뒤로가기 막기
+            //goToStep4()
         }
 
     }

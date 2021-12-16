@@ -4,6 +4,7 @@ import com.nemo.tuktalk.data.remote.UserApi
 import com.nemo.tuktalk.data.remote.dto.request.user.UserLoginRequestDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserEmailCheckDto
 import com.nemo.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
+import com.nemo.tuktalk.data.remote.dto.response.user.UserInfoResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserLoginResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserSignUpResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.activity.WishMentorResponseDto
@@ -51,4 +52,12 @@ class UserRepositoryImpl(
             userApi.deleteWishMentor(userToken, wishId)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
+
+
+    // 현재 로그인한 유저 정보 가져오기
+    override fun getUserInfo(userToken: String): Single<Response<UserInfoResponseDto>> =
+            userApi.getUserInfo(userToken)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+
 }

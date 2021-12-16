@@ -12,11 +12,15 @@ import androidx.fragment.app.Fragment
 import com.nemo.tuktalk.R
 import com.nemo.tuktalk.common.Constants
 import com.nemo.tuktalk.databinding.FragmentMentorServicePortfolioTabBinding
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioActivity
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioViewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class MentorServicePortfolioTabFragment: Fragment() {
 
     private lateinit var binding : FragmentMentorServicePortfolioTabBinding
+    private val viewModel : MentorServiceViewModel by sharedViewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Log.e("AppTest", "MentorServicePortfolioTabFragment/ mentor service portfolio tab fragment onCreateView")
@@ -30,6 +34,39 @@ class MentorServicePortfolioTabFragment: Fragment() {
         Log.e("AppTest", "MentorServicePortfolioTabFragment/ mentor service portfolio tab fragment onCreateView")
 
 
+        viewModel.IsGetMentorPortfolioInfoSuccess.observe(viewLifecycleOwner, {
+            if(it){
+                Log.e("AppTest", "MentorServicePortfolioTabFragment/ 포트폴리오 정보 조회 성공")
+
+                if(viewModel.IsPortfolioRegistered){
+                    Log.e("AppTest", "MentorServicePortfolioTabFragment/ 포트폴리오 등록 상태")
+
+                    binding.llNoPortfolio.visibility = View.INVISIBLE
+                    binding.cvPortfolio.visibility = View.VISIBLE
+
+                    binding.tvDate.text = viewModel.PF_CREATED_TIME
+                    binding.tvPortfolioDescription.text = viewModel.PF_DESCRIPTION
+                }
+                else{
+                    Log.e("AppTest", "MentorServicePortfolioTabFragment/ 포트폴리오 미등록 상태")
+
+                    binding.llNoPortfolio.visibility = View.VISIBLE
+                    binding.cvPortfolio.visibility = View.INVISIBLE
+                }
+            }
+            else{
+                Log.e("AppTest", "MentorServicePortfolioTabFragment/ 포트폴리오 정보 조회 실패")
+            }
+        })
+
+        viewModel.ProgressBarVisibility_info.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBar.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBar.visibility = View.INVISIBLE
+        })
+
+
         // 등록하기 버튼 클릭 시
         binding.btnGotoRegistPortfolio.setOnClickListener {
             Log.e("AppTest", "MentorServicePortfolioTabFragment/ 멘토 기업 이메일 인증 여부 : ${Constants.IS_CERTIFIED_MENTOR}")
@@ -41,6 +78,18 @@ class MentorServicePortfolioTabFragment: Fragment() {
                 Toast.makeText(context, "멘토 기업 이메일 인증을 먼저 해주세요.", Toast.LENGTH_SHORT).show()
             }
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("AppTest", "MentorServicePortfolioTabFragment/ onResume")
+
+
+        // 등록한 포트폴리오 있는지 가져와야 한다   //  현재는 최대 1개만 존재재
+        viewModel.getMentorPortfolioInfo()
+
+        // 포폴등록 후 업데이트 위해 onResume에 통신부분 배치 -> onResume에서 통신하는 것이 괜찮은 것인지??
 
     }
 

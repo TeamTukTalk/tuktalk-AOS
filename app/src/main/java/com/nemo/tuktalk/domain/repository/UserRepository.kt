@@ -3,6 +3,7 @@ package com.nemo.tuktalk.domain.repository
 import com.nemo.tuktalk.data.remote.dto.request.user.UserLoginRequestDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserEmailCheckDto
 import com.nemo.tuktalk.data.remote.dto.request.user.UserSignUpRequestDto
+import com.nemo.tuktalk.data.remote.dto.response.user.UserInfoResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserLoginResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.UserSignUpResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.user.activity.WishMentorResponseDto
@@ -20,6 +21,10 @@ interface UserRepository {
 
     // 멘토 찜 취소 하기
     fun deleteWishMentor(userToken: String, wishId: Int) : Single<Response<Void>>
+    
+    
+    // 현재 로그인한 유저 정보 알아오기
+    fun getUserInfo(userToken: String) : Single<Response<UserInfoResponseDto>>
 }
 
 

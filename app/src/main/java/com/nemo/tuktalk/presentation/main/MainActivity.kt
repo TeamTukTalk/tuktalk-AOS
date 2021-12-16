@@ -59,6 +59,9 @@ class MainActivity : AppCompatActivity() {
             viewModel.checkMentorCertified()
         }
 
+        // 로그인한 유저 아이디(Int)값 조회
+        viewModel.getUserInfo()
+
         viewModel.isCertificationCheckSuccess.observe(this, {
             if(it){
                 Log.e("AppTest", "MainActivity/ 인증 여부 확인 성공")
@@ -74,6 +77,14 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        viewModel.isGetUserInfoSuccess.observe(this, {
+            if(it){
+                Log.e("AppTest", "MainActivity/ 유저 정보 조회 성공")
+            }
+            else{
+                Log.e("AppTest", "MainActivity/ 유저 정보 조회 실패")
+            }
+        })
 
 
     }

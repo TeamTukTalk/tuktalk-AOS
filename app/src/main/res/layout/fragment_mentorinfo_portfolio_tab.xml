@@ -177,6 +177,95 @@
             app:layout_constraintTop_toBottomOf="@id/view_7"
             app:layout_constraintDimensionRatio="360:190"/>
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_preview_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/view_portfolio_preview"
+            app:layout_constraintBottom_toBottomOf="@id/view_portfolio_preview"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintDimensionRatio="290:190"
+            android:backgroundTint="@color/tuktalk_gray_5"
+
+            app:cardUseCompatPadding="true"
+            app:cardElevation="0dp"
+            app:shapeAppearanceOverlay="@style/CardViewRadius5"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/tuktalk_gray_5">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_26"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.26"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_74"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.74"/>
+
+
+                <View
+                    android:id="@+id/view_preview_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintDimensionRatio="290:60"/>
+
+                <View
+                    android:id="@+id/view_preview_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_preview_1"
+                    app:layout_constraintDimensionRatio="290:40"/>
+
+                <ImageView
+                    android:id="@+id/iv_waiting"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gl_v_26"
+                    app:layout_constraintRight_toRightOf="@id/gl_v_74"
+                    app:layout_constraintTop_toBottomOf="@id/view_preview_1"
+                    app:layout_constraintBottom_toBottomOf="@id/view_preview_2"
+                    android:src="@drawable/img_waiting"
+                    android:scaleType="centerInside"/>
+
+                <View
+                    android:id="@+id/view_preview_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/iv_waiting"
+                    app:layout_constraintDimensionRatio="290:20"/>
+
+                <View
+                    android:id="@+id/view_preview_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_preview_3"
+                    app:layout_constraintDimensionRatio="290:30"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/view_preview_3"
+                    app:layout_constraintBottom_toBottomOf="@id/view_preview_4"
+                    android:text="@string/tv_preview_service_wait"
+                    style="@style/tv_service_waiting"
+                    android:maxLines="2"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- 포트폴리오 미리보기 영역!!! -->
 
 

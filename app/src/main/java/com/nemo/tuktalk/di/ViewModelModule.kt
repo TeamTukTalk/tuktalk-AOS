@@ -5,6 +5,7 @@ import com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskViewModel
 import com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewViewModel
 import com.nemo.tuktalk.presentation.login.LoginViewModel
 import com.nemo.tuktalk.presentation.main.MainActivityViewModel
+import com.nemo.tuktalk.presentation.mypage.MyPageMentorViewModel
 import com.nemo.tuktalk.presentation.mypage.account.withdrawal.WithdrawalViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.managereview.MenteeManageReviewViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.managereview.tab.writereview.WriteReviewViewModel
@@ -15,6 +16,7 @@ import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewMode
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistViewModel
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioViewModel
 import com.nemo.tuktalk.presentation.search.viewModel.SearchDesignViewModel
 import com.nemo.tuktalk.presentation.search.viewModel.SearchDirectViewModel
@@ -33,11 +35,11 @@ internal val viewModelModule = module {
     viewModel { MenteeProfileViewModel() }
 
     viewModel { MentorInfoViewModel(get(), get(), get()) }
-    viewModel { RegistPortfolioViewModel(get()) }
+    viewModel { RegistPortfolioViewModel(get(), get()) }
 
     viewModel { MenteeRecentPortfolioViewModel(get()) }
 
-    viewModel { MainActivityViewModel(get()) }
+    viewModel { MainActivityViewModel(get(), get()) }
 
     viewModel { HomeViewModel(get(), get(), get()) }
     viewModel { ViewAllByTaskViewModel(get()) }
@@ -56,4 +58,7 @@ internal val viewModelModule = module {
     viewModel { MenteeManageReviewViewModel(get(), get()) }
     viewModel { WriteReviewViewModel(get()) }
 
+    viewModel { MyPageMentorViewModel(get()) }
+
+    viewModel{ MentorServiceViewModel(get())}
 }

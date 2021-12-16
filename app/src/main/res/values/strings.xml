@@ -561,4 +561,6 @@
     <string name="tv_write_review_1">얼마나 만족하셨나요? 🤔</string>
     <string name="tv_write_review_2">어떤점이 좋았나요?</string>
 
+    <string name="tv_preview_service_wait">미리보기 서비스 준비중입니다.\n잠시만 기다려주세요.</string>
+
 </resources>

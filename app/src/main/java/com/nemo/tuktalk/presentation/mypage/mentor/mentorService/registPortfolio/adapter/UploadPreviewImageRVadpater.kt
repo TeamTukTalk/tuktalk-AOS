@@ -9,7 +9,8 @@ import com.nemo.tuktalk.domain.model.mypage.mentor.portfolio.UploadPreviewImage
 import java.lang.RuntimeException
 
 class UploadPreviewImageRVadpater(
-        private var dataSet : MutableList<UploadPreviewImage>
+        private var dataSet : MutableList<UploadPreviewImage>,
+        val addImage:() -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     // 뷰 타입 오버라이드! 1. 설명 텍스트뷰 2. 포트폴리오 리스트 아이템 3. 로딩 뷰
@@ -87,6 +88,11 @@ class UploadPreviewImageRVadpater(
 
         }
         else if(holder is ViewType2ViewHolder){
+
+            // 터치 시
+            holder.binding.root.setOnClickListener {
+                addImage.invoke()
+            }
 
         }
         else if(holder is ViewType3ViewHolder){

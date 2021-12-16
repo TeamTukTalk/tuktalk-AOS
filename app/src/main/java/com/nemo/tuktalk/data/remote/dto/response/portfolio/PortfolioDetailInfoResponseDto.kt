@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 data class PortfolioDetailInfoResponseDto (
     @SerializedName("portfolioId")
     val portfolioId : Int,
+    @SerializedName("createdDateTime")
+    val createdDateTime: String,
     @SerializedName("description")
     val description : String,
     @SerializedName("projectCount")

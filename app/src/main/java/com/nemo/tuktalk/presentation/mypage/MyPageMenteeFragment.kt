@@ -107,9 +107,13 @@ class MyPageMenteeFragment: Fragment() {
         inflater.inflate(R.menu.toolbar_menu2, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean { // 우측 상단 설정 아이콘 누를 시
         if (item.itemId == R.id.action_option) {
             Log.e("AppTest","fragment actionbar option icon clicked")
+
+            Log.e("AppTest","MyPageMenteeFragment/ go to account option activity")
+            val intent = Intent(context, AccountOptionActivity::class.java)
+            startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
     }

@@ -13,16 +13,19 @@ import androidx.fragment.app.Fragment
 import com.nemo.tuktalk.R
 import com.nemo.tuktalk.common.Constants
 import com.nemo.tuktalk.databinding.FragmentMypageMentorLaunchingVerBinding
+import com.nemo.tuktalk.presentation.home.HomeViewModel
 import com.nemo.tuktalk.presentation.mypage.account.AccountOptionActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceActivity
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MyPageMentorFragment: Fragment() {
 
     //private lateinit var binding : FragmentMypageMentorBinding
     // 런칭 버전
     private lateinit var binding : FragmentMypageMentorLaunchingVerBinding
+    private val viewModel: MyPageMentorViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -48,7 +51,7 @@ class MyPageMentorFragment: Fragment() {
         }*/
 
         // 닉네임 받아오고 상단 닉네임 텍스트에 할당
-        binding.tvName.text = Constants.USER_NICKNAME + "님"
+        binding.tvName.text = Constants.USER_NICKNAME + "님".replace(" ", "\u00A0")
 
         // 프로필 배경 & 닉네임 첫 글자 설정
         binding.tvProfileFirstLetter.text = Constants.USER_FIRST_LETTER
@@ -57,6 +60,14 @@ class MyPageMentorFragment: Fragment() {
 
         // 멘토 등록 액티비티 이동
        binding.cvGotoMentorRegist.setOnClickListener {
+            Log.e("AppTest","go to mentor regist activity")
+            val intent = Intent(context, MentorRegistActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 멘토 / 회사 인증,   = 멘토 등록 액티비티 이동
+        val llGotoMentorResgist : LinearLayout = view.findViewById(R.id.ll_goto_certificate_company)
+        llGotoMentorResgist.setOnClickListener {
             Log.e("AppTest","go to mentor regist activity")
             val intent = Intent(context, MentorRegistActivity::class.java)
             startActivity(intent)
@@ -114,22 +125,72 @@ class MyPageMentorFragment: Fragment() {
         }
 
 
+        //////////////////////////////////////////////////////
+
+        // 등록된 포트폴리오 있는지
+        viewModel.IsGetMentorPortfolioInfoSuccess.observe(viewLifecycleOwner, {
+            if(it){
+                Log.e("AppTest", "MyPageMentorFragment/ 포트폴리오 정보 조회 성공")
+                if(viewModel.IsPortfolioRegistered){
+                    Log.e("AppTest", "MyPageMentorFragment/ 포트폴리오 등록 상태입니다")
+
+                    binding.clNoPortfolio.visibility = View.GONE
+                    binding.clYesPorfolio.visibility = View.VISIBLE
+
+                    binding.tvDate.text = viewModel.PF_CREATED_TIME
+                    binding.tvPortfolioDescription.text = viewModel.PF_DESCRIPTION
+
+                }
+                else{
+                    Log.e("AppTest", "MyPageMentorFragment/ 포트폴리오 미등록 상태입니다")
+                    binding.clNoPortfolio.visibility = View.VISIBLE
+                    binding.clYesPorfolio.visibility = View.GONE
+
+                }
+            }
+            else{
+                Log.e("AppTest", "MyPageMentorFragment/ 포트폴리오 정보 조회 실패")
+            }
+        })
+
+        viewModel.ProgressBarVisibility_info.observe(viewLifecycleOwner, {
+            if(it)
+                binding.loadingProgressBarInfo.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarInfo.visibility = View.INVISIBLE
+        })
+
+        ////////////////////////////////////////////////////////////////////////
+
+
     }
 
     override fun onResume() {
         super.onResume()
-        Log.e("AppTest", "mentor fragment onResume")
-        Log.e("AppTest", "mentor certified : ${Constants.IS_CERTIFIED_MENTOR}")
+        Log.e("AppTest", "MyPageMentorFragment/ mentor fragment onResume")
+        Log.e("AppTest", "MyPageMentorFragment/ mentor certified : ${Constants.IS_CERTIFIED_MENTOR}")
 
-        if(Constants.IS_CERTIFIED_MENTOR){   // 멘토 기업인증 했으면
+        if(Constants.IS_CERTIFIED_MENTOR){   // 멘토 기업인증 했으면 기업인증 하라는 문구 없어지고, 등록한 포폴 있는지 조회하기
             binding.cvGotoMentorRegist.visibility = View.GONE
             binding.view6.visibility = View.GONE
             binding.view7.visibility = View.GONE
+
+            binding.ivMentorCertification.visibility = View.VISIBLE
+            binding.ivMentorCertificationCheck.visibility = View.VISIBLE
+
+
+            // 등록한 포폴있는지 조회
+            viewModel.getMentorPortfolioInfo()
+
         }
         else{  // 기업인증 아직 하지않은 상태라면
             binding.view6.visibility = View.VISIBLE
             binding.cvGotoMentorRegist.visibility = View.VISIBLE
             binding.view7.visibility = View.VISIBLE
+
+            binding.ivMentorCertification.visibility = View.INVISIBLE
+            binding.ivMentorCertificationCheck.visibility = View.INVISIBLE
+            
         }
 
     }
@@ -138,9 +199,12 @@ class MyPageMentorFragment: Fragment() {
         inflater.inflate(R.menu.toolbar_menu2, menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {  // 우측 상단 설정 아이콘 누를 시
         if (item.itemId == R.id.action_option) {
             Log.e("AppTest","fragment actionbar option icon clicked")
+            Log.e("AppTest","MyPageMentorFragment/ go to account option activity")
+            val intent = Intent(context, AccountOptionActivity::class.java)
+            startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
     }

@@ -13,10 +13,13 @@ import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.tab.MentorServi
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.tab.MentorServicePortfolioTabFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.nemo.tuktalk.presentation.mypage.MyPageMentorViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MentorServiceActivity: AppCompatActivity() {
 
     private lateinit var binding : ActivityMentorServiceBinding
+    private val viewModel: MentorServiceViewModel by viewModel()
 
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout

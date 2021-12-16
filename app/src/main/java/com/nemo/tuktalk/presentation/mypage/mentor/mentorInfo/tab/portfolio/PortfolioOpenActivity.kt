@@ -77,7 +77,7 @@ class PortfolioOpenActivity: AppCompatActivity() {
     fun startLoadPdf(){
         Handler(Looper.getMainLooper()).postDelayed({
             binding.webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$PortfolioPdfUrl")
-        }, 1500)
+        }, 1750)
     }
 
     inner class WebViewClientCustom : WebViewClient(){

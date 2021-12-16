@@ -4,6 +4,8 @@ object Constants {
 
     // 일단 멘토로 설정 / 멘토 = 0, 멘티 = 1
     var USER_MODE = 0   // 멘토 or 멘티
+    var USER_MENTOR_ID = 0
+    var USER_MENTEE_ID = 0
 
     // 하단바 번호 / 홈 = 0
     var BOTTOM_NAVI_NUM = 0

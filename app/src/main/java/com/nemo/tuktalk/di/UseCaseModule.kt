@@ -10,8 +10,10 @@ import com.nemo.tuktalk.domain.usecase.mentor.MentorRegistProfileUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorSendEmailCertificationUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.info.GetMentorDetailInfoUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.GetPortfolioDetailInfoUseCase
+import com.nemo.tuktalk.domain.usecase.portfolio.RegistPortfolioUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.UploadPdfFileUseCase
 import com.nemo.tuktalk.domain.usecase.search.SearchMentorListUseCase
+import com.nemo.tuktalk.domain.usecase.user.GetUserInfoUseCase
 import com.nemo.tuktalk.domain.usecase.user.UserEmailCheckUseCase
 import com.nemo.tuktalk.domain.usecase.user.UserLoginUseCase
 import com.nemo.tuktalk.domain.usecase.user.UserSignUpUseCase
@@ -39,7 +41,8 @@ internal val useCaseModule = module {
     factory { GetMentorDetailInfoUseCase(get()) }
     factory { GetPortfolioDetailInfoUseCase(get()) }
 
-    factory { UploadPdfFileUseCase(get()) }  // pdf 파일 등록 수정하기
+    factory { UploadPdfFileUseCase(get()) }
+    factory { RegistPortfolioUseCase(get()) }
 
     factory { WishMentorUseCase(get()) }
     factory { GetWishListUseCase(get()) }
@@ -50,6 +53,8 @@ internal val useCaseModule = module {
 
     factory { WriteReviewUseCase(get()) }
     factory { GetReviewListUseCase(get()) }
+
+    factory { GetUserInfoUseCase(get()) }
 
 
 
