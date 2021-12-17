@@ -26,4 +26,7 @@ interface MenteeRepository {
 
     // 멘티 후기 리스트 가져오기
     fun getMenteeReviewList(userToken: String) : Single<Response<MenteeReviewListResponseDtoList>>
+
+    // 멘티 -> 멘토 전환하기
+    fun menteeTomentor(userToken: String) : Single<Response<Void>>
 }

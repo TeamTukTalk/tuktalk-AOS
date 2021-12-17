@@ -24,7 +24,7 @@ class MyPageFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        Log.e("AppTest", "mypage fragment onAttach")
+        Log.e("AppTest", "MyPageFragment/ mypage fragment onAttach")
        /* callback = object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 (activity as MainActivity).backToHome(4)
@@ -36,7 +36,7 @@ class MyPageFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        Log.e("AppTest", "mypage fragment onCreateView")
+        Log.e("AppTest", "MyPageFragment/ mypage fragment onCreateView")
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mypage, container, false)
         return binding.root
@@ -68,14 +68,16 @@ class MyPageFragment: Fragment() {
         super.onResume()
 
         Constants.BOTTOM_NAVI_NUM = 4
-        Log.e("AppTest", "mypage fragment onResume, Bottom navi num : ${Constants.BOTTOM_NAVI_NUM}")
+        Log.e("AppTest", "MyPageFragment/ mypage fragment onResume, Bottom navi num : ${Constants.BOTTOM_NAVI_NUM}")
 
         if(Constants.USER_MODE == 0){  // 멘토 모드
+            Log.e("AppTest", "user mode : ${Constants.USER_MODE}, 멘토")
             childFragmentManager.beginTransaction()
                     .replace(R.id.framelayout_mypage, mentorFragment)
                     .commit()
         }
         else{
+            Log.e("AppTest", "user mode : ${Constants.USER_MODE}, 멘티")
             childFragmentManager.beginTransaction()
                     .replace(R.id.framelayout_mypage, menteeFragment)
                     .commit()

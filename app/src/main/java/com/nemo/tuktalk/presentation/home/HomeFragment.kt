@@ -25,7 +25,9 @@ import com.nemo.tuktalk.presentation.home.viewAll.ViewAllByTaskActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoActivity
 import com.google.android.material.card.MaterialCardView
 import com.nemo.tuktalk.domain.model.home.RealTimeReviewRVitem
+import com.nemo.tuktalk.presentation.home.mentorguide.MentorGuideActivity
 import com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewActivity
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeFragment: Fragment() {
@@ -217,7 +219,7 @@ class HomeFragment: Fragment() {
 
         // 직무별 뚝딱멘토 전체보기
         binding.tvWatchAllByTask.setOnClickListener {
-            Log.e("AppTest","go to viewall bytask activity")
+            Log.e("AppTest","HomeFragment/ go to viewall bytask activity")
             val intent = Intent(context, ViewAllByTaskActivity::class.java)
             startActivity(intent)
         }
@@ -225,8 +227,33 @@ class HomeFragment: Fragment() {
 
         // 멘토 실시간 후기 전체보기
        binding.tvWatchAllRealtimeMenteeReview.setOnClickListener {
-            Log.e("AppTest","go to viewall bytask activity")
+            Log.e("AppTest","HomeFragment/ go to viewall bytask activity")
             val intent = Intent(context, ViewAllMenteeReviewActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        // 상단 배너 터치 시 -> 멘토 등록 가이드 뷰 이동
+        binding.ivTopBanner.setOnClickListener {
+            Log.e("AppTest","HomeFragment/ go to mentor guide activity")
+            val intent = Intent(context, MentorGuideActivity::class.java)
+            startActivity(intent)
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+        // 하단 배너 - 멘토등록 방법과 혜택이 궁금해요! 터치 시
+        binding.cvMentor2.setOnClickListener {
+            Log.e("AppTest","HomeFragment/ go to mentor guide activity")
+            val intent = Intent(context, MentorGuideActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        // 하단 배너 - 뚝딱멘토 바로 시작하기 터치 시
+        binding.cvMentor1.setOnClickListener {
+            Log.e("AppTest","HomeFragment/ go to mentor regist activity")
+            val intent = Intent(context, MentorRegistActivity::class.java)
             startActivity(intent)
         }
 

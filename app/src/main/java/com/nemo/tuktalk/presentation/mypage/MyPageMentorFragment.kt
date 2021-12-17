@@ -15,6 +15,7 @@ import com.nemo.tuktalk.common.Constants
 import com.nemo.tuktalk.databinding.FragmentMypageMentorLaunchingVerBinding
 import com.nemo.tuktalk.presentation.home.HomeViewModel
 import com.nemo.tuktalk.presentation.mypage.account.AccountOptionActivity
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.detailpage.PortfolioDetailActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceActivity
@@ -161,6 +162,14 @@ class MyPageMentorFragment: Fragment() {
         })
 
         ////////////////////////////////////////////////////////////////////////
+
+        // 멘토가 등록한 포트폴리오 있는 경우 ->  나의 서비스 밑에 활성화된 포트폴리오 뷰에서 '상세보기' 버튼 누를 시  포폴 상세페이지로 이동
+        binding.btnPortfolioDetail.setOnClickListener {
+            Log.e("AppTest","MyPageMentorFragment/ go to PortfolioDetail activity")
+            val intent = Intent(context, PortfolioDetailActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }

@@ -52,4 +52,11 @@ class MenteeRepositoryImpl(
                     .observeOn(AndroidSchedulers.mainThread())
 
 
+    // 멘티 -> 멘토 전환하기
+    override fun menteeTomentor(userToken: String): Single<Response<Void>>  =
+            menteeApi.menteeTomentor(userToken)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+
+
 }

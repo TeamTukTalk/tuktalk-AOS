@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_v_4.44"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0444"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_v_75"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_v_95.56"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9556"/>
+
+    <!-- //////////  -->
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/gl_v_4.44"
+        app:layout_constraintRight_toRightOf="@id/gl_v_95.56"
+
+        app:shapeAppearanceOverlay="@style/CardViewRadius8"
+        app:strokeWidth="0.4dp"
+        app:strokeColor="#EEEEEE"
+
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_cl_v_6.1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.061"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_cl_v_93.9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.939"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_cl_v_80"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"/>
+
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintDimensionRatio="330:18"/>
+
+            <ImageView
+                android:id="@+id/iv_portfolio"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_1"
+                app:layout_constraintLeft_toRightOf="@id/gl_cl_v_6.1"
+                app:layout_constraintWidth_percent="0.061"
+                app:layout_constraintDimensionRatio="1:1"
+                android:src="@drawable/ic_portfolio"
+                android:scaleType="centerInside"/>
+
+            <View
+                android:id="@+id/view_1_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/iv_portfolio"
+                app:layout_constraintBottom_toBottomOf="@id/iv_portfolio"
+                app:layout_constraintLeft_toRightOf="@id/iv_portfolio"
+                app:layout_constraintWidth_percent="0.024"/>
+
+            <TextView
+                android:id="@+id/tv_portfolio"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/view_1_1"
+                app:layout_constraintTop_toTopOf="@id/view_1_1"
+                app:layout_constraintBottom_toBottomOf="@id/view_1_1"
+                app:layout_constraintWidth_percent="0.198"
+                android:text="포트폴리오"
+                style="@style/item_recent_pf_tv_portfolio"/>
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_portfolio"
+                app:layout_constraintDimensionRatio="328:12"/>
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_2"
+                app:layout_constraintDimensionRatio="328:13"/>
+
+            <ImageView
+                android:id="@+id/iv_star"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toRightOf="@id/gl_cl_v_6.1"
+                app:layout_constraintTop_toBottomOf="@id/view_2"
+                app:layout_constraintBottom_toBottomOf="@id/view_3"
+                app:layout_constraintWidth_percent="0.183"
+
+                android:src="@drawable/ic_star_5"/>
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_star"
+                app:layout_constraintDimensionRatio="328:8"/>
+
+            <TextView
+                android:id="@+id/tv_review_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/gl_cl_v_6.1"
+                app:layout_constraintRight_toLeftOf="@id/gl_cl_v_93.9"
+                app:layout_constraintTop_toBottomOf="@id/view_4"
+
+                style="@style/tv_done_review_1"
+                android:maxLines="3"
+                android:ellipsize="end"/>
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_review_description"
+                app:layout_constraintDimensionRatio="328:17"/>
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_5"
+                app:layout_constraintDimensionRatio="328:14"/>
+
+            <TextView
+                android:id="@+id/tv_mentee_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_5"
+                app:layout_constraintBottom_toBottomOf="@id/view_6"
+                app:layout_constraintLeft_toRightOf="@id/gl_cl_v_6.1"
+
+                style="@style/tv_done_review_2"/>
+
+            <View
+                android:id="@+id/view_8_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/tv_mentee_nickname"
+                app:layout_constraintBottom_toBottomOf="@id/tv_mentee_nickname"
+                app:layout_constraintLeft_toRightOf="@id/tv_mentee_nickname"
+                app:layout_constraintWidth_percent="0.0122"/>
+
+            <View
+                android:id="@+id/view_point_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                app:layout_constraintTop_toTopOf="@id/view_8_1"
+                app:layout_constraintBottom_toBottomOf="@id/view_8_1"
+                app:layout_constraintLeft_toRightOf="@id/view_8_1"
+                app:layout_constraintWidth_percent="0.0061"
+                app:layout_constraintDimensionRatio="1:1"
+
+                android:background="@drawable/point_gray_1"/>
+
+            <View
+                android:id="@+id/view_8_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/tv_mentee_nickname"
+                app:layout_constraintBottom_toBottomOf="@id/tv_mentee_nickname"
+                app:layout_constraintLeft_toRightOf="@id/view_point_2"
+                app:layout_constraintWidth_percent="0.0122"/>
+
+
+            <TextView
+                android:id="@+id/tv_review_date"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/view_5"
+                app:layout_constraintBottom_toBottomOf="@id/view_6"
+                app:layout_constraintLeft_toRightOf="@id/view_8_2"
+                android:text="2021-01-01"
+
+                style="@style/tv_done_review_2"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_viewall_review"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@id/tv_mentee_nickname"
+                app:layout_constraintBottom_toBottomOf="@id/tv_mentee_nickname"
+                app:layout_constraintLeft_toRightOf="@id/gl_cl_v_80"
+                app:layout_constraintWidth_percent="0.134"
+                android:orientation="horizontal"
+                android:weightSum="44">
+
+                <TextView
+                    android:id="@+id/tv_viewall_review"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="28"
+                    android:text="더보기"
+                    style="@style/tv_viewall_review"/>
+
+                <ImageView
+                    android:id="@+id/iv_viewall_review"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="16"
+                    android:src="@drawable/ic_down_arrow"
+                    android:scaleType="centerInside"/>
+
+            </LinearLayout>
+
+
+
+            <View
+                android:id="@+id/view_9"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_mentee_nickname"
+                app:layout_constraintDimensionRatio="328:20"/>
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

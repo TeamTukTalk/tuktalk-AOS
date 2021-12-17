@@ -14,7 +14,8 @@ import java.lang.RuntimeException
 
 class MenteeRecentPorfolioRVadapter(
         private var dataSet : MutableList<RecentHistoryItem>,
-        val openPdfUrl:(pdfUrl : String) -> Unit
+        val openPdfUrl:(pdfUrl : String) -> Unit,
+        val gotoPortfolioDetail:(mentorId : Int) -> Unit
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     // 뷰 타입 오버라이드!   ->  1 = 빈 뷰  /  2 = 찜 멘토 리스트 아이템
@@ -83,6 +84,12 @@ class MenteeRecentPorfolioRVadapter(
             holder.binding.tvPortfolioDescription.text = dataSet[position].menteeRecentHistoryResponseDto.description // 설명
 
 
+            // 버튼 외 영역 터치 시 해당 포트폴리오 상세페이지로 이동하기
+            holder.binding.root.setOnClickListener {
+                gotoPortfolioDetail.invoke(dataSet[position].menteeRecentHistoryResponseDto.mentorId)
+            }
+            
+            
             // 열람하기 버튼 터치 시 해당 pdf url 열기 액티비티 이동 연동하기
             holder.binding.btnOpenPdf.setOnClickListener {
                 openPdfUrl.invoke(dataSet[position].menteeRecentHistoryResponseDto.pdfUrl)

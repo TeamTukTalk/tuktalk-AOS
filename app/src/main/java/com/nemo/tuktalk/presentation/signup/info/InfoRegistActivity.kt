@@ -49,6 +49,7 @@ class InfoRegistActivity: AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true) // 뒤로가기 버튼 활성화
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_icon_back)
         supportActionBar!!.setDisplayShowTitleEnabled(false) // 기본제목 없애기
+        /////////////////////////////////
 
         // 멘티, 멘토 중 어떤 역할인지
         IsMentee = intent.getBooleanExtra("isMentee", true)

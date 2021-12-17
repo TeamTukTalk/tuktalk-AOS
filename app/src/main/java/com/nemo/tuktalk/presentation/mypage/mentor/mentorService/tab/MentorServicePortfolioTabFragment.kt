@@ -67,15 +67,21 @@ class MentorServicePortfolioTabFragment: Fragment() {
         })
 
 
-        // 등록하기 버튼 클릭 시
+        // 등록하기 버튼 클릭 시,   멘토 프로필 등록을 했으며 && 기업 인증을 한 경우 포폴 등록 가능!!!!
         binding.btnGotoRegistPortfolio.setOnClickListener {
             Log.e("AppTest", "MentorServicePortfolioTabFragment/ 멘토 기업 이메일 인증 여부 : ${Constants.IS_CERTIFIED_MENTOR}")
-            if(Constants.IS_CERTIFIED_MENTOR){
+            if(Constants.IS_CERTIFIED_MENTOR && Constants.USER_MENTOR_ID > 0){
                 val intent = Intent(context, RegistPortfolioActivity::class.java)
                 startActivity(intent)
             }
             else{  // 기업 메일 인증 연동 후 else 에서는 Toast 메시지만 보여주기!!!
-                Toast.makeText(context, "멘토 기업 이메일 인증을 먼저 해주세요.", Toast.LENGTH_SHORT).show()
+
+                if(Constants.USER_MENTOR_ID <= 0){
+                    Toast.makeText(context, "멘토 프로필 등록 (마이뚝딱-프로필 이미지 클릭) 을 먼저 해주세요.", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    Toast.makeText(context, "멘토 기업 이메일 인증을 먼저 해주세요.", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

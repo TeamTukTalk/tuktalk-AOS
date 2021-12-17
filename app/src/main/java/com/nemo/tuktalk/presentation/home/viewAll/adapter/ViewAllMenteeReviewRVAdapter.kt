@@ -68,7 +68,7 @@ class ViewAllMenteeReviewRVAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if(holder is ViewAllMenteeReviewRVAdapter.ViewType1ViewHolder){
+        if(holder is ViewType1ViewHolder){
 
         }
         else if(holder is ViewType2ViewHolder){

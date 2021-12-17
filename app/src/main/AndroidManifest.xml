@@ -85,6 +85,13 @@
         <activity android:name="com.nemo.tuktalk.presentation.mypage.mentee.managereview.tab.writereview.WriteReviewActivity"
             android:screenOrientation="portrait"/>
 
+        <activity android:name="com.nemo.tuktalk.presentation.home.mentorguide.MentorGuideActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.detailpage.PortfolioDetailActivity"
+            android:screenOrientation="portrait"/>
+
+
+
     </application>
 
 </manifest>

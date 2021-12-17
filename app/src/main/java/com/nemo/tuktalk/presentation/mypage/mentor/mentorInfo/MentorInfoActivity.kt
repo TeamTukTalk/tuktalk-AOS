@@ -117,8 +117,10 @@ class MentorInfoActivity: AppCompatActivity() {
 
         /////////////////////////////////////////////////////////////////////////
         // 전달 받은 mentorId로 멘토 상세 정보, 포트폴리오 상제 정보 조회 후 뷰모델에 데이터 저장
+        // + 후기 리스트 조회 하기
         viewModel.getMentorDetailInfo(MENTOR_ID)
         viewModel.getPortfolioDetailInfo(MENTOR_ID)
+        viewModel.getMentorReviewList(MENTOR_ID)
 
         viewModel.IsGetMentorDetialInfoSuccess.observe(this, {
             if(it){
@@ -216,6 +218,16 @@ class MentorInfoActivity: AppCompatActivity() {
                 binding.loadingProgressBarWish.visibility = View.INVISIBLE
         })
 
+        //////////////////
+
+        // 멘토 후기 리스트 가져오기 로딩 프로그레스바
+        viewModel.ProgressBarVisibility_review.observe(this, {
+            if(it)
+                binding.loadingProgressBarReview.visibility = View.VISIBLE
+            else
+                binding.loadingProgressBarReview.visibility = View.INVISIBLE
+        })
+
 
     }
 
@@ -246,7 +258,7 @@ class MentorInfoActivity: AppCompatActivity() {
                 // 찜 여부에 따라 찜하기 / 찜취소 나누기!!! = 찜 취소는 마이페이지 찜 목록에서 가능
                 if(viewModel.AddedToWishList){
                     // 찜 취소
-                    Toast.makeText(this, "찜 취소는 '마이뚝딱-찜목록' 에서 가능합니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "찜 취소는 '멘티모드-마이뚝딱-찜목록' 에서 가능합니다.", Toast.LENGTH_SHORT).show()
                 }
                 else{
                     // 찜 하기

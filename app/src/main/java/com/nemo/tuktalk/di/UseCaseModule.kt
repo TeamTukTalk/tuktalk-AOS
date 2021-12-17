@@ -4,11 +4,13 @@ import com.nemo.tuktalk.domain.usecase.home.GetRealTimeReviewListUseCase
 import com.nemo.tuktalk.domain.usecase.home.HomeByTaskMentorListUseCase
 import com.nemo.tuktalk.domain.usecase.home.HomeTop5MentorListUseCase
 import com.nemo.tuktalk.domain.usecase.mentee.*
+import com.nemo.tuktalk.domain.usecase.mentee.change.MenteeToMentorUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorEmailCertificationCheckUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorGetCompanyNameUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorRegistProfileUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.MentorSendEmailCertificationUseCase
 import com.nemo.tuktalk.domain.usecase.mentor.info.GetMentorDetailInfoUseCase
+import com.nemo.tuktalk.domain.usecase.mentor.info.GetMentorReviewListUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.GetPortfolioDetailInfoUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.RegistPortfolioUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.UploadPdfFileUseCase
@@ -40,6 +42,7 @@ internal val useCaseModule = module {
 
     factory { GetMentorDetailInfoUseCase(get()) }
     factory { GetPortfolioDetailInfoUseCase(get()) }
+    factory { GetMentorReviewListUseCase(get()) }
 
     factory { UploadPdfFileUseCase(get()) }
     factory { RegistPortfolioUseCase(get()) }
@@ -55,6 +58,8 @@ internal val useCaseModule = module {
     factory { GetReviewListUseCase(get()) }
 
     factory { GetUserInfoUseCase(get()) }
+
+    factory { MenteeToMentorUseCase(get()) }
 
 
 

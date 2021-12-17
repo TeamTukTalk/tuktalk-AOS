@@ -1026,4 +1026,148 @@
     </style>
 
 
+    <!-- 멘토 등록 가이드 뷰 -->
+    <style name="tv_mentor_guide_1">
+        <item name="android:textColor">@color/black</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="fontFamily">@font/gmarket_sans_ttf_medium</item>
+    </style>
+
+    <style name="tv_mentor_guide_2">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="fontFamily">@font/gmarket_sans_ttf_medium</item>
+    </style>
+
+    <style name="tv_mentor_guide_3">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="tv_mentor_guide_4">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="tv_mentor_guide_5_6">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="tv_mentor_guide_5_6_1">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+    <style name="tv_mentor_guide_7">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="tv_mentor_guide_9">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+    <style name="tv_mentor_guide_10">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+    <style name="tv_mentor_guide_11">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="tv_mentor_guide_12">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+
+
+    <style name="tv_tip_dialog_1">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_bold</item>
+    </style>
+
+    <style name="tv_tip_dialog_2">
+        <item name="android:textColor">@color/tuktalk_sub_content_2</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
+    <style name="tv_tip_dialog_cl_1">
+        <item name="android:textColor">@color/tuktalk_basic_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="tv_tip_dialog_cl_2">
+        <item name="android:textColor">@color/tuktalk_primary</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_medium</item>
+    </style>
+
+    <style name="tv_tip_dialog_cl_3">
+        <item name="android:textColor">@color/tuktalk_sub_content</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/notosans_kr_regular</item>
+    </style>
+
 </resources>

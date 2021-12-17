@@ -59,6 +59,7 @@ class PortfolioOpenActivity: AppCompatActivity() {
 
         PortfolioId = intent.getIntExtra("portfolioId", -1)
         Log.e("AppTest", "PortfolioOpenActivity/ portfolio id : ${PortfolioId}")
+
         Log.e("AppTest", "PortfolioOpenActivity/ current user mode : ${Constants.USER_MODE}")
 
         //////////////////////////////////////////
@@ -67,6 +68,7 @@ class PortfolioOpenActivity: AppCompatActivity() {
         binding.webView.webViewClient = WebViewClientCustom()
         binding.webView.clearCache(true)
         binding.webView.settings.setSupportZoom(true) // 확대 기능 허용
+        binding.webView.settings.builtInZoomControls = true  // 터치로 확대, 축소 허용
         binding.webView.settings.javaScriptEnabled = true
 
 
@@ -77,7 +79,7 @@ class PortfolioOpenActivity: AppCompatActivity() {
     fun startLoadPdf(){
         Handler(Looper.getMainLooper()).postDelayed({
             binding.webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$PortfolioPdfUrl")
-        }, 1750)
+        }, 2000)
     }
 
     inner class WebViewClientCustom : WebViewClient(){

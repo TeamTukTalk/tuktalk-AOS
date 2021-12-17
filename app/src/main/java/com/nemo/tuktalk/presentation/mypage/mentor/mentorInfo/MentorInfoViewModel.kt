@@ -5,17 +5,24 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nemo.tuktalk.common.Constants_gitignore
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseDto
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseDtoList
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseMentee
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseMentor
+import com.nemo.tuktalk.domain.model.mypage.mentor.info.ReviewTabRVitem
 import com.nemo.tuktalk.domain.model.mypage.mentor.info.SubSpecialty
 import com.nemo.tuktalk.domain.model.mypage.mentor.profileRegist.CareerInput
 import com.nemo.tuktalk.domain.model.mypage.mentor.profileRegist.HashTag
 import com.nemo.tuktalk.domain.usecase.mentor.info.GetMentorDetailInfoUseCase
+import com.nemo.tuktalk.domain.usecase.mentor.info.GetMentorReviewListUseCase
 import com.nemo.tuktalk.domain.usecase.portfolio.GetPortfolioDetailInfoUseCase
 import com.nemo.tuktalk.domain.usecase.user.activity.WishMentorUseCase
 
 class MentorInfoViewModel(
     private val getMentorDetailInfoUseCase: GetMentorDetailInfoUseCase,
     private val getPortfolioDetailInfoUseCase: GetPortfolioDetailInfoUseCase,
-    private val wishMentorUseCase: WishMentorUseCase
+    private val wishMentorUseCase: WishMentorUseCase,
+    private val getMentorReviewListUseCase: GetMentorReviewListUseCase
 ): ViewModel() {
 
     var CURRENT_MENTOR_ID = 0
@@ -194,6 +201,75 @@ class MentorInfoViewModel(
         )
     }
 
+    ///////////////////////////////////////////////////////////
+
+    // 멘토 후기 리스트 조회
+
+    var ProgressBarVisibility_review = MutableLiveData<Boolean>()
+    var IsGetMentorReviewListSuccess = MutableLiveData<Boolean>()
+
+    var IsResultEmpty_review = false
+
+    // 실시간 멘티 후기 조회 결과 담을 리스트
+    var Mentor_Review_List = ArrayList<ReviewTabRVitem>()
+
+    var emptyItem_ReviewTabRVitem = ReviewTabRVitem(1, false,
+        MenteeReviewListResponseDto(0, MenteeReviewListResponseMentor("", "", ""),
+        0, "", MenteeReviewListResponseMentee(""), "",
+        "", "", ""))
+
+    @SuppressLint("CheckResult")
+    fun getMentorReviewList(mentorId: Int){
+
+        ProgressBarVisibility_review.value = true
+        Mentor_Review_List.clear()
+
+        getMentorReviewListUseCase.getMentorReviewList(Constants_gitignore.USER_TOKEN, mentorId).subscribe(
+                {
+                    if(it.code() == 200){
+                        if(it.body() is MenteeReviewListResponseDtoList){
+                            Log.e("AppTest", "MentorInfoViewModel/ 멘토 후기 리스트 조회 성공")
+
+                            if(it.body()!!.reviews.size == 0){
+                                Log.e("AppTest", "MentorInfoViewModel/ 멘토 후기 리스트 empty")
+                                IsResultEmpty_review = true
+                            }
+                            else{
+                                Log.e("AppTest", "MentorInfoViewModel/ 멘토 후기 리스트 not empty")
+                                IsResultEmpty_review = false
+                            }
+
+                            Mentor_Review_List.add(emptyItem_ReviewTabRVitem)
+
+                            it.body()!!.reviews.forEach{
+                                Log.e("AppTest", "MentorInfoViewModel/ 멘티 닉네임 : ${it.mentee.menteeNickname}")
+
+                                Mentor_Review_List.add(ReviewTabRVitem(2, false, it))
+                            }
+
+                            IsGetMentorReviewListSuccess.value = true
+                        }
+                        else{
+                            Log.e("AppTest", "MentorInfoViewModel/ 멘토 후기 리스트 조회 실패")
+                            IsGetMentorReviewListSuccess.value = false
+                        }
+                    }
+                    else{
+                        Log.e("AppTest", "MentorInfoViewModel/ 멘토 후기 리스트 조회 실패")
+                        IsGetMentorReviewListSuccess.value = false
+                    }
+
+                    ProgressBarVisibility_review.value = false
+                },
+                {
+                    throwable -> Log.e("AppTest", "MentorInfoViewModel/ throwable : ${throwable},  멘토 후기 리스트 조회 오류")
+                    ProgressBarVisibility_review.value = false
+                    IsGetMentorReviewListSuccess.value = false
+                }
+        )
+    }
+
+
     //////////////////////////////////////////////////////////////
 
     var ProgressBarVisibility_wish = MutableLiveData<Boolean>()
@@ -231,4 +307,6 @@ class MentorInfoViewModel(
                 }
         )
     }
+
+    ////////////////////////////////////////////////////////////
 }

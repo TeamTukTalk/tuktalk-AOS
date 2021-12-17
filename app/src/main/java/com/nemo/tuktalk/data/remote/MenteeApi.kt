@@ -48,6 +48,13 @@ interface MenteeApi {
     fun getMenteeReviewList(
             @Header("Authorization")userToken: String
     ) : Single<Response<MenteeReviewListResponseDtoList>>
+    
+    
+    // 멘티 -> 멘토  전환하기
+    @POST("api/mentees/change-role")
+    fun menteeTomentor(
+            @Header("Authorization")userToken: String
+    ) : Single<Response<Void>>
 
 
 }

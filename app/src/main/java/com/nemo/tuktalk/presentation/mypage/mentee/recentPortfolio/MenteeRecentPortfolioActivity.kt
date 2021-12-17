@@ -17,6 +17,7 @@ import com.nemo.tuktalk.domain.model.mypage.mentee.wishlist.WishListItem
 import com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.adapter.MenteeRecentPorfolioRVadapter
 import com.nemo.tuktalk.presentation.mypage.mentee.wishlist.adapter.MenteeWishListRVadapter
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenActivity
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.detailpage.PortfolioDetailActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MenteeRecentPortfolioActivity: AppCompatActivity() {
@@ -52,7 +53,13 @@ class MenteeRecentPortfolioActivity: AppCompatActivity() {
                     intent.putExtra("portfolioPdfUrl", it)  // url 전달
                     intent.putExtra("portfolioId", -100) // 포트폴리오 아이디 전달, 이 경우 포폴 아이디 값 음수 전달!!
                     startActivity(intent)
-                })
+                },
+                gotoPortfolioDetail = {
+                    val intent = Intent(this, PortfolioDetailActivity::class.java)
+                    intent.putExtra("mentorId", it)  // url 전달
+                    startActivity(intent)
+                }
+        )
         binding.rvMenteeRecentHistory.layoutManager = LinearLayoutManager(this)
         binding.rvMenteeRecentHistory.adapter = rvAdapter
         binding.rvMenteeRecentHistory.addItemDecoration(VerticalItemDecorator(17))

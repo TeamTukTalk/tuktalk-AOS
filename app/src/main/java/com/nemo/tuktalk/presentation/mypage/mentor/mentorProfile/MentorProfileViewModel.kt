@@ -306,8 +306,10 @@ class MentorProfileViewModel(
                         }
                         else{ // 프로필 등록 성공
                             Constants.CURRENT_MENTOR_ID = it.body()!!.mentorId
+                            Constants.USER_MENTOR_ID = it.body()!!.mentorId
+
                             Log.e("AppTest", "MentorProfileViewModel/ 멘토 프로필 등록 성공 " +
-                                    "멘토 id : ${Constants.CURRENT_MENTOR_ID}")
+                                    "멘토 id : ${Constants.CURRENT_MENTOR_ID}, ${Constants.USER_MENTOR_ID}")
 
                             Regist_Mentor_Profile_Success.value = true
                         }

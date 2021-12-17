@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         //fragmentManager.beginTransaction().replace(R.id.framelayout, homeFragment, "home").commitAllowingStateLoss()
         binding.bottomNavi.selectedItemId = R.id.tuktalk_home
         
-        
+        ///////////////////////////////////////////////////////
         //// 멘토인 경우 기업 메일 인증 여부 확인하기 실행
         if(Constants.USER_MODE == 0){
             viewModel.checkMentorCertified()
@@ -61,6 +61,8 @@ class MainActivity : AppCompatActivity() {
 
         // 로그인한 유저 아이디(Int)값 조회
         viewModel.getUserInfo()
+
+        //////////////////////////////////////////////////////
 
         viewModel.isCertificationCheckSuccess.observe(this, {
             if(it){

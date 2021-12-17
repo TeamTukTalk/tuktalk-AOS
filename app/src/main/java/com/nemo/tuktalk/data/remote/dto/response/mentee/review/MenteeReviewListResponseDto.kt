@@ -23,4 +23,5 @@ data class MenteeReviewListResponseDto(
         val profileImageColor : String,
         @SerializedName("firstLetter")
         val firstLetter : String
+
 )

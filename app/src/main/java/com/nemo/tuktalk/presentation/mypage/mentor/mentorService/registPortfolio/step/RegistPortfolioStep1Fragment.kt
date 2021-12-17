@@ -13,6 +13,8 @@ import com.nemo.tuktalk.R
 import com.nemo.tuktalk.databinding.FragmentMentorRegistPortfolioStep1Binding
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioActivity
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.RegistPortfolioViewModel
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.registPortfolio.step.dialog.TipDialogFragment
+import com.nemo.tuktalk.presentation.signup.info.breakaway.BreakAwayDialogFragment
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class RegistPortfolioStep1Fragment: Fragment() {
@@ -68,16 +70,16 @@ class RegistPortfolioStep1Fragment: Fragment() {
         }
 
 
-        // 작성 TIP 누를 시
+        // 작성 TIP 누를 시 -> 다이얼로그 나타내기
         binding.tvOpenTip.setOnClickListener {
             Log.e("AppTest","RegistPortfolioStep1Fragment/ tip dialog open")
 
+            var dialogVeiw = TipDialogFragment()
+            dialogVeiw.show(childFragmentManager, "AppTest")
 
         }
 
 
-
     }
-
 
 }

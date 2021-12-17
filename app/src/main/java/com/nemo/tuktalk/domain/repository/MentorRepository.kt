@@ -1,6 +1,7 @@
 package com.nemo.tuktalk.domain.repository
 
 import com.nemo.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDto
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseDtoList
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
@@ -24,4 +25,7 @@ interface MentorRepository {
 
     // 멘토 상제정보 조회
     fun getMentorDetailInfo(userToken: String, mentorId: Int): Single<Response<MentorDetailInfoResponseDto>>
+    
+    // 멘토의 후기 리스트 조회
+    fun getMentorReviewList(userToken: String, mentorId: Int) : Single<Response<MenteeReviewListResponseDtoList>>
 }

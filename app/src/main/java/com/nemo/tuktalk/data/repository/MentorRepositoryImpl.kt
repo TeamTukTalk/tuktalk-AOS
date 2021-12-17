@@ -2,6 +2,7 @@ package com.nemo.tuktalk.data.repository
 
 import com.nemo.tuktalk.data.remote.MentorApi
 import com.nemo.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDto
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseDtoList
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
@@ -53,6 +54,14 @@ class MentorRepositoryImpl(
         mentorApi.getMentorDetailInfo(userToken, mentorId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+
+
+    // 멘토 후기 리스트 조회
+    override fun getMentorReviewList(userToken: String, mentorId: Int): Single<Response<MenteeReviewListResponseDtoList>> =
+            mentorApi.getMentorReviewList(userToken, mentorId)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+
 
 
 }

@@ -33,12 +33,12 @@ class BreakAwayDialogFragment: DialogFragment() {
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog?.window?.requestFeature(Window.FEATURE_NO_TITLE)
 
-        // 다이얼로그 외부 터치 시 사라짐 방지 / '계속 작성' 을 통해 닫을 수 있음
-        dialog!!.setOnShowListener(object : DialogInterface.OnShowListener{
+        // 다이얼로그 외부 터치 시 사라짐 방지 / '계속 작성' 을 통해 닫을 수 있음 -> 현재는 기능 막아둠, 누를 시 에러 발생
+     /*   dialog!!.setOnShowListener(object : DialogInterface.OnShowListener{
             override fun onShow(p0: DialogInterface?) {
                 dialog!!.setCancelable(false)
             }
-        })
+        })*/
 
         return binding.root
     }

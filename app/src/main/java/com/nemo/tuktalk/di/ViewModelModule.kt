@@ -6,6 +6,7 @@ import com.nemo.tuktalk.presentation.home.viewAll.ViewAllMenteeReviewViewModel
 import com.nemo.tuktalk.presentation.login.LoginViewModel
 import com.nemo.tuktalk.presentation.main.MainActivityViewModel
 import com.nemo.tuktalk.presentation.mypage.MyPageMentorViewModel
+import com.nemo.tuktalk.presentation.mypage.account.AccountOptionViewModel
 import com.nemo.tuktalk.presentation.mypage.account.withdrawal.WithdrawalViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.managereview.MenteeManageReviewViewModel
 import com.nemo.tuktalk.presentation.mypage.mentee.managereview.tab.writereview.WriteReviewViewModel
@@ -14,6 +15,7 @@ import com.nemo.tuktalk.presentation.mypage.mentee.recentPortfolio.MenteeRecentP
 import com.nemo.tuktalk.presentation.mypage.mentee.wishlist.MenteeWishListViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.MentorInfoViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.PortfolioOpenViewModel
+import com.nemo.tuktalk.presentation.mypage.mentor.mentorInfo.tab.portfolio.detailpage.PortfolioDetailViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorProfile.MentorProfileViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorRegist.MentorRegistViewModel
 import com.nemo.tuktalk.presentation.mypage.mentor.mentorService.MentorServiceViewModel
@@ -34,7 +36,7 @@ internal val viewModelModule = module {
     viewModel { MentorProfileViewModel(get(), get()) }
     viewModel { MenteeProfileViewModel() }
 
-    viewModel { MentorInfoViewModel(get(), get(), get()) }
+    viewModel { MentorInfoViewModel(get(), get(), get(), get()) }
     viewModel { RegistPortfolioViewModel(get(), get()) }
 
     viewModel { MenteeRecentPortfolioViewModel(get()) }
@@ -61,4 +63,8 @@ internal val viewModelModule = module {
     viewModel { MyPageMentorViewModel(get()) }
 
     viewModel{ MentorServiceViewModel(get())}
+
+    viewModel { PortfolioDetailViewModel(get()) }
+
+    viewModel { AccountOptionViewModel(get(), get()) }
 }

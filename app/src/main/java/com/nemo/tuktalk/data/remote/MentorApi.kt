@@ -1,6 +1,7 @@
 package com.nemo.tuktalk.data.remote
 
 import com.nemo.tuktalk.data.remote.dto.request.mentor.MentorProfileRequestDto
+import com.nemo.tuktalk.data.remote.dto.response.mentee.review.MenteeReviewListResponseDtoList
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorCompanyNameResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorEmailCertificationResponseDto
 import com.nemo.tuktalk.data.remote.dto.response.mentor.MentorProfileResponseDto
@@ -48,5 +49,14 @@ interface MentorApi {
         @Path("mentorId")mentorId : Int
     ) : Single<Response<MentorDetailInfoResponseDto>>
 
-    //
+
+
+    // 해당 멘토의 후기 리스트 가져오기
+    @GET("api/reviews-mentor")
+    fun getMentorReviewList(
+            @Header("Authorization")userToken: String,
+            @Query("mentorId") mentorId: Int
+    ) : Single<Response<MenteeReviewListResponseDtoList>>
+
+
 }
