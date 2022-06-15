@@ -17,7 +17,15 @@
 <img src="https://user-images.githubusercontent.com/69443895/146964530-39285680-10ab-4930-9c46-ed43a385147e.png" width="280" height="498"/> <img src="https://user-images.githubusercontent.com/69443895/146964624-f144af8b-8214-4af6-b3f6-c1417ca4c906.png" width="280" height="498"/>
 
 ***
+<br>
 
+### Stack
+
+- UI 구성 : xml 
+- MVVM 패턴 적용
+- DI : Koin
+- RxJava
+- Retrofit
 
 
 
